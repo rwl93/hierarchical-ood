@@ -9,10 +9,9 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 
-import attacks
-import calculate_log as callog
+from .utils import calculate_log as callog
 import hierarchy_metrics as hmetrics
-from protos import main_pb2
+from .protos import main_pb2
 import models
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
@@ -20,7 +19,7 @@ module_logger = logging.getLogger('__main__.train_util')
 
 
 class AverageMetric:
-    """Average metric
+    """Average metric.
 
     Methods
     -------
@@ -50,8 +49,7 @@ class AverageMetric:
 
 # adapted from pytorch ImageNet example code
 class Accuracy(AverageMetric):
-    """Topk accuracy metric
-
+    """Topk accuracy metric.
     Parameters
     ----------
     topk : tuple
@@ -86,25 +84,6 @@ class Accuracy(AverageMetric):
                     correct[:k].reshape(-1).float().sum(0).to('cpu')
 
 
-class BCELoss:
-    """Binary Cross Entropy criteria for use with ILR classifiers"""
-    def __init__(self, weights=None):
-        self.logger = logging.getLogger('__main__.train_util.BCELoss')
-        self.weights = weights
-
-    def to_one_hot(self, inp, num_classes):
-        out = torch.zeros((inp.size()[0], num_classes), dtype=float,
-                          requires_grad=False, device=device)
-        out[torch.arange(inp.size(0)), inp.long()] = 1
-        return out
-
-    def __call__(self, outputs, labels):
-        lbls = self.to_one_hot(labels, outputs.size(1))
-        loss = F.binary_cross_entropy_with_logits(outputs, lbls,
-                                                  pos_weight=self.weights)
-        return loss
-
-
 class OOD:
     """OOD metric
 
@@ -132,20 +111,12 @@ class OOD:
             ref_config = main_pb2.Main()
             if model == ref_config.SOFTMAX:
                 model = 'softmax'
-            elif model == ref_config.ILR:
-                model = 'ilr'
             elif model == ref_config.CASCADE:
                 model = 'cascade'
             elif model == ref_config.CASCADEFCHEAD:
                 model = 'cascadefchead'
             elif model == ref_config.SOFTMAXFCHEAD:
                 model = 'softmaxfchead'
-            elif model == ref_config.HILR:
-                model = 'hilr'
-            elif model == ref_config.AMSOFTMAX:
-                model = 'amsoftmax'
-            elif model == ref_config.AMCASCADE:
-                model = 'amcascade'
             else:
                 raise ValueError('Invalid model for OOD metrics')
         self._model = model
@@ -266,35 +237,9 @@ class OOD:
         return dict(self._metric_results)
 
 
-def update_lipschitz(model):
-    with torch.no_grad():
-        for m in model.modules():
-            if isinstance(m, models.SpectralNormConv2d) or \
-               isinstance(m, models.SpectralNormLinear) or \
-               isinstance(m, models.InducedNormConv2d) or \
-               isinstance(m, models.InducedNormLinear):
-                m.compute_weight(update=True)
-
-
-def get_lipschitz_constants(model):
-    lipschitz_constants = []
-    for m in model.modules():
-        if isinstance(m, models.SpectralNormConv2d) or \
-           isinstance(m, models.SpectralNormLinear) or \
-           isinstance(m, models.InducedNormConv2d) or \
-           isinstance(m, models.InducedNormLinear) or \
-           isinstance(m, models.LopConv2d) or isinstance(m, models.LopLinear):
-            lipschitz_constants.append(m.scale.item())
-    return lipschitz_constants
-
-
-def pretty_repr(a):
-    return '[[' + ','.join(list(map(lambda i: f'{i:.2f}', a))) + ']]'
-
 def train(
         net, trainloader, testloader, criterion, optimizer, epochs, batch_size,
-        log_every_n=250, checkpoint=None, attack=None, eps=0.5, iters=7,
-        alpha=0.5/5, rand_start=True, attack_norm='inf',
+        log_every_n=250, checkpoint=None,
         hierarchy=None,
         profile=False,
         warmup_iters=5,
@@ -321,18 +266,6 @@ def train(
         Intra-epoch logging interval in number of steps
     checkpoint : string
         Checkpoint path
-    attack : string
-        Type of attack to train against
-    eps : float
-        Attack strength
-    iters : int
-        Number of iterations for PGD attack
-    alpha : float
-        PGD attack step size
-    rand_start : bool
-        Whether to choose random starting point for attack
-    attack_norm : string
-        Indicates which norm to attack with (either 'inf' or 'l2')
 
     Returns
     -------
@@ -341,8 +274,7 @@ def train(
         best top-5 validation accuracy achieved
     """
     print(criterion)
-    if (('AMCASCADE'==model_type) or ('CASCADE' in model_type)
-            or ('MOS' in model_type)):
+    if (('CASCADE' in model_type) or ('MOS' in model_type)):
         if 'MOS' in model_type:
             accuracy = hmetrics.MOSAccuracy(hierarchy)
         else:
@@ -431,30 +363,15 @@ def train(
         train_loss.reset_state()
         start = time.time()
         with get_profiler() as profiler:
-            for batch_idx, (inputs, targets) in enumerate(trainloader):
+            for inputs, targets in trainloader:
                 inputs, targets = inputs.to(device), targets.to(device)
-                if attack == 'PGD':
-                    adv_data = attacks.PGD_attack(
-                        net, device, inputs.clone().detach(), targets, eps=eps,
-                        alpha=alpha, iters=iters, rand_start=rand_start,
-                        norm=attack_norm)
-                elif attack == 'FGSM':
-                    adv_data = attacks.FGSM_attack(
-                        net, device, inputs.clone().detach(), targets, eps=eps)
-                elif attack == 'MI-FGSM':
-                    adv_data = attacks.MomentumIterative_attack(
-                        net, device, inputs.clone().detach(), targets, eps=eps,
-                        alpha=alpha, iters=iters, mu=1.0)
-                else:
-                    adv_data = inputs
-                outputs = net(adv_data)
+                outputs = net(inputs)
                 net.zero_grad()
                 optimizer.zero_grad()
                 loss = criterion(outputs, targets)
                 loss.backward()
                 optimizer.step()
                 optimizer.zero_grad()
-                update_lipschitz(net)
                 train_loss.update_state(loss.item(), 1)
                 global_steps += 1
 
@@ -494,7 +411,6 @@ def train(
 
                 test_loss.update_state(loss.item(), 1)
                 accuracy.update_state(outputs, targets)
-            lipschitz_constants = get_lipschitz_constants(net)
         if isinstance(accuracy, hmetrics.HierarchicalAccuracy):
             val_top1 = accuracy.result_pred()
             val_top5 = accuracy.result()
@@ -516,9 +432,6 @@ def train(
             module_logger.info(
                 "Test Loss=%.4f, Test top-1 acc=%.4f, Test top-5 acc=%.4f" %
                 (test_loss.result(), val_top1, val_top5))
-        if len(lipschitz_constants) > 0:
-            module_logger.info('Lipsh: {}'.format(
-                pretty_repr(lipschitz_constants)))
         accuracy.reset_state()
         test_loss.reset_state()
 

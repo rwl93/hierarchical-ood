@@ -1,21 +1,18 @@
-"""Hierarchy Inference Classes and Stopping Criterion"""
-
-# import matplotlib.pyplot as plt
-import numpy as np
-import torch
-# import torch.nn as nn
-# import torch.nn.functional as F
+"""Hierarchy Inference Classes and Stopping Criterion."""
+from abc import ABC, abstractmethod
 import logging
-# from sklearn.preprocessing import label_binarize
-from sklearn.metrics import roc_curve  # , auc, confusion_matrix
-import hierarchy_metrics
+import numpy as np
+from sklearn.metrics import roc_curve
+import torch
+from . import hierarchy_metrics
 
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
+DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 module_logger = logging.getLogger('__main__.hierarchy_inference')
 
 
-class StoppingCriterion:
-    """Base class for inference stopping criterion"""
+class StoppingCriterion(ABC):
+    """Base class for inference stopping criterion."""
+
     def __init__(self, hierarchy, tnr=0.95, pred_method='topdown'):
         self.logger = logging.getLogger(
             '__main__.hierarchy_inference.StoppingCriterion')
@@ -23,12 +20,17 @@ class StoppingCriterion:
         self.tnr = tnr
         self._thresh = []
         self._pred_method = pred_method
+        self._scores = np.empty((0),)
+        self._gtroc = np.empty((0),)
 
-    def update(self,):
+    @abstractmethod
+    def update(self, inputs, labels, inp_scores=False):
+        """Update the stopping criterion with new data."""
         raise NotImplementedError(
             "Update method must be overriden by subclasses")
 
     def reset(self,):
+        """Reset to initial state."""
         for i in range(len(self._scores)):
             self._scores[i] = np.zeros_like(self._scores[i])
             self._gtroc[i] = np.zeros_like(self._gtroc[i])
@@ -42,23 +44,22 @@ class StoppingCriterion:
             self._thresh.append(targ)
 
     def log_threshold(self):
+        """Log threshold values."""
         self.logger.info('Threshold values:\n')
         self.logger.info(self._thresh)
 
     def print_threshold(self):
+        """Print threshold values."""
         print('Threshold values:\n')
         print(self._thresh)
 
     def predict(self, scores, leaf_preds):
+        """Predict using threshold given scores and predictions."""
         if self._pred_method.lower() == 'topdown':
             return self.top_down_predict(scores, leaf_preds)
-        elif self._pred_method.lower() == 'bottomup':
-            raise NotImplementedError("Bottom up pred is not implemented")
-            # return self.bottom_up_predict(scores, leaf_preds)
-        elif self._pred_method.lower() == 'flat':
+        if self._pred_method.lower() == 'flat':
             return self.flat_predict(scores, leaf_preds)
-        else:
-            raise ValueError("Unknown prediction method: " + self._pred_method)
+        raise ValueError("Unknown prediction method: " + self._pred_method)
 
     def top_down_predict(self, scores, leaf_preds):
         # Get multilabel and active_synsets
@@ -306,7 +307,7 @@ class SynsetEntropyStoppingCriterion(StoppingCriterion):
 
     def update(self, inputs, labels, inp_scores=False):
         # Calculate soft scores from logits
-        inputs = inputs.to(device)
+        inputs = inputs.to(DEVICE)
         if not inp_scores:
             hlogits = self.H.split_logits_by_synset(inputs)
             scores = []
@@ -436,7 +437,7 @@ class PathEntropyStoppingCriterion(StoppingCriterion):
 
     def update(self, inputs, labels, inp_scores=False):
         # Calculate soft scores from logits
-        inputs = inputs.to(device)
+        inputs = inputs.to(DEVICE)
 
         # Calculate path prediciton
         # Calculate synset entropys

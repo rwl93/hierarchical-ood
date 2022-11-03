@@ -87,6 +87,14 @@ def gen_datasets(datadir,
                                            eval_transform)
         ood_dataset = datasets.ImageFolder(os.path.join(datadir, 'ood'),
                                            eval_transform)
+        logger.info('# ID Train: %d', len(train_dataset.imgs))
+        logger.info('# ID Val: %d', len(val_dataset.imgs))
+        logger.info('# OOD: %d', len(ood_dataset.imgs))
+
+    if 'cifar' in datadir.lower():
+        logger.info('# ID Train: %d', len(train_dataset))
+        logger.info('# ID Val: %d', len(val_dataset))
+        logger.info('# OOD: %d', len(ood_dataset))
     return train_dataset, val_dataset, ood_dataset
 
 

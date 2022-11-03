@@ -1,31 +1,22 @@
 import argparse
-import numpy as np
-import sys
-import os
-from collections import defaultdict
 import logging
 import random
 import torch
-import torch.nn as nn
-import torch.nn.functional as F
-import torch.optim as optim
-import torch.utils.data as utilsdata
-import torchvision
-import torchvision.transforms as transforms
-import torchvision.datasets as datasets
-import warnings
+from torch import nn
+from torch import optim
+from torch.utils.data import DataLoader
 
 # Custom
-import models
-import train_util
-import ood_helpers
-import calculate_log as callog
-import hierarchy_util
-import hierarchy_loss
-from utils import config_util
-from utils.dataset_util import gen_datasets, print_stats_of_list
+from . import models
+from . import train_util
+from .hierarchy import Hierarchy
+from . import hierarchy_loss
+from .utils import config_util
+from .utils.dataset_util import gen_datasets
 
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
+
+DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
+
 
 parser = argparse.ArgumentParser(description='Hierarchical OOD experiment \
                                  runner harness')
@@ -45,20 +36,24 @@ logger.addHandler(ch)
 
 
 def setup_filehandler(config):
+    """Create filehandler for logger."""
     # Add file handler
-    fh = logging.FileHandler(config.train_params.log_fn, 'w')
-    fh.setLevel(logging.INFO)
+    file_handler = logging.FileHandler(config.train_params.log_fn, 'w')
+    file_handler.setLevel(logging.INFO)
     fh_formatter = logging.Formatter(
         '%(asctime)s - %(levelname)s - %(message)s')
-    fh.setFormatter(fh_formatter)
-    logger.addHandler(fh)
+    file_handler.setFormatter(fh_formatter)
+    logger.addHandler(file_handler)
+
 
 def main(args):
+    """Train network."""
     config = config_util.read_config(args.config_fn)
-    setup_filehandler(config) 
+    setup_filehandler(config)
     random.seed(config.seed)
     torch.manual_seed(config.seed)
 
+    feat_extractor_config = None
     if config.finetune_from_ckpt:
         logger.info("Reading Feature Extractor Config")
         feat_extractor_config = config_util.read_config(
@@ -67,31 +62,24 @@ def main(args):
         if feat_extractor_config.backbone != config.backbone:
             raise ValueError("Feature extractor and model must have the same" +
                              " backbone")
+
     backbone = getattr(models, config.backbone)
 
     logger.info('==> Preparing data..')
-    train_ds, val_ds, ood_ds = gen_datasets(config.data_dir)
+    train_ds, val_ds, _ = gen_datasets(config.data_dir)
     num_id_classes = len(train_ds.classes)
 
-    trainloader = torch.utils.data.DataLoader(
+    trainloader = DataLoader(
         train_ds, batch_size=config.train_params.batch_size,
         shuffle=True, num_workers=16)
-    valloader = torch.utils.data.DataLoader(
+    valloader = DataLoader(
         val_ds, batch_size=config.train_params.batch_size,
         shuffle=False, num_workers=16)
-    oodloader = torch.utils.data.DataLoader(
-        ood_ds, batch_size=config.train_params.batch_size,
-        shuffle=False, num_workers=16)
-
-    logger.info(f"# ID Train: {len(train_ds.imgs)}")
-    logger.info(f"# ID Test:  {len(val_ds.imgs)}")
-    logger.info(f"# OOD Test: {len(ood_ds.imgs)}")
 
     if config.no_save:
         config.train_params.checkpoint_fn = None
-    logger.info('checkpoint filename: {}'.format(
-        config.train_params.checkpoint_fn))
-    logger.info('log filename: {}'.format(config.train_params.log_fn))
+    logger.info('checkpoint filename: %s', config.train_params.checkpoint_fn)
+    logger.info('log filename: %s', config.train_params.log_fn)
 
     # Load Model
     kwargs = {}
@@ -114,26 +102,27 @@ def main(args):
             )
             model_type = 'SOFTMAXFCHEAD'
         else:
-            net = backbone(num_classes=num_id_classes, **snkwargs)
+            net = backbone(num_classes=num_id_classes)
             model_type = 'SOFTMAX'
         criterion = nn.CrossEntropyLoss()
         hierarchy = None
     elif config.model in [config.CASCADE, config.CASCADEFCHEAD]:
-        hierarchy = hierarchy_util.Hierarchy(train_ds.classes,
-                                             config.hierarchy_fn,
-                                             config.min_norm_factor,
-                                             )
+        hierarchy = Hierarchy(train_ds.classes,
+                              config.hierarchy_fn,
+                              config.min_norm_factor,
+                              )
         if config.model == config.CASCADE:
-            net = backbone(num_classes=hierarchy.num_classes, **snkwargs)
+            net = backbone(num_classes=hierarchy.num_classes)
             model_type = 'CASCADE'
         elif config.model == config.CASCADEFCHEAD:
             net = models.build_softmax_cascade(
                 hierarchy, backbone=config.backbone,
                 embed_layer=config.embed_layer,
-                **snkwargs,
                 **kwargs,)
             model_type = 'CASCADEFCHEAD'
             print(net.head)
+        else:
+            raise ValueError(f'Unsupported model type: {config.model}')
         if config.hl.weight_ce:
             logger.info("Generating CE Weights...")
             hierarchy.gen_CEweights(trainloader)
@@ -151,14 +140,16 @@ def main(args):
             depth_weight=config.hl.depth_weight,
         )
     elif config.model == config.MOS:
-        hierarchy = hierarchy_util.Hierarchy(train_ds.classes,
-                                             config.hierarchy_fn,
-                                             config.min_norm_factor,
-                                             )
+        hierarchy = Hierarchy(train_ds.classes,
+                              config.hierarchy_fn,
+                              config.min_norm_factor,
+                              )
         net = models.build_MOS(hierarchy, config.backbone,
                                **kwargs)
         criterion = hierarchy_loss.MOSLoss(hierarchy)
         model_type = 'MOS'
+    else:
+        raise ValueError(f'Unsupported model type: {config.model}')
 
     if config.resume_from_ckpt:
         logger.info("Loading checkpoint to continue training")
@@ -174,6 +165,8 @@ def main(args):
                 updated_state_dict[k] = v
         net.load_state_dict(updated_state_dict)
     elif config.finetune_from_ckpt:
+        if feat_extractor_config is None:
+            raise ValueError('Feature extractor config not found')
         logger.info("Loading weights from feature extractor")
         checkpoint_fn = feat_extractor_config.train_params.checkpoint_fn
         state_dict = torch.load(checkpoint_fn)
@@ -197,8 +190,7 @@ def main(args):
                           for k, v in state_dict.items()
                           if prefix in k}
         # Add in necessary keys
-        if config.model in [config.SOFTMAX, config.CASCADE,
-                            config.HILR, config.ILR]:
+        if config.model in [config.SOFTMAX, config.CASCADE]:
             state_dict['fc.weight'] = net.fc._parameters['weight']
             state_dict['fc.bias'] = net.fc._parameters['bias']
             # remove extras from resnet backbone keys
@@ -221,16 +213,14 @@ def main(args):
                     p.requires_grad = False
 
     if config.distribution_strategy.lower() == 'dataparallel':
-        logger.info("DataParallel on " + str(torch.cuda.device_count())
-                    + " devices")
+        logger.info("DataParallel on %d devices", torch.cuda.device_count())
         net = torch.nn.DataParallel(net)
     elif config.distribution_strategy.lower() == 'distributeddataparallel':
-        logger.info("DistributedDataParallel on " +
-                    str(torch.cuda.device_count()) + " devices")
+        logger.info("DistributedDataParallel on %d devices", torch.cuda.device_count())
         net = torch.nn.parallel.DistributedDataParallel(net)
     print(net)
-    logger.info(device)
-    net = net.to(device)
+    logger.info(DEVICE)
+    net = net.to(DEVICE)
 
     if config.WhichOneof('optimizer') == 'sgd':
         optimizer = optim.SGD(net.parameters(),
@@ -255,6 +245,8 @@ def main(args):
         lr_steps = config.adam.lr_step
         if len(lr_steps) == 0:
             lr_steps = None
+    else:
+        raise ValueError(f'Unsupported optimizer {config.WhichOneof("optimizer")}')
 
     # TODO: Add this to proto
     log_every_n = 250
@@ -269,8 +261,8 @@ def main(args):
     )
 
     logger.info("Printing Final Accuracy + OOD Detection stats")
-    logger.info("Top 1 Accuracy: ", top1_acc)
-    logger.info("Top 5 Accuracy: ", top5_acc)
+    logger.info("Top 1 Accuracy: %f", top1_acc)
+    logger.info("Top 5 Accuracy: %f", top5_acc)
 
 
 if __name__=="__main__":

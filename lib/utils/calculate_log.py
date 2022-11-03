@@ -1,42 +1,18 @@
-# NAI
-
 # Adapted from "https://github.com/pokaxpoka/deep_Mahalanobis_detector/blob/master/calculate_log.py"
 #   to input numpy arrays directly instead of file paths
 
 ## Measure the detection performance - Kibok Lee
 from __future__ import print_function
-#import torch
-#from torch.autograd import Variable
-#import torch.nn as nn
-#import torch.nn.functional as F
 import numpy as np
-#import torch.optim as optim
-#import torchvision
-#import torchvision.transforms as transforms
-import numpy as np
-import time
-from scipy import misc
 
-import matplotlib
-# matplotlib.use('TkAgg')
-import matplotlib.pyplot as plt
 
-#def get_curve(dir_name, stypes = ['Baseline', 'Gaussian_LDA']):
-def get_curve(known,novel):
+def get_curve(known, novel):
+    """Get ROC Curve."""
     tp, fp = dict(), dict()
     tnr_at_tpr95 = dict()
     for stype in ['TMP']:
-        #known = np.loadtxt('{}/confidence_{}_In.txt'.format(dir_name, stype), delimiter='\n')
-        #novel = np.loadtxt('{}/confidence_{}_Out.txt'.format(dir_name, stype), delimiter='\n')
-        ## NAI
-        #print(known.shape)
-        #print(novel.shape)
-        #exit("HA")
         known.sort()
         novel.sort()
-        #import pdb;pdb.set_trace()
-        end = np.max([np.max(known), np.max(novel)])
-        start = np.min([np.min(known),np.min(novel)])
         num_k = known.shape[0]
         num_n = novel.shape[0]
         tp[stype] = -np.ones([num_k+num_n+1], dtype=int)
@@ -65,12 +41,11 @@ def get_curve(known,novel):
         tnr_at_tpr95[stype] = 1. - fp[stype][tpr95_pos] / num_n
     return tp, fp, tnr_at_tpr95
 
-#def metric(dir_name, stypes = ['Bas', 'Gau'], verbose=False):
+
 def metric(in_scores, out_scores):
-    #tp, fp, tnr_at_tpr95 = get_curve(dir_name, stypes)
+    """Gather OOD Metrics from ID and OOD scores."""
     tp, fp, tnr_at_tpr95 = get_curve(in_scores,out_scores)
     results = dict()
-    mtypes = ['TNR', 'AUROC', 'DTACC', 'AUIN', 'AUOUT']
     for stype in ['TMP']:
         results[stype] = dict()
         # TNR

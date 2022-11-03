@@ -1,5 +1,4 @@
 import logging
-import hierarchy_util as hutils
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
