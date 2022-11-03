@@ -2,7 +2,7 @@
 
 ## Overview
 
-*Fine-grain Inference on Out-of-Distribution Data with Hierarchical Classification.*
+__Fine-grain Inference on Out-of-Distribution Data with Hierarchical Classification.__
 Randolph Linderman, Jingyang Zhang, Nathan Inkawhich, Hai Li, Yiran Chen @ [Duke CEI Lab](https://cei.pratt.duke.edu/)
 
 
