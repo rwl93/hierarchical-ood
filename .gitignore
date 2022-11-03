@@ -2,12 +2,13 @@
 **.swp
 **.swo
 
-data/balanced100/**
+data/imagenet1000
+data/balanced100
 data/balanced100-coarseood
 data/balanced100-mediumood
 data/balanced100-fineood
 data/balanced100-finemediumood
-data/coarse/**
+data/coarse
 data/iNaturalist
 data/SUN
 data/Places
@@ -37,5 +38,4 @@ slurm-*
 metrics-slurm.sh
 vallogits-slurm.sh
 nbdt/
-
-local/protoc-21.4-osx-aarch_64
+local/
