@@ -7,8 +7,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 import logging
 
-import calculate_log as callog
-from protos import main_pb2
+from .utils import calculate_log as callog
+from .protos import main_pb2
 
 from collections import defaultdict
 

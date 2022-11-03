@@ -1,6 +1,6 @@
 syntax = "proto2";
 
-package hierarchical_ood.protos;
+package hierarchical_ood.lib.protos;
 
 message Main {
     enum Model {

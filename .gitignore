@@ -3,21 +3,21 @@
 **.swo
 
 data/imagenet1000
+data/imagenet100
 data/balanced100
+data/imagenet1000-fineood
+data/imagenet1000-mediumood
+data/imagenet1000-coarseood
 data/balanced100-coarseood
 data/balanced100-mediumood
 data/balanced100-fineood
 data/balanced100-finemediumood
-data/coarse
+data/imagenet100-coarseood/
+data/imagenet100-fineood/
 data/iNaturalist
 data/SUN
 data/Places
 data/Textures
-data/imagenet1000-fineood
-data/imagenet1000-mediumood
-data/imagenet1000-coarseood
-data/coarseid-coarseood/
-data/coarseid-fineood/
 
 **.out
 ckpts/**

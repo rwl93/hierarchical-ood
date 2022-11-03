@@ -7,12 +7,12 @@ from torch import optim
 from torch.utils.data import DataLoader
 
 # Custom
-from . import models
-from . import train_util
-from .hierarchy import Hierarchy
-from . import hierarchy_loss
-from .utils import config_util
-from .utils.dataset_util import gen_datasets
+from lib import models
+from lib import train_util
+from lib.hierarchy import Hierarchy
+from lib import hierarchy_loss
+from lib.utils import config_util
+from lib.utils.dataset_util import gen_datasets
 
 
 DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'

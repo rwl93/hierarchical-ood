@@ -7,12 +7,10 @@ import torch.nn as nn
 import logging
 import warnings
 import torch.nn.functional as F
-from .lipschitz import SpectralNormLinear
 from functools import partial
 
 
-__all__ = ['build_softmax_cascade', 'build_softmax_fchead', 'build_MOS',
-           'build_AMSoftmax']
+__all__ = ['build_softmax_cascade', 'build_softmax_fchead', 'build_MOS',]
 logging.captureWarnings(True)
 module_logger = logging.getLogger('__main__.models.softcascade')
 SOFT_CASCADE_FC_HEAD_SIZES = [256, 128]
@@ -49,7 +47,8 @@ class SoftCascadeFCHead(nn.Module):
     def __init__(self, inplanes, hierarchy,
                  embed_layer=False,
                  layer_sizes=SOFT_CASCADE_FC_HEAD_SIZES,
-                 **snkwargs):
+                 **kwargs
+                 ):
         super().__init__()
         print(f'head_layer_sizes: {layer_sizes}')
         if embed_layer:
@@ -57,16 +56,11 @@ class SoftCascadeFCHead(nn.Module):
                 layer_sizes.append(3)
             else:
                 layer_sizes = [3]
-        self.snkwargs = dict(snkwargs)
-        self.spectral_normalization = self.snkwargs.pop('spectral_normalization')
         self._gen_synset_modules(inplanes, hierarchy, layer_sizes)
 
     def _gen_synset_modules(self, inplanes, hierarchy, layer_sizes):
         """Generate the head FC layers"""
-        if self.spectral_normalization:
-            linlayer = partial(SpectralNormLinear, **self.snkwargs)
-        else:
-            linlayer = nn.Linear
+        linlayer = nn.Linear
         self.synset_mods = nn.ModuleList()
         for o, b in zip(hierarchy.synset_offsets, hierarchy.synset_bounds):
             layers = []
@@ -108,7 +102,8 @@ class SoftmaxFCHead(nn.Module):
     def __init__(self, inplanes, outplanes,
                  embed_layer=False,
                  layer_sizes=SOFT_CASCADE_FC_HEAD_SIZES,
-                 **snkwargs):
+                 **kwargs
+                 ):
         super().__init__()
         if embed_layer:
             if layer_sizes is not None:
@@ -118,12 +113,7 @@ class SoftmaxFCHead(nn.Module):
         layers = []
         print("head_layer_sizes: {}".format(layer_sizes))
         curr_inplanes = inplanes
-        self.snkwargs = dict(snkwargs)
-        self.spectral_normalization = self.snkwargs.pop('spectral_normalization')
-        if self.spectral_normalization:
-            linlayer = partial(SpectralNormLinear, **self.snkwargs)
-        else:
-            linlayer = nn.Linear
+        linlayer = nn.Linear
         for ls in layer_sizes:
             layers.append(linlayer(curr_inplanes, ls))
             # TODO: Add non-linear activation after each intermediate layer!
@@ -154,7 +144,7 @@ class MOSHead(nn.Module):
         Expecting a 2 level head where the superclasses correspond to the
         "groups" in the MOS technique
     """
-    def __init__(self, inplanes, hierarchy, layer_sizes=[], **snkwargs):
+    def __init__(self, inplanes, hierarchy, layer_sizes=[], **kwargs):
         super().__init__()
         if hierarchy.max_depth != 2:
             if hierarchy.max_depth < 2:
@@ -163,12 +153,7 @@ class MOSHead(nn.Module):
         print("head_layer_sizes: {}".format(layer_sizes))
         layers = []
         curr_inplanes = inplanes
-        self.snkwargs = dict(snkwargs)
-        self.spectral_normalization = self.snkwargs.pop('spectral_normalization')
-        if self.spectral_normalization:
-            linlayer = partial(SpectralNormLinear, **self.snkwargs)
-        else:
-            linlayer = nn.Linear
+        linlayer = nn.Linear
         for ls in layer_sizes:
             layers.append(linlayer(curr_inplanes, ls))
             curr_inplanes = ls

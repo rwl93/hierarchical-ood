@@ -10,9 +10,9 @@ import torch.nn.functional as F
 import torch.optim as optim
 
 from .utils import calculate_log as callog
-import hierarchy_metrics as hmetrics
+from . import hierarchy_metrics as hmetrics
 from .protos import main_pb2
-import models
+from . import models
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 module_logger = logging.getLogger('__main__.train_util')

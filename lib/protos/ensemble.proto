@@ -1,8 +1,8 @@
 syntax = "proto2";
 
-package hierarchical_ood.protos;
+package hierarchical_ood.lib.protos;
 
-import 'protos/main.proto';
+import 'lib/protos/main.proto';
 
 message Ensemble {
     enum Model {
