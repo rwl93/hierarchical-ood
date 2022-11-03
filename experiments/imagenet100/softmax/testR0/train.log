@@ -1,0 +1,22 @@
+2022-11-03 15:51:48,149 - INFO - ==> Preparing data..
+2022-11-03 15:51:48,471 - INFO - # ID Train: 106872
+2022-11-03 15:51:48,471 - INFO - # ID Val: 4150
+2022-11-03 15:51:48,471 - INFO - # OOD: 850
+2022-11-03 15:51:48,472 - INFO - checkpoint filename: experiments/imagenet100/softmax/testR0/checkpoint.pt
+2022-11-03 15:51:48,472 - INFO - log filename: experiments/imagenet100/softmax/testR0/train.log
+2022-11-03 15:51:48,764 - INFO - cuda
+2022-11-03 15:51:52,439 - INFO - 
+Epoch: 0
+2022-11-03 15:51:52,439 - INFO - 
+Learning Rate: 0.0100
+2022-11-03 15:53:50,765 - INFO - [Step=250]	Loss=4.4521	270.4 examples/second
+2022-11-03 15:55:46,846 - INFO - [Step=500]	Loss=3.9238	275.7 examples/second
+2022-11-03 15:57:43,128 - INFO - [Step=750]	Loss=3.7001	275.2 examples/second
+2022-11-03 15:58:30,061 - INFO - Test Loss=3.4905, Test top-1 acc=0.1564, Test top-5 acc=0.4219
+2022-11-03 15:58:30,061 - INFO - Saving...
+2022-11-03 15:58:30,229 - INFO - Epoch time: 397.7908375263214
+2022-11-03 15:58:30,230 - INFO - 
+Epoch: 1
+2022-11-03 15:58:30,230 - INFO - 
+Learning Rate: 0.0280
+2022-11-03 15:59:49,179 - INFO - [Step=1000]	Loss=3.6738	405.3 examples/second
