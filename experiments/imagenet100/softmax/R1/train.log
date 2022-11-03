@@ -1,0 +1,1013 @@
+==> Preparing data..
+ckpts/softmax_coarse_SEED4357298_ITER0_EPOCHS90.pt
+**********************************************************
+Starting Iter: 0 / 1
+**********************************************************
+
+Epoch: 0
+[Step=250]	Loss=5.0554	top1 acc=0.0141	top5 acc=0.0649	266.3 examples/second
+[Step=500]	Loss=4.4044	top1 acc=0.0160	top5 acc=0.0772	271.4 examples/second
+[Step=750]	Loss=4.3793	top1 acc=0.0186	top5 acc=0.0887	269.3 examples/second
+[Step=1000]	Loss=4.3726	top1 acc=0.0201	top5 acc=0.0903	268.4 examples/second
+[Step=1250]	Loss=4.3645	top1 acc=0.0193	top5 acc=0.0962	267.4 examples/second
+[Step=1500]	Loss=4.3360	top1 acc=0.0231	top5 acc=0.1072	267.6 examples/second
+/home/rwl17/anaconda3/lib/python3.8/site-packages/torch/nn/functional.py:718: UserWarning: Named tensors and all their associated APIs are an experimental feature and subject to change. Please do not use them for anything important until they are released as stable. (Triggered internally at  /opt/conda/conda-bld/pytorch_1623448234945/work/c10/core/TensorImpl.h:1156.)
+  return torch.max_pool2d(input, kernel_size, stride, padding, dilation, ceil_mode)
+Test Loss=4.3500, Test top-1 acc=0.0318, Test top-5 acc=0.1173
+Saving...
+Epoch time: 404.919157743454
+
+Epoch: 1
+[Step=1750]	Loss=4.2531	top1 acc=0.0301	top5 acc=0.1439	236.9 examples/second
+[Step=2000]	Loss=4.1802	top1 acc=0.0444	top5 acc=0.1634	268.5 examples/second
+[Step=2250]	Loss=4.0940	top1 acc=0.0518	top5 acc=0.1972	268.0 examples/second
+[Step=2500]	Loss=4.0089	top1 acc=0.0644	top5 acc=0.2335	267.9 examples/second
+[Step=2750]	Loss=3.9342	top1 acc=0.0721	top5 acc=0.2498	268.2 examples/second
+[Step=3000]	Loss=3.8395	top1 acc=0.0891	top5 acc=0.2856	267.4 examples/second
+[Step=3250]	Loss=3.7862	top1 acc=0.0988	top5 acc=0.3047	267.4 examples/second
+Test Loss=3.6357, Test top-1 acc=0.1198, Test top-5 acc=0.3467
+Saving...
+Epoch time: 407.27603912353516
+
+Epoch: 2
+[Step=3500]	Loss=3.7120	top1 acc=0.1128	top5 acc=0.3411	236.3 examples/second
+[Step=3750]	Loss=3.6481	top1 acc=0.1188	top5 acc=0.3592	269.5 examples/second
+[Step=4000]	Loss=3.5609	top1 acc=0.1381	top5 acc=0.3842	268.7 examples/second
+[Step=4250]	Loss=3.4865	top1 acc=0.1499	top5 acc=0.4023	269.1 examples/second
+[Step=4500]	Loss=3.4098	top1 acc=0.1634	top5 acc=0.4296	268.9 examples/second
+[Step=4750]	Loss=3.3528	top1 acc=0.1749	top5 acc=0.4484	268.7 examples/second
+[Step=5000]	Loss=3.3106	top1 acc=0.1872	top5 acc=0.4608	267.2 examples/second
+Test Loss=3.1383, Test top-1 acc=0.2241, Test top-5 acc=0.5164
+Saving...
+Epoch time: 405.88642382621765
+
+Epoch: 3
+[Step=5250]	Loss=3.2264	top1 acc=0.2005	top5 acc=0.4876	236.2 examples/second
+[Step=5500]	Loss=3.1871	top1 acc=0.2099	top5 acc=0.4965	268.9 examples/second
+[Step=5750]	Loss=3.1238	top1 acc=0.2211	top5 acc=0.5099	269.4 examples/second
+[Step=6000]	Loss=3.0804	top1 acc=0.2339	top5 acc=0.5294	267.5 examples/second
+[Step=6250]	Loss=3.0384	top1 acc=0.2443	top5 acc=0.5374	267.4 examples/second
+[Step=6500]	Loss=2.9981	top1 acc=0.2511	top5 acc=0.5443	267.4 examples/second
+Test Loss=2.8544, Test top-1 acc=0.2682, Test top-5 acc=0.5971
+Saving...
+Epoch time: 406.80360198020935
+
+Epoch: 4
+[Step=6750]	Loss=2.9290	top1 acc=0.2806	top5 acc=0.5786	235.3 examples/second
+[Step=7000]	Loss=2.8676	top1 acc=0.2778	top5 acc=0.5739	268.0 examples/second
+[Step=7250]	Loss=2.8110	top1 acc=0.2846	top5 acc=0.5943	269.3 examples/second
+[Step=7500]	Loss=2.7781	top1 acc=0.2886	top5 acc=0.5960	268.7 examples/second
+[Step=7750]	Loss=2.7626	top1 acc=0.2982	top5 acc=0.6046	268.2 examples/second
+[Step=8000]	Loss=2.7062	top1 acc=0.3050	top5 acc=0.6167	268.7 examples/second
+[Step=8250]	Loss=2.6812	top1 acc=0.3133	top5 acc=0.6252	267.4 examples/second
+Test Loss=3.2341, Test top-1 acc=0.2366, Test top-5 acc=0.5564
+Epoch time: 405.9732577800751
+
+Epoch: 5
+[Step=8500]	Loss=2.5990	top1 acc=0.3284	top5 acc=0.6497	237.4 examples/second
+[Step=8750]	Loss=2.5765	top1 acc=0.3359	top5 acc=0.6491	267.7 examples/second
+[Step=9000]	Loss=2.5200	top1 acc=0.3458	top5 acc=0.6642	267.3 examples/second
+[Step=9250]	Loss=2.4950	top1 acc=0.3519	top5 acc=0.6637	267.0 examples/second
+[Step=9500]	Loss=2.4602	top1 acc=0.3634	top5 acc=0.6732	267.1 examples/second
+[Step=9750]	Loss=2.4435	top1 acc=0.3636	top5 acc=0.6758	266.7 examples/second
+[Step=10000]	Loss=2.4183	top1 acc=0.3660	top5 acc=0.6824	266.5 examples/second
+Test Loss=3.9304, Test top-1 acc=0.3434, Test top-5 acc=0.6518
+Saving...
+Epoch time: 408.1378128528595
+
+Epoch: 6
+[Step=10250]	Loss=2.3561	top1 acc=0.3861	top5 acc=0.6955	236.1 examples/second
+[Step=10500]	Loss=2.3206	top1 acc=0.3944	top5 acc=0.7038	267.6 examples/second
+[Step=10750]	Loss=2.3227	top1 acc=0.3913	top5 acc=0.7052	268.0 examples/second
+[Step=11000]	Loss=2.2989	top1 acc=0.3946	top5 acc=0.7067	267.3 examples/second
+[Step=11250]	Loss=2.2829	top1 acc=0.4008	top5 acc=0.7128	267.3 examples/second
+[Step=11500]	Loss=2.2439	top1 acc=0.4034	top5 acc=0.7162	267.2 examples/second
+Test Loss=2.2621, Test top-1 acc=0.4089, Test top-5 acc=0.7345
+Saving...
+Epoch time: 407.8397753238678
+
+Epoch: 7
+[Step=11750]	Loss=2.2339	top1 acc=0.4214	top5 acc=0.7352	234.7 examples/second
+[Step=12000]	Loss=2.1957	top1 acc=0.4192	top5 acc=0.7320	267.5 examples/second
+[Step=12250]	Loss=2.1614	top1 acc=0.4267	top5 acc=0.7389	267.4 examples/second
+[Step=12500]	Loss=2.1343	top1 acc=0.4252	top5 acc=0.7449	267.6 examples/second
+[Step=12750]	Loss=2.1504	top1 acc=0.4285	top5 acc=0.7379	267.2 examples/second
+[Step=13000]	Loss=2.0994	top1 acc=0.4446	top5 acc=0.7469	267.0 examples/second
+[Step=13250]	Loss=2.1011	top1 acc=0.4398	top5 acc=0.7482	266.6 examples/second
+Test Loss=2.0057, Test top-1 acc=0.4545, Test top-5 acc=0.7745
+Saving...
+Epoch time: 408.26005458831787
+
+Epoch: 8
+[Step=13500]	Loss=2.0646	top1 acc=0.4540	top5 acc=0.7603	234.9 examples/second
+[Step=13750]	Loss=2.0571	top1 acc=0.4497	top5 acc=0.7557	267.6 examples/second
+[Step=14000]	Loss=2.0338	top1 acc=0.4576	top5 acc=0.7639	267.2 examples/second
+[Step=14250]	Loss=2.0058	top1 acc=0.4622	top5 acc=0.7651	267.2 examples/second
+[Step=14500]	Loss=1.9995	top1 acc=0.4652	top5 acc=0.7685	266.8 examples/second
+[Step=14750]	Loss=1.9730	top1 acc=0.4688	top5 acc=0.7727	266.4 examples/second
+[Step=15000]	Loss=1.9760	top1 acc=0.4728	top5 acc=0.7725	266.5 examples/second
+Test Loss=1.8841, Test top-1 acc=0.4728, Test top-5 acc=0.8067
+Saving...
+Epoch time: 408.58466267585754
+
+Epoch: 9
+[Step=15250]	Loss=1.9422	top1 acc=0.4817	top5 acc=0.7789	234.7 examples/second
+[Step=15500]	Loss=1.9386	top1 acc=0.4733	top5 acc=0.7794	267.7 examples/second
+[Step=15750]	Loss=1.9225	top1 acc=0.4809	top5 acc=0.7823	267.4 examples/second
+[Step=16000]	Loss=1.9010	top1 acc=0.4891	top5 acc=0.7837	267.5 examples/second
+[Step=16250]	Loss=1.9197	top1 acc=0.4823	top5 acc=0.7849	268.4 examples/second
+[Step=16500]	Loss=1.8950	top1 acc=0.4863	top5 acc=0.7887	267.5 examples/second
+Test Loss=1.8397, Test top-1 acc=0.5063, Test top-5 acc=0.8041
+Saving...
+Epoch time: 407.4704773426056
+
+Epoch: 10
+[Step=16750]	Loss=1.8680	top1 acc=0.5044	top5 acc=0.7962	235.7 examples/second
+[Step=17000]	Loss=1.8421	top1 acc=0.4981	top5 acc=0.7954	269.7 examples/second
+[Step=17250]	Loss=1.8334	top1 acc=0.4966	top5 acc=0.7972	269.5 examples/second
+[Step=17500]	Loss=1.8011	top1 acc=0.5074	top5 acc=0.8052	269.0 examples/second
+[Step=17750]	Loss=1.8354	top1 acc=0.4997	top5 acc=0.7962	269.0 examples/second
+[Step=18000]	Loss=1.7963	top1 acc=0.5067	top5 acc=0.8018	268.5 examples/second
+[Step=18250]	Loss=1.8237	top1 acc=0.5060	top5 acc=0.7997	268.8 examples/second
+Test Loss=6.6554, Test top-1 acc=0.3737, Test top-5 acc=0.6465
+Epoch time: 405.0123300552368
+
+Epoch: 11
+[Step=18500]	Loss=1.7620	top1 acc=0.5290	top5 acc=0.8179	236.7 examples/second
+[Step=18750]	Loss=1.7769	top1 acc=0.5152	top5 acc=0.8052	267.4 examples/second
+[Step=19000]	Loss=1.7633	top1 acc=0.5173	top5 acc=0.8098	267.5 examples/second
+[Step=19250]	Loss=1.7187	top1 acc=0.5271	top5 acc=0.8169	267.2 examples/second
+[Step=19500]	Loss=1.7423	top1 acc=0.5254	top5 acc=0.8149	267.3 examples/second
+[Step=19750]	Loss=1.7449	top1 acc=0.5228	top5 acc=0.8109	266.9 examples/second
+[Step=20000]	Loss=1.7346	top1 acc=0.5278	top5 acc=0.8168	266.8 examples/second
+Test Loss=1.7963, Test top-1 acc=0.5099, Test top-5 acc=0.8193
+Saving...
+Epoch time: 408.3327419757843
+
+Epoch: 12
+[Step=20250]	Loss=1.7029	top1 acc=0.5382	top5 acc=0.8211	235.0 examples/second
+[Step=20500]	Loss=1.6897	top1 acc=0.5344	top5 acc=0.8238	267.5 examples/second
+[Step=20750]	Loss=1.6675	top1 acc=0.5421	top5 acc=0.8271	267.9 examples/second
+[Step=21000]	Loss=1.6531	top1 acc=0.5483	top5 acc=0.8300	268.9 examples/second
+[Step=21250]	Loss=1.6803	top1 acc=0.5399	top5 acc=0.8260	268.0 examples/second
+[Step=21500]	Loss=1.7086	top1 acc=0.5332	top5 acc=0.8171	268.6 examples/second
+Test Loss=2.3051, Test top-1 acc=0.4002, Test top-5 acc=0.7337
+Epoch time: 406.4306540489197
+
+Epoch: 13
+[Step=21750]	Loss=1.6524	top1 acc=0.5582	top5 acc=0.8340	237.2 examples/second
+[Step=22000]	Loss=1.6443	top1 acc=0.5448	top5 acc=0.8286	268.3 examples/second
+[Step=22250]	Loss=1.6288	top1 acc=0.5526	top5 acc=0.8314	268.9 examples/second
+[Step=22500]	Loss=1.6281	top1 acc=0.5511	top5 acc=0.8320	267.6 examples/second
+[Step=22750]	Loss=1.6275	top1 acc=0.5546	top5 acc=0.8296	268.9 examples/second
+[Step=23000]	Loss=1.6272	top1 acc=0.5506	top5 acc=0.8335	268.6 examples/second
+[Step=23250]	Loss=1.6150	top1 acc=0.5565	top5 acc=0.8353	268.1 examples/second
+Test Loss=1.5376, Test top-1 acc=0.5716, Test top-5 acc=0.8607
+Saving...
+Epoch time: 406.4868574142456
+
+Epoch: 14
+[Step=23500]	Loss=1.5834	top1 acc=0.5742	top5 acc=0.8408	235.8 examples/second
+[Step=23750]	Loss=1.6073	top1 acc=0.5578	top5 acc=0.8363	267.9 examples/second
+[Step=24000]	Loss=1.5993	top1 acc=0.5559	top5 acc=0.8404	268.2 examples/second
+[Step=24250]	Loss=1.6130	top1 acc=0.5601	top5 acc=0.8336	267.5 examples/second
+[Step=24500]	Loss=1.5963	top1 acc=0.5641	top5 acc=0.8384	267.7 examples/second
+[Step=24750]	Loss=1.5675	top1 acc=0.5665	top5 acc=0.8417	267.7 examples/second
+[Step=25000]	Loss=1.5621	top1 acc=0.5699	top5 acc=0.8429	267.3 examples/second
+Test Loss=1.5646, Test top-1 acc=0.5745, Test top-5 acc=0.8525
+Saving...
+Epoch time: 407.42393684387207
+
+Epoch: 15
+[Step=25250]	Loss=1.5334	top1 acc=0.5692	top5 acc=0.8505	235.3 examples/second
+[Step=25500]	Loss=1.5422	top1 acc=0.5765	top5 acc=0.8456	267.5 examples/second
+[Step=25750]	Loss=1.5604	top1 acc=0.5697	top5 acc=0.8426	267.4 examples/second
+[Step=26000]	Loss=1.5477	top1 acc=0.5701	top5 acc=0.8441	267.0 examples/second
+[Step=26250]	Loss=1.5441	top1 acc=0.5732	top5 acc=0.8457	267.0 examples/second
+[Step=26500]	Loss=1.5303	top1 acc=0.5732	top5 acc=0.8486	267.2 examples/second
+Test Loss=1.4808, Test top-1 acc=0.5913, Test top-5 acc=0.8684
+Saving...
+Epoch time: 408.0081810951233
+
+Epoch: 16
+[Step=26750]	Loss=1.5449	top1 acc=0.5740	top5 acc=0.8526	235.0 examples/second
+[Step=27000]	Loss=1.4926	top1 acc=0.5865	top5 acc=0.8559	267.8 examples/second
+[Step=27250]	Loss=1.5168	top1 acc=0.5786	top5 acc=0.8508	267.9 examples/second
+[Step=27500]	Loss=1.5318	top1 acc=0.5807	top5 acc=0.8476	268.1 examples/second
+[Step=27750]	Loss=1.5293	top1 acc=0.5774	top5 acc=0.8463	269.2 examples/second
+[Step=28000]	Loss=1.5234	top1 acc=0.5789	top5 acc=0.8489	268.3 examples/second
+[Step=28250]	Loss=1.5236	top1 acc=0.5747	top5 acc=0.8501	268.2 examples/second
+Test Loss=1.5400, Test top-1 acc=0.5680, Test top-5 acc=0.8607
+Epoch time: 406.4024188518524
+
+Epoch: 17
+[Step=28500]	Loss=1.5015	top1 acc=0.5791	top5 acc=0.8520	237.7 examples/second
+[Step=28750]	Loss=1.4762	top1 acc=0.5917	top5 acc=0.8592	269.7 examples/second
+[Step=29000]	Loss=1.4689	top1 acc=0.5929	top5 acc=0.8561	268.6 examples/second
+[Step=29250]	Loss=1.4642	top1 acc=0.5934	top5 acc=0.8565	267.9 examples/second
+[Step=29500]	Loss=1.4966	top1 acc=0.5859	top5 acc=0.8540	267.7 examples/second
+[Step=29750]	Loss=1.4779	top1 acc=0.5924	top5 acc=0.8550	267.5 examples/second
+[Step=30000]	Loss=1.4802	top1 acc=0.5899	top5 acc=0.8566	267.9 examples/second
+Test Loss=2.0098, Test top-1 acc=0.4964, Test top-5 acc=0.8007
+Epoch time: 406.0439040660858
+
+Epoch: 18
+[Step=30250]	Loss=1.4702	top1 acc=0.6002	top5 acc=0.8595	237.3 examples/second
+[Step=30500]	Loss=1.4570	top1 acc=0.5928	top5 acc=0.8571	267.7 examples/second
+[Step=30750]	Loss=1.4437	top1 acc=0.6021	top5 acc=0.8606	267.4 examples/second
+[Step=31000]	Loss=1.4560	top1 acc=0.5974	top5 acc=0.8597	267.7 examples/second
+[Step=31250]	Loss=1.4580	top1 acc=0.5942	top5 acc=0.8571	267.3 examples/second
+[Step=31500]	Loss=1.4407	top1 acc=0.5974	top5 acc=0.8607	267.0 examples/second
+Test Loss=1.6961, Test top-1 acc=0.5619, Test top-5 acc=0.8347
+Epoch time: 407.34607124328613
+
+Epoch: 19
+[Step=31750]	Loss=1.4305	top1 acc=0.6039	top5 acc=0.8766	236.7 examples/second
+[Step=32000]	Loss=1.4265	top1 acc=0.5994	top5 acc=0.8633	268.2 examples/second
+[Step=32250]	Loss=1.4193	top1 acc=0.6042	top5 acc=0.8650	268.3 examples/second
+[Step=32500]	Loss=1.4256	top1 acc=0.5990	top5 acc=0.8627	268.6 examples/second
+[Step=32750]	Loss=1.4538	top1 acc=0.5950	top5 acc=0.8584	267.8 examples/second
+[Step=33000]	Loss=1.4479	top1 acc=0.5984	top5 acc=0.8609	267.3 examples/second
+[Step=33250]	Loss=1.4349	top1 acc=0.5961	top5 acc=0.8617	266.6 examples/second
+Test Loss=1.4185, Test top-1 acc=0.6060, Test top-5 acc=0.8733
+Saving...
+Epoch time: 407.39166378974915
+
+Epoch: 20
+[Step=33500]	Loss=1.4206	top1 acc=0.6111	top5 acc=0.8645	235.7 examples/second
+[Step=33750]	Loss=1.3944	top1 acc=0.6096	top5 acc=0.8690	268.5 examples/second
+[Step=34000]	Loss=1.3948	top1 acc=0.6081	top5 acc=0.8689	269.3 examples/second
+[Step=34250]	Loss=1.4043	top1 acc=0.6122	top5 acc=0.8647	267.7 examples/second
+[Step=34500]	Loss=1.4139	top1 acc=0.6076	top5 acc=0.8644	267.6 examples/second
+[Step=34750]	Loss=1.4139	top1 acc=0.6060	top5 acc=0.8653	267.4 examples/second
+[Step=35000]	Loss=1.4408	top1 acc=0.6034	top5 acc=0.8608	267.6 examples/second
+Test Loss=1.5263, Test top-1 acc=0.5817, Test top-5 acc=0.8559
+Epoch time: 406.4231219291687
+
+Epoch: 21
+[Step=35250]	Loss=1.3665	top1 acc=0.6247	top5 acc=0.8744	236.8 examples/second
+[Step=35500]	Loss=1.3891	top1 acc=0.6133	top5 acc=0.8697	267.7 examples/second
+[Step=35750]	Loss=1.4007	top1 acc=0.6122	top5 acc=0.8636	267.4 examples/second
+[Step=36000]	Loss=1.4017	top1 acc=0.6073	top5 acc=0.8667	267.1 examples/second
+[Step=36250]	Loss=1.3822	top1 acc=0.6173	top5 acc=0.8719	266.9 examples/second
+[Step=36500]	Loss=1.3840	top1 acc=0.6127	top5 acc=0.8697	266.9 examples/second
+Test Loss=1.4782, Test top-1 acc=0.5935, Test top-5 acc=0.8598
+Epoch time: 408.13618659973145
+
+Epoch: 22
+[Step=36750]	Loss=1.3916	top1 acc=0.5953	top5 acc=0.8609	235.4 examples/second
+[Step=37000]	Loss=1.3790	top1 acc=0.6124	top5 acc=0.8734	267.9 examples/second
+[Step=37250]	Loss=1.3721	top1 acc=0.6136	top5 acc=0.8729	267.6 examples/second
+[Step=37500]	Loss=1.3738	top1 acc=0.6161	top5 acc=0.8692	267.1 examples/second
+[Step=37750]	Loss=1.3771	top1 acc=0.6124	top5 acc=0.8721	267.4 examples/second
+[Step=38000]	Loss=1.3945	top1 acc=0.6156	top5 acc=0.8671	267.8 examples/second
+[Step=38250]	Loss=1.3707	top1 acc=0.6170	top5 acc=0.8699	267.7 examples/second
+Test Loss=1.4473, Test top-1 acc=0.6058, Test top-5 acc=0.8682
+Epoch time: 407.0908634662628
+
+Epoch: 23
+[Step=38500]	Loss=1.3747	top1 acc=0.6259	top5 acc=0.8807	237.5 examples/second
+[Step=38750]	Loss=1.3796	top1 acc=0.6188	top5 acc=0.8718	268.1 examples/second
+[Step=39000]	Loss=1.3539	top1 acc=0.6171	top5 acc=0.8774	267.8 examples/second
+[Step=39250]	Loss=1.3637	top1 acc=0.6219	top5 acc=0.8734	267.8 examples/second
+[Step=39500]	Loss=1.3595	top1 acc=0.6199	top5 acc=0.8730	267.1 examples/second
+[Step=39750]	Loss=1.3562	top1 acc=0.6229	top5 acc=0.8762	267.2 examples/second
+[Step=40000]	Loss=1.3582	top1 acc=0.6170	top5 acc=0.8756	266.8 examples/second
+Test Loss=1.4370, Test top-1 acc=0.6000, Test top-5 acc=0.8713
+Epoch time: 407.2754683494568
+
+Epoch: 24
+[Step=40250]	Loss=1.3429	top1 acc=0.6337	top5 acc=0.8740	236.9 examples/second
+[Step=40500]	Loss=1.3475	top1 acc=0.6220	top5 acc=0.8739	267.5 examples/second
+[Step=40750]	Loss=1.3478	top1 acc=0.6258	top5 acc=0.8747	267.7 examples/second
+[Step=41000]	Loss=1.3451	top1 acc=0.6274	top5 acc=0.8747	266.9 examples/second
+[Step=41250]	Loss=1.3466	top1 acc=0.6200	top5 acc=0.8778	267.0 examples/second
+[Step=41500]	Loss=1.3368	top1 acc=0.6256	top5 acc=0.8797	266.7 examples/second
+[Step=41750]	Loss=1.3475	top1 acc=0.6273	top5 acc=0.8756	266.7 examples/second
+Test Loss=1.5988, Test top-1 acc=0.5602, Test top-5 acc=0.8520
+Epoch time: 407.9133822917938
+
+Epoch: 25
+[Step=42000]	Loss=1.3387	top1 acc=0.6237	top5 acc=0.8756	237.0 examples/second
+[Step=42250]	Loss=1.3183	top1 acc=0.6310	top5 acc=0.8803	267.4 examples/second
+[Step=42500]	Loss=1.3353	top1 acc=0.6241	top5 acc=0.8790	267.3 examples/second
+[Step=42750]	Loss=1.3379	top1 acc=0.6279	top5 acc=0.8768	267.2 examples/second
+[Step=43000]	Loss=1.3313	top1 acc=0.6292	top5 acc=0.8781	267.2 examples/second
+[Step=43250]	Loss=1.3330	top1 acc=0.6254	top5 acc=0.8767	266.7 examples/second
+Test Loss=2.5819, Test top-1 acc=0.4296, Test top-5 acc=0.7347
+Epoch time: 407.7098491191864
+
+Epoch: 26
+[Step=43500]	Loss=1.3146	top1 acc=0.6459	top5 acc=0.8822	236.4 examples/second
+[Step=43750]	Loss=1.3191	top1 acc=0.6269	top5 acc=0.8794	267.5 examples/second
+[Step=44000]	Loss=1.3143	top1 acc=0.6321	top5 acc=0.8820	267.3 examples/second
+[Step=44250]	Loss=1.3085	top1 acc=0.6338	top5 acc=0.8799	267.5 examples/second
+[Step=44500]	Loss=1.3293	top1 acc=0.6252	top5 acc=0.8767	267.0 examples/second
+[Step=44750]	Loss=1.3510	top1 acc=0.6196	top5 acc=0.8748	266.8 examples/second
+[Step=45000]	Loss=1.3397	top1 acc=0.6244	top5 acc=0.8752	266.8 examples/second
+Test Loss=1.2767, Test top-1 acc=0.6359, Test top-5 acc=0.8935
+Saving...
+Epoch time: 408.3164749145508
+
+Epoch: 27
+[Step=45250]	Loss=1.3171	top1 acc=0.6366	top5 acc=0.8844	235.0 examples/second
+[Step=45500]	Loss=1.2915	top1 acc=0.6350	top5 acc=0.8819	267.8 examples/second
+[Step=45750]	Loss=1.3215	top1 acc=0.6322	top5 acc=0.8796	267.4 examples/second
+[Step=46000]	Loss=1.3397	top1 acc=0.6266	top5 acc=0.8765	267.2 examples/second
+[Step=46250]	Loss=1.3144	top1 acc=0.6303	top5 acc=0.8816	266.9 examples/second
+[Step=46500]	Loss=1.3144	top1 acc=0.6294	top5 acc=0.8784	266.9 examples/second
+[Step=46750]	Loss=1.3086	top1 acc=0.6332	top5 acc=0.8824	267.0 examples/second
+Test Loss=1.2938, Test top-1 acc=0.6504, Test top-5 acc=0.8899
+Saving...
+Epoch time: 408.2598385810852
+
+Epoch: 28
+[Step=47000]	Loss=1.2705	top1 acc=0.6439	top5 acc=0.8860	235.0 examples/second
+[Step=47250]	Loss=1.2801	top1 acc=0.6359	top5 acc=0.8855	267.9 examples/second
+[Step=47500]	Loss=1.2952	top1 acc=0.6383	top5 acc=0.8812	267.7 examples/second
+[Step=47750]	Loss=1.2967	top1 acc=0.6359	top5 acc=0.8839	267.3 examples/second
+[Step=48000]	Loss=1.3142	top1 acc=0.6304	top5 acc=0.8787	268.4 examples/second
+[Step=48250]	Loss=1.3022	top1 acc=0.6323	top5 acc=0.8805	268.9 examples/second
+Test Loss=1.3244, Test top-1 acc=0.6272, Test top-5 acc=0.8853
+Epoch time: 406.7309081554413
+
+Epoch: 29
+[Step=48500]	Loss=1.2936	top1 acc=0.6355	top5 acc=0.8866	236.3 examples/second
+[Step=48750]	Loss=1.2973	top1 acc=0.6353	top5 acc=0.8825	269.0 examples/second
+[Step=49000]	Loss=1.2649	top1 acc=0.6416	top5 acc=0.8886	267.6 examples/second
+[Step=49250]	Loss=1.2678	top1 acc=0.6437	top5 acc=0.8867	268.9 examples/second
+[Step=49500]	Loss=1.2929	top1 acc=0.6308	top5 acc=0.8833	267.5 examples/second
+[Step=49750]	Loss=1.2992	top1 acc=0.6387	top5 acc=0.8814	266.8 examples/second
+[Step=50000]	Loss=1.3083	top1 acc=0.6366	top5 acc=0.8814	266.9 examples/second
+Test Loss=1.7095, Test top-1 acc=0.5701, Test top-5 acc=0.8504
+Epoch time: 406.93200945854187
+
+Epoch: 30
+[Step=50250]	Loss=1.1558	top1 acc=0.6988	top5 acc=0.9124	237.6 examples/second
+[Step=50500]	Loss=0.9832	top1 acc=0.7191	top5 acc=0.9212	268.4 examples/second
+[Step=50750]	Loss=0.9391	top1 acc=0.7325	top5 acc=0.9262	268.7 examples/second
+[Step=51000]	Loss=0.9084	top1 acc=0.7404	top5 acc=0.9288	269.0 examples/second
+[Step=51250]	Loss=0.9183	top1 acc=0.7378	top5 acc=0.9294	268.4 examples/second
+[Step=51500]	Loss=0.9033	top1 acc=0.7407	top5 acc=0.9314	267.2 examples/second
+[Step=51750]	Loss=0.8906	top1 acc=0.7409	top5 acc=0.9324	267.7 examples/second
+Test Loss=0.8227, Test top-1 acc=0.7566, Test top-5 acc=0.9508
+Saving...
+Epoch time: 406.328494310379
+
+Epoch: 31
+[Step=52000]	Loss=0.8583	top1 acc=0.7535	top5 acc=0.9349	237.7 examples/second
+[Step=52250]	Loss=0.8179	top1 acc=0.7616	top5 acc=0.9404	269.7 examples/second
+[Step=52500]	Loss=0.8562	top1 acc=0.7519	top5 acc=0.9368	268.4 examples/second
+[Step=52750]	Loss=0.8387	top1 acc=0.7571	top5 acc=0.9392	267.3 examples/second
+[Step=53000]	Loss=0.8443	top1 acc=0.7556	top5 acc=0.9357	267.6 examples/second
+[Step=53250]	Loss=0.8573	top1 acc=0.7478	top5 acc=0.9358	267.0 examples/second
+Test Loss=0.7971, Test top-1 acc=0.7680, Test top-5 acc=0.9525
+Saving...
+Epoch time: 406.61453104019165
+
+Epoch: 32
+[Step=53500]	Loss=0.8265	top1 acc=0.7698	top5 acc=0.9479	236.2 examples/second
+[Step=53750]	Loss=0.8211	top1 acc=0.7617	top5 acc=0.9407	269.9 examples/second
+[Step=54000]	Loss=0.8097	top1 acc=0.7611	top5 acc=0.9418	269.2 examples/second
+[Step=54250]	Loss=0.8136	top1 acc=0.7641	top5 acc=0.9399	267.8 examples/second
+[Step=54500]	Loss=0.8078	top1 acc=0.7632	top5 acc=0.9406	267.2 examples/second
+[Step=54750]	Loss=0.7997	top1 acc=0.7661	top5 acc=0.9436	267.3 examples/second
+[Step=55000]	Loss=0.8010	top1 acc=0.7652	top5 acc=0.9426	266.9 examples/second
+Test Loss=0.7788, Test top-1 acc=0.7692, Test top-5 acc=0.9528
+Saving...
+Epoch time: 406.8487410545349
+
+Epoch: 33
+[Step=55250]	Loss=0.7827	top1 acc=0.7733	top5 acc=0.9445	235.9 examples/second
+[Step=55500]	Loss=0.7789	top1 acc=0.7738	top5 acc=0.9439	269.7 examples/second
+[Step=55750]	Loss=0.7870	top1 acc=0.7723	top5 acc=0.9438	269.1 examples/second
+[Step=56000]	Loss=0.8025	top1 acc=0.7657	top5 acc=0.9424	269.0 examples/second
+[Step=56250]	Loss=0.7903	top1 acc=0.7717	top5 acc=0.9421	268.6 examples/second
+[Step=56500]	Loss=0.7990	top1 acc=0.7679	top5 acc=0.9408	267.0 examples/second
+[Step=56750]	Loss=0.7800	top1 acc=0.7718	top5 acc=0.9444	267.1 examples/second
+Test Loss=0.7784, Test top-1 acc=0.7701, Test top-5 acc=0.9552
+Saving...
+Epoch time: 406.39669585227966
+
+Epoch: 34
+[Step=57000]	Loss=0.7858	top1 acc=0.7680	top5 acc=0.9421	235.1 examples/second
+[Step=57250]	Loss=0.7605	top1 acc=0.7764	top5 acc=0.9464	267.7 examples/second
+[Step=57500]	Loss=0.7579	top1 acc=0.7771	top5 acc=0.9448	267.5 examples/second
+[Step=57750]	Loss=0.7665	top1 acc=0.7757	top5 acc=0.9457	267.4 examples/second
+[Step=58000]	Loss=0.7748	top1 acc=0.7715	top5 acc=0.9474	267.3 examples/second
+[Step=58250]	Loss=0.7588	top1 acc=0.7780	top5 acc=0.9481	267.4 examples/second
+Test Loss=0.7540, Test top-1 acc=0.7766, Test top-5 acc=0.9576
+Saving...
+Epoch time: 407.76833748817444
+
+Epoch: 35
+[Step=58500]	Loss=0.7766	top1 acc=0.7772	top5 acc=0.9491	235.3 examples/second
+[Step=58750]	Loss=0.7230	top1 acc=0.7869	top5 acc=0.9524	267.7 examples/second
+[Step=59000]	Loss=0.7437	top1 acc=0.7806	top5 acc=0.9494	267.5 examples/second
+[Step=59250]	Loss=0.7450	top1 acc=0.7818	top5 acc=0.9487	267.3 examples/second
+[Step=59500]	Loss=0.7430	top1 acc=0.7818	top5 acc=0.9483	267.0 examples/second
+[Step=59750]	Loss=0.7667	top1 acc=0.7743	top5 acc=0.9455	267.4 examples/second
+[Step=60000]	Loss=0.7532	top1 acc=0.7796	top5 acc=0.9473	266.9 examples/second
+Test Loss=0.7584, Test top-1 acc=0.7699, Test top-5 acc=0.9578
+Epoch time: 407.5354800224304
+
+Epoch: 36
+[Step=60250]	Loss=0.7222	top1 acc=0.7858	top5 acc=0.9488	236.0 examples/second
+[Step=60500]	Loss=0.7354	top1 acc=0.7861	top5 acc=0.9475	267.7 examples/second
+[Step=60750]	Loss=0.7212	top1 acc=0.7866	top5 acc=0.9529	267.5 examples/second
+[Step=61000]	Loss=0.7403	top1 acc=0.7834	top5 acc=0.9472	267.6 examples/second
+[Step=61250]	Loss=0.7257	top1 acc=0.7862	top5 acc=0.9509	267.3 examples/second
+[Step=61500]	Loss=0.7262	top1 acc=0.7852	top5 acc=0.9489	267.2 examples/second
+[Step=61750]	Loss=0.7447	top1 acc=0.7811	top5 acc=0.9458	266.7 examples/second
+Test Loss=0.7580, Test top-1 acc=0.7742, Test top-5 acc=0.9595
+Epoch time: 407.7975697517395
+
+Epoch: 37
+[Step=62000]	Loss=0.7251	top1 acc=0.7874	top5 acc=0.9507	236.8 examples/second
+[Step=62250]	Loss=0.7282	top1 acc=0.7838	top5 acc=0.9505	267.9 examples/second
+[Step=62500]	Loss=0.7152	top1 acc=0.7906	top5 acc=0.9499	267.5 examples/second
+[Step=62750]	Loss=0.7233	top1 acc=0.7851	top5 acc=0.9504	268.0 examples/second
+[Step=63000]	Loss=0.7357	top1 acc=0.7829	top5 acc=0.9477	268.5 examples/second
+[Step=63250]	Loss=0.7331	top1 acc=0.7821	top5 acc=0.9486	267.2 examples/second
+Test Loss=0.7425, Test top-1 acc=0.7793, Test top-5 acc=0.9612
+Saving...
+Epoch time: 407.40334486961365
+
+Epoch: 38
+[Step=63500]	Loss=0.7155	top1 acc=0.7871	top5 acc=0.9535	235.2 examples/second
+[Step=63750]	Loss=0.7029	top1 acc=0.7882	top5 acc=0.9532	270.0 examples/second
+[Step=64000]	Loss=0.6950	top1 acc=0.7969	top5 acc=0.9523	269.6 examples/second
+[Step=64250]	Loss=0.6928	top1 acc=0.7971	top5 acc=0.9524	268.9 examples/second
+[Step=64500]	Loss=0.7002	top1 acc=0.7941	top5 acc=0.9526	268.1 examples/second
+[Step=64750]	Loss=0.7103	top1 acc=0.7878	top5 acc=0.9505	268.7 examples/second
+[Step=65000]	Loss=0.7238	top1 acc=0.7873	top5 acc=0.9496	267.8 examples/second
+Test Loss=0.7440, Test top-1 acc=0.7805, Test top-5 acc=0.9588
+Saving...
+Epoch time: 405.93881034851074
+
+Epoch: 39
+[Step=65250]	Loss=0.7133	top1 acc=0.7932	top5 acc=0.9544	235.0 examples/second
+[Step=65500]	Loss=0.6871	top1 acc=0.7979	top5 acc=0.9561	267.9 examples/second
+[Step=65750]	Loss=0.6967	top1 acc=0.7929	top5 acc=0.9515	267.5 examples/second
+[Step=66000]	Loss=0.7139	top1 acc=0.7907	top5 acc=0.9525	267.3 examples/second
+[Step=66250]	Loss=0.7083	top1 acc=0.7911	top5 acc=0.9488	267.3 examples/second
+[Step=66500]	Loss=0.7118	top1 acc=0.7903	top5 acc=0.9504	267.1 examples/second
+[Step=66750]	Loss=0.6955	top1 acc=0.7933	top5 acc=0.9515	266.9 examples/second
+Test Loss=0.7568, Test top-1 acc=0.7711, Test top-5 acc=0.9581
+Epoch time: 407.4947476387024
+
+Epoch: 40
+[Step=67000]	Loss=0.6833	top1 acc=0.8024	top5 acc=0.9523	237.6 examples/second
+[Step=67250]	Loss=0.7012	top1 acc=0.7919	top5 acc=0.9541	268.7 examples/second
+[Step=67500]	Loss=0.6972	top1 acc=0.7973	top5 acc=0.9517	268.1 examples/second
+[Step=67750]	Loss=0.6928	top1 acc=0.7958	top5 acc=0.9527	267.6 examples/second
+[Step=68000]	Loss=0.7079	top1 acc=0.7954	top5 acc=0.9488	267.2 examples/second
+[Step=68250]	Loss=0.7080	top1 acc=0.7912	top5 acc=0.9530	268.0 examples/second
+Test Loss=0.7353, Test top-1 acc=0.7860, Test top-5 acc=0.9566
+Saving...
+Epoch time: 407.22624683380127
+
+Epoch: 41
+[Step=68500]	Loss=0.6857	top1 acc=0.8000	top5 acc=0.9568	233.9 examples/second
+[Step=68750]	Loss=0.6702	top1 acc=0.8027	top5 acc=0.9571	269.6 examples/second
+[Step=69000]	Loss=0.6780	top1 acc=0.7994	top5 acc=0.9525	269.1 examples/second
+[Step=69250]	Loss=0.6937	top1 acc=0.7983	top5 acc=0.9521	269.2 examples/second
+[Step=69500]	Loss=0.6839	top1 acc=0.7969	top5 acc=0.9564	269.1 examples/second
+[Step=69750]	Loss=0.6879	top1 acc=0.8002	top5 acc=0.9526	268.7 examples/second
+[Step=70000]	Loss=0.6892	top1 acc=0.7967	top5 acc=0.9505	267.6 examples/second
+Test Loss=0.7617, Test top-1 acc=0.7778, Test top-5 acc=0.9573
+Epoch time: 405.8681447505951
+
+Epoch: 42
+[Step=70250]	Loss=0.6814	top1 acc=0.8085	top5 acc=0.9594	237.0 examples/second
+[Step=70500]	Loss=0.6657	top1 acc=0.8011	top5 acc=0.9560	269.8 examples/second
+[Step=70750]	Loss=0.6612	top1 acc=0.8017	top5 acc=0.9583	269.2 examples/second
+[Step=71000]	Loss=0.6870	top1 acc=0.7986	top5 acc=0.9526	268.7 examples/second
+[Step=71250]	Loss=0.6752	top1 acc=0.7966	top5 acc=0.9544	269.0 examples/second
+[Step=71500]	Loss=0.6935	top1 acc=0.7946	top5 acc=0.9531	269.1 examples/second
+[Step=71750]	Loss=0.6814	top1 acc=0.8017	top5 acc=0.9531	268.0 examples/second
+Test Loss=0.7489, Test top-1 acc=0.7754, Test top-5 acc=0.9607
+Epoch time: 405.26100730895996
+
+Epoch: 43
+[Step=72000]	Loss=0.6837	top1 acc=0.8034	top5 acc=0.9540	237.6 examples/second
+[Step=72250]	Loss=0.6423	top1 acc=0.8108	top5 acc=0.9592	269.6 examples/second
+[Step=72500]	Loss=0.6762	top1 acc=0.8008	top5 acc=0.9547	268.7 examples/second
+[Step=72750]	Loss=0.6545	top1 acc=0.8054	top5 acc=0.9588	267.8 examples/second
+[Step=73000]	Loss=0.6750	top1 acc=0.7993	top5 acc=0.9547	268.8 examples/second
+[Step=73250]	Loss=0.6562	top1 acc=0.8068	top5 acc=0.9581	267.5 examples/second
+Test Loss=0.7575, Test top-1 acc=0.7824, Test top-5 acc=0.9552
+Epoch time: 405.87629747390747
+
+Epoch: 44
+[Step=73500]	Loss=0.6702	top1 acc=0.8141	top5 acc=0.9523	236.8 examples/second
+[Step=73750]	Loss=0.6536	top1 acc=0.8062	top5 acc=0.9589	268.2 examples/second
+[Step=74000]	Loss=0.6476	top1 acc=0.8052	top5 acc=0.9593	269.0 examples/second
+[Step=74250]	Loss=0.6673	top1 acc=0.7999	top5 acc=0.9558	269.1 examples/second
+[Step=74500]	Loss=0.6588	top1 acc=0.8051	top5 acc=0.9562	269.1 examples/second
+[Step=74750]	Loss=0.6588	top1 acc=0.8036	top5 acc=0.9565	268.2 examples/second
+[Step=75000]	Loss=0.6866	top1 acc=0.7980	top5 acc=0.9529	267.9 examples/second
+Test Loss=0.7910, Test top-1 acc=0.7720, Test top-5 acc=0.9523
+Epoch time: 405.83762764930725
+
+Epoch: 45
+[Step=75250]	Loss=0.6533	top1 acc=0.8055	top5 acc=0.9569	237.1 examples/second
+[Step=75500]	Loss=0.6382	top1 acc=0.8101	top5 acc=0.9585	267.8 examples/second
+[Step=75750]	Loss=0.6525	top1 acc=0.8064	top5 acc=0.9566	267.8 examples/second
+[Step=76000]	Loss=0.6540	top1 acc=0.8027	top5 acc=0.9560	267.7 examples/second
+[Step=76250]	Loss=0.6643	top1 acc=0.8027	top5 acc=0.9561	267.5 examples/second
+[Step=76500]	Loss=0.6641	top1 acc=0.8042	top5 acc=0.9551	267.5 examples/second
+[Step=76750]	Loss=0.6643	top1 acc=0.8037	top5 acc=0.9574	267.5 examples/second
+Test Loss=0.7609, Test top-1 acc=0.7798, Test top-5 acc=0.9598
+Epoch time: 407.2952289581299
+
+Epoch: 46
+[Step=77000]	Loss=0.6560	top1 acc=0.8062	top5 acc=0.9533	236.3 examples/second
+[Step=77250]	Loss=0.6374	top1 acc=0.8110	top5 acc=0.9581	267.7 examples/second
+[Step=77500]	Loss=0.6331	top1 acc=0.8122	top5 acc=0.9586	267.6 examples/second
+[Step=77750]	Loss=0.6549	top1 acc=0.8063	top5 acc=0.9557	267.9 examples/second
+[Step=78000]	Loss=0.6402	top1 acc=0.8100	top5 acc=0.9582	267.5 examples/second
+[Step=78250]	Loss=0.6661	top1 acc=0.8027	top5 acc=0.9563	267.0 examples/second
+Test Loss=0.7629, Test top-1 acc=0.7781, Test top-5 acc=0.9566
+Epoch time: 407.4975905418396
+
+Epoch: 47
+[Step=78500]	Loss=0.6693	top1 acc=0.8047	top5 acc=0.9641	235.8 examples/second
+[Step=78750]	Loss=0.6321	top1 acc=0.8147	top5 acc=0.9594	268.2 examples/second
+[Step=79000]	Loss=0.6462	top1 acc=0.8090	top5 acc=0.9567	267.8 examples/second
+[Step=79250]	Loss=0.6461	top1 acc=0.8054	top5 acc=0.9576	268.3 examples/second
+[Step=79500]	Loss=0.6427	top1 acc=0.8086	top5 acc=0.9606	268.8 examples/second
+[Step=79750]	Loss=0.6443	top1 acc=0.8068	top5 acc=0.9569	267.2 examples/second
+[Step=80000]	Loss=0.6697	top1 acc=0.8029	top5 acc=0.9538	267.0 examples/second
+Test Loss=0.7590, Test top-1 acc=0.7798, Test top-5 acc=0.9590
+Epoch time: 406.99279141426086
+
+Epoch: 48
+[Step=80250]	Loss=0.6554	top1 acc=0.8094	top5 acc=0.9554	236.6 examples/second
+[Step=80500]	Loss=0.6356	top1 acc=0.8097	top5 acc=0.9579	268.0 examples/second
+[Step=80750]	Loss=0.6098	top1 acc=0.8229	top5 acc=0.9579	267.6 examples/second
+[Step=81000]	Loss=0.6361	top1 acc=0.8083	top5 acc=0.9571	267.8 examples/second
+[Step=81250]	Loss=0.6348	top1 acc=0.8149	top5 acc=0.9594	267.3 examples/second
+[Step=81500]	Loss=0.6606	top1 acc=0.8040	top5 acc=0.9550	267.3 examples/second
+[Step=81750]	Loss=0.6399	top1 acc=0.8048	top5 acc=0.9602	267.0 examples/second
+Test Loss=0.7704, Test top-1 acc=0.7788, Test top-5 acc=0.9605
+Epoch time: 407.33335280418396
+
+Epoch: 49
+[Step=82000]	Loss=0.6380	top1 acc=0.8112	top5 acc=0.9564	236.6 examples/second
+[Step=82250]	Loss=0.6304	top1 acc=0.8156	top5 acc=0.9572	267.8 examples/second
+[Step=82500]	Loss=0.6243	top1 acc=0.8154	top5 acc=0.9601	267.8 examples/second
+[Step=82750]	Loss=0.6294	top1 acc=0.8119	top5 acc=0.9597	267.7 examples/second
+[Step=83000]	Loss=0.6349	top1 acc=0.8110	top5 acc=0.9595	267.4 examples/second
+[Step=83250]	Loss=0.6552	top1 acc=0.8074	top5 acc=0.9555	267.5 examples/second
+[Step=83500]	Loss=0.6262	top1 acc=0.8107	top5 acc=0.9594	267.0 examples/second
+Test Loss=0.7707, Test top-1 acc=0.7737, Test top-5 acc=0.9564
+Epoch time: 407.2724733352661
+
+Epoch: 50
+[Step=83750]	Loss=0.6104	top1 acc=0.8163	top5 acc=0.9637	236.8 examples/second
+[Step=84000]	Loss=0.6266	top1 acc=0.8129	top5 acc=0.9588	267.7 examples/second
+[Step=84250]	Loss=0.6207	top1 acc=0.8123	top5 acc=0.9598	267.6 examples/second
+[Step=84500]	Loss=0.6162	top1 acc=0.8187	top5 acc=0.9596	267.5 examples/second
+[Step=84750]	Loss=0.6349	top1 acc=0.8115	top5 acc=0.9589	267.6 examples/second
+[Step=85000]	Loss=0.6396	top1 acc=0.8121	top5 acc=0.9579	267.0 examples/second
+Test Loss=0.7842, Test top-1 acc=0.7684, Test top-5 acc=0.9549
+Epoch time: 407.4428057670593
+
+Epoch: 51
+[Step=85250]	Loss=0.6440	top1 acc=0.8109	top5 acc=0.9529	236.0 examples/second
+[Step=85500]	Loss=0.6122	top1 acc=0.8185	top5 acc=0.9600	267.7 examples/second
+[Step=85750]	Loss=0.6274	top1 acc=0.8112	top5 acc=0.9575	267.8 examples/second
+[Step=86000]	Loss=0.6111	top1 acc=0.8155	top5 acc=0.9621	267.5 examples/second
+[Step=86250]	Loss=0.6296	top1 acc=0.8093	top5 acc=0.9607	267.2 examples/second
+[Step=86500]	Loss=0.6293	top1 acc=0.8120	top5 acc=0.9578	267.7 examples/second
+[Step=86750]	Loss=0.6319	top1 acc=0.8159	top5 acc=0.9589	267.1 examples/second
+Test Loss=0.8168, Test top-1 acc=0.7660, Test top-5 acc=0.9520
+Epoch time: 407.3860297203064
+
+Epoch: 52
+[Step=87000]	Loss=0.6134	top1 acc=0.8255	top5 acc=0.9628	236.6 examples/second
+[Step=87250]	Loss=0.6045	top1 acc=0.8207	top5 acc=0.9614	267.8 examples/second
+[Step=87500]	Loss=0.6158	top1 acc=0.8194	top5 acc=0.9580	267.5 examples/second
+[Step=87750]	Loss=0.6378	top1 acc=0.8136	top5 acc=0.9585	267.4 examples/second
+[Step=88000]	Loss=0.6302	top1 acc=0.8097	top5 acc=0.9597	267.0 examples/second
+[Step=88250]	Loss=0.6375	top1 acc=0.8093	top5 acc=0.9568	267.2 examples/second
+[Step=88500]	Loss=0.6388	top1 acc=0.8091	top5 acc=0.9579	267.4 examples/second
+Test Loss=0.7746, Test top-1 acc=0.7754, Test top-5 acc=0.9578
+Epoch time: 407.5041937828064
+
+Epoch: 53
+[Step=88750]	Loss=0.5976	top1 acc=0.8246	top5 acc=0.9604	236.6 examples/second
+[Step=89000]	Loss=0.5991	top1 acc=0.8199	top5 acc=0.9624	267.5 examples/second
+[Step=89250]	Loss=0.6088	top1 acc=0.8201	top5 acc=0.9612	267.3 examples/second
+[Step=89500]	Loss=0.6102	top1 acc=0.8151	top5 acc=0.9620	267.0 examples/second
+[Step=89750]	Loss=0.6218	top1 acc=0.8151	top5 acc=0.9589	266.9 examples/second
+[Step=90000]	Loss=0.6357	top1 acc=0.8093	top5 acc=0.9591	266.6 examples/second
+Test Loss=0.7570, Test top-1 acc=0.7795, Test top-5 acc=0.9607
+Epoch time: 408.1287500858307
+
+Epoch: 54
+[Step=90250]	Loss=0.6164	top1 acc=0.8252	top5 acc=0.9638	235.6 examples/second
+[Step=90500]	Loss=0.5862	top1 acc=0.8273	top5 acc=0.9606	267.9 examples/second
+[Step=90750]	Loss=0.6087	top1 acc=0.8177	top5 acc=0.9607	267.8 examples/second
+[Step=91000]	Loss=0.6120	top1 acc=0.8191	top5 acc=0.9625	267.6 examples/second
+[Step=91250]	Loss=0.6032	top1 acc=0.8232	top5 acc=0.9616	267.0 examples/second
+[Step=91500]	Loss=0.6168	top1 acc=0.8113	top5 acc=0.9606	267.0 examples/second
+[Step=91750]	Loss=0.6292	top1 acc=0.8148	top5 acc=0.9560	266.9 examples/second
+Test Loss=0.7904, Test top-1 acc=0.7711, Test top-5 acc=0.9549
+Epoch time: 407.7127299308777
+
+Epoch: 55
+[Step=92000]	Loss=0.5992	top1 acc=0.8225	top5 acc=0.9620	236.0 examples/second
+[Step=92250]	Loss=0.5970	top1 acc=0.8249	top5 acc=0.9601	267.9 examples/second
+[Step=92500]	Loss=0.6039	top1 acc=0.8198	top5 acc=0.9613	267.9 examples/second
+[Step=92750]	Loss=0.6270	top1 acc=0.8145	top5 acc=0.9584	267.4 examples/second
+[Step=93000]	Loss=0.6060	top1 acc=0.8170	top5 acc=0.9613	267.3 examples/second
+[Step=93250]	Loss=0.6331	top1 acc=0.8145	top5 acc=0.9571	267.5 examples/second
+[Step=93500]	Loss=0.6351	top1 acc=0.8089	top5 acc=0.9586	267.0 examples/second
+Test Loss=0.7638, Test top-1 acc=0.7742, Test top-5 acc=0.9581
+Epoch time: 407.4351444244385
+
+Epoch: 56
+[Step=93750]	Loss=0.5831	top1 acc=0.8285	top5 acc=0.9637	237.1 examples/second
+[Step=94000]	Loss=0.5924	top1 acc=0.8207	top5 acc=0.9619	267.7 examples/second
+[Step=94250]	Loss=0.6245	top1 acc=0.8177	top5 acc=0.9564	267.5 examples/second
+[Step=94500]	Loss=0.6077	top1 acc=0.8167	top5 acc=0.9611	267.1 examples/second
+[Step=94750]	Loss=0.6190	top1 acc=0.8132	top5 acc=0.9600	267.5 examples/second
+[Step=95000]	Loss=0.6418	top1 acc=0.8069	top5 acc=0.9544	267.2 examples/second
+Test Loss=0.7996, Test top-1 acc=0.7749, Test top-5 acc=0.9588
+Epoch time: 407.29707884788513
+
+Epoch: 57
+[Step=95250]	Loss=0.6144	top1 acc=0.8164	top5 acc=0.9576	236.8 examples/second
+[Step=95500]	Loss=0.5877	top1 acc=0.8238	top5 acc=0.9621	268.1 examples/second
+[Step=95750]	Loss=0.5977	top1 acc=0.8210	top5 acc=0.9629	267.4 examples/second
+[Step=96000]	Loss=0.6018	top1 acc=0.8187	top5 acc=0.9620	267.3 examples/second
+[Step=96250]	Loss=0.6115	top1 acc=0.8206	top5 acc=0.9606	267.0 examples/second
+[Step=96500]	Loss=0.6247	top1 acc=0.8158	top5 acc=0.9589	267.7 examples/second
+[Step=96750]	Loss=0.6051	top1 acc=0.8195	top5 acc=0.9609	266.6 examples/second
+Test Loss=0.8248, Test top-1 acc=0.7675, Test top-5 acc=0.9576
+Epoch time: 407.5714781284332
+
+Epoch: 58
+[Step=97000]	Loss=0.6163	top1 acc=0.8214	top5 acc=0.9605	236.6 examples/second
+[Step=97250]	Loss=0.5715	top1 acc=0.8301	top5 acc=0.9648	267.6 examples/second
+[Step=97500]	Loss=0.5884	top1 acc=0.8217	top5 acc=0.9644	267.6 examples/second
+[Step=97750]	Loss=0.6045	top1 acc=0.8186	top5 acc=0.9596	267.8 examples/second
+[Step=98000]	Loss=0.6132	top1 acc=0.8195	top5 acc=0.9610	267.1 examples/second
+[Step=98250]	Loss=0.5971	top1 acc=0.8209	top5 acc=0.9632	266.8 examples/second
+[Step=98500]	Loss=0.6334	top1 acc=0.8120	top5 acc=0.9581	266.9 examples/second
+Test Loss=0.7913, Test top-1 acc=0.7752, Test top-5 acc=0.9569
+Epoch time: 407.62825536727905
+
+Epoch: 59
+[Step=98750]	Loss=0.5992	top1 acc=0.8207	top5 acc=0.9611	236.8 examples/second
+[Step=99000]	Loss=0.5933	top1 acc=0.8229	top5 acc=0.9622	267.6 examples/second
+[Step=99250]	Loss=0.5897	top1 acc=0.8264	top5 acc=0.9630	267.4 examples/second
+[Step=99500]	Loss=0.6082	top1 acc=0.8213	top5 acc=0.9603	267.2 examples/second
+[Step=99750]	Loss=0.6140	top1 acc=0.8184	top5 acc=0.9603	266.9 examples/second
+[Step=100000]	Loss=0.6218	top1 acc=0.8114	top5 acc=0.9598	268.1 examples/second
+Test Loss=0.8140, Test top-1 acc=0.7701, Test top-5 acc=0.9583
+Epoch time: 407.1753513813019
+
+Epoch: 60
+[Step=100250]	Loss=0.6111	top1 acc=0.8350	top5 acc=0.9641	237.3 examples/second
+[Step=100500]	Loss=0.5248	top1 acc=0.8451	top5 acc=0.9676	269.4 examples/second
+[Step=100750]	Loss=0.5037	top1 acc=0.8503	top5 acc=0.9679	268.6 examples/second
+[Step=101000]	Loss=0.5027	top1 acc=0.8524	top5 acc=0.9686	268.2 examples/second
+[Step=101250]	Loss=0.4964	top1 acc=0.8556	top5 acc=0.9687	267.3 examples/second
+[Step=101500]	Loss=0.4834	top1 acc=0.8566	top5 acc=0.9699	268.5 examples/second
+[Step=101750]	Loss=0.4816	top1 acc=0.8603	top5 acc=0.9694	268.7 examples/second
+Test Loss=0.7069, Test top-1 acc=0.7978, Test top-5 acc=0.9660
+Saving...
+Epoch time: 406.06737422943115
+
+Epoch: 61
+[Step=102000]	Loss=0.4835	top1 acc=0.8631	top5 acc=0.9690	236.9 examples/second
+[Step=102250]	Loss=0.4636	top1 acc=0.8654	top5 acc=0.9703	269.6 examples/second
+[Step=102500]	Loss=0.4618	top1 acc=0.8659	top5 acc=0.9709	268.4 examples/second
+[Step=102750]	Loss=0.4597	top1 acc=0.8675	top5 acc=0.9733	267.8 examples/second
+[Step=103000]	Loss=0.4634	top1 acc=0.8641	top5 acc=0.9718	266.9 examples/second
+[Step=103250]	Loss=0.4669	top1 acc=0.8649	top5 acc=0.9716	267.0 examples/second
+[Step=103500]	Loss=0.4677	top1 acc=0.8616	top5 acc=0.9708	266.8 examples/second
+Test Loss=0.6985, Test top-1 acc=0.7973, Test top-5 acc=0.9660
+Epoch time: 406.7351334095001
+
+Epoch: 62
+[Step=103750]	Loss=0.4434	top1 acc=0.8688	top5 acc=0.9751	238.5 examples/second
+[Step=104000]	Loss=0.4615	top1 acc=0.8646	top5 acc=0.9704	267.6 examples/second
+[Step=104250]	Loss=0.4546	top1 acc=0.8681	top5 acc=0.9717	268.5 examples/second
+[Step=104500]	Loss=0.4560	top1 acc=0.8652	top5 acc=0.9718	267.2 examples/second
+[Step=104750]	Loss=0.4488	top1 acc=0.8673	top5 acc=0.9724	267.8 examples/second
+[Step=105000]	Loss=0.4428	top1 acc=0.8716	top5 acc=0.9731	267.0 examples/second
+Test Loss=0.6972, Test top-1 acc=0.8017, Test top-5 acc=0.9677
+Saving...
+Epoch time: 407.20366883277893
+
+Epoch: 63
+[Step=105250]	Loss=0.4678	top1 acc=0.8660	top5 acc=0.9723	235.4 examples/second
+[Step=105500]	Loss=0.4284	top1 acc=0.8734	top5 acc=0.9746	269.1 examples/second
+[Step=105750]	Loss=0.4400	top1 acc=0.8683	top5 acc=0.9709	269.2 examples/second
+[Step=106000]	Loss=0.4393	top1 acc=0.8711	top5 acc=0.9733	269.2 examples/second
+[Step=106250]	Loss=0.4451	top1 acc=0.8706	top5 acc=0.9729	267.4 examples/second
+[Step=106500]	Loss=0.4345	top1 acc=0.8706	top5 acc=0.9749	268.6 examples/second
+[Step=106750]	Loss=0.4414	top1 acc=0.8753	top5 acc=0.9737	267.3 examples/second
+Test Loss=0.7008, Test top-1 acc=0.8010, Test top-5 acc=0.9663
+Epoch time: 405.96059584617615
+
+Epoch: 64
+[Step=107000]	Loss=0.4363	top1 acc=0.8740	top5 acc=0.9741	236.4 examples/second
+[Step=107250]	Loss=0.4416	top1 acc=0.8709	top5 acc=0.9712	269.4 examples/second
+[Step=107500]	Loss=0.4269	top1 acc=0.8731	top5 acc=0.9747	267.8 examples/second
+[Step=107750]	Loss=0.4388	top1 acc=0.8718	top5 acc=0.9737	267.6 examples/second
+[Step=108000]	Loss=0.4197	top1 acc=0.8790	top5 acc=0.9741	268.3 examples/second
+[Step=108250]	Loss=0.4311	top1 acc=0.8698	top5 acc=0.9750	267.8 examples/second
+[Step=108500]	Loss=0.4232	top1 acc=0.8781	top5 acc=0.9729	268.4 examples/second
+Test Loss=0.7051, Test top-1 acc=0.8005, Test top-5 acc=0.9653
+Epoch time: 406.6150949001312
+
+Epoch: 65
+[Step=108750]	Loss=0.4257	top1 acc=0.8757	top5 acc=0.9759	236.5 examples/second
+[Step=109000]	Loss=0.4240	top1 acc=0.8765	top5 acc=0.9739	267.8 examples/second
+[Step=109250]	Loss=0.4245	top1 acc=0.8762	top5 acc=0.9728	267.5 examples/second
+[Step=109500]	Loss=0.4335	top1 acc=0.8727	top5 acc=0.9746	267.3 examples/second
+[Step=109750]	Loss=0.4410	top1 acc=0.8724	top5 acc=0.9730	267.2 examples/second
+[Step=110000]	Loss=0.4213	top1 acc=0.8746	top5 acc=0.9751	267.1 examples/second
+Test Loss=0.6967, Test top-1 acc=0.8043, Test top-5 acc=0.9663
+Saving...
+Epoch time: 408.06583070755005
+
+Epoch: 66
+[Step=110250]	Loss=0.4235	top1 acc=0.8729	top5 acc=0.9703	234.7 examples/second
+[Step=110500]	Loss=0.4319	top1 acc=0.8741	top5 acc=0.9724	268.0 examples/second
+[Step=110750]	Loss=0.4211	top1 acc=0.8760	top5 acc=0.9755	267.8 examples/second
+[Step=111000]	Loss=0.4067	top1 acc=0.8767	top5 acc=0.9768	267.4 examples/second
+[Step=111250]	Loss=0.4178	top1 acc=0.8761	top5 acc=0.9737	267.4 examples/second
+[Step=111500]	Loss=0.4274	top1 acc=0.8757	top5 acc=0.9744	267.0 examples/second
+[Step=111750]	Loss=0.4315	top1 acc=0.8732	top5 acc=0.9729	267.1 examples/second
+Test Loss=0.6983, Test top-1 acc=0.8051, Test top-5 acc=0.9680
+Saving...
+Epoch time: 407.70814275741577
+
+Epoch: 67
+[Step=112000]	Loss=0.4215	top1 acc=0.8805	top5 acc=0.9763	235.6 examples/second
+[Step=112250]	Loss=0.4143	top1 acc=0.8788	top5 acc=0.9759	267.8 examples/second
+[Step=112500]	Loss=0.4100	top1 acc=0.8811	top5 acc=0.9749	267.4 examples/second
+[Step=112750]	Loss=0.4243	top1 acc=0.8745	top5 acc=0.9739	267.4 examples/second
+[Step=113000]	Loss=0.4188	top1 acc=0.8772	top5 acc=0.9759	266.8 examples/second
+[Step=113250]	Loss=0.4162	top1 acc=0.8780	top5 acc=0.9745	267.2 examples/second
+[Step=113500]	Loss=0.4198	top1 acc=0.8788	top5 acc=0.9731	266.7 examples/second
+Test Loss=0.6997, Test top-1 acc=0.8041, Test top-5 acc=0.9684
+Epoch time: 407.685097694397
+
+Epoch: 68
+[Step=113750]	Loss=0.4083	top1 acc=0.8803	top5 acc=0.9757	237.0 examples/second
+[Step=114000]	Loss=0.4263	top1 acc=0.8750	top5 acc=0.9739	267.8 examples/second
+[Step=114250]	Loss=0.4062	top1 acc=0.8827	top5 acc=0.9736	267.5 examples/second
+[Step=114500]	Loss=0.4134	top1 acc=0.8784	top5 acc=0.9749	267.2 examples/second
+[Step=114750]	Loss=0.4110	top1 acc=0.8800	top5 acc=0.9754	267.2 examples/second
+[Step=115000]	Loss=0.4166	top1 acc=0.8781	top5 acc=0.9741	267.0 examples/second
+Test Loss=0.6999, Test top-1 acc=0.8014, Test top-5 acc=0.9692
+Epoch time: 407.32452845573425
+
+Epoch: 69
+[Step=115250]	Loss=0.4158	top1 acc=0.8758	top5 acc=0.9766	237.2 examples/second
+[Step=115500]	Loss=0.3887	top1 acc=0.8871	top5 acc=0.9775	267.9 examples/second
+[Step=115750]	Loss=0.4057	top1 acc=0.8827	top5 acc=0.9749	267.5 examples/second
+[Step=116000]	Loss=0.4051	top1 acc=0.8821	top5 acc=0.9768	267.3 examples/second
+[Step=116250]	Loss=0.3993	top1 acc=0.8817	top5 acc=0.9746	267.1 examples/second
+[Step=116500]	Loss=0.4159	top1 acc=0.8804	top5 acc=0.9747	267.2 examples/second
+[Step=116750]	Loss=0.3968	top1 acc=0.8847	top5 acc=0.9771	266.7 examples/second
+Test Loss=0.7130, Test top-1 acc=0.8010, Test top-5 acc=0.9653
+Epoch time: 407.4479639530182
+
+Epoch: 70
+[Step=117000]	Loss=0.4035	top1 acc=0.8847	top5 acc=0.9764	236.5 examples/second
+[Step=117250]	Loss=0.4004	top1 acc=0.8816	top5 acc=0.9771	268.0 examples/second
+[Step=117500]	Loss=0.4042	top1 acc=0.8827	top5 acc=0.9754	267.5 examples/second
+[Step=117750]	Loss=0.4025	top1 acc=0.8842	top5 acc=0.9756	267.3 examples/second
+[Step=118000]	Loss=0.4108	top1 acc=0.8810	top5 acc=0.9746	267.2 examples/second
+[Step=118250]	Loss=0.4084	top1 acc=0.8803	top5 acc=0.9751	266.9 examples/second
+[Step=118500]	Loss=0.4041	top1 acc=0.8809	top5 acc=0.9741	266.8 examples/second
+Test Loss=0.7075, Test top-1 acc=0.8034, Test top-5 acc=0.9675
+Epoch time: 408.0493838787079
+
+Epoch: 71
+[Step=118750]	Loss=0.3989	top1 acc=0.8852	top5 acc=0.9757	236.4 examples/second
+[Step=119000]	Loss=0.4026	top1 acc=0.8852	top5 acc=0.9744	267.8 examples/second
+[Step=119250]	Loss=0.3905	top1 acc=0.8873	top5 acc=0.9766	267.6 examples/second
+[Step=119500]	Loss=0.3965	top1 acc=0.8848	top5 acc=0.9770	267.7 examples/second
+[Step=119750]	Loss=0.4033	top1 acc=0.8823	top5 acc=0.9761	267.2 examples/second
+[Step=120000]	Loss=0.4114	top1 acc=0.8786	top5 acc=0.9741	267.3 examples/second
+Test Loss=0.7169, Test top-1 acc=0.8019, Test top-5 acc=0.9646
+Epoch time: 407.3022301197052
+
+Epoch: 72
+[Step=120250]	Loss=0.3957	top1 acc=0.8859	top5 acc=0.9688	234.8 examples/second
+[Step=120500]	Loss=0.3959	top1 acc=0.8848	top5 acc=0.9756	267.9 examples/second
+[Step=120750]	Loss=0.3862	top1 acc=0.8872	top5 acc=0.9788	267.4 examples/second
+[Step=121000]	Loss=0.4004	top1 acc=0.8830	top5 acc=0.9746	267.1 examples/second
+[Step=121250]	Loss=0.3972	top1 acc=0.8834	top5 acc=0.9754	266.9 examples/second
+[Step=121500]	Loss=0.4123	top1 acc=0.8808	top5 acc=0.9744	266.8 examples/second
+[Step=121750]	Loss=0.3877	top1 acc=0.8851	top5 acc=0.9775	266.5 examples/second
+Test Loss=0.7133, Test top-1 acc=0.8048, Test top-5 acc=0.9672
+Epoch time: 408.44644379615784
+
+Epoch: 73
+[Step=122000]	Loss=0.3961	top1 acc=0.8863	top5 acc=0.9755	236.1 examples/second
+[Step=122250]	Loss=0.3924	top1 acc=0.8862	top5 acc=0.9769	267.5 examples/second
+[Step=122500]	Loss=0.3911	top1 acc=0.8873	top5 acc=0.9770	267.6 examples/second
+[Step=122750]	Loss=0.3930	top1 acc=0.8834	top5 acc=0.9751	267.4 examples/second
+[Step=123000]	Loss=0.3855	top1 acc=0.8880	top5 acc=0.9758	267.0 examples/second
+[Step=123250]	Loss=0.4061	top1 acc=0.8822	top5 acc=0.9746	266.9 examples/second
+[Step=123500]	Loss=0.3936	top1 acc=0.8849	top5 acc=0.9774	266.6 examples/second
+Test Loss=0.7176, Test top-1 acc=0.8005, Test top-5 acc=0.9670
+Epoch time: 407.6770963668823
+
+Epoch: 74
+[Step=123750]	Loss=0.3954	top1 acc=0.8869	top5 acc=0.9759	236.8 examples/second
+[Step=124000]	Loss=0.3833	top1 acc=0.8896	top5 acc=0.9765	268.2 examples/second
+[Step=124250]	Loss=0.3837	top1 acc=0.8874	top5 acc=0.9784	268.0 examples/second
+[Step=124500]	Loss=0.3787	top1 acc=0.8867	top5 acc=0.9773	267.2 examples/second
+[Step=124750]	Loss=0.3899	top1 acc=0.8857	top5 acc=0.9766	267.3 examples/second
+[Step=125000]	Loss=0.3902	top1 acc=0.8871	top5 acc=0.9769	267.4 examples/second
+[Step=125250]	Loss=0.3952	top1 acc=0.8841	top5 acc=0.9755	267.2 examples/second
+Test Loss=0.7152, Test top-1 acc=0.8041, Test top-5 acc=0.9680
+Epoch time: 407.1643009185791
+
+Epoch: 75
+[Step=125500]	Loss=0.3792	top1 acc=0.8884	top5 acc=0.9763	237.0 examples/second
+[Step=125750]	Loss=0.3811	top1 acc=0.8886	top5 acc=0.9771	267.5 examples/second
+[Step=126000]	Loss=0.3798	top1 acc=0.8882	top5 acc=0.9776	267.1 examples/second
+[Step=126250]	Loss=0.3877	top1 acc=0.8852	top5 acc=0.9778	267.0 examples/second
+[Step=126500]	Loss=0.3797	top1 acc=0.8922	top5 acc=0.9782	267.0 examples/second
+[Step=126750]	Loss=0.3831	top1 acc=0.8860	top5 acc=0.9771	266.7 examples/second
+Test Loss=0.7238, Test top-1 acc=0.7993, Test top-5 acc=0.9677
+Epoch time: 408.04903078079224
+
+Epoch: 76
+[Step=127000]	Loss=0.3777	top1 acc=0.8914	top5 acc=0.9791	236.1 examples/second
+[Step=127250]	Loss=0.3823	top1 acc=0.8905	top5 acc=0.9753	267.7 examples/second
+[Step=127500]	Loss=0.3786	top1 acc=0.8889	top5 acc=0.9774	268.1 examples/second
+[Step=127750]	Loss=0.3730	top1 acc=0.8893	top5 acc=0.9796	268.1 examples/second
+[Step=128000]	Loss=0.3938	top1 acc=0.8850	top5 acc=0.9762	269.2 examples/second
+[Step=128250]	Loss=0.3807	top1 acc=0.8898	top5 acc=0.9768	267.4 examples/second
+[Step=128500]	Loss=0.3918	top1 acc=0.8854	top5 acc=0.9762	267.1 examples/second
+Test Loss=0.7178, Test top-1 acc=0.7988, Test top-5 acc=0.9684
+Epoch time: 406.85830187797546
+
+Epoch: 77
+[Step=128750]	Loss=0.3842	top1 acc=0.8915	top5 acc=0.9774	236.8 examples/second
+[Step=129000]	Loss=0.3757	top1 acc=0.8923	top5 acc=0.9759	267.9 examples/second
+[Step=129250]	Loss=0.3784	top1 acc=0.8881	top5 acc=0.9779	267.9 examples/second
+[Step=129500]	Loss=0.3874	top1 acc=0.8857	top5 acc=0.9762	269.0 examples/second
+[Step=129750]	Loss=0.3853	top1 acc=0.8880	top5 acc=0.9773	267.5 examples/second
+[Step=130000]	Loss=0.3723	top1 acc=0.8930	top5 acc=0.9760	267.4 examples/second
+[Step=130250]	Loss=0.3881	top1 acc=0.8877	top5 acc=0.9756	267.6 examples/second
+Test Loss=0.7160, Test top-1 acc=0.7998, Test top-5 acc=0.9675
+Epoch time: 406.79475116729736
+
+Epoch: 78
+[Step=130500]	Loss=0.3776	top1 acc=0.8902	top5 acc=0.9760	236.9 examples/second
+[Step=130750]	Loss=0.3804	top1 acc=0.8888	top5 acc=0.9771	267.7 examples/second
+[Step=131000]	Loss=0.3857	top1 acc=0.8889	top5 acc=0.9762	267.4 examples/second
+[Step=131250]	Loss=0.3698	top1 acc=0.8907	top5 acc=0.9791	267.0 examples/second
+[Step=131500]	Loss=0.3740	top1 acc=0.8894	top5 acc=0.9786	267.0 examples/second
+[Step=131750]	Loss=0.3829	top1 acc=0.8907	top5 acc=0.9755	267.0 examples/second
+Test Loss=0.7349, Test top-1 acc=0.8029, Test top-5 acc=0.9653
+Epoch time: 407.6460814476013
+
+Epoch: 79
+[Step=132000]	Loss=0.3737	top1 acc=0.8980	top5 acc=0.9799	236.6 examples/second
+[Step=132250]	Loss=0.3751	top1 acc=0.8908	top5 acc=0.9776	267.9 examples/second
+[Step=132500]	Loss=0.3794	top1 acc=0.8892	top5 acc=0.9778	267.7 examples/second
+[Step=132750]	Loss=0.3774	top1 acc=0.8898	top5 acc=0.9756	267.3 examples/second
+[Step=133000]	Loss=0.3693	top1 acc=0.8923	top5 acc=0.9781	267.2 examples/second
+[Step=133250]	Loss=0.3681	top1 acc=0.8919	top5 acc=0.9790	267.1 examples/second
+[Step=133500]	Loss=0.3729	top1 acc=0.8907	top5 acc=0.9771	266.8 examples/second
+Test Loss=0.7233, Test top-1 acc=0.7995, Test top-5 acc=0.9667
+Epoch time: 407.5897271633148
+
+Epoch: 80
+[Step=133750]	Loss=0.3817	top1 acc=0.8880	top5 acc=0.9777	236.0 examples/second
+[Step=134000]	Loss=0.3729	top1 acc=0.8925	top5 acc=0.9781	267.8 examples/second
+[Step=134250]	Loss=0.3697	top1 acc=0.8923	top5 acc=0.9783	267.2 examples/second
+[Step=134500]	Loss=0.3763	top1 acc=0.8906	top5 acc=0.9780	267.5 examples/second
+[Step=134750]	Loss=0.3781	top1 acc=0.8904	top5 acc=0.9766	267.2 examples/second
+[Step=135000]	Loss=0.3750	top1 acc=0.8903	top5 acc=0.9781	268.1 examples/second
+[Step=135250]	Loss=0.3765	top1 acc=0.8889	top5 acc=0.9796	266.9 examples/second
+Test Loss=0.7244, Test top-1 acc=0.7995, Test top-5 acc=0.9680
+Epoch time: 407.57398867607117
+
+Epoch: 81
+[Step=135500]	Loss=0.3677	top1 acc=0.8938	top5 acc=0.9786	236.7 examples/second
+[Step=135750]	Loss=0.3722	top1 acc=0.8913	top5 acc=0.9771	268.9 examples/second
+[Step=136000]	Loss=0.3520	top1 acc=0.8933	top5 acc=0.9788	268.1 examples/second
+[Step=136250]	Loss=0.3598	top1 acc=0.8942	top5 acc=0.9794	268.6 examples/second
+[Step=136500]	Loss=0.3685	top1 acc=0.8943	top5 acc=0.9770	267.2 examples/second
+[Step=136750]	Loss=0.3748	top1 acc=0.8902	top5 acc=0.9772	267.2 examples/second
+Test Loss=0.7254, Test top-1 acc=0.7990, Test top-5 acc=0.9663
+Epoch time: 406.73867106437683
+
+Epoch: 82
+[Step=137000]	Loss=0.3721	top1 acc=0.8953	top5 acc=0.9773	236.7 examples/second
+[Step=137250]	Loss=0.3733	top1 acc=0.8911	top5 acc=0.9776	267.8 examples/second
+[Step=137500]	Loss=0.3625	top1 acc=0.8956	top5 acc=0.9789	267.7 examples/second
+[Step=137750]	Loss=0.3742	top1 acc=0.8885	top5 acc=0.9777	267.4 examples/second
+[Step=138000]	Loss=0.3727	top1 acc=0.8899	top5 acc=0.9780	267.3 examples/second
+[Step=138250]	Loss=0.3680	top1 acc=0.8925	top5 acc=0.9780	266.8 examples/second
+[Step=138500]	Loss=0.3766	top1 acc=0.8923	top5 acc=0.9771	266.9 examples/second
+Test Loss=0.7450, Test top-1 acc=0.7957, Test top-5 acc=0.9648
+Epoch time: 407.48152899742126
+
+Epoch: 83
+[Step=138750]	Loss=0.3711	top1 acc=0.8883	top5 acc=0.9769	237.0 examples/second
+[Step=139000]	Loss=0.3477	top1 acc=0.9007	top5 acc=0.9783	267.8 examples/second
+[Step=139250]	Loss=0.3655	top1 acc=0.8936	top5 acc=0.9783	268.5 examples/second
+[Step=139500]	Loss=0.3709	top1 acc=0.8933	top5 acc=0.9772	268.3 examples/second
+[Step=139750]	Loss=0.3698	top1 acc=0.8936	top5 acc=0.9771	268.9 examples/second
+[Step=140000]	Loss=0.3622	top1 acc=0.8941	top5 acc=0.9793	267.1 examples/second
+[Step=140250]	Loss=0.3708	top1 acc=0.8941	top5 acc=0.9773	267.9 examples/second
+Test Loss=0.7331, Test top-1 acc=0.7990, Test top-5 acc=0.9639
+Epoch time: 406.5887312889099
+
+Epoch: 84
+[Step=140500]	Loss=0.3623	top1 acc=0.8946	top5 acc=0.9768	237.1 examples/second
+[Step=140750]	Loss=0.3597	top1 acc=0.8939	top5 acc=0.9780	267.5 examples/second
+[Step=141000]	Loss=0.3734	top1 acc=0.8938	top5 acc=0.9759	267.7 examples/second
+[Step=141250]	Loss=0.3713	top1 acc=0.8949	top5 acc=0.9766	267.2 examples/second
+[Step=141500]	Loss=0.3655	top1 acc=0.8924	top5 acc=0.9786	267.3 examples/second
+[Step=141750]	Loss=0.3579	top1 acc=0.8967	top5 acc=0.9776	267.1 examples/second
+Test Loss=0.7720, Test top-1 acc=0.7988, Test top-5 acc=0.9636
+Epoch time: 407.55536007881165
+
+Epoch: 85
+[Step=142000]	Loss=0.3640	top1 acc=0.9000	top5 acc=0.9775	235.6 examples/second
+[Step=142250]	Loss=0.3585	top1 acc=0.8938	top5 acc=0.9793	267.9 examples/second
+[Step=142500]	Loss=0.3521	top1 acc=0.8975	top5 acc=0.9799	267.9 examples/second
+[Step=142750]	Loss=0.3502	top1 acc=0.8960	top5 acc=0.9790	267.3 examples/second
+[Step=143000]	Loss=0.3609	top1 acc=0.8954	top5 acc=0.9781	267.2 examples/second
+[Step=143250]	Loss=0.3638	top1 acc=0.8938	top5 acc=0.9787	267.0 examples/second
+[Step=143500]	Loss=0.3629	top1 acc=0.8941	top5 acc=0.9789	267.0 examples/second
+Test Loss=0.7405, Test top-1 acc=0.7988, Test top-5 acc=0.9648
+Epoch time: 407.6060121059418
+
+Epoch: 86
+[Step=143750]	Loss=0.3726	top1 acc=0.8905	top5 acc=0.9763	236.2 examples/second
+[Step=144000]	Loss=0.3532	top1 acc=0.8964	top5 acc=0.9789	267.5 examples/second
+[Step=144250]	Loss=0.3557	top1 acc=0.8967	top5 acc=0.9785	267.3 examples/second
+[Step=144500]	Loss=0.3530	top1 acc=0.8971	top5 acc=0.9784	267.5 examples/second
+[Step=144750]	Loss=0.3699	top1 acc=0.8937	top5 acc=0.9778	267.1 examples/second
+[Step=145000]	Loss=0.3579	top1 acc=0.8959	top5 acc=0.9793	267.0 examples/second
+[Step=145250]	Loss=0.3563	top1 acc=0.8973	top5 acc=0.9773	266.9 examples/second
+Test Loss=0.7376, Test top-1 acc=0.8005, Test top-5 acc=0.9639
+Epoch time: 407.81176495552063
+
+Epoch: 87
+[Step=145500]	Loss=0.3416	top1 acc=0.9020	top5 acc=0.9788	236.4 examples/second
+[Step=145750]	Loss=0.3518	top1 acc=0.8980	top5 acc=0.9800	267.7 examples/second
+[Step=146000]	Loss=0.3611	top1 acc=0.8947	top5 acc=0.9769	267.5 examples/second
+[Step=146250]	Loss=0.3550	top1 acc=0.8962	top5 acc=0.9785	267.2 examples/second
+[Step=146500]	Loss=0.3612	top1 acc=0.8971	top5 acc=0.9781	266.9 examples/second
+[Step=146750]	Loss=0.3566	top1 acc=0.8953	top5 acc=0.9789	267.3 examples/second
+Test Loss=0.7363, Test top-1 acc=0.7971, Test top-5 acc=0.9660
+Epoch time: 407.66997385025024
+
+Epoch: 88
+[Step=147000]	Loss=0.3582	top1 acc=0.9027	top5 acc=0.9789	236.9 examples/second
+[Step=147250]	Loss=0.3586	top1 acc=0.8968	top5 acc=0.9779	268.4 examples/second
+[Step=147500]	Loss=0.3548	top1 acc=0.8958	top5 acc=0.9800	267.6 examples/second
+[Step=147750]	Loss=0.3488	top1 acc=0.9003	top5 acc=0.9771	267.9 examples/second
+[Step=148000]	Loss=0.3621	top1 acc=0.8931	top5 acc=0.9784	269.0 examples/second
+[Step=148250]	Loss=0.3600	top1 acc=0.8954	top5 acc=0.9774	268.7 examples/second
+[Step=148500]	Loss=0.3598	top1 acc=0.8936	top5 acc=0.9789	267.8 examples/second
+Test Loss=0.7380, Test top-1 acc=0.8019, Test top-5 acc=0.9651
+Epoch time: 406.1721625328064
+
+Epoch: 89
+[Step=148750]	Loss=0.3452	top1 acc=0.9040	top5 acc=0.9781	235.9 examples/second
+[Step=149000]	Loss=0.3478	top1 acc=0.8991	top5 acc=0.9793	267.9 examples/second
+[Step=149250]	Loss=0.3487	top1 acc=0.8991	top5 acc=0.9786	268.1 examples/second
+[Step=149500]	Loss=0.3527	top1 acc=0.8979	top5 acc=0.9794	268.8 examples/second
+[Step=149750]	Loss=0.3578	top1 acc=0.8946	top5 acc=0.9786	268.4 examples/second
+[Step=150000]	Loss=0.3525	top1 acc=0.8998	top5 acc=0.9787	266.8 examples/second
+[Step=150250]	Loss=0.3581	top1 acc=0.8955	top5 acc=0.9786	268.3 examples/second
+Test Loss=0.7466, Test top-1 acc=0.7937, Test top-5 acc=0.9670
+Epoch time: 406.8866288661957
+Computing OOD Statistics...
+	Baseline.          AUROC: 0.8912. TNR@95TPR: 0.4835. AUPR OUT: 0.6148
+	ODIN (T=1000).     AUROC: 0.9243. TNR@95TPR: 0.5671. AUPR OUT: 0.6721
+
+
+
+Printing Final Accuracy + OOD Detection stats
+
+Top 1 Accuracy:  Min: 0.8051; Max: 0.8051; Avg: 0.8051; Std: 0.0000; Len: 1
+Top 5 Accuracy:  Min: 0.9680; Max: 0.9680; Avg: 0.9680; Std: 0.0000; Len: 1
+**********************************************************************
+Traceback (most recent call last):
+  File "main.py", line 319, in <module>
+    main()
+  File "main.py", line 314, in main
+    print_stats_of_list("\t{} ({}): {}".format(k, ood,
+TypeError: print_stats_of_list() missing 1 required positional argument: 'dat'

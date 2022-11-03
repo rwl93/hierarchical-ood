@@ -1,0 +1,135 @@
+<!-- Code adapted from d3-graph-gallery.com, https://observablehq.com/@d3/radial-dendrogram -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Radial Example</title>
+  <style>
+.node {
+  cursor: pointer;
+}
+
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 3px;
+}
+
+.node text {
+  font: 12px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2px;
+}
+  </style>
+</head>
+<body>
+<!-- Create a div where the graph will take place -->
+  <div class="tree-main">
+  </div>
+
+</body>
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<!-- Create tree -->
+<script>
+
+
+var margin = {
+        top: 50,
+        right: 50,
+        bottom: 50,
+        left: 50
+    },
+	  width = CONFIG_SIZE - margin.right - margin.left,
+	  height = CONFIG_SIZE - margin.top - margin.bottom;
+
+// radius of the dendrogram 
+var radius = width / 2
+
+// append the svg object to the body of the page
+var svg = d3.select("div.tree-main").append("svg")
+    .attr("width", width + margin.right + margin.left)
+    .attr("height", height + margin.top + margin.bottom)
+  .style("font-size", 10)
+  .append("g")
+    .attr("transform", "translate(" + (radius + margin.left) + "," + (radius +
+        margin.top) + ")");
+
+//d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_dendrogram.json", function(data) {
+var treeData = CONFIG_TREE_DATA;
+
+root = treeData[0];
+var tree = d3.cluster().size([2 * Math.PI, radius - 100])
+
+update(root);
+
+function update(data) {
+
+  const nodes = tree(d3.hierarchy(data)
+      .sort((a, b) => d3.ascending(a.data.name, b.data.name)));
+
+  svg.append("g")
+      .attr("fill", "none")
+    .selectAll("path")
+    .data(nodes.links())
+    .enter().append("path")
+      .attr("d", d3.linkRadial()
+          .angle(d => d.x)
+          .radius(d => d.y))
+      .attr("stroke", function(d) {
+          if (d.target.data.ood) return "red";
+          return "steelblue";
+        })
+      .attr("stroke-opacity", function(d) {
+          if (d.target.data.ood) return 0.8;
+          return 0.8;
+        })
+      .attr("stroke-width", function(d) {
+          if (d.target.data.ood) return 2;
+          return 2;
+        });
+      //.attr("stroke", "steelblue")
+  
+  svg.append("g")
+    .selectAll("circle")
+    .data(nodes.descendants())
+    .enter().append("circle")
+      .attr("transform", d => `
+        rotate(${d.x * 180 / Math.PI - 90})
+        translate(${d.y},0)
+      `)
+      .attr("fill", function(d) {
+          if (d.children) return "#555";
+          return "#999";
+        })
+      .attr("r", 2.5);
+
+  svg.append("g")
+      .attr("font-family", "sans-serif")
+      .attr("font-size", 10)
+      .attr("stroke-linejoin", "round")
+      .attr("stroke-width", 3)
+    .selectAll("text")
+    .data(nodes.descendants())
+    .enter().append("text")
+      .attr("transform", d => `
+        rotate(${d.x * 180 / Math.PI - 90}) 
+        translate(${d.y},0) 
+        rotate(${d.x >= Math.PI ? 180 : 0})
+      `)
+      .attr("dy", "0.31em")
+      .attr("x", d => d.x < Math.PI === !d.children ? 6 : -6)
+      .attr("text-anchor", d => d.x < Math.PI === !d.children ? "start" : "end")
+      .text(d => d.data.name)
+    .clone(true).lower()
+      .attr("stroke", "white");
+
+}
+
+</script>

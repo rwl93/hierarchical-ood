@@ -1,0 +1,1199 @@
+2022-09-27 14:26:24,263 - INFO - ==> Preparing data..
+2022-09-27 14:26:24,686 - INFO - # ID Train: 89972
+2022-09-27 14:26:24,686 - INFO - # ID Test:  3500
+2022-09-27 14:26:24,686 - INFO - # OOD Test: 1500
+2022-09-27 14:26:24,686 - INFO - checkpoint filename: experiments/balanced100/cascade/pruned-wn/R0_oe/checkpoint.pt
+2022-09-27 14:26:24,686 - INFO - log filename: experiments/balanced100/cascade/pruned-wn/R0_oe/train.log
+2022-09-27 14:26:24,686 - INFO - ********************************************************
+2022-09-27 14:26:24,686 - INFO - Starting Iter: 0 / 1
+2022-09-27 14:26:24,686 - INFO - ********************************************************
+2022-09-27 14:26:37,976 - INFO - cuda
+2022-09-27 14:26:38,784 - INFO - 
+Epoch: 0
+2022-09-27 14:26:38,784 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 14:26:38,784 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 14:28:22,370 - INFO - [Step=250]	Loss=10.5786	308.9 examples/second
+2022-09-27 14:29:53,882 - INFO - [Step=500]	Loss=9.9640	349.7 examples/second
+2022-09-27 14:31:16,665 - INFO - Test Loss=9.3200, Test pred acc=0.1320, Test mean synset acc=0.5477
+2022-09-27 14:31:16,667 - INFO - Error Depth: [ 112.  352. 1037. 1000.  463.  152.  384.]
+2022-09-27 14:31:16,667 - INFO - Saving...
+2022-09-27 14:31:17,162 - INFO - Epoch time: 278.3778202533722
+2022-09-27 14:31:17,162 - INFO - 
+Epoch: 1
+2022-09-27 14:31:17,162 - INFO - 
+Learning Rate: 0.0280
+2022-09-27 14:31:17,162 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 14:31:36,747 - INFO - [Step=750]	Loss=9.8828	1634.0 examples/second
+2022-09-27 14:33:08,065 - INFO - [Step=1000]	Loss=9.7823	350.4 examples/second
+2022-09-27 14:34:40,479 - INFO - [Step=1250]	Loss=9.6065	346.3 examples/second
+2022-09-27 14:35:47,663 - INFO - Test Loss=9.4554, Test pred acc=0.1849, Test mean synset acc=0.5756
+2022-09-27 14:35:47,664 - INFO - Error Depth: [120. 275. 950. 953. 428. 161. 613.]
+2022-09-27 14:35:47,664 - INFO - Saving...
+2022-09-27 14:35:48,225 - INFO - Epoch time: 271.0626862049103
+2022-09-27 14:35:48,225 - INFO - 
+Epoch: 2
+2022-09-27 14:35:48,225 - INFO - 
+Learning Rate: 0.0460
+2022-09-27 14:35:48,225 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 14:36:25,426 - INFO - [Step=1500]	Loss=9.5943	860.2 examples/second
+2022-09-27 14:37:57,505 - INFO - [Step=1750]	Loss=9.4662	347.5 examples/second
+2022-09-27 14:39:30,078 - INFO - [Step=2000]	Loss=9.3065	345.7 examples/second
+2022-09-27 14:40:18,277 - INFO - Test Loss=9.2636, Test pred acc=0.2683, Test mean synset acc=0.6255
+2022-09-27 14:40:18,277 - INFO - Error Depth: [ 94. 269. 869. 816. 391. 148. 913.]
+2022-09-27 14:40:18,278 - INFO - Saving...
+2022-09-27 14:40:18,730 - INFO - Epoch time: 270.5054407119751
+2022-09-27 14:40:18,731 - INFO - 
+Epoch: 3
+2022-09-27 14:40:18,731 - INFO - 
+Learning Rate: 0.0640
+2022-09-27 14:40:18,731 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 14:41:13,007 - INFO - [Step=2250]	Loss=9.2225	589.6 examples/second
+2022-09-27 14:42:45,437 - INFO - [Step=2500]	Loss=9.1312	346.2 examples/second
+2022-09-27 14:44:18,141 - INFO - [Step=2750]	Loss=8.9851	345.2 examples/second
+2022-09-27 14:44:49,339 - INFO - Test Loss=8.5263, Test pred acc=0.2834, Test mean synset acc=0.6430
+2022-09-27 14:44:49,341 - INFO - Error Depth: [114. 384. 815. 802. 360. 137. 888.]
+2022-09-27 14:44:49,341 - INFO - Saving...
+2022-09-27 14:44:49,878 - INFO - Epoch time: 271.146861076355
+2022-09-27 14:44:49,878 - INFO - 
+Epoch: 4
+2022-09-27 14:44:49,878 - INFO - 
+Learning Rate: 0.1000
+2022-09-27 14:44:49,878 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 14:46:01,387 - INFO - [Step=3000]	Loss=8.9978	447.5 examples/second
+2022-09-27 14:47:34,012 - INFO - [Step=3250]	Loss=8.8847	345.5 examples/second
+2022-09-27 14:49:06,637 - INFO - [Step=3500]	Loss=8.8364	345.5 examples/second
+2022-09-27 14:49:20,336 - INFO - Test Loss=8.1548, Test pred acc=0.3363, Test mean synset acc=0.6609
+2022-09-27 14:49:20,337 - INFO - Error Depth: [  61.  297.  817.  760.  344.  136. 1085.]
+2022-09-27 14:49:20,337 - INFO - Saving...
+2022-09-27 14:49:20,902 - INFO - Epoch time: 271.02399706840515
+2022-09-27 14:49:20,902 - INFO - 
+Epoch: 5
+2022-09-27 14:49:20,902 - INFO - 
+Learning Rate: 0.1000
+2022-09-27 14:49:20,902 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 14:50:49,933 - INFO - [Step=3750]	Loss=8.7227	359.4 examples/second
+2022-09-27 14:52:22,682 - INFO - [Step=4000]	Loss=8.6205	345.0 examples/second
+2022-09-27 14:53:51,374 - INFO - Test Loss=7.8785, Test pred acc=0.4300, Test mean synset acc=0.7125
+2022-09-27 14:53:51,375 - INFO - Error Depth: [  65.  225.  637.  650.  307.  136. 1480.]
+2022-09-27 14:53:51,375 - INFO - Saving...
+2022-09-27 14:53:51,885 - INFO - Epoch time: 270.98294162750244
+2022-09-27 14:53:51,885 - INFO - 
+Epoch: 6
+2022-09-27 14:53:51,886 - INFO - 
+Learning Rate: 0.1000
+2022-09-27 14:53:51,886 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 14:54:06,330 - INFO - [Step=4250]	Loss=8.4695	2215.7 examples/second
+2022-09-27 14:55:38,688 - INFO - [Step=4500]	Loss=8.4293	346.5 examples/second
+2022-09-27 14:57:11,813 - INFO - [Step=4750]	Loss=8.3700	343.6 examples/second
+2022-09-27 14:58:23,702 - INFO - Test Loss=8.3531, Test pred acc=0.4503, Test mean synset acc=0.7233
+2022-09-27 14:58:23,703 - INFO - Error Depth: [  87.  259.  624.  628.  281.  122. 1499.]
+2022-09-27 14:58:23,703 - INFO - Saving...
+2022-09-27 14:58:24,231 - INFO - Epoch time: 272.3452808856964
+2022-09-27 14:58:24,231 - INFO - 
+Epoch: 7
+2022-09-27 14:58:24,231 - INFO - 
+Learning Rate: 0.1000
+2022-09-27 14:58:24,231 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 14:58:55,814 - INFO - [Step=5000]	Loss=8.2597	1013.3 examples/second
+2022-09-27 15:00:28,173 - INFO - [Step=5250]	Loss=8.2146	346.5 examples/second
+2022-09-27 15:02:01,397 - INFO - [Step=5500]	Loss=8.1778	343.3 examples/second
+2022-09-27 15:02:55,618 - INFO - Test Loss=7.7146, Test pred acc=0.4691, Test mean synset acc=0.7274
+2022-09-27 15:02:55,618 - INFO - Error Depth: [  79.  206.  600.  639.  302.  103. 1571.]
+2022-09-27 15:02:55,619 - INFO - Saving...
+2022-09-27 15:02:56,404 - INFO - Epoch time: 272.17284893989563
+2022-09-27 15:02:56,404 - INFO - 
+Epoch: 8
+2022-09-27 15:02:56,404 - INFO - 
+Learning Rate: 0.1000
+2022-09-27 15:02:56,405 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 15:03:45,260 - INFO - [Step=5750]	Loss=8.0758	655.0 examples/second
+2022-09-27 15:05:17,762 - INFO - [Step=6000]	Loss=8.0504	345.9 examples/second
+2022-09-27 15:06:51,269 - INFO - [Step=6250]	Loss=8.0314	342.2 examples/second
+2022-09-27 15:07:27,992 - INFO - Test Loss=7.4639, Test pred acc=0.5074, Test mean synset acc=0.7517
+2022-09-27 15:07:27,992 - INFO - Error Depth: [  56.  162.  565.  557.  290.  109. 1761.]
+2022-09-27 15:07:27,993 - INFO - Saving...
+2022-09-27 15:07:28,500 - INFO - Epoch time: 272.09538078308105
+2022-09-27 15:07:28,500 - INFO - 
+Epoch: 9
+2022-09-27 15:07:28,500 - INFO - 
+Learning Rate: 0.1000
+2022-09-27 15:07:28,500 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 15:08:34,936 - INFO - [Step=6500]	Loss=7.9384	481.7 examples/second
+2022-09-27 15:10:07,919 - INFO - [Step=6750]	Loss=7.9224	344.2 examples/second
+2022-09-27 15:11:39,938 - INFO - [Step=7000]	Loss=7.9027	347.8 examples/second
+2022-09-27 15:11:59,252 - INFO - Test Loss=7.5412, Test pred acc=0.5146, Test mean synset acc=0.7586
+2022-09-27 15:11:59,252 - INFO - Error Depth: [  47.  194.  550.  551.  247.  119. 1792.]
+2022-09-27 15:11:59,253 - INFO - Saving...
+2022-09-27 15:11:59,801 - INFO - Epoch time: 271.30075550079346
+2022-09-27 15:11:59,801 - INFO - 
+Epoch: 10
+2022-09-27 15:11:59,801 - INFO - 
+Learning Rate: 0.1000
+2022-09-27 15:11:59,801 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 15:13:23,434 - INFO - [Step=7250]	Loss=7.8564	382.6 examples/second
+2022-09-27 15:14:56,336 - INFO - [Step=7500]	Loss=7.8108	344.5 examples/second
+2022-09-27 15:16:30,401 - INFO - Test Loss=7.4163, Test pred acc=0.5134, Test mean synset acc=0.7568
+2022-09-27 15:16:30,403 - INFO - Error Depth: [  95.  168.  558.  529.  242.  121. 1787.]
+2022-09-27 15:16:30,403 - INFO - Epoch time: 270.60164070129395
+2022-09-27 15:16:30,403 - INFO - 
+Epoch: 11
+2022-09-27 15:16:30,403 - INFO - 
+Learning Rate: 0.1000
+2022-09-27 15:16:30,403 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 15:16:39,211 - INFO - [Step=7750]	Loss=7.7965	3633.3 examples/second
+2022-09-27 15:18:11,448 - INFO - [Step=8000]	Loss=7.9284	346.9 examples/second
+2022-09-27 15:19:44,304 - INFO - [Step=8250]	Loss=7.8982	344.6 examples/second
+2022-09-27 15:21:00,920 - INFO - Test Loss=7.1688, Test pred acc=0.5460, Test mean synset acc=0.7685
+2022-09-27 15:21:00,921 - INFO - Error Depth: [  46.  133.  506.  533.  278.  116. 1888.]
+2022-09-27 15:21:00,922 - INFO - Saving...
+2022-09-27 15:21:01,436 - INFO - Epoch time: 271.0332009792328
+2022-09-27 15:21:01,436 - INFO - 
+Epoch: 12
+2022-09-27 15:21:01,436 - INFO - 
+Learning Rate: 0.1000
+2022-09-27 15:21:01,436 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 15:21:27,406 - INFO - [Step=8500]	Loss=7.7443	1232.2 examples/second
+2022-09-27 15:22:59,955 - INFO - [Step=8750]	Loss=7.7254	345.8 examples/second
+2022-09-27 15:24:32,414 - INFO - [Step=9000]	Loss=7.7144	346.1 examples/second
+2022-09-27 15:25:31,969 - INFO - Test Loss=7.3057, Test pred acc=0.5477, Test mean synset acc=0.7762
+2022-09-27 15:25:31,970 - INFO - Error Depth: [  95.  158.  474.  515.  230.  116. 1912.]
+2022-09-27 15:25:31,970 - INFO - Saving...
+2022-09-27 15:25:32,492 - INFO - Epoch time: 271.0560100078583
+2022-09-27 15:25:32,493 - INFO - 
+Epoch: 13
+2022-09-27 15:25:32,493 - INFO - 
+Learning Rate: 0.1000
+2022-09-27 15:25:32,493 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 15:26:16,048 - INFO - [Step=9250]	Loss=7.6313	734.7 examples/second
+2022-09-27 15:27:48,823 - INFO - [Step=9500]	Loss=7.6108	344.9 examples/second
+2022-09-27 15:29:20,970 - INFO - [Step=9750]	Loss=7.6018	347.3 examples/second
+2022-09-27 15:30:03,514 - INFO - Test Loss=7.0378, Test pred acc=0.5857, Test mean synset acc=0.7881
+2022-09-27 15:30:03,514 - INFO - Error Depth: [  45.  149.  437.  485.  237.  111. 2036.]
+2022-09-27 15:30:03,515 - INFO - Saving...
+2022-09-27 15:30:04,065 - INFO - Epoch time: 271.57268929481506
+2022-09-27 15:30:04,065 - INFO - 
+Epoch: 14
+2022-09-27 15:30:04,065 - INFO - 
+Learning Rate: 0.1000
+2022-09-27 15:30:04,066 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 15:31:04,771 - INFO - [Step=10000]	Loss=7.5778	527.1 examples/second
+2022-09-27 15:32:37,618 - INFO - [Step=10250]	Loss=7.5718	344.7 examples/second
+2022-09-27 15:34:09,718 - INFO - [Step=10500]	Loss=7.5673	347.5 examples/second
+2022-09-27 15:34:34,534 - INFO - Test Loss=6.9842, Test pred acc=0.6091, Test mean synset acc=0.8036
+2022-09-27 15:34:34,535 - INFO - Error Depth: [  48.  149.  421.  478.  184.  114. 2106.]
+2022-09-27 15:34:34,535 - INFO - Saving...
+2022-09-27 15:34:35,096 - INFO - Epoch time: 271.03006052970886
+2022-09-27 15:34:35,096 - INFO - 
+Epoch: 15
+2022-09-27 15:34:35,096 - INFO - 
+Learning Rate: 0.1000
+2022-09-27 15:34:35,096 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 15:35:53,572 - INFO - [Step=10750]	Loss=7.5248	407.8 examples/second
+2022-09-27 15:37:27,443 - INFO - [Step=11000]	Loss=7.5095	340.9 examples/second
+2022-09-27 15:39:06,940 - INFO - Test Loss=7.0048, Test pred acc=0.5900, Test mean synset acc=0.7945
+2022-09-27 15:39:06,941 - INFO - Error Depth: [  41.  131.  434.  501.  222.  106. 2065.]
+2022-09-27 15:39:06,941 - INFO - Epoch time: 271.8449938297272
+2022-09-27 15:39:06,941 - INFO - 
+Epoch: 16
+2022-09-27 15:39:06,941 - INFO - 
+Learning Rate: 0.1000
+2022-09-27 15:39:06,941 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 15:39:10,461 - INFO - [Step=11250]	Loss=7.5787	9093.9 examples/second
+2022-09-27 15:40:43,254 - INFO - [Step=11500]	Loss=7.4869	344.9 examples/second
+2022-09-27 15:42:15,926 - INFO - [Step=11750]	Loss=7.4718	345.3 examples/second
+2022-09-27 15:43:38,241 - INFO - Test Loss=6.9555, Test pred acc=0.6143, Test mean synset acc=0.8066
+2022-09-27 15:43:38,243 - INFO - Error Depth: [  42.  147.  399.  479.  195.  109. 2129.]
+2022-09-27 15:43:38,243 - INFO - Saving...
+2022-09-27 15:43:38,754 - INFO - Epoch time: 271.81296849250793
+2022-09-27 15:43:38,754 - INFO - 
+Epoch: 17
+2022-09-27 15:43:38,754 - INFO - 
+Learning Rate: 0.1000
+2022-09-27 15:43:38,754 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 15:43:59,148 - INFO - [Step=12000]	Loss=7.4429	1569.2 examples/second
+2022-09-27 15:45:31,821 - INFO - [Step=12250]	Loss=7.4300	345.3 examples/second
+2022-09-27 15:47:04,460 - INFO - [Step=12500]	Loss=7.4244	345.4 examples/second
+2022-09-27 15:48:09,311 - INFO - Test Loss=6.7965, Test pred acc=0.6380, Test mean synset acc=0.8136
+2022-09-27 15:48:09,312 - INFO - Error Depth: [  32.  135.  366.  431.  220.   94. 2222.]
+2022-09-27 15:48:09,313 - INFO - Saving...
+2022-09-27 15:48:09,859 - INFO - Epoch time: 271.10499024391174
+2022-09-27 15:48:09,859 - INFO - 
+Epoch: 18
+2022-09-27 15:48:09,859 - INFO - 
+Learning Rate: 0.1000
+2022-09-27 15:48:09,860 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 15:48:47,593 - INFO - [Step=12750]	Loss=7.3809	848.1 examples/second
+2022-09-27 15:50:20,175 - INFO - [Step=13000]	Loss=7.3957	345.6 examples/second
+2022-09-27 15:51:52,809 - INFO - [Step=13250]	Loss=7.4053	345.4 examples/second
+2022-09-27 15:52:40,477 - INFO - Test Loss=6.9097, Test pred acc=0.6180, Test mean synset acc=0.8046
+2022-09-27 15:52:40,478 - INFO - Error Depth: [  34.  140.  408.  458.  216.  107. 2137.]
+2022-09-27 15:52:40,478 - INFO - Epoch time: 270.61840319633484
+2022-09-27 15:52:40,478 - INFO - 
+Epoch: 19
+2022-09-27 15:52:40,478 - INFO - 
+Learning Rate: 0.1000
+2022-09-27 15:52:40,478 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 15:53:36,357 - INFO - [Step=13500]	Loss=7.3822	572.7 examples/second
+2022-09-27 15:55:08,540 - INFO - [Step=13750]	Loss=7.3821	347.1 examples/second
+2022-09-27 15:56:40,916 - INFO - [Step=14000]	Loss=7.3723	346.4 examples/second
+2022-09-27 15:57:11,073 - INFO - Test Loss=6.7743, Test pred acc=0.6486, Test mean synset acc=0.8169
+2022-09-27 15:57:11,073 - INFO - Error Depth: [  30.  116.  357.  461.  184.  108. 2244.]
+2022-09-27 15:57:11,074 - INFO - Saving...
+2022-09-27 15:57:11,564 - INFO - Epoch time: 271.086403131485
+2022-09-27 15:57:11,565 - INFO - 
+Epoch: 20
+2022-09-27 15:57:11,565 - INFO - 
+Learning Rate: 0.1000
+2022-09-27 15:57:11,565 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 15:58:24,671 - INFO - [Step=14250]	Loss=7.3579	437.7 examples/second
+2022-09-27 15:59:57,065 - INFO - [Step=14500]	Loss=7.3610	346.3 examples/second
+2022-09-27 16:01:29,147 - INFO - [Step=14750]	Loss=7.3430	347.5 examples/second
+2022-09-27 16:01:42,173 - INFO - Test Loss=6.8147, Test pred acc=0.6406, Test mean synset acc=0.8173
+2022-09-27 16:01:42,174 - INFO - Error Depth: [  48.  104.  386.  447.  194.  100. 2221.]
+2022-09-27 16:01:42,174 - INFO - Epoch time: 270.60977029800415
+2022-09-27 16:01:42,174 - INFO - 
+Epoch: 21
+2022-09-27 16:01:42,175 - INFO - 
+Learning Rate: 0.1000
+2022-09-27 16:01:42,175 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 16:03:12,206 - INFO - [Step=15000]	Loss=7.3259	355.4 examples/second
+2022-09-27 16:04:44,555 - INFO - [Step=15250]	Loss=7.3436	346.5 examples/second
+2022-09-27 16:06:13,070 - INFO - Test Loss=6.7439, Test pred acc=0.6617, Test mean synset acc=0.8260
+2022-09-27 16:06:13,070 - INFO - Error Depth: [  23.  102.  341.  435.  175.  102. 2322.]
+2022-09-27 16:06:13,071 - INFO - Saving...
+2022-09-27 16:06:13,660 - INFO - Epoch time: 271.48593282699585
+2022-09-27 16:06:13,661 - INFO - 
+Epoch: 22
+2022-09-27 16:06:13,661 - INFO - 
+Learning Rate: 0.1000
+2022-09-27 16:06:13,661 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 16:06:30,286 - INFO - [Step=15500]	Loss=7.3217	1925.0 examples/second
+2022-09-27 16:08:03,951 - INFO - [Step=15750]	Loss=7.3041	341.6 examples/second
+2022-09-27 16:09:36,680 - INFO - [Step=16000]	Loss=7.2968	345.1 examples/second
+2022-09-27 16:10:48,065 - INFO - Test Loss=6.7638, Test pred acc=0.6611, Test mean synset acc=0.8282
+2022-09-27 16:10:48,067 - INFO - Error Depth: [  51.  115.  331.  435.  172.   91. 2305.]
+2022-09-27 16:10:48,067 - INFO - Epoch time: 274.40610694885254
+2022-09-27 16:10:48,067 - INFO - 
+Epoch: 23
+2022-09-27 16:10:48,067 - INFO - 
+Learning Rate: 0.1000
+2022-09-27 16:10:48,067 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 16:11:20,431 - INFO - [Step=16250]	Loss=7.2918	988.8 examples/second
+2022-09-27 16:12:52,690 - INFO - [Step=16500]	Loss=7.2862	346.9 examples/second
+2022-09-27 16:14:25,080 - INFO - [Step=16750]	Loss=7.2907	346.4 examples/second
+2022-09-27 16:15:19,272 - INFO - Test Loss=6.6764, Test pred acc=0.6734, Test mean synset acc=0.8272
+2022-09-27 16:15:19,273 - INFO - Error Depth: [  28.   75.  342.  406.  205.   94. 2350.]
+2022-09-27 16:15:19,273 - INFO - Saving...
+2022-09-27 16:15:19,832 - INFO - Epoch time: 271.7653856277466
+2022-09-27 16:15:19,833 - INFO - 
+Epoch: 24
+2022-09-27 16:15:19,833 - INFO - 
+Learning Rate: 0.1000
+2022-09-27 16:15:19,833 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 16:16:09,489 - INFO - [Step=17000]	Loss=7.2464	644.5 examples/second
+2022-09-27 16:17:41,446 - INFO - [Step=17250]	Loss=7.2753	348.0 examples/second
+2022-09-27 16:19:13,714 - INFO - [Step=17500]	Loss=7.2796	346.8 examples/second
+2022-09-27 16:19:50,166 - INFO - Test Loss=6.7992, Test pred acc=0.6434, Test mean synset acc=0.8171
+2022-09-27 16:19:50,167 - INFO - Error Depth: [  31.  117.  358.  453.  192.   98. 2251.]
+2022-09-27 16:19:50,167 - INFO - Epoch time: 270.3344542980194
+2022-09-27 16:19:50,167 - INFO - 
+Epoch: 25
+2022-09-27 16:19:50,167 - INFO - 
+Learning Rate: 0.1000
+2022-09-27 16:19:50,168 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 16:20:57,368 - INFO - [Step=17750]	Loss=7.2313	476.2 examples/second
+2022-09-27 16:22:30,314 - INFO - [Step=18000]	Loss=7.2510	344.3 examples/second
+2022-09-27 16:24:03,178 - INFO - [Step=18250]	Loss=7.2568	344.6 examples/second
+2022-09-27 16:24:21,600 - INFO - Test Loss=6.7409, Test pred acc=0.6700, Test mean synset acc=0.8336
+2022-09-27 16:24:21,601 - INFO - Error Depth: [  41.  128.  321.  411.  156.  105. 2338.]
+2022-09-27 16:24:21,601 - INFO - Epoch time: 271.4339108467102
+2022-09-27 16:24:21,601 - INFO - 
+Epoch: 26
+2022-09-27 16:24:21,601 - INFO - 
+Learning Rate: 0.1000
+2022-09-27 16:24:21,601 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 16:25:46,331 - INFO - [Step=18500]	Loss=7.2209	377.7 examples/second
+2022-09-27 16:27:18,841 - INFO - [Step=18750]	Loss=7.2452	345.9 examples/second
+2022-09-27 16:28:52,579 - INFO - Test Loss=7.0557, Test pred acc=0.6077, Test mean synset acc=0.8072
+2022-09-27 16:28:52,581 - INFO - Error Depth: [  34.  170.  366.  476.  224.  114. 2116.]
+2022-09-27 16:28:52,581 - INFO - Epoch time: 270.9796118736267
+2022-09-27 16:28:52,581 - INFO - 
+Epoch: 27
+2022-09-27 16:28:52,581 - INFO - 
+Learning Rate: 0.1000
+2022-09-27 16:28:52,581 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 16:29:02,004 - INFO - [Step=19000]	Loss=7.1774	3396.5 examples/second
+2022-09-27 16:30:33,951 - INFO - [Step=19250]	Loss=7.2220	348.0 examples/second
+2022-09-27 16:32:06,337 - INFO - [Step=19500]	Loss=7.2165	346.4 examples/second
+2022-09-27 16:33:23,293 - INFO - Test Loss=6.7440, Test pred acc=0.6529, Test mean synset acc=0.8240
+2022-09-27 16:33:23,294 - INFO - Error Depth: [  17.  112.  407.  417.  166.  101. 2280.]
+2022-09-27 16:33:23,294 - INFO - Epoch time: 270.7130172252655
+2022-09-27 16:33:23,294 - INFO - 
+Epoch: 28
+2022-09-27 16:33:23,294 - INFO - 
+Learning Rate: 0.1000
+2022-09-27 16:33:23,294 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 16:33:50,211 - INFO - [Step=19750]	Loss=7.2007	1188.9 examples/second
+2022-09-27 16:35:22,192 - INFO - [Step=20000]	Loss=7.2037	347.9 examples/second
+2022-09-27 16:36:55,304 - INFO - [Step=20250]	Loss=7.2063	343.7 examples/second
+2022-09-27 16:37:55,466 - INFO - Test Loss=6.6781, Test pred acc=0.6760, Test mean synset acc=0.8380
+2022-09-27 16:37:55,467 - INFO - Error Depth: [  24.   99.  367.  401.  153.   98. 2358.]
+2022-09-27 16:37:55,467 - INFO - Saving...
+2022-09-27 16:37:55,977 - INFO - Epoch time: 272.68319749832153
+2022-09-27 16:37:55,978 - INFO - 
+Epoch: 29
+2022-09-27 16:37:55,978 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 16:37:55,978 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 16:38:39,903 - INFO - [Step=20500]	Loss=7.0084	728.5 examples/second
+2022-09-27 16:40:12,061 - INFO - [Step=20750]	Loss=6.9227	347.2 examples/second
+2022-09-27 16:41:44,956 - INFO - [Step=21000]	Loss=6.8674	344.5 examples/second
+2022-09-27 16:42:26,280 - INFO - Test Loss=6.1914, Test pred acc=0.7823, Test mean synset acc=0.8832
+2022-09-27 16:42:26,281 - INFO - Error Depth: [  14.   49.  220.  293.  120.   77. 2727.]
+2022-09-27 16:42:26,281 - INFO - Saving...
+2022-09-27 16:42:26,771 - INFO - Epoch time: 270.7929620742798
+2022-09-27 16:42:26,771 - INFO - 
+Epoch: 30
+2022-09-27 16:42:26,771 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 16:42:26,771 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 16:43:28,446 - INFO - [Step=21250]	Loss=6.8373	518.9 examples/second
+2022-09-27 16:45:00,887 - INFO - [Step=21500]	Loss=6.8277	346.2 examples/second
+2022-09-27 16:46:33,845 - INFO - [Step=21750]	Loss=6.8262	344.2 examples/second
+2022-09-27 16:46:57,921 - INFO - Test Loss=6.1815, Test pred acc=0.7791, Test mean synset acc=0.8836
+2022-09-27 16:46:57,922 - INFO - Error Depth: [  12.   47.  218.  305.  112.   77. 2729.]
+2022-09-27 16:46:57,923 - INFO - Epoch time: 271.1516876220703
+2022-09-27 16:46:57,923 - INFO - 
+Epoch: 31
+2022-09-27 16:46:57,923 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 16:46:57,923 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 16:48:16,750 - INFO - [Step=22000]	Loss=6.7934	406.0 examples/second
+2022-09-27 16:49:48,993 - INFO - [Step=22250]	Loss=6.7969	346.9 examples/second
+2022-09-27 16:51:28,130 - INFO - Test Loss=6.1460, Test pred acc=0.7866, Test mean synset acc=0.8867
+2022-09-27 16:51:28,131 - INFO - Error Depth: [  13.   44.  212.  300.  109.   74. 2748.]
+2022-09-27 16:51:28,131 - INFO - Saving...
+2022-09-27 16:51:28,719 - INFO - Epoch time: 270.7960457801819
+2022-09-27 16:51:28,719 - INFO - 
+Epoch: 32
+2022-09-27 16:51:28,719 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 16:51:28,719 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 16:51:32,598 - INFO - [Step=22500]	Loss=6.7964	8253.4 examples/second
+2022-09-27 16:53:04,625 - INFO - [Step=22750]	Loss=6.7752	347.7 examples/second
+2022-09-27 16:54:37,447 - INFO - [Step=23000]	Loss=6.7788	344.7 examples/second
+2022-09-27 16:55:59,356 - INFO - Test Loss=6.1466, Test pred acc=0.7929, Test mean synset acc=0.8891
+2022-09-27 16:55:59,357 - INFO - Error Depth: [  14.   44.  202.  283.  113.   76. 2768.]
+2022-09-27 16:55:59,357 - INFO - Saving...
+2022-09-27 16:55:59,915 - INFO - Epoch time: 271.1958734989166
+2022-09-27 16:55:59,915 - INFO - 
+Epoch: 33
+2022-09-27 16:55:59,915 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 16:55:59,916 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 16:56:21,207 - INFO - [Step=23250]	Loss=6.7432	1503.0 examples/second
+2022-09-27 16:57:53,387 - INFO - [Step=23500]	Loss=6.7537	347.1 examples/second
+2022-09-27 16:59:26,299 - INFO - [Step=23750]	Loss=6.7644	344.4 examples/second
+2022-09-27 17:00:30,406 - INFO - Test Loss=6.1359, Test pred acc=0.7889, Test mean synset acc=0.8874
+2022-09-27 17:00:30,408 - INFO - Error Depth: [  11.   44.  203.  288.  115.   77. 2762.]
+2022-09-27 17:00:30,408 - INFO - Epoch time: 270.49243998527527
+2022-09-27 17:00:30,408 - INFO - 
+Epoch: 34
+2022-09-27 17:00:30,408 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 17:00:30,408 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 17:01:09,409 - INFO - [Step=24000]	Loss=6.7364	820.5 examples/second
+2022-09-27 17:02:41,509 - INFO - [Step=24250]	Loss=6.7344	347.5 examples/second
+2022-09-27 17:04:14,339 - INFO - [Step=24500]	Loss=6.7402	344.7 examples/second
+2022-09-27 17:05:01,499 - INFO - Test Loss=6.1319, Test pred acc=0.7877, Test mean synset acc=0.8862
+2022-09-27 17:05:01,500 - INFO - Error Depth: [   7.   44.  214.  293.  112.   74. 2756.]
+2022-09-27 17:05:01,500 - INFO - Epoch time: 271.09257411956787
+2022-09-27 17:05:01,501 - INFO - 
+Epoch: 35
+2022-09-27 17:05:01,501 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 17:05:01,501 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 17:05:57,742 - INFO - [Step=24750]	Loss=6.7131	569.0 examples/second
+2022-09-27 17:07:31,225 - INFO - [Step=25000]	Loss=6.7275	342.3 examples/second
+2022-09-27 17:09:04,509 - INFO - [Step=25250]	Loss=6.7154	343.0 examples/second
+2022-09-27 17:09:34,356 - INFO - Test Loss=6.1324, Test pred acc=0.7966, Test mean synset acc=0.8900
+2022-09-27 17:09:34,357 - INFO - Error Depth: [  16.   34.  201.  289.  104.   68. 2788.]
+2022-09-27 17:09:34,358 - INFO - Saving...
+2022-09-27 17:09:34,864 - INFO - Epoch time: 273.36338353157043
+2022-09-27 17:09:34,864 - INFO - 
+Epoch: 36
+2022-09-27 17:09:34,864 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 17:09:34,864 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 17:10:48,133 - INFO - [Step=25500]	Loss=6.7156	436.8 examples/second
+2022-09-27 17:12:20,650 - INFO - [Step=25750]	Loss=6.7151	345.9 examples/second
+2022-09-27 17:13:53,038 - INFO - [Step=26000]	Loss=6.7121	346.4 examples/second
+2022-09-27 17:14:05,317 - INFO - Test Loss=6.1262, Test pred acc=0.7963, Test mean synset acc=0.8921
+2022-09-27 17:14:05,318 - INFO - Error Depth: [   9.   45.  206.  278.  113.   68. 2781.]
+2022-09-27 17:14:05,319 - INFO - Epoch time: 270.45441222190857
+2022-09-27 17:14:05,319 - INFO - 
+Epoch: 37
+2022-09-27 17:14:05,319 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 17:14:05,319 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 17:15:35,901 - INFO - [Step=26250]	Loss=6.7067	353.3 examples/second
+2022-09-27 17:17:08,769 - INFO - [Step=26500]	Loss=6.6987	344.6 examples/second
+2022-09-27 17:18:35,819 - INFO - Test Loss=6.1166, Test pred acc=0.7954, Test mean synset acc=0.8896
+2022-09-27 17:18:35,820 - INFO - Error Depth: [  10.   31.  205.  289.  106.   73. 2786.]
+2022-09-27 17:18:35,820 - INFO - Epoch time: 270.5014445781708
+2022-09-27 17:18:35,820 - INFO - 
+Epoch: 38
+2022-09-27 17:18:35,820 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 17:18:35,821 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 17:18:51,138 - INFO - [Step=26750]	Loss=6.7108	2089.3 examples/second
+2022-09-27 17:20:23,545 - INFO - [Step=27000]	Loss=6.6885	346.3 examples/second
+2022-09-27 17:21:56,801 - INFO - [Step=27250]	Loss=6.6960	343.1 examples/second
+2022-09-27 17:23:06,849 - INFO - Test Loss=6.1149, Test pred acc=0.7931, Test mean synset acc=0.8896
+2022-09-27 17:23:06,851 - INFO - Error Depth: [   9.   39.  211.  284.  107.   77. 2773.]
+2022-09-27 17:23:06,851 - INFO - Epoch time: 271.03053283691406
+2022-09-27 17:23:06,851 - INFO - 
+Epoch: 39
+2022-09-27 17:23:06,851 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 17:23:06,851 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 17:23:39,522 - INFO - [Step=27500]	Loss=6.6842	979.5 examples/second
+2022-09-27 17:25:11,936 - INFO - [Step=27750]	Loss=6.6786	346.3 examples/second
+2022-09-27 17:26:44,715 - INFO - [Step=28000]	Loss=6.6858	344.9 examples/second
+2022-09-27 17:27:37,124 - INFO - Test Loss=6.1241, Test pred acc=0.7934, Test mean synset acc=0.8902
+2022-09-27 17:27:37,125 - INFO - Error Depth: [   8.   41.  219.  283.  101.   77. 2771.]
+2022-09-27 17:27:37,126 - INFO - Epoch time: 270.27452993392944
+2022-09-27 17:27:37,126 - INFO - 
+Epoch: 40
+2022-09-27 17:27:37,126 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 17:27:37,126 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 17:28:27,618 - INFO - [Step=28250]	Loss=6.6672	633.8 examples/second
+2022-09-27 17:30:00,112 - INFO - [Step=28500]	Loss=6.6779	346.0 examples/second
+2022-09-27 17:31:32,455 - INFO - [Step=28750]	Loss=6.6912	346.5 examples/second
+2022-09-27 17:32:07,722 - INFO - Test Loss=6.1217, Test pred acc=0.7960, Test mean synset acc=0.8907
+2022-09-27 17:32:07,723 - INFO - Error Depth: [  10.   38.  217.  278.  104.   76. 2777.]
+2022-09-27 17:32:07,723 - INFO - Epoch time: 270.59757375717163
+2022-09-27 17:32:07,723 - INFO - 
+Epoch: 41
+2022-09-27 17:32:07,723 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 17:32:07,723 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 17:33:15,550 - INFO - [Step=29000]	Loss=6.6632	471.8 examples/second
+2022-09-27 17:34:48,240 - INFO - [Step=29250]	Loss=6.6694	345.2 examples/second
+2022-09-27 17:36:20,649 - INFO - [Step=29500]	Loss=6.6682	346.3 examples/second
+2022-09-27 17:36:38,434 - INFO - Test Loss=6.1242, Test pred acc=0.7969, Test mean synset acc=0.8909
+2022-09-27 17:36:38,435 - INFO - Error Depth: [   9.   38.  189.  293.  106.   74. 2791.]
+2022-09-27 17:36:38,435 - INFO - Saving...
+2022-09-27 17:36:38,953 - INFO - Epoch time: 271.22968077659607
+2022-09-27 17:36:38,953 - INFO - 
+Epoch: 42
+2022-09-27 17:36:38,954 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 17:36:38,954 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 17:38:04,907 - INFO - [Step=29750]	Loss=6.6548	372.3 examples/second
+2022-09-27 17:39:37,987 - INFO - [Step=30000]	Loss=6.6617	343.8 examples/second
+2022-09-27 17:41:11,024 - INFO - Test Loss=6.1254, Test pred acc=0.7909, Test mean synset acc=0.8895
+2022-09-27 17:41:11,025 - INFO - Error Depth: [  13.   44.  208.  282.  111.   75. 2767.]
+2022-09-27 17:41:11,025 - INFO - Epoch time: 272.07203698158264
+2022-09-27 17:41:11,026 - INFO - 
+Epoch: 43
+2022-09-27 17:41:11,026 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 17:41:11,026 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 17:41:21,410 - INFO - [Step=30250]	Loss=6.6410	3081.9 examples/second
+2022-09-27 17:42:53,724 - INFO - [Step=30500]	Loss=6.6549	346.6 examples/second
+2022-09-27 17:44:26,310 - INFO - [Step=30750]	Loss=6.6573	345.6 examples/second
+2022-09-27 17:45:41,812 - INFO - Test Loss=6.1073, Test pred acc=0.8043, Test mean synset acc=0.8979
+2022-09-27 17:45:41,813 - INFO - Error Depth: [   7.   45.  193.  263.  103.   73. 2816.]
+2022-09-27 17:45:41,813 - INFO - Saving...
+2022-09-27 17:45:42,324 - INFO - Epoch time: 271.2980194091797
+2022-09-27 17:45:42,324 - INFO - 
+Epoch: 44
+2022-09-27 17:45:42,324 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 17:45:42,324 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 17:46:09,796 - INFO - [Step=31000]	Loss=6.6529	1164.9 examples/second
+2022-09-27 17:47:42,470 - INFO - [Step=31250]	Loss=6.6365	345.3 examples/second
+2022-09-27 17:49:15,120 - INFO - [Step=31500]	Loss=6.6377	345.4 examples/second
+2022-09-27 17:50:13,054 - INFO - Test Loss=6.1196, Test pred acc=0.8006, Test mean synset acc=0.8940
+2022-09-27 17:50:13,055 - INFO - Error Depth: [   7.   34.  203.  277.  101.   77. 2801.]
+2022-09-27 17:50:13,055 - INFO - Epoch time: 270.73095655441284
+2022-09-27 17:50:13,055 - INFO - 
+Epoch: 45
+2022-09-27 17:50:13,055 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 17:50:13,055 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 17:50:58,058 - INFO - [Step=31750]	Loss=6.6267	711.1 examples/second
+2022-09-27 17:52:30,964 - INFO - [Step=32000]	Loss=6.6495	344.4 examples/second
+2022-09-27 17:54:03,355 - INFO - [Step=32250]	Loss=6.6474	346.4 examples/second
+2022-09-27 17:54:44,023 - INFO - Test Loss=6.1136, Test pred acc=0.8026, Test mean synset acc=0.8953
+2022-09-27 17:54:44,024 - INFO - Error Depth: [  10.   41.  189.  284.   99.   72. 2805.]
+2022-09-27 17:54:44,024 - INFO - Epoch time: 270.96913743019104
+2022-09-27 17:54:44,024 - INFO - 
+Epoch: 46
+2022-09-27 17:54:44,024 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 17:54:44,025 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 17:55:46,696 - INFO - [Step=32500]	Loss=6.6239	510.6 examples/second
+2022-09-27 17:57:19,178 - INFO - [Step=32750]	Loss=6.6337	346.0 examples/second
+2022-09-27 17:58:51,774 - INFO - [Step=33000]	Loss=6.6378	345.6 examples/second
+2022-09-27 17:59:15,230 - INFO - Test Loss=6.1219, Test pred acc=0.7966, Test mean synset acc=0.8912
+2022-09-27 17:59:15,231 - INFO - Error Depth: [  13.   31.  196.  276.  115.   79. 2790.]
+2022-09-27 17:59:15,231 - INFO - Epoch time: 271.206814289093
+2022-09-27 17:59:15,231 - INFO - 
+Epoch: 47
+2022-09-27 17:59:15,231 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 17:59:15,231 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 18:00:35,080 - INFO - [Step=33250]	Loss=6.6226	400.8 examples/second
+2022-09-27 18:02:07,250 - INFO - [Step=33500]	Loss=6.6205	347.2 examples/second
+2022-09-27 18:03:45,528 - INFO - Test Loss=6.1075, Test pred acc=0.7986, Test mean synset acc=0.8918
+2022-09-27 18:03:45,529 - INFO - Error Depth: [  11.   40.  193.  285.  108.   70. 2793.]
+2022-09-27 18:03:45,529 - INFO - Epoch time: 270.2976620197296
+2022-09-27 18:03:45,529 - INFO - 
+Epoch: 48
+2022-09-27 18:03:45,529 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 18:03:45,529 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 18:03:50,169 - INFO - [Step=33750]	Loss=6.6789	6898.5 examples/second
+2022-09-27 18:05:22,674 - INFO - [Step=34000]	Loss=6.6147	345.9 examples/second
+2022-09-27 18:06:55,109 - INFO - [Step=34250]	Loss=6.6291	346.2 examples/second
+2022-09-27 18:08:17,231 - INFO - Test Loss=6.1256, Test pred acc=0.8006, Test mean synset acc=0.8923
+2022-09-27 18:08:17,232 - INFO - Error Depth: [  10.   37.  199.  284.  101.   71. 2798.]
+2022-09-27 18:08:17,232 - INFO - Epoch time: 271.7030665874481
+2022-09-27 18:08:17,232 - INFO - 
+Epoch: 49
+2022-09-27 18:08:17,232 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 18:08:17,232 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 18:08:39,917 - INFO - [Step=34500]	Loss=6.5977	1410.7 examples/second
+2022-09-27 18:10:12,599 - INFO - [Step=34750]	Loss=6.6027	345.3 examples/second
+2022-09-27 18:11:45,207 - INFO - [Step=35000]	Loss=6.6239	345.5 examples/second
+2022-09-27 18:12:49,360 - INFO - Test Loss=6.1444, Test pred acc=0.7889, Test mean synset acc=0.8871
+2022-09-27 18:12:49,361 - INFO - Error Depth: [   8.   38.  213.  278.  121.   78. 2764.]
+2022-09-27 18:12:49,362 - INFO - Epoch time: 272.12962770462036
+2022-09-27 18:12:49,362 - INFO - 
+Epoch: 50
+2022-09-27 18:12:49,362 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 18:12:49,362 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 18:13:28,991 - INFO - [Step=35250]	Loss=6.5909	807.5 examples/second
+2022-09-27 18:15:01,428 - INFO - [Step=35500]	Loss=6.6025	346.2 examples/second
+2022-09-27 18:16:33,803 - INFO - [Step=35750]	Loss=6.6139	346.4 examples/second
+2022-09-27 18:17:20,431 - INFO - Test Loss=6.1049, Test pred acc=0.8017, Test mean synset acc=0.8938
+2022-09-27 18:17:20,432 - INFO - Error Depth: [  12.   44.  193.  279.  104.   70. 2798.]
+2022-09-27 18:17:20,432 - INFO - Epoch time: 271.0701415538788
+2022-09-27 18:17:20,432 - INFO - 
+Epoch: 51
+2022-09-27 18:17:20,432 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 18:17:20,432 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 18:18:17,273 - INFO - [Step=36000]	Loss=6.5948	563.0 examples/second
+2022-09-27 18:19:49,434 - INFO - [Step=36250]	Loss=6.6030	347.2 examples/second
+2022-09-27 18:21:21,820 - INFO - [Step=36500]	Loss=6.6156	346.4 examples/second
+2022-09-27 18:21:50,776 - INFO - Test Loss=6.1376, Test pred acc=0.7974, Test mean synset acc=0.8959
+2022-09-27 18:21:50,777 - INFO - Error Depth: [   9.   49.  206.  270.  104.   74. 2788.]
+2022-09-27 18:21:50,777 - INFO - Epoch time: 270.34503054618835
+2022-09-27 18:21:50,777 - INFO - 
+Epoch: 52
+2022-09-27 18:21:50,777 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 18:21:50,777 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 18:23:04,908 - INFO - [Step=36750]	Loss=6.5835	431.7 examples/second
+2022-09-27 18:24:37,043 - INFO - [Step=37000]	Loss=6.6058	347.3 examples/second
+2022-09-27 18:26:09,703 - INFO - [Step=37250]	Loss=6.6005	345.4 examples/second
+2022-09-27 18:26:21,334 - INFO - Test Loss=6.1172, Test pred acc=0.8014, Test mean synset acc=0.8961
+2022-09-27 18:26:21,334 - INFO - Error Depth: [  10.   41.  204.  257.  106.   76. 2806.]
+2022-09-27 18:26:21,335 - INFO - Epoch time: 270.55728006362915
+2022-09-27 18:26:21,335 - INFO - 
+Epoch: 53
+2022-09-27 18:26:21,335 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 18:26:21,335 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 18:27:53,079 - INFO - [Step=37500]	Loss=6.5802	348.8 examples/second
+2022-09-27 18:29:25,529 - INFO - [Step=37750]	Loss=6.5978	346.1 examples/second
+2022-09-27 18:30:52,744 - INFO - Test Loss=6.1207, Test pred acc=0.7954, Test mean synset acc=0.8896
+2022-09-27 18:30:52,745 - INFO - Error Depth: [  11.   33.  201.  299.  103.   75. 2778.]
+2022-09-27 18:30:52,745 - INFO - Epoch time: 271.410662651062
+2022-09-27 18:30:52,745 - INFO - 
+Epoch: 54
+2022-09-27 18:30:52,745 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 18:30:52,746 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 18:31:09,511 - INFO - [Step=38000]	Loss=6.5690	1908.8 examples/second
+2022-09-27 18:32:41,874 - INFO - [Step=38250]	Loss=6.5852	346.5 examples/second
+2022-09-27 18:34:14,623 - INFO - [Step=38500]	Loss=6.5866	345.0 examples/second
+2022-09-27 18:35:24,056 - INFO - Test Loss=6.1119, Test pred acc=0.7997, Test mean synset acc=0.8931
+2022-09-27 18:35:24,057 - INFO - Error Depth: [   7.   31.  198.  284.  104.   77. 2799.]
+2022-09-27 18:35:24,057 - INFO - Epoch time: 271.31204986572266
+2022-09-27 18:35:24,058 - INFO - 
+Epoch: 55
+2022-09-27 18:35:24,058 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 18:35:24,058 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 18:35:58,551 - INFO - [Step=38750]	Loss=6.5838	927.8 examples/second
+2022-09-27 18:37:30,759 - INFO - [Step=39000]	Loss=6.5730	347.0 examples/second
+2022-09-27 18:39:04,740 - INFO - [Step=39250]	Loss=6.5891	340.5 examples/second
+2022-09-27 18:39:57,309 - INFO - Test Loss=6.1126, Test pred acc=0.8043, Test mean synset acc=0.8958
+2022-09-27 18:39:57,311 - INFO - Error Depth: [  10.   37.  188.  274.  102.   75. 2814.]
+2022-09-27 18:39:57,311 - INFO - Epoch time: 273.2532994747162
+2022-09-27 18:39:57,311 - INFO - 
+Epoch: 56
+2022-09-27 18:39:57,311 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 18:39:57,311 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 18:40:48,801 - INFO - [Step=39500]	Loss=6.5743	621.5 examples/second
+2022-09-27 18:42:21,069 - INFO - [Step=39750]	Loss=6.5792	346.8 examples/second
+2022-09-27 18:43:53,883 - INFO - [Step=40000]	Loss=6.5765	344.8 examples/second
+2022-09-27 18:44:28,997 - INFO - Test Loss=6.1155, Test pred acc=0.8026, Test mean synset acc=0.8949
+2022-09-27 18:44:28,998 - INFO - Error Depth: [   9.   39.  195.  271.  113.   69. 2804.]
+2022-09-27 18:44:28,998 - INFO - Epoch time: 271.68734216690063
+2022-09-27 18:44:28,999 - INFO - 
+Epoch: 57
+2022-09-27 18:44:28,999 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 18:44:28,999 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 18:45:37,406 - INFO - [Step=40250]	Loss=6.5702	467.8 examples/second
+2022-09-27 18:47:09,572 - INFO - [Step=40500]	Loss=6.5611	347.2 examples/second
+2022-09-27 18:48:42,419 - INFO - [Step=40750]	Loss=6.5781	344.7 examples/second
+2022-09-27 18:48:59,577 - INFO - Test Loss=6.1336, Test pred acc=0.7977, Test mean synset acc=0.8931
+2022-09-27 18:48:59,578 - INFO - Error Depth: [   6.   36.  207.  280.  103.   75. 2793.]
+2022-09-27 18:48:59,578 - INFO - Epoch time: 270.5797748565674
+2022-09-27 18:48:59,578 - INFO - 
+Epoch: 58
+2022-09-27 18:48:59,578 - INFO - 
+Learning Rate: 0.0100
+2022-09-27 18:48:59,579 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 18:50:25,190 - INFO - [Step=41000]	Loss=6.5615	373.8 examples/second
+2022-09-27 18:51:57,491 - INFO - [Step=41250]	Loss=6.5746	346.7 examples/second
+2022-09-27 18:53:29,856 - INFO - Test Loss=6.1280, Test pred acc=0.7997, Test mean synset acc=0.8940
+2022-09-27 18:53:29,857 - INFO - Error Depth: [   6.   33.  189.  287.  107.   75. 2803.]
+2022-09-27 18:53:29,857 - INFO - Epoch time: 270.27901101112366
+2022-09-27 18:53:29,858 - INFO - 
+Epoch: 59
+2022-09-27 18:53:29,858 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 18:53:29,858 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 18:53:40,707 - INFO - [Step=41500]	Loss=6.5619	2949.9 examples/second
+2022-09-27 18:55:12,867 - INFO - [Step=41750]	Loss=6.5137	347.2 examples/second
+2022-09-27 18:56:45,402 - INFO - [Step=42000]	Loss=6.5072	345.8 examples/second
+2022-09-27 18:58:00,233 - INFO - Test Loss=6.0653, Test pred acc=0.8120, Test mean synset acc=0.8993
+2022-09-27 18:58:00,233 - INFO - Error Depth: [   4.   40.  173.  274.   99.   68. 2842.]
+2022-09-27 18:58:00,234 - INFO - Saving...
+2022-09-27 18:58:00,748 - INFO - Epoch time: 270.8905167579651
+2022-09-27 18:58:00,748 - INFO - 
+Epoch: 60
+2022-09-27 18:58:00,748 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 18:58:00,748 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 18:58:28,997 - INFO - [Step=42250]	Loss=6.5141	1132.8 examples/second
+2022-09-27 19:00:01,068 - INFO - [Step=42500]	Loss=6.4835	347.6 examples/second
+2022-09-27 19:01:33,626 - INFO - [Step=42750]	Loss=6.4923	345.7 examples/second
+2022-09-27 19:02:31,263 - INFO - Test Loss=6.0657, Test pred acc=0.8129, Test mean synset acc=0.8993
+2022-09-27 19:02:31,264 - INFO - Error Depth: [   3.   45.  168.  277.   98.   67. 2842.]
+2022-09-27 19:02:31,264 - INFO - Saving...
+2022-09-27 19:02:31,762 - INFO - Epoch time: 271.0132393836975
+2022-09-27 19:02:31,762 - INFO - 
+Epoch: 61
+2022-09-27 19:02:31,762 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 19:02:31,762 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 19:03:17,307 - INFO - [Step=43000]	Loss=6.4797	702.6 examples/second
+2022-09-27 19:04:49,342 - INFO - [Step=43250]	Loss=6.4881	347.7 examples/second
+2022-09-27 19:06:22,264 - INFO - [Step=43500]	Loss=6.4787	344.4 examples/second
+2022-09-27 19:07:02,104 - INFO - Test Loss=6.0600, Test pred acc=0.8149, Test mean synset acc=0.8999
+2022-09-27 19:07:02,105 - INFO - Error Depth: [   5.   38.  173.  272.   97.   69. 2846.]
+2022-09-27 19:07:02,105 - INFO - Saving...
+2022-09-27 19:07:02,650 - INFO - Epoch time: 270.88826060295105
+2022-09-27 19:07:02,650 - INFO - 
+Epoch: 62
+2022-09-27 19:07:02,651 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 19:07:02,651 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 19:08:05,326 - INFO - [Step=43750]	Loss=6.4773	510.6 examples/second
+2022-09-27 19:09:39,173 - INFO - [Step=44000]	Loss=6.4740	341.0 examples/second
+2022-09-27 19:11:11,750 - INFO - [Step=44250]	Loss=6.4716	345.7 examples/second
+2022-09-27 19:11:34,354 - INFO - Test Loss=6.0604, Test pred acc=0.8146, Test mean synset acc=0.8989
+2022-09-27 19:11:34,355 - INFO - Error Depth: [   5.   39.  170.  270.  104.   71. 2841.]
+2022-09-27 19:11:34,355 - INFO - Epoch time: 271.7045843601227
+2022-09-27 19:11:34,355 - INFO - 
+Epoch: 63
+2022-09-27 19:11:34,355 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 19:11:34,355 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 19:12:54,463 - INFO - [Step=44500]	Loss=6.4672	399.5 examples/second
+2022-09-27 19:14:26,737 - INFO - [Step=44750]	Loss=6.4654	346.8 examples/second
+2022-09-27 19:16:04,703 - INFO - Test Loss=6.0675, Test pred acc=0.8151, Test mean synset acc=0.8988
+2022-09-27 19:16:04,704 - INFO - Error Depth: [   3.   31.  169.  266.  109.   71. 2851.]
+2022-09-27 19:16:04,705 - INFO - Saving...
+2022-09-27 19:16:05,290 - INFO - Epoch time: 270.93520426750183
+2022-09-27 19:16:05,291 - INFO - 
+Epoch: 64
+2022-09-27 19:16:05,291 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 19:16:05,291 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 19:16:10,635 - INFO - [Step=45000]	Loss=6.5051	5989.2 examples/second
+2022-09-27 19:17:42,827 - INFO - [Step=45250]	Loss=6.4674	347.1 examples/second
+2022-09-27 19:19:15,257 - INFO - [Step=45500]	Loss=6.4673	346.2 examples/second
+2022-09-27 19:20:35,934 - INFO - Test Loss=6.0620, Test pred acc=0.8146, Test mean synset acc=0.9006
+2022-09-27 19:20:35,935 - INFO - Error Depth: [   5.   32.  179.  267.  101.   67. 2849.]
+2022-09-27 19:20:35,936 - INFO - Epoch time: 270.6450548171997
+2022-09-27 19:20:35,936 - INFO - 
+Epoch: 65
+2022-09-27 19:20:35,936 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 19:20:35,936 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 19:20:58,509 - INFO - [Step=45750]	Loss=6.4455	1417.7 examples/second
+2022-09-27 19:22:30,697 - INFO - [Step=46000]	Loss=6.4651	347.1 examples/second
+2022-09-27 19:24:03,214 - INFO - [Step=46250]	Loss=6.4629	345.9 examples/second
+2022-09-27 19:25:05,860 - INFO - Test Loss=6.0615, Test pred acc=0.8160, Test mean synset acc=0.9002
+2022-09-27 19:25:05,861 - INFO - Error Depth: [   5.   29.  179.  269.   97.   69. 2852.]
+2022-09-27 19:25:05,861 - INFO - Saving...
+2022-09-27 19:25:06,455 - INFO - Epoch time: 270.5195474624634
+2022-09-27 19:25:06,456 - INFO - 
+Epoch: 66
+2022-09-27 19:25:06,456 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 19:25:06,456 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 19:25:46,517 - INFO - [Step=46500]	Loss=6.4626	798.8 examples/second
+2022-09-27 19:27:18,779 - INFO - [Step=46750]	Loss=6.4577	346.8 examples/second
+2022-09-27 19:28:51,264 - INFO - [Step=47000]	Loss=6.4654	346.0 examples/second
+2022-09-27 19:29:36,542 - INFO - Test Loss=6.0629, Test pred acc=0.8123, Test mean synset acc=0.8993
+2022-09-27 19:29:36,543 - INFO - Error Depth: [   5.   28.  180.  270.  103.   69. 2845.]
+2022-09-27 19:29:36,543 - INFO - Epoch time: 270.08731389045715
+2022-09-27 19:29:36,543 - INFO - 
+Epoch: 67
+2022-09-27 19:29:36,543 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 19:29:36,543 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 19:30:33,941 - INFO - [Step=47250]	Loss=6.4559	557.5 examples/second
+2022-09-27 19:32:06,321 - INFO - [Step=47500]	Loss=6.4589	346.4 examples/second
+2022-09-27 19:33:38,767 - INFO - [Step=47750]	Loss=6.4568	346.2 examples/second
+2022-09-27 19:34:06,949 - INFO - Test Loss=6.0652, Test pred acc=0.8163, Test mean synset acc=0.9021
+2022-09-27 19:34:06,950 - INFO - Error Depth: [   5.   35.  175.  259.  100.   68. 2858.]
+2022-09-27 19:34:06,950 - INFO - Saving...
+2022-09-27 19:34:07,531 - INFO - Epoch time: 270.987833738327
+2022-09-27 19:34:07,531 - INFO - 
+Epoch: 68
+2022-09-27 19:34:07,531 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 19:34:07,531 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 19:35:22,435 - INFO - [Step=48000]	Loss=6.4445	427.2 examples/second
+2022-09-27 19:36:55,139 - INFO - [Step=48250]	Loss=6.4534	345.2 examples/second
+2022-09-27 19:38:27,270 - INFO - [Step=48500]	Loss=6.4627	347.3 examples/second
+2022-09-27 19:38:39,313 - INFO - Test Loss=6.0683, Test pred acc=0.8143, Test mean synset acc=0.9002
+2022-09-27 19:38:39,315 - INFO - Error Depth: [   5.   33.  169.  267.  102.   70. 2854.]
+2022-09-27 19:38:39,315 - INFO - Epoch time: 271.7840266227722
+2022-09-27 19:38:39,315 - INFO - 
+Epoch: 69
+2022-09-27 19:38:39,315 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 19:38:39,315 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 19:40:14,082 - INFO - [Step=48750]	Loss=6.4491	337.7 examples/second
+2022-09-27 19:41:46,449 - INFO - [Step=49000]	Loss=6.4444	346.4 examples/second
+2022-09-27 19:43:12,194 - INFO - Test Loss=6.0749, Test pred acc=0.8140, Test mean synset acc=0.8998
+2022-09-27 19:43:12,195 - INFO - Error Depth: [   6.   34.  176.  270.  100.   69. 2845.]
+2022-09-27 19:43:12,195 - INFO - Epoch time: 272.8795666694641
+2022-09-27 19:43:12,195 - INFO - 
+Epoch: 70
+2022-09-27 19:43:12,195 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 19:43:12,195 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 19:43:29,785 - INFO - [Step=49250]	Loss=6.4390	1819.4 examples/second
+2022-09-27 19:45:02,239 - INFO - [Step=49500]	Loss=6.4555	346.1 examples/second
+2022-09-27 19:46:34,630 - INFO - [Step=49750]	Loss=6.4484	346.4 examples/second
+2022-09-27 19:47:43,126 - INFO - Test Loss=6.0731, Test pred acc=0.8129, Test mean synset acc=0.8980
+2022-09-27 19:47:43,127 - INFO - Error Depth: [   6.   31.  177.  270.  101.   73. 2842.]
+2022-09-27 19:47:43,127 - INFO - Epoch time: 270.9320478439331
+2022-09-27 19:47:43,127 - INFO - 
+Epoch: 71
+2022-09-27 19:47:43,127 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 19:47:43,127 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 19:48:17,591 - INFO - [Step=50000]	Loss=6.4349	928.5 examples/second
+2022-09-27 19:49:49,807 - INFO - [Step=50250]	Loss=6.4531	347.0 examples/second
+2022-09-27 19:51:22,509 - INFO - [Step=50500]	Loss=6.4499	345.2 examples/second
+2022-09-27 19:52:13,731 - INFO - Test Loss=6.0730, Test pred acc=0.8151, Test mean synset acc=0.9001
+2022-09-27 19:52:13,732 - INFO - Error Depth: [   7.   34.  167.  270.   97.   69. 2856.]
+2022-09-27 19:52:13,732 - INFO - Epoch time: 270.60481357574463
+2022-09-27 19:52:13,732 - INFO - 
+Epoch: 72
+2022-09-27 19:52:13,732 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 19:52:13,732 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 19:53:05,863 - INFO - [Step=50750]	Loss=6.4490	613.9 examples/second
+2022-09-27 19:54:38,447 - INFO - [Step=51000]	Loss=6.4360	345.6 examples/second
+2022-09-27 19:56:10,827 - INFO - [Step=51250]	Loss=6.4421	346.4 examples/second
+2022-09-27 19:56:44,864 - INFO - Test Loss=6.0712, Test pred acc=0.8143, Test mean synset acc=0.8999
+2022-09-27 19:56:44,865 - INFO - Error Depth: [   6.   29.  183.  265.  102.   69. 2846.]
+2022-09-27 19:56:44,865 - INFO - Epoch time: 271.1331875324249
+2022-09-27 19:56:44,865 - INFO - 
+Epoch: 73
+2022-09-27 19:56:44,865 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 19:56:44,865 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 19:57:54,351 - INFO - [Step=51500]	Loss=6.4381	460.5 examples/second
+2022-09-27 19:59:26,779 - INFO - [Step=51750]	Loss=6.4447	346.2 examples/second
+2022-09-27 20:00:59,244 - INFO - [Step=52000]	Loss=6.4421	346.1 examples/second
+2022-09-27 20:01:15,372 - INFO - Test Loss=6.0698, Test pred acc=0.8151, Test mean synset acc=0.9009
+2022-09-27 20:01:15,372 - INFO - Error Depth: [   6.   33.  175.  268.   99.   68. 2851.]
+2022-09-27 20:01:15,373 - INFO - Epoch time: 270.50734090805054
+2022-09-27 20:01:15,373 - INFO - 
+Epoch: 74
+2022-09-27 20:01:15,373 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 20:01:15,373 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 20:02:41,752 - INFO - [Step=52250]	Loss=6.4346	370.5 examples/second
+2022-09-27 20:04:14,228 - INFO - [Step=52500]	Loss=6.4434	346.0 examples/second
+2022-09-27 20:05:45,491 - INFO - Test Loss=6.0770, Test pred acc=0.8123, Test mean synset acc=0.8986
+2022-09-27 20:05:45,492 - INFO - Error Depth: [   5.   31.  179.  270.   99.   73. 2843.]
+2022-09-27 20:05:45,493 - INFO - Epoch time: 270.1198220252991
+2022-09-27 20:05:45,493 - INFO - 
+Epoch: 75
+2022-09-27 20:05:45,493 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 20:05:45,493 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 20:05:57,200 - INFO - [Step=52750]	Loss=6.4017	2733.5 examples/second
+2022-09-27 20:07:29,542 - INFO - [Step=53000]	Loss=6.4345	346.5 examples/second
+2022-09-27 20:09:02,101 - INFO - [Step=53250]	Loss=6.4381	345.7 examples/second
+2022-09-27 20:10:17,510 - INFO - Test Loss=6.0714, Test pred acc=0.8097, Test mean synset acc=0.8970
+2022-09-27 20:10:17,511 - INFO - Error Depth: [   5.   34.  180.  276.  104.   71. 2830.]
+2022-09-27 20:10:17,511 - INFO - Epoch time: 272.01826333999634
+2022-09-27 20:10:17,511 - INFO - 
+Epoch: 76
+2022-09-27 20:10:17,511 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 20:10:17,511 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 20:10:46,413 - INFO - [Step=53500]	Loss=6.4191	1107.2 examples/second
+2022-09-27 20:12:18,854 - INFO - [Step=53750]	Loss=6.4305	346.2 examples/second
+2022-09-27 20:13:51,067 - INFO - [Step=54000]	Loss=6.4379	347.0 examples/second
+2022-09-27 20:14:48,390 - INFO - Test Loss=6.0777, Test pred acc=0.8129, Test mean synset acc=0.8989
+2022-09-27 20:14:48,391 - INFO - Error Depth: [   8.   34.  178.  268.  102.   69. 2841.]
+2022-09-27 20:14:48,391 - INFO - Epoch time: 270.8804123401642
+2022-09-27 20:14:48,391 - INFO - 
+Epoch: 77
+2022-09-27 20:14:48,392 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 20:14:48,392 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 20:15:34,677 - INFO - [Step=54250]	Loss=6.4368	691.4 examples/second
+2022-09-27 20:17:07,068 - INFO - [Step=54500]	Loss=6.4304	346.4 examples/second
+2022-09-27 20:18:39,530 - INFO - [Step=54750]	Loss=6.4306	346.1 examples/second
+2022-09-27 20:19:18,825 - INFO - Test Loss=6.0757, Test pred acc=0.8120, Test mean synset acc=0.8991
+2022-09-27 20:19:18,826 - INFO - Error Depth: [   6.   33.  182.  270.  102.   66. 2841.]
+2022-09-27 20:19:18,826 - INFO - Epoch time: 270.4343509674072
+2022-09-27 20:19:18,826 - INFO - 
+Epoch: 78
+2022-09-27 20:19:18,826 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 20:19:18,826 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 20:20:22,489 - INFO - [Step=55000]	Loss=6.4371	502.7 examples/second
+2022-09-27 20:21:54,997 - INFO - [Step=55250]	Loss=6.4240	345.9 examples/second
+2022-09-27 20:23:27,748 - INFO - [Step=55500]	Loss=6.4282	345.0 examples/second
+2022-09-27 20:23:49,767 - INFO - Test Loss=6.0728, Test pred acc=0.8140, Test mean synset acc=0.8995
+2022-09-27 20:23:49,768 - INFO - Error Depth: [   8.   33.  179.  263.  100.   70. 2847.]
+2022-09-27 20:23:49,768 - INFO - Epoch time: 270.94221687316895
+2022-09-27 20:23:49,768 - INFO - 
+Epoch: 79
+2022-09-27 20:23:49,768 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 20:23:49,768 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 20:25:10,969 - INFO - [Step=55750]	Loss=6.4230	394.1 examples/second
+2022-09-27 20:26:43,033 - INFO - [Step=56000]	Loss=6.4352	347.6 examples/second
+2022-09-27 20:28:20,154 - INFO - Test Loss=6.0742, Test pred acc=0.8149, Test mean synset acc=0.8999
+2022-09-27 20:28:20,156 - INFO - Error Depth: [   6.   32.  172.  262.  102.   70. 2856.]
+2022-09-27 20:28:20,156 - INFO - Epoch time: 270.3875548839569
+2022-09-27 20:28:20,156 - INFO - 
+Epoch: 80
+2022-09-27 20:28:20,156 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 20:28:20,156 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 20:28:26,294 - INFO - [Step=56250]	Loss=6.4055	5214.7 examples/second
+2022-09-27 20:29:58,765 - INFO - [Step=56500]	Loss=6.4296	346.1 examples/second
+2022-09-27 20:31:30,972 - INFO - [Step=56750]	Loss=6.4238	347.1 examples/second
+2022-09-27 20:32:50,623 - INFO - Test Loss=6.0706, Test pred acc=0.8111, Test mean synset acc=0.8979
+2022-09-27 20:32:50,624 - INFO - Error Depth: [   5.   32.  176.  276.  101.   74. 2836.]
+2022-09-27 20:32:50,624 - INFO - Epoch time: 270.46828532218933
+2022-09-27 20:32:50,624 - INFO - 
+Epoch: 81
+2022-09-27 20:32:50,624 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 20:32:50,624 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 20:33:14,594 - INFO - [Step=57000]	Loss=6.4126	1335.1 examples/second
+2022-09-27 20:34:47,108 - INFO - [Step=57250]	Loss=6.4245	345.9 examples/second
+2022-09-27 20:36:19,131 - INFO - [Step=57500]	Loss=6.4322	347.7 examples/second
+2022-09-27 20:37:21,621 - INFO - Test Loss=6.0751, Test pred acc=0.8131, Test mean synset acc=0.8994
+2022-09-27 20:37:21,622 - INFO - Error Depth: [   8.   42.  176.  270.   98.   70. 2836.]
+2022-09-27 20:37:21,623 - INFO - Epoch time: 270.99820923805237
+2022-09-27 20:37:21,623 - INFO - 
+Epoch: 82
+2022-09-27 20:37:21,623 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 20:37:21,623 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 20:38:02,467 - INFO - [Step=57750]	Loss=6.4243	783.5 examples/second
+2022-09-27 20:39:35,547 - INFO - [Step=58000]	Loss=6.4348	343.8 examples/second
+2022-09-27 20:41:09,023 - INFO - [Step=58250]	Loss=6.4205	342.3 examples/second
+2022-09-27 20:41:53,850 - INFO - Test Loss=6.0764, Test pred acc=0.8117, Test mean synset acc=0.8976
+2022-09-27 20:41:53,851 - INFO - Error Depth: [   5.   27.  176.  276.  104.   72. 2840.]
+2022-09-27 20:41:53,852 - INFO - Epoch time: 272.22896218299866
+2022-09-27 20:41:53,852 - INFO - 
+Epoch: 83
+2022-09-27 20:41:53,852 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 20:41:53,852 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 20:42:52,324 - INFO - [Step=58500]	Loss=6.4307	547.3 examples/second
+2022-09-27 20:44:24,714 - INFO - [Step=58750]	Loss=6.4247	346.4 examples/second
+2022-09-27 20:45:57,489 - INFO - [Step=59000]	Loss=6.4232	344.9 examples/second
+2022-09-27 20:46:25,274 - INFO - Test Loss=6.0774, Test pred acc=0.8140, Test mean synset acc=0.8994
+2022-09-27 20:46:25,275 - INFO - Error Depth: [   7.   38.  163.  273.  103.   70. 2846.]
+2022-09-27 20:46:25,275 - INFO - Epoch time: 271.42339992523193
+2022-09-27 20:46:25,275 - INFO - 
+Epoch: 84
+2022-09-27 20:46:25,275 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 20:46:25,275 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 20:47:40,539 - INFO - [Step=59250]	Loss=6.4130	425.2 examples/second
+2022-09-27 20:49:12,733 - INFO - [Step=59500]	Loss=6.4177	347.1 examples/second
+2022-09-27 20:50:44,943 - INFO - [Step=59750]	Loss=6.4174	347.0 examples/second
+2022-09-27 20:50:54,848 - INFO - Test Loss=6.0777, Test pred acc=0.8189, Test mean synset acc=0.9006
+2022-09-27 20:50:54,849 - INFO - Error Depth: [   7.   33.  171.  267.  100.   67. 2855.]
+2022-09-27 20:50:54,849 - INFO - Saving...
+2022-09-27 20:50:55,328 - INFO - Epoch time: 270.05233430862427
+2022-09-27 20:50:55,328 - INFO - 
+Epoch: 85
+2022-09-27 20:50:55,328 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 20:50:55,328 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 20:52:27,401 - INFO - [Step=60000]	Loss=6.4032	347.6 examples/second
+2022-09-27 20:53:58,903 - INFO - [Step=60250]	Loss=6.4177	349.7 examples/second
+2022-09-27 20:55:23,152 - INFO - Test Loss=6.0779, Test pred acc=0.8100, Test mean synset acc=0.8971
+2022-09-27 20:55:23,153 - INFO - Error Depth: [   6.   35.  178.  270.  106.   72. 2833.]
+2022-09-27 20:55:23,153 - INFO - Epoch time: 267.8251142501831
+2022-09-27 20:55:23,153 - INFO - 
+Epoch: 86
+2022-09-27 20:55:23,153 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 20:55:23,153 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 20:55:40,726 - INFO - [Step=60500]	Loss=6.4004	1821.0 examples/second
+2022-09-27 20:57:12,051 - INFO - [Step=60750]	Loss=6.4192	350.4 examples/second
+2022-09-27 20:58:43,422 - INFO - [Step=61000]	Loss=6.4237	350.2 examples/second
+2022-09-27 20:59:50,115 - INFO - Test Loss=6.0755, Test pred acc=0.8174, Test mean synset acc=0.9003
+2022-09-27 20:59:50,116 - INFO - Error Depth: [   7.   33.  173.  263.   99.   72. 2853.]
+2022-09-27 20:59:50,116 - INFO - Epoch time: 266.96326661109924
+2022-09-27 20:59:50,117 - INFO - 
+Epoch: 87
+2022-09-27 20:59:50,117 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 20:59:50,117 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 21:00:24,665 - INFO - [Step=61250]	Loss=6.3995	926.3 examples/second
+2022-09-27 21:01:56,147 - INFO - [Step=61500]	Loss=6.4146	349.8 examples/second
+2022-09-27 21:03:27,684 - INFO - [Step=61750]	Loss=6.4219	349.6 examples/second
+2022-09-27 21:04:17,088 - INFO - Test Loss=6.0735, Test pred acc=0.8146, Test mean synset acc=0.8999
+2022-09-27 21:04:17,089 - INFO - Error Depth: [   6.   32.  176.  261.  102.   74. 2849.]
+2022-09-27 21:04:17,089 - INFO - Epoch time: 266.9723517894745
+2022-09-27 21:04:17,089 - INFO - 
+Epoch: 88
+2022-09-27 21:04:17,089 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 21:04:17,089 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 21:05:08,914 - INFO - [Step=62000]	Loss=6.4030	617.5 examples/second
+2022-09-27 21:06:40,348 - INFO - [Step=62250]	Loss=6.4054	350.0 examples/second
+2022-09-27 21:08:11,968 - INFO - [Step=62500]	Loss=6.4115	349.3 examples/second
+2022-09-27 21:08:43,838 - INFO - Test Loss=6.0848, Test pred acc=0.8089, Test mean synset acc=0.8977
+2022-09-27 21:08:43,839 - INFO - Error Depth: [   5.   37.  178.  272.  104.   73. 2831.]
+2022-09-27 21:08:43,839 - INFO - Epoch time: 266.7502965927124
+2022-09-27 21:08:43,839 - INFO - 
+Epoch: 89
+2022-09-27 21:08:43,839 - INFO - 
+Learning Rate: 0.0010
+2022-09-27 21:08:43,840 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.20000000298023224
+2022-09-27 21:09:53,722 - INFO - [Step=62750]	Loss=6.4236	457.9 examples/second
+2022-09-27 21:11:25,329 - INFO - [Step=63000]	Loss=6.4042	349.3 examples/second
+2022-09-27 21:12:56,710 - INFO - [Step=63250]	Loss=6.4173	350.2 examples/second
+2022-09-27 21:13:11,515 - INFO - Test Loss=6.0812, Test pred acc=0.8126, Test mean synset acc=0.8993
+2022-09-27 21:13:11,515 - INFO - Error Depth: [   5.   36.  171.  265.  105.   70. 2848.]
+2022-09-27 21:13:11,516 - INFO - Epoch time: 267.676237821579
+2022-09-27 21:13:11,516 - INFO - Printing Final Accuracy + OOD Detection stats
+2022-09-27 21:13:11,517 - INFO - Top 1 Accuracy:  Min: 0.8189; Max: 0.8189; Avg: 0.8189; Std: 0.0000; Len: 1
+2022-09-27 21:13:11,517 - INFO - Top 5 Accuracy:  Min: 0.9006; Max: 0.9006; Avg: 0.9006; Std: 0.0000; Len: 1

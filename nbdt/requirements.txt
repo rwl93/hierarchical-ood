@@ -1,0 +1,11 @@
+pytorchcv
+requests
+pyparsing
+zipp
+torch==1.6.0
+torchvision==0.7.0
+nltk
+scikit-learn
+networkx
+pytest
+opencv-python==4.4.0.42

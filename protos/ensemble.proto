@@ -1,0 +1,50 @@
+syntax = "proto2";
+
+package hierarchical_ood.protos;
+
+import 'protos/main.proto';
+
+message Ensemble {
+    enum Model {
+        SOFTMAX = 1;
+        ILR = 2;
+        HILR = 3;
+        CASCADE = 4;
+        CASCADEFCHEAD = 5;
+        SOFTMAXFCHEAD = 6;
+        MOS = 7;
+    }
+    optional Model model = 1 [default=SOFTMAX];
+    optional string data_dir = 2 [default='data/coarse'];
+    optional string hierarchy_fn = 3 [default='pruned-wn.pth'];
+    optional TrainParams train_params = 4;
+    oneof optimizer {
+        SGDParams sgd = 5;
+        AdamParams adam = 6;
+    }
+    oneof loss {
+        CrossEntropy ce = 7;
+        BinaryCrossEntropy bce = 8;
+        HierarchicalLoss hl = 9;
+        MOSLoss ml = 10;
+    }
+    repeated int32 seed = 11;
+    optional int32 num_models = 12 [default=5];
+    optional int32 repeat_iters = 26 [default=1];
+    optional bool no_save = 13 [default=false];
+    optional bool verbose = 14 [default=false];
+    optional string savedir = 15 [default=''];
+    optional string backbone = 16 [default='resnet50'];
+    oneof model_config {
+        Softmax softmax_mc = 17;
+        Cascade cascade_mc = 18;
+        CascadeFCHead cascadefchead_mc = 19;
+        SoftmaxFCHead softmaxfchead_mc = 20;
+        MOSConf mos_mc = 21;
+    }
+    repeated string far_ood_dsets = 22;
+    optional string distribution_strategy = 23 [default=''];
+    optional bool resume_from_ckpt = 24 [default=false];
+    optional string finetune_from_ckpt = 25 [default=''];
+}
+// vim:set foldmethod=marker:

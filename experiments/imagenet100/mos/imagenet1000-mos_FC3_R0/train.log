@@ -1,0 +1,1157 @@
+2022-01-21 05:58:16,355 - INFO - ==> Preparing data..
+2022-01-21 05:58:16,945 - INFO - checkpoint filename: experiments/coarse/mos/imagenet1000-mos_FC3_R0/checkpoint.pt
+2022-01-21 05:58:16,945 - INFO - log filename: experiments/coarse/mos/imagenet1000-mos_FC3_R0/train.log
+2022-01-21 05:58:16,945 - INFO - ********************************************************
+2022-01-21 05:58:16,945 - INFO - Starting Iter: 0 / 1
+2022-01-21 05:58:16,946 - INFO - ********************************************************
+2022-01-21 05:58:20,563 - INFO - cuda
+2022-01-21 05:58:20,617 - INFO - 
+Epoch: 0
+2022-01-21 05:58:20,617 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 06:00:19,494 - INFO - [Step=250]	Loss=4.9119	269.2 examples/second
+2022-01-21 06:02:15,970 - INFO - [Step=500]	Loss=4.4398	274.7 examples/second
+2022-01-21 06:04:13,108 - INFO - [Step=750]	Loss=4.1657	273.2 examples/second
+2022-01-21 06:05:00,947 - INFO - Test Loss=3.9706, Test top-1 acc=0.1419
+2022-01-21 06:05:00,947 - INFO - Group Accuracy:
+
+2022-01-21 06:05:00,947 - INFO - [0.2746988  0.82578313 0.946506  ]
+2022-01-21 06:05:00,948 - INFO - Saving...
+2022-01-21 06:05:01,258 - INFO - Epoch time: 400.6417143344879
+2022-01-21 06:05:01,259 - INFO - 
+Epoch: 1
+2022-01-21 06:05:01,259 - INFO - 
+Learning Rate: 0.0280
+2022-01-21 06:06:20,546 - INFO - [Step=1000]	Loss=4.1668	251.1 examples/second
+2022-01-21 06:08:17,434 - INFO - [Step=1250]	Loss=3.9536	273.8 examples/second
+2022-01-21 06:10:14,134 - INFO - [Step=1500]	Loss=3.7230	274.2 examples/second
+2022-01-21 06:11:41,424 - INFO - Test Loss=3.5438, Test top-1 acc=0.2022
+2022-01-21 06:11:41,424 - INFO - Group Accuracy:
+
+2022-01-21 06:11:41,424 - INFO - [0.32819277 0.8298795  0.9508434 ]
+2022-01-21 06:11:41,424 - INFO - Saving...
+2022-01-21 06:11:41,704 - INFO - Epoch time: 400.44569993019104
+2022-01-21 06:11:41,705 - INFO - 
+Epoch: 2
+2022-01-21 06:11:41,705 - INFO - 
+Learning Rate: 0.0460
+2022-01-21 06:12:21,065 - INFO - [Step=1750]	Loss=3.6238	252.1 examples/second
+2022-01-21 06:14:17,261 - INFO - [Step=2000]	Loss=3.5614	275.4 examples/second
+2022-01-21 06:16:14,259 - INFO - [Step=2250]	Loss=3.4125	273.5 examples/second
+2022-01-21 06:18:11,342 - INFO - [Step=2500]	Loss=3.2398	273.3 examples/second
+2022-01-21 06:18:21,644 - INFO - Test Loss=3.3293, Test top-1 acc=0.2622
+2022-01-21 06:18:21,644 - INFO - Group Accuracy:
+
+2022-01-21 06:18:21,644 - INFO - [0.39228916 0.82578313 0.9539759 ]
+2022-01-21 06:18:21,644 - INFO - Saving...
+2022-01-21 06:18:21,949 - INFO - Epoch time: 400.2444577217102
+2022-01-21 06:18:21,949 - INFO - 
+Epoch: 3
+2022-01-21 06:18:21,950 - INFO - 
+Learning Rate: 0.0640
+2022-01-21 06:20:18,609 - INFO - [Step=2750]	Loss=3.2260	251.4 examples/second
+2022-01-21 06:22:15,214 - INFO - [Step=3000]	Loss=3.1175	274.4 examples/second
+2022-01-21 06:24:11,644 - INFO - [Step=3250]	Loss=2.9868	274.8 examples/second
+2022-01-21 06:25:01,165 - INFO - Test Loss=3.2082, Test top-1 acc=0.2964
+2022-01-21 06:25:01,165 - INFO - Group Accuracy:
+
+2022-01-21 06:25:01,166 - INFO - [0.42240962 0.8014458  0.9573494 ]
+2022-01-21 06:25:01,166 - INFO - Saving...
+2022-01-21 06:25:01,356 - INFO - Epoch time: 399.4064927101135
+2022-01-21 06:25:01,356 - INFO - 
+Epoch: 4
+2022-01-21 06:25:01,356 - INFO - 
+Learning Rate: 0.1000
+2022-01-21 06:26:17,878 - INFO - [Step=3500]	Loss=3.0250	253.5 examples/second
+2022-01-21 06:28:14,235 - INFO - [Step=3750]	Loss=2.9549	275.0 examples/second
+2022-01-21 06:30:10,999 - INFO - [Step=4000]	Loss=2.8072	274.1 examples/second
+2022-01-21 06:31:40,262 - INFO - Test Loss=2.8929, Test top-1 acc=0.3229
+2022-01-21 06:31:40,262 - INFO - Group Accuracy:
+
+2022-01-21 06:31:40,262 - INFO - [0.43710843 0.8453012  0.96072286]
+2022-01-21 06:31:40,263 - INFO - Saving...
+2022-01-21 06:31:40,527 - INFO - Epoch time: 399.17117953300476
+2022-01-21 06:31:40,528 - INFO - 
+Epoch: 5
+2022-01-21 06:31:40,528 - INFO - 
+Learning Rate: 0.1000
+2022-01-21 06:32:17,751 - INFO - [Step=4250]	Loss=2.8247	252.5 examples/second
+2022-01-21 06:34:14,647 - INFO - [Step=4500]	Loss=2.7475	273.7 examples/second
+2022-01-21 06:36:11,411 - INFO - [Step=4750]	Loss=2.5825	274.1 examples/second
+2022-01-21 06:38:08,487 - INFO - [Step=5000]	Loss=2.5012	273.3 examples/second
+2022-01-21 06:38:21,204 - INFO - Test Loss=2.5446, Test top-1 acc=0.4043
+2022-01-21 06:38:21,205 - INFO - Group Accuracy:
+
+2022-01-21 06:38:21,205 - INFO - [0.49710843 0.8643373  0.9653012 ]
+2022-01-21 06:38:21,205 - INFO - Saving...
+2022-01-21 06:38:21,391 - INFO - Epoch time: 400.8632323741913
+2022-01-21 06:38:21,391 - INFO - 
+Epoch: 6
+2022-01-21 06:38:21,391 - INFO - 
+Learning Rate: 0.1000
+2022-01-21 06:40:15,600 - INFO - [Step=5250]	Loss=2.4140	251.7 examples/second
+2022-01-21 06:42:12,689 - INFO - [Step=5500]	Loss=2.3643	273.3 examples/second
+2022-01-21 06:44:08,612 - INFO - [Step=5750]	Loss=2.3275	276.0 examples/second
+2022-01-21 06:45:00,252 - INFO - Test Loss=2.1411, Test top-1 acc=0.4634
+2022-01-21 06:45:00,253 - INFO - Group Accuracy:
+
+2022-01-21 06:45:00,253 - INFO - [0.56192774 0.8725301  0.9746988 ]
+2022-01-21 06:45:00,254 - INFO - Saving...
+2022-01-21 06:45:00,510 - INFO - Epoch time: 399.1187274456024
+2022-01-21 06:45:00,510 - INFO - 
+Epoch: 7
+2022-01-21 06:45:00,510 - INFO - 
+Learning Rate: 0.1000
+2022-01-21 06:46:14,224 - INFO - [Step=6000]	Loss=2.2540	254.8 examples/second
+2022-01-21 06:48:09,891 - INFO - [Step=6250]	Loss=2.2028	276.7 examples/second
+2022-01-21 06:50:05,614 - INFO - [Step=6500]	Loss=2.1519	276.5 examples/second
+2022-01-21 06:51:36,656 - INFO - Test Loss=2.0872, Test top-1 acc=0.4810
+2022-01-21 06:51:36,657 - INFO - Group Accuracy:
+
+2022-01-21 06:51:36,657 - INFO - [0.5710843 0.8833735 0.966506 ]
+2022-01-21 06:51:36,657 - INFO - Saving...
+2022-01-21 06:51:36,919 - INFO - Epoch time: 396.40928196907043
+2022-01-21 06:51:36,920 - INFO - 
+Epoch: 8
+2022-01-21 06:51:36,920 - INFO - 
+Learning Rate: 0.1000
+2022-01-21 06:52:11,464 - INFO - [Step=6750]	Loss=2.0847	254.3 examples/second
+2022-01-21 06:54:07,148 - INFO - [Step=7000]	Loss=2.0791	276.6 examples/second
+2022-01-21 06:56:02,782 - INFO - [Step=7250]	Loss=2.0964	276.7 examples/second
+2022-01-21 06:57:58,398 - INFO - [Step=7500]	Loss=2.0482	276.8 examples/second
+2022-01-21 06:58:12,735 - INFO - Test Loss=1.8376, Test top-1 acc=0.5263
+2022-01-21 06:58:12,735 - INFO - Group Accuracy:
+
+2022-01-21 06:58:12,735 - INFO - [0.6118072  0.8838554  0.97831327]
+2022-01-21 06:58:12,736 - INFO - Saving...
+2022-01-21 06:58:12,985 - INFO - Epoch time: 396.065087556839
+2022-01-21 06:58:12,985 - INFO - 
+Epoch: 9
+2022-01-21 06:58:12,985 - INFO - 
+Learning Rate: 0.1000
+2022-01-21 07:00:03,734 - INFO - [Step=7750]	Loss=1.9705	255.3 examples/second
+2022-01-21 07:01:59,113 - INFO - [Step=8000]	Loss=1.9330	277.3 examples/second
+2022-01-21 07:03:55,544 - INFO - [Step=8250]	Loss=1.8841	274.8 examples/second
+2022-01-21 07:04:50,106 - INFO - Test Loss=1.9029, Test top-1 acc=0.5176
+2022-01-21 07:04:50,106 - INFO - Group Accuracy:
+
+2022-01-21 07:04:50,106 - INFO - [0.613253  0.879759  0.9708434]
+2022-01-21 07:04:50,107 - INFO - Epoch time: 397.1215012073517
+2022-01-21 07:04:50,107 - INFO - 
+Epoch: 10
+2022-01-21 07:04:50,107 - INFO - 
+Learning Rate: 0.1000
+2022-01-21 07:06:02,502 - INFO - [Step=8500]	Loss=1.8638	252.1 examples/second
+2022-01-21 07:07:59,420 - INFO - [Step=8750]	Loss=1.8387	273.7 examples/second
+2022-01-21 07:09:56,412 - INFO - [Step=9000]	Loss=1.8111	273.5 examples/second
+2022-01-21 07:11:30,497 - INFO - Test Loss=1.6612, Test top-1 acc=0.5711
+2022-01-21 07:11:30,497 - INFO - Group Accuracy:
+
+2022-01-21 07:11:30,497 - INFO - [0.6433735  0.90698797 0.9845783 ]
+2022-01-21 07:11:30,497 - INFO - Saving...
+2022-01-21 07:11:30,760 - INFO - Epoch time: 400.65320229530334
+2022-01-21 07:11:30,760 - INFO - 
+Epoch: 11
+2022-01-21 07:11:30,760 - INFO - 
+Learning Rate: 0.1000
+2022-01-21 07:12:03,183 - INFO - [Step=9250]	Loss=1.7963	252.4 examples/second
+2022-01-21 07:13:59,936 - INFO - [Step=9500]	Loss=1.8103	274.1 examples/second
+2022-01-21 07:15:56,864 - INFO - [Step=9750]	Loss=1.7754	273.7 examples/second
+2022-01-21 07:17:54,085 - INFO - [Step=10000]	Loss=1.7512	273.0 examples/second
+2022-01-21 07:18:11,878 - INFO - Test Loss=1.6795, Test top-1 acc=0.5800
+2022-01-21 07:18:11,878 - INFO - Group Accuracy:
+
+2022-01-21 07:18:11,878 - INFO - [0.64963853 0.8992771  0.9807229 ]
+2022-01-21 07:18:11,879 - INFO - Saving...
+2022-01-21 07:18:12,103 - INFO - Epoch time: 401.3428864479065
+2022-01-21 07:18:12,103 - INFO - 
+Epoch: 12
+2022-01-21 07:18:12,103 - INFO - 
+Learning Rate: 0.1000
+2022-01-21 07:20:01,442 - INFO - [Step=10250]	Loss=1.6963	251.3 examples/second
+2022-01-21 07:21:58,290 - INFO - [Step=10500]	Loss=1.7029	273.9 examples/second
+2022-01-21 07:23:55,285 - INFO - [Step=10750]	Loss=1.6771	273.5 examples/second
+2022-01-21 07:24:52,455 - INFO - Test Loss=1.7135, Test top-1 acc=0.5588
+2022-01-21 07:24:52,455 - INFO - Group Accuracy:
+
+2022-01-21 07:24:52,455 - INFO - [0.64      0.9055422 0.9703615]
+2022-01-21 07:24:52,456 - INFO - Epoch time: 400.35250759124756
+2022-01-21 07:24:52,456 - INFO - 
+Epoch: 13
+2022-01-21 07:24:52,456 - INFO - 
+Learning Rate: 0.1000
+2022-01-21 07:26:02,673 - INFO - [Step=11000]	Loss=1.6549	251.2 examples/second
+2022-01-21 07:27:59,412 - INFO - [Step=11250]	Loss=1.6370	274.1 examples/second
+2022-01-21 07:29:56,220 - INFO - [Step=11500]	Loss=1.6290	274.0 examples/second
+2022-01-21 07:31:32,638 - INFO - Test Loss=1.6128, Test top-1 acc=0.5759
+2022-01-21 07:31:32,638 - INFO - Group Accuracy:
+
+2022-01-21 07:31:32,638 - INFO - [0.65686744 0.89638555 0.9819277 ]
+2022-01-21 07:31:32,639 - INFO - Epoch time: 400.1830677986145
+2022-01-21 07:31:32,639 - INFO - 
+Epoch: 14
+2022-01-21 07:31:32,639 - INFO - 
+Learning Rate: 0.1000
+2022-01-21 07:32:03,302 - INFO - [Step=11750]	Loss=1.6203	251.8 examples/second
+2022-01-21 07:34:00,103 - INFO - [Step=12000]	Loss=1.5874	274.0 examples/second
+2022-01-21 07:35:56,923 - INFO - [Step=12250]	Loss=1.6085	273.9 examples/second
+2022-01-21 07:37:53,350 - INFO - [Step=12500]	Loss=1.5564	274.9 examples/second
+2022-01-21 07:38:12,962 - INFO - Test Loss=1.5437, Test top-1 acc=0.6053
+2022-01-21 07:38:12,962 - INFO - Group Accuracy:
+
+2022-01-21 07:38:12,962 - INFO - [0.6640964 0.9178313 0.9855422]
+2022-01-21 07:38:12,963 - INFO - Saving...
+2022-01-21 07:38:13,144 - INFO - Epoch time: 400.50519728660583
+2022-01-21 07:38:13,144 - INFO - 
+Epoch: 15
+2022-01-21 07:38:13,144 - INFO - 
+Learning Rate: 0.1000
+2022-01-21 07:40:00,396 - INFO - [Step=12750]	Loss=1.5592	251.9 examples/second
+2022-01-21 07:41:57,299 - INFO - [Step=13000]	Loss=1.5434	273.7 examples/second
+2022-01-21 07:43:54,254 - INFO - [Step=13250]	Loss=1.5401	273.6 examples/second
+2022-01-21 07:44:53,744 - INFO - Test Loss=1.4404, Test top-1 acc=0.6299
+2022-01-21 07:44:53,744 - INFO - Group Accuracy:
+
+2022-01-21 07:44:53,744 - INFO - [0.69493973 0.91879517 0.9812048 ]
+2022-01-21 07:44:53,745 - INFO - Saving...
+2022-01-21 07:44:54,013 - INFO - Epoch time: 400.86858201026917
+2022-01-21 07:44:54,013 - INFO - 
+Epoch: 16
+2022-01-21 07:44:54,013 - INFO - 
+Learning Rate: 0.1000
+2022-01-21 07:46:00,995 - INFO - [Step=13500]	Loss=1.5160	252.5 examples/second
+2022-01-21 07:47:57,932 - INFO - [Step=13750]	Loss=1.5148	273.7 examples/second
+2022-01-21 07:49:54,969 - INFO - [Step=14000]	Loss=1.4974	273.4 examples/second
+2022-01-21 07:51:33,939 - INFO - Test Loss=1.6312, Test top-1 acc=0.5834
+2022-01-21 07:51:33,939 - INFO - Group Accuracy:
+
+2022-01-21 07:51:33,939 - INFO - [0.646506   0.91638553 0.98313254]
+2022-01-21 07:51:33,940 - INFO - Epoch time: 399.9267952442169
+2022-01-21 07:51:33,940 - INFO - 
+Epoch: 17
+2022-01-21 07:51:33,940 - INFO - 
+Learning Rate: 0.1000
+2022-01-21 07:52:02,110 - INFO - [Step=14250]	Loss=1.5034	251.7 examples/second
+2022-01-21 07:53:58,995 - INFO - [Step=14500]	Loss=1.4645	273.8 examples/second
+2022-01-21 07:55:55,513 - INFO - [Step=14750]	Loss=1.4870	274.6 examples/second
+2022-01-21 07:57:52,209 - INFO - [Step=15000]	Loss=1.4813	274.2 examples/second
+2022-01-21 07:58:14,245 - INFO - Test Loss=1.5244, Test top-1 acc=0.6198
+2022-01-21 07:58:14,245 - INFO - Group Accuracy:
+
+2022-01-21 07:58:14,245 - INFO - [0.6872289  0.92168677 0.97831327]
+2022-01-21 07:58:14,246 - INFO - Epoch time: 400.3057062625885
+2022-01-21 07:58:14,246 - INFO - 
+Epoch: 18
+2022-01-21 07:58:14,246 - INFO - 
+Learning Rate: 0.1000
+2022-01-21 07:59:59,437 - INFO - [Step=15250]	Loss=1.4452	251.5 examples/second
+2022-01-21 08:01:56,479 - INFO - [Step=15500]	Loss=1.4319	273.4 examples/second
+2022-01-21 08:03:53,190 - INFO - [Step=15750]	Loss=1.4662	274.2 examples/second
+2022-01-21 08:04:54,770 - INFO - Test Loss=1.3089, Test top-1 acc=0.6660
+2022-01-21 08:04:54,770 - INFO - Group Accuracy:
+
+2022-01-21 08:04:54,770 - INFO - [0.71590364 0.9320482  0.9812048 ]
+2022-01-21 08:04:54,771 - INFO - Saving...
+2022-01-21 08:04:55,038 - INFO - Epoch time: 400.792129278183
+2022-01-21 08:04:55,038 - INFO - 
+Epoch: 19
+2022-01-21 08:04:55,038 - INFO - 
+Learning Rate: 0.1000
+2022-01-21 08:05:59,923 - INFO - [Step=16000]	Loss=1.4124	252.5 examples/second
+2022-01-21 08:07:56,325 - INFO - [Step=16250]	Loss=1.4100	274.9 examples/second
+2022-01-21 08:09:52,675 - INFO - [Step=16500]	Loss=1.4181	275.0 examples/second
+2022-01-21 08:11:33,639 - INFO - Test Loss=1.5331, Test top-1 acc=0.6161
+2022-01-21 08:11:33,640 - INFO - Group Accuracy:
+
+2022-01-21 08:11:33,640 - INFO - [0.68626505 0.90771085 0.9840964 ]
+2022-01-21 08:11:33,640 - INFO - Epoch time: 398.60181999206543
+2022-01-21 08:11:33,640 - INFO - 
+Epoch: 20
+2022-01-21 08:11:33,640 - INFO - 
+Learning Rate: 0.1000
+2022-01-21 08:11:59,507 - INFO - [Step=16750]	Loss=1.4103	252.3 examples/second
+2022-01-21 08:13:56,074 - INFO - [Step=17000]	Loss=1.3968	274.5 examples/second
+2022-01-21 08:15:52,959 - INFO - [Step=17250]	Loss=1.4210	273.8 examples/second
+2022-01-21 08:17:49,257 - INFO - [Step=17500]	Loss=1.4155	275.2 examples/second
+2022-01-21 08:18:13,366 - INFO - Test Loss=1.2998, Test top-1 acc=0.6470
+2022-01-21 08:18:13,367 - INFO - Group Accuracy:
+
+2022-01-21 08:18:13,367 - INFO - [0.713253  0.92      0.9850602]
+2022-01-21 08:18:13,367 - INFO - Epoch time: 399.7270061969757
+2022-01-21 08:18:13,367 - INFO - 
+Epoch: 21
+2022-01-21 08:18:13,367 - INFO - 
+Learning Rate: 0.1000
+2022-01-21 08:19:55,819 - INFO - [Step=17750]	Loss=1.3615	252.8 examples/second
+2022-01-21 08:21:52,709 - INFO - [Step=18000]	Loss=1.3724	273.8 examples/second
+2022-01-21 08:23:49,955 - INFO - [Step=18250]	Loss=1.3795	272.9 examples/second
+2022-01-21 08:24:54,440 - INFO - Test Loss=1.3462, Test top-1 acc=0.6564
+2022-01-21 08:24:54,440 - INFO - Group Accuracy:
+
+2022-01-21 08:24:54,440 - INFO - [0.7219277  0.91445786 0.98722893]
+2022-01-21 08:24:54,441 - INFO - Epoch time: 401.07367038726807
+2022-01-21 08:24:54,441 - INFO - 
+Epoch: 22
+2022-01-21 08:24:54,441 - INFO - 
+Learning Rate: 0.1000
+2022-01-21 08:25:57,589 - INFO - [Step=18500]	Loss=1.3645	250.7 examples/second
+2022-01-21 08:27:54,466 - INFO - [Step=18750]	Loss=1.3515	273.8 examples/second
+2022-01-21 08:29:51,472 - INFO - [Step=19000]	Loss=1.3516	273.5 examples/second
+2022-01-21 08:31:35,788 - INFO - Test Loss=1.6499, Test top-1 acc=0.6166
+2022-01-21 08:31:35,788 - INFO - Group Accuracy:
+
+2022-01-21 08:31:35,788 - INFO - [0.67469877 0.89301205 0.9845783 ]
+2022-01-21 08:31:35,789 - INFO - Epoch time: 401.3479480743408
+2022-01-21 08:31:35,789 - INFO - 
+Epoch: 23
+2022-01-21 08:31:35,789 - INFO - 
+Learning Rate: 0.1000
+2022-01-21 08:31:59,049 - INFO - [Step=19250]	Loss=1.3559	250.8 examples/second
+2022-01-21 08:33:56,504 - INFO - [Step=19500]	Loss=1.3273	272.4 examples/second
+2022-01-21 08:35:53,370 - INFO - [Step=19750]	Loss=1.3214	273.8 examples/second
+2022-01-21 08:37:50,226 - INFO - [Step=20000]	Loss=1.3427	273.8 examples/second
+2022-01-21 08:38:17,331 - INFO - Test Loss=1.4466, Test top-1 acc=0.6335
+2022-01-21 08:38:17,331 - INFO - Group Accuracy:
+
+2022-01-21 08:38:17,331 - INFO - [0.70048195 0.9142169  0.98313254]
+2022-01-21 08:38:17,332 - INFO - Epoch time: 401.5428395271301
+2022-01-21 08:38:17,332 - INFO - 
+Epoch: 24
+2022-01-21 08:38:17,332 - INFO - 
+Learning Rate: 0.1000
+2022-01-21 08:39:57,774 - INFO - [Step=20250]	Loss=1.3130	250.9 examples/second
+2022-01-21 08:41:55,085 - INFO - [Step=20500]	Loss=1.3297	272.8 examples/second
+2022-01-21 08:43:52,669 - INFO - [Step=20750]	Loss=1.3247	272.1 examples/second
+2022-01-21 08:44:58,880 - INFO - Test Loss=1.3630, Test top-1 acc=0.6631
+2022-01-21 08:44:58,881 - INFO - Group Accuracy:
+
+2022-01-21 08:44:58,881 - INFO - [0.7207229  0.91638553 0.98578316]
+2022-01-21 08:44:58,882 - INFO - Epoch time: 401.5497667789459
+2022-01-21 08:44:58,882 - INFO - 
+Epoch: 25
+2022-01-21 08:44:58,882 - INFO - 
+Learning Rate: 0.1000
+2022-01-21 08:45:58,849 - INFO - [Step=21000]	Loss=1.3156	253.6 examples/second
+2022-01-21 08:47:56,048 - INFO - [Step=21250]	Loss=1.3100	273.0 examples/second
+2022-01-21 08:49:53,143 - INFO - [Step=21500]	Loss=1.2989	273.3 examples/second
+2022-01-21 08:51:39,537 - INFO - Test Loss=1.4727, Test top-1 acc=0.6106
+2022-01-21 08:51:39,537 - INFO - Group Accuracy:
+
+2022-01-21 08:51:39,547 - INFO - [0.67783135 0.91879517 0.98289156]
+2022-01-21 08:51:39,547 - INFO - Epoch time: 400.66533398628235
+2022-01-21 08:51:39,547 - INFO - 
+Epoch: 26
+2022-01-21 08:51:39,547 - INFO - 
+Learning Rate: 0.1000
+2022-01-21 08:52:00,821 - INFO - [Step=21750]	Loss=1.3033	250.6 examples/second
+2022-01-21 08:53:57,774 - INFO - [Step=22000]	Loss=1.3026	273.6 examples/second
+2022-01-21 08:55:54,520 - INFO - [Step=22250]	Loss=1.2919	274.1 examples/second
+2022-01-21 08:57:50,976 - INFO - [Step=22500]	Loss=1.3073	274.8 examples/second
+2022-01-21 08:58:20,402 - INFO - Test Loss=1.1668, Test top-1 acc=0.6964
+2022-01-21 08:58:20,402 - INFO - Group Accuracy:
+
+2022-01-21 08:58:20,402 - INFO - [0.7453012  0.9356626  0.98578316]
+2022-01-21 08:58:20,403 - INFO - Saving...
+2022-01-21 08:58:20,715 - INFO - Epoch time: 401.16786885261536
+2022-01-21 08:58:20,715 - INFO - 
+Epoch: 27
+2022-01-21 08:58:20,715 - INFO - 
+Learning Rate: 0.1000
+2022-01-21 08:59:57,995 - INFO - [Step=22750]	Loss=1.2815	251.9 examples/second
+2022-01-21 09:01:54,475 - INFO - [Step=23000]	Loss=1.2714	274.7 examples/second
+2022-01-21 09:03:50,724 - INFO - [Step=23250]	Loss=1.3038	275.3 examples/second
+2022-01-21 09:04:59,322 - INFO - Test Loss=1.3660, Test top-1 acc=0.6530
+2022-01-21 09:04:59,322 - INFO - Group Accuracy:
+
+2022-01-21 09:04:59,322 - INFO - [0.70915663 0.93301207 0.9850602 ]
+2022-01-21 09:04:59,323 - INFO - Epoch time: 398.6074903011322
+2022-01-21 09:04:59,323 - INFO - 
+Epoch: 28
+2022-01-21 09:04:59,323 - INFO - 
+Learning Rate: 0.1000
+2022-01-21 09:05:57,597 - INFO - [Step=23500]	Loss=1.2700	252.2 examples/second
+2022-01-21 09:07:53,904 - INFO - [Step=23750]	Loss=1.2848	275.1 examples/second
+2022-01-21 09:09:50,341 - INFO - [Step=24000]	Loss=1.2834	274.8 examples/second
+2022-01-21 09:11:38,115 - INFO - Test Loss=1.2874, Test top-1 acc=0.6831
+2022-01-21 09:11:38,116 - INFO - Group Accuracy:
+
+2022-01-21 09:11:38,116 - INFO - [0.73518074 0.9325301  0.98313254]
+2022-01-21 09:11:38,116 - INFO - Epoch time: 398.7932229042053
+2022-01-21 09:11:38,116 - INFO - 
+Epoch: 29
+2022-01-21 09:11:38,116 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 09:11:56,868 - INFO - [Step=24250]	Loss=1.2512	252.9 examples/second
+2022-01-21 09:13:53,095 - INFO - [Step=24500]	Loss=0.9368	275.3 examples/second
+2022-01-21 09:15:50,460 - INFO - [Step=24750]	Loss=0.8851	272.7 examples/second
+2022-01-21 09:17:47,715 - INFO - [Step=25000]	Loss=0.8721	272.9 examples/second
+2022-01-21 09:18:19,458 - INFO - Test Loss=0.7729, Test top-1 acc=0.7807
+2022-01-21 09:18:19,459 - INFO - Group Accuracy:
+
+2022-01-21 09:18:19,459 - INFO - [0.8245783 0.9510843 0.9939759]
+2022-01-21 09:18:19,459 - INFO - Saving...
+2022-01-21 09:18:19,735 - INFO - Epoch time: 401.61854553222656
+2022-01-21 09:18:19,735 - INFO - 
+Epoch: 30
+2022-01-21 09:18:19,735 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 09:19:55,872 - INFO - [Step=25250]	Loss=0.8233	249.7 examples/second
+2022-01-21 09:21:53,162 - INFO - [Step=25500]	Loss=0.8252	272.8 examples/second
+2022-01-21 09:23:50,050 - INFO - [Step=25750]	Loss=0.8214	273.8 examples/second
+2022-01-21 09:25:01,888 - INFO - Test Loss=0.7571, Test top-1 acc=0.7848
+2022-01-21 09:25:01,888 - INFO - Group Accuracy:
+
+2022-01-21 09:25:01,888 - INFO - [0.8226506  0.95759034 0.9930121 ]
+2022-01-21 09:25:01,889 - INFO - Saving...
+2022-01-21 09:25:02,110 - INFO - Epoch time: 402.3745357990265
+2022-01-21 09:25:02,110 - INFO - 
+Epoch: 31
+2022-01-21 09:25:02,110 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 09:25:58,460 - INFO - [Step=26000]	Loss=0.7958	249.2 examples/second
+2022-01-21 09:27:54,464 - INFO - [Step=26250]	Loss=0.7846	275.9 examples/second
+2022-01-21 09:29:50,450 - INFO - [Step=26500]	Loss=0.7657	275.9 examples/second
+2022-01-21 09:31:39,878 - INFO - Test Loss=0.7340, Test top-1 acc=0.7896
+2022-01-21 09:31:39,879 - INFO - Group Accuracy:
+
+2022-01-21 09:31:39,879 - INFO - [0.8274699  0.95662653 0.993494  ]
+2022-01-21 09:31:39,879 - INFO - Saving...
+2022-01-21 09:31:40,072 - INFO - Epoch time: 397.9624469280243
+2022-01-21 09:31:40,073 - INFO - 
+Epoch: 32
+2022-01-21 09:31:40,073 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 09:31:55,878 - INFO - [Step=26750]	Loss=0.7814	255.1 examples/second
+2022-01-21 09:33:52,231 - INFO - [Step=27000]	Loss=0.7610	275.0 examples/second
+2022-01-21 09:35:48,692 - INFO - [Step=27250]	Loss=0.7587	274.8 examples/second
+2022-01-21 09:37:44,778 - INFO - [Step=27500]	Loss=0.7512	275.7 examples/second
+2022-01-21 09:38:17,666 - INFO - Test Loss=0.7350, Test top-1 acc=0.7945
+2022-01-21 09:38:17,667 - INFO - Group Accuracy:
+
+2022-01-21 09:38:17,667 - INFO - [0.8301205  0.9583132  0.99373496]
+2022-01-21 09:38:17,668 - INFO - Saving...
+2022-01-21 09:38:17,990 - INFO - Epoch time: 397.91716504096985
+2022-01-21 09:38:17,990 - INFO - 
+Epoch: 33
+2022-01-21 09:38:17,990 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 09:39:50,838 - INFO - [Step=27750]	Loss=0.7367	253.8 examples/second
+2022-01-21 09:41:46,857 - INFO - [Step=28000]	Loss=0.7384	275.8 examples/second
+2022-01-21 09:43:43,001 - INFO - [Step=28250]	Loss=0.7389	275.5 examples/second
+2022-01-21 09:44:55,010 - INFO - Test Loss=0.7153, Test top-1 acc=0.7961
+2022-01-21 09:44:55,010 - INFO - Group Accuracy:
+
+2022-01-21 09:44:55,010 - INFO - [0.83301204 0.9580723  0.99373496]
+2022-01-21 09:44:55,011 - INFO - Saving...
+2022-01-21 09:44:55,289 - INFO - Epoch time: 397.29878520965576
+2022-01-21 09:44:55,289 - INFO - 
+Epoch: 34
+2022-01-21 09:44:55,289 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 09:45:48,393 - INFO - [Step=28500]	Loss=0.7399	255.2 examples/second
+2022-01-21 09:47:44,783 - INFO - [Step=28750]	Loss=0.7357	274.9 examples/second
+2022-01-21 09:49:41,200 - INFO - [Step=29000]	Loss=0.7328	274.9 examples/second
+2022-01-21 09:51:33,238 - INFO - Test Loss=0.7118, Test top-1 acc=0.8012
+2022-01-21 09:51:33,239 - INFO - Group Accuracy:
+
+2022-01-21 09:51:33,239 - INFO - [0.83686745 0.96072286 0.9930121 ]
+2022-01-21 09:51:33,239 - INFO - Saving...
+2022-01-21 09:51:33,514 - INFO - Epoch time: 398.2248363494873
+2022-01-21 09:51:33,514 - INFO - 
+Epoch: 35
+2022-01-21 09:51:33,514 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 09:51:47,129 - INFO - [Step=29250]	Loss=0.7144	254.1 examples/second
+2022-01-21 09:53:42,968 - INFO - [Step=29500]	Loss=0.7126	276.2 examples/second
+2022-01-21 09:55:38,937 - INFO - [Step=29750]	Loss=0.7006	275.9 examples/second
+2022-01-21 09:57:34,995 - INFO - [Step=30000]	Loss=0.7248	275.7 examples/second
+2022-01-21 09:58:10,312 - INFO - Test Loss=0.7147, Test top-1 acc=0.7945
+2022-01-21 09:58:10,313 - INFO - Group Accuracy:
+
+2022-01-21 09:58:10,313 - INFO - [0.8306024 0.96      0.9925301]
+2022-01-21 09:58:10,314 - INFO - Epoch time: 396.7992739677429
+2022-01-21 09:58:10,314 - INFO - 
+Epoch: 36
+2022-01-21 09:58:10,314 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 09:59:40,682 - INFO - [Step=30250]	Loss=0.6944	254.6 examples/second
+2022-01-21 10:01:36,624 - INFO - [Step=30500]	Loss=0.6960	276.0 examples/second
+2022-01-21 10:03:32,440 - INFO - [Step=30750]	Loss=0.7090	276.3 examples/second
+2022-01-21 10:04:47,078 - INFO - Test Loss=0.7137, Test top-1 acc=0.7981
+2022-01-21 10:04:47,078 - INFO - Group Accuracy:
+
+2022-01-21 10:04:47,078 - INFO - [0.8354217 0.9592771 0.993494 ]
+2022-01-21 10:04:47,079 - INFO - Epoch time: 396.76523637771606
+2022-01-21 10:04:47,079 - INFO - 
+Epoch: 37
+2022-01-21 10:04:47,079 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 10:05:37,590 - INFO - [Step=31000]	Loss=0.7066	255.7 examples/second
+2022-01-21 10:07:33,590 - INFO - [Step=31250]	Loss=0.6821	275.9 examples/second
+2022-01-21 10:09:29,869 - INFO - [Step=31500]	Loss=0.6974	275.2 examples/second
+2022-01-21 10:11:23,789 - INFO - Test Loss=0.7253, Test top-1 acc=0.8022
+2022-01-21 10:11:23,790 - INFO - Group Accuracy:
+
+2022-01-21 10:11:23,790 - INFO - [0.83710843 0.96024096 0.9930121 ]
+2022-01-21 10:11:23,790 - INFO - Saving...
+2022-01-21 10:11:24,067 - INFO - Epoch time: 396.98844838142395
+2022-01-21 10:11:24,068 - INFO - 
+Epoch: 38
+2022-01-21 10:11:24,068 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 10:11:35,142 - INFO - [Step=31750]	Loss=0.6842	255.4 examples/second
+2022-01-21 10:13:31,356 - INFO - [Step=32000]	Loss=0.6795	275.4 examples/second
+2022-01-21 10:15:27,627 - INFO - [Step=32250]	Loss=0.6811	275.2 examples/second
+2022-01-21 10:17:23,861 - INFO - [Step=32500]	Loss=0.6762	275.3 examples/second
+2022-01-21 10:18:01,218 - INFO - Test Loss=0.7048, Test top-1 acc=0.8036
+2022-01-21 10:18:01,218 - INFO - Group Accuracy:
+
+2022-01-21 10:18:01,218 - INFO - [0.83638555 0.9624096  0.993494  ]
+2022-01-21 10:18:01,219 - INFO - Saving...
+2022-01-21 10:18:01,489 - INFO - Epoch time: 397.42131090164185
+2022-01-21 10:18:01,489 - INFO - 
+Epoch: 39
+2022-01-21 10:18:01,489 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 10:19:29,165 - INFO - [Step=32750]	Loss=0.6671	255.4 examples/second
+2022-01-21 10:21:24,922 - INFO - [Step=33000]	Loss=0.6686	276.4 examples/second
+2022-01-21 10:23:20,866 - INFO - [Step=33250]	Loss=0.6635	276.0 examples/second
+2022-01-21 10:24:37,946 - INFO - Test Loss=0.7144, Test top-1 acc=0.7957
+2022-01-21 10:24:37,946 - INFO - Group Accuracy:
+
+2022-01-21 10:24:37,946 - INFO - [0.8315663 0.96      0.9925301]
+2022-01-21 10:24:37,947 - INFO - Epoch time: 396.4573938846588
+2022-01-21 10:24:37,947 - INFO - 
+Epoch: 40
+2022-01-21 10:24:37,947 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 10:25:26,224 - INFO - [Step=33500]	Loss=0.6806	255.3 examples/second
+2022-01-21 10:27:22,257 - INFO - [Step=33750]	Loss=0.6499	275.8 examples/second
+2022-01-21 10:29:18,210 - INFO - [Step=34000]	Loss=0.6731	276.0 examples/second
+2022-01-21 10:31:14,541 - INFO - Test Loss=0.7108, Test top-1 acc=0.7971
+2022-01-21 10:31:14,542 - INFO - Group Accuracy:
+
+2022-01-21 10:31:14,542 - INFO - [0.8310843 0.9612048 0.993494 ]
+2022-01-21 10:31:14,542 - INFO - Epoch time: 396.5956959724426
+2022-01-21 10:31:14,542 - INFO - 
+Epoch: 41
+2022-01-21 10:31:14,543 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 10:31:23,292 - INFO - [Step=34250]	Loss=0.6675	255.8 examples/second
+2022-01-21 10:33:19,129 - INFO - [Step=34500]	Loss=0.6630	276.3 examples/second
+2022-01-21 10:35:15,148 - INFO - [Step=34750]	Loss=0.6488	275.8 examples/second
+2022-01-21 10:37:11,100 - INFO - [Step=35000]	Loss=0.6559	276.0 examples/second
+2022-01-21 10:37:50,857 - INFO - Test Loss=0.7136, Test top-1 acc=0.8043
+2022-01-21 10:37:50,857 - INFO - Group Accuracy:
+
+2022-01-21 10:37:50,857 - INFO - [0.8383133 0.9614458 0.9946988]
+2022-01-21 10:37:50,858 - INFO - Saving...
+2022-01-21 10:37:51,148 - INFO - Epoch time: 396.6059105396271
+2022-01-21 10:37:51,149 - INFO - 
+Epoch: 42
+2022-01-21 10:37:51,149 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 10:39:16,659 - INFO - [Step=35250]	Loss=0.6450	254.9 examples/second
+2022-01-21 10:41:12,568 - INFO - [Step=35500]	Loss=0.6490	276.1 examples/second
+2022-01-21 10:43:08,577 - INFO - [Step=35750]	Loss=0.6459	275.8 examples/second
+2022-01-21 10:44:27,662 - INFO - Test Loss=0.7009, Test top-1 acc=0.8012
+2022-01-21 10:44:27,663 - INFO - Group Accuracy:
+
+2022-01-21 10:44:27,663 - INFO - [0.83710843 0.9619277  0.99373496]
+2022-01-21 10:44:27,663 - INFO - Epoch time: 396.51447439193726
+2022-01-21 10:44:27,663 - INFO - 
+Epoch: 43
+2022-01-21 10:44:27,663 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 10:45:13,348 - INFO - [Step=36000]	Loss=0.6416	256.5 examples/second
+2022-01-21 10:47:09,384 - INFO - [Step=36250]	Loss=0.6386	275.8 examples/second
+2022-01-21 10:49:05,461 - INFO - [Step=36500]	Loss=0.6433	275.7 examples/second
+2022-01-21 10:51:04,367 - INFO - Test Loss=0.7111, Test top-1 acc=0.8048
+2022-01-21 10:51:04,367 - INFO - Group Accuracy:
+
+2022-01-21 10:51:04,368 - INFO - [0.84048194 0.9595181  0.993494  ]
+2022-01-21 10:51:04,368 - INFO - Saving...
+2022-01-21 10:51:04,655 - INFO - Epoch time: 396.9915361404419
+2022-01-21 10:51:04,655 - INFO - 
+Epoch: 44
+2022-01-21 10:51:04,655 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 10:51:11,671 - INFO - [Step=36750]	Loss=0.6328	253.5 examples/second
+2022-01-21 10:53:07,569 - INFO - [Step=37000]	Loss=0.6345	276.1 examples/second
+2022-01-21 10:55:03,587 - INFO - [Step=37250]	Loss=0.6335	275.8 examples/second
+2022-01-21 10:56:59,881 - INFO - [Step=37500]	Loss=0.6288	275.2 examples/second
+2022-01-21 10:57:42,146 - INFO - Test Loss=0.7091, Test top-1 acc=0.8019
+2022-01-21 10:57:42,147 - INFO - Group Accuracy:
+
+2022-01-21 10:57:42,147 - INFO - [0.8342169 0.9621687 0.9939759]
+2022-01-21 10:57:42,147 - INFO - Epoch time: 397.49212312698364
+2022-01-21 10:57:42,147 - INFO - 
+Epoch: 45
+2022-01-21 10:57:42,147 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 10:59:05,286 - INFO - [Step=37750]	Loss=0.6205	255.2 examples/second
+2022-01-21 11:01:01,407 - INFO - [Step=38000]	Loss=0.6269	275.6 examples/second
+2022-01-21 11:02:57,786 - INFO - [Step=38250]	Loss=0.6270	275.0 examples/second
+2022-01-21 11:04:19,654 - INFO - Test Loss=0.7116, Test top-1 acc=0.8007
+2022-01-21 11:04:19,654 - INFO - Group Accuracy:
+
+2022-01-21 11:04:19,654 - INFO - [0.8354217  0.96168673 0.99373496]
+2022-01-21 11:04:19,655 - INFO - Epoch time: 397.5077781677246
+2022-01-21 11:04:19,655 - INFO - 
+Epoch: 46
+2022-01-21 11:04:19,655 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 11:05:03,364 - INFO - [Step=38500]	Loss=0.6246	254.8 examples/second
+2022-01-21 11:06:59,339 - INFO - [Step=38750]	Loss=0.6121	275.9 examples/second
+2022-01-21 11:08:55,255 - INFO - [Step=39000]	Loss=0.6184	276.1 examples/second
+2022-01-21 11:10:56,418 - INFO - Test Loss=0.7163, Test top-1 acc=0.8012
+2022-01-21 11:10:56,419 - INFO - Group Accuracy:
+
+2022-01-21 11:10:56,419 - INFO - [0.83686745 0.96072286 0.993253  ]
+2022-01-21 11:10:56,419 - INFO - Epoch time: 396.76434326171875
+2022-01-21 11:10:56,419 - INFO - 
+Epoch: 47
+2022-01-21 11:10:56,419 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 11:11:00,734 - INFO - [Step=39250]	Loss=0.6242	255.0 examples/second
+2022-01-21 11:12:56,444 - INFO - [Step=39500]	Loss=0.6116	276.6 examples/second
+2022-01-21 11:14:52,410 - INFO - [Step=39750]	Loss=0.6135	275.9 examples/second
+2022-01-21 11:16:48,511 - INFO - [Step=40000]	Loss=0.6335	275.6 examples/second
+2022-01-21 11:17:33,004 - INFO - Test Loss=0.7268, Test top-1 acc=0.7937
+2022-01-21 11:17:33,004 - INFO - Group Accuracy:
+
+2022-01-21 11:17:33,004 - INFO - [0.8306024 0.96      0.993494 ]
+2022-01-21 11:17:33,005 - INFO - Epoch time: 396.5852768421173
+2022-01-21 11:17:33,005 - INFO - 
+Epoch: 48
+2022-01-21 11:17:33,005 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 11:18:53,901 - INFO - [Step=40250]	Loss=0.6031	255.2 examples/second
+2022-01-21 11:20:49,947 - INFO - [Step=40500]	Loss=0.5892	275.8 examples/second
+2022-01-21 11:22:45,947 - INFO - [Step=40750]	Loss=0.6060	275.9 examples/second
+2022-01-21 11:24:09,966 - INFO - Test Loss=0.7249, Test top-1 acc=0.8010
+2022-01-21 11:24:09,966 - INFO - Group Accuracy:
+
+2022-01-21 11:24:09,966 - INFO - [0.83638555 0.96072286 0.9925301 ]
+2022-01-21 11:24:09,967 - INFO - Epoch time: 396.96195006370544
+2022-01-21 11:24:09,967 - INFO - 
+Epoch: 49
+2022-01-21 11:24:09,967 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 11:24:51,330 - INFO - [Step=41000]	Loss=0.6070	255.2 examples/second
+2022-01-21 11:26:47,551 - INFO - [Step=41250]	Loss=0.6031	275.3 examples/second
+2022-01-21 11:28:43,654 - INFO - [Step=41500]	Loss=0.6120	275.6 examples/second
+2022-01-21 11:30:39,977 - INFO - [Step=41750]	Loss=0.5989	275.1 examples/second
+2022-01-21 11:30:47,504 - INFO - Test Loss=0.7269, Test top-1 acc=0.7995
+2022-01-21 11:30:47,505 - INFO - Group Accuracy:
+
+2022-01-21 11:30:47,505 - INFO - [0.8354217 0.9612048 0.9925301]
+2022-01-21 11:30:47,506 - INFO - Epoch time: 397.53876423835754
+2022-01-21 11:30:47,506 - INFO - 
+Epoch: 50
+2022-01-21 11:30:47,506 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 11:32:45,098 - INFO - [Step=42000]	Loss=0.5864	255.8 examples/second
+2022-01-21 11:34:41,189 - INFO - [Step=42250]	Loss=0.6093	275.6 examples/second
+2022-01-21 11:36:37,406 - INFO - [Step=42500]	Loss=0.5924	275.3 examples/second
+2022-01-21 11:37:24,318 - INFO - Test Loss=0.7484, Test top-1 acc=0.7995
+2022-01-21 11:37:24,318 - INFO - Group Accuracy:
+
+2022-01-21 11:37:24,318 - INFO - [0.833253  0.9624096 0.993253 ]
+2022-01-21 11:37:24,319 - INFO - Epoch time: 396.81306052207947
+2022-01-21 11:37:24,319 - INFO - 
+Epoch: 51
+2022-01-21 11:37:24,319 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 11:38:42,516 - INFO - [Step=42750]	Loss=0.5781	255.8 examples/second
+2022-01-21 11:40:38,675 - INFO - [Step=43000]	Loss=0.5864	275.5 examples/second
+2022-01-21 11:42:34,684 - INFO - [Step=43250]	Loss=0.5902	275.8 examples/second
+2022-01-21 11:44:01,280 - INFO - Test Loss=0.7309, Test top-1 acc=0.8039
+2022-01-21 11:44:01,281 - INFO - Group Accuracy:
+
+2022-01-21 11:44:01,281 - INFO - [0.8385542  0.9631325  0.99373496]
+2022-01-21 11:44:01,281 - INFO - Epoch time: 396.9626452922821
+2022-01-21 11:44:01,282 - INFO - 
+Epoch: 52
+2022-01-21 11:44:01,282 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 11:44:39,989 - INFO - [Step=43500]	Loss=0.5797	255.4 examples/second
+2022-01-21 11:46:35,889 - INFO - [Step=43750]	Loss=0.5876	276.1 examples/second
+2022-01-21 11:48:31,935 - INFO - [Step=44000]	Loss=0.5800	275.8 examples/second
+2022-01-21 11:50:28,215 - INFO - [Step=44250]	Loss=0.5896	275.2 examples/second
+2022-01-21 11:50:37,967 - INFO - Test Loss=0.7419, Test top-1 acc=0.8002
+2022-01-21 11:50:37,968 - INFO - Group Accuracy:
+
+2022-01-21 11:50:37,968 - INFO - [0.83614457 0.95759034 0.99373496]
+2022-01-21 11:50:37,969 - INFO - Epoch time: 396.6871085166931
+2022-01-21 11:50:37,969 - INFO - 
+Epoch: 53
+2022-01-21 11:50:37,969 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 11:52:33,906 - INFO - [Step=44500]	Loss=0.5749	254.6 examples/second
+2022-01-21 11:54:30,065 - INFO - [Step=44750]	Loss=0.5658	275.5 examples/second
+2022-01-21 11:56:26,278 - INFO - [Step=45000]	Loss=0.5922	275.4 examples/second
+2022-01-21 11:57:15,542 - INFO - Test Loss=0.7291, Test top-1 acc=0.8012
+2022-01-21 11:57:15,543 - INFO - Group Accuracy:
+
+2022-01-21 11:57:15,543 - INFO - [0.8351807  0.96168673 0.99373496]
+2022-01-21 11:57:15,543 - INFO - Epoch time: 397.5743453502655
+2022-01-21 11:57:15,543 - INFO - 
+Epoch: 54
+2022-01-21 11:57:15,543 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 11:58:31,595 - INFO - [Step=45250]	Loss=0.5723	255.4 examples/second
+2022-01-21 12:00:27,781 - INFO - [Step=45500]	Loss=0.5598	275.4 examples/second
+2022-01-21 12:02:23,686 - INFO - [Step=45750]	Loss=0.5785	276.1 examples/second
+2022-01-21 12:03:52,669 - INFO - Test Loss=0.7207, Test top-1 acc=0.8039
+2022-01-21 12:03:52,670 - INFO - Group Accuracy:
+
+2022-01-21 12:03:52,670 - INFO - [0.8383133  0.9621687  0.99445784]
+2022-01-21 12:03:52,671 - INFO - Epoch time: 397.1273558139801
+2022-01-21 12:03:52,671 - INFO - 
+Epoch: 55
+2022-01-21 12:03:52,671 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 12:04:29,213 - INFO - [Step=46000]	Loss=0.5708	254.9 examples/second
+2022-01-21 12:06:25,463 - INFO - [Step=46250]	Loss=0.5579	275.3 examples/second
+2022-01-21 12:08:21,815 - INFO - [Step=46500]	Loss=0.5696	275.0 examples/second
+2022-01-21 12:10:18,218 - INFO - [Step=46750]	Loss=0.5734	274.9 examples/second
+2022-01-21 12:10:30,624 - INFO - Test Loss=0.7454, Test top-1 acc=0.7978
+2022-01-21 12:10:30,624 - INFO - Group Accuracy:
+
+2022-01-21 12:10:30,624 - INFO - [0.83566266 0.9590362  0.993494  ]
+2022-01-21 12:10:30,625 - INFO - Epoch time: 397.954638004303
+2022-01-21 12:10:30,625 - INFO - 
+Epoch: 56
+2022-01-21 12:10:30,626 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 12:12:23,837 - INFO - [Step=47000]	Loss=0.5553	254.7 examples/second
+2022-01-21 12:14:19,910 - INFO - [Step=47250]	Loss=0.5546	275.7 examples/second
+2022-01-21 12:16:15,955 - INFO - [Step=47500]	Loss=0.5755	275.8 examples/second
+2022-01-21 12:17:07,493 - INFO - Test Loss=0.7403, Test top-1 acc=0.8000
+2022-01-21 12:17:07,493 - INFO - Group Accuracy:
+
+2022-01-21 12:17:07,493 - INFO - [0.83253014 0.9628916  0.993253  ]
+2022-01-21 12:17:07,494 - INFO - Epoch time: 396.8686034679413
+2022-01-21 12:17:07,494 - INFO - 
+Epoch: 57
+2022-01-21 12:17:07,494 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 12:18:21,288 - INFO - [Step=47750]	Loss=0.5469	255.3 examples/second
+2022-01-21 12:20:17,170 - INFO - [Step=48000]	Loss=0.5565	276.1 examples/second
+2022-01-21 12:22:13,295 - INFO - [Step=48250]	Loss=0.5710	275.6 examples/second
+2022-01-21 12:23:44,557 - INFO - Test Loss=0.7393, Test top-1 acc=0.8034
+2022-01-21 12:23:44,557 - INFO - Group Accuracy:
+
+2022-01-21 12:23:44,567 - INFO - [0.8366265 0.9655422 0.9927711]
+2022-01-21 12:23:44,568 - INFO - Epoch time: 397.0734016895294
+2022-01-21 12:23:44,568 - INFO - 
+Epoch: 58
+2022-01-21 12:23:44,568 - INFO - 
+Learning Rate: 0.0100
+2022-01-21 12:24:18,562 - INFO - [Step=48500]	Loss=0.5439	255.5 examples/second
+2022-01-21 12:26:14,512 - INFO - [Step=48750]	Loss=0.5486	276.0 examples/second
+2022-01-21 12:28:10,545 - INFO - [Step=49000]	Loss=0.5575	275.8 examples/second
+2022-01-21 12:30:06,555 - INFO - [Step=49250]	Loss=0.5625	275.8 examples/second
+2022-01-21 12:30:21,066 - INFO - Test Loss=0.7325, Test top-1 acc=0.8005
+2022-01-21 12:30:21,067 - INFO - Group Accuracy:
+
+2022-01-21 12:30:21,078 - INFO - [0.8344578 0.9633735 0.993494 ]
+2022-01-21 12:30:21,079 - INFO - Epoch time: 396.51108956336975
+2022-01-21 12:30:21,079 - INFO - 
+Epoch: 59
+2022-01-21 12:30:21,079 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 12:32:11,769 - INFO - [Step=49500]	Loss=0.5241	255.6 examples/second
+2022-01-21 12:34:07,757 - INFO - [Step=49750]	Loss=0.4860	275.9 examples/second
+2022-01-21 12:36:03,565 - INFO - [Step=50000]	Loss=0.4846	276.3 examples/second
+2022-01-21 12:36:57,631 - INFO - Test Loss=0.6863, Test top-1 acc=0.8161
+2022-01-21 12:36:57,631 - INFO - Group Accuracy:
+
+2022-01-21 12:36:57,631 - INFO - [0.8445783  0.96795183 0.99445784]
+2022-01-21 12:36:57,632 - INFO - Saving...
+2022-01-21 12:36:57,934 - INFO - Epoch time: 396.85491037368774
+2022-01-21 12:36:57,934 - INFO - 
+Epoch: 60
+2022-01-21 12:36:57,934 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 12:38:09,276 - INFO - [Step=50250]	Loss=0.4787	254.6 examples/second
+2022-01-21 12:40:05,064 - INFO - [Step=50500]	Loss=0.4700	276.4 examples/second
+2022-01-21 12:42:01,086 - INFO - [Step=50750]	Loss=0.4659	275.8 examples/second
+2022-01-21 12:43:34,960 - INFO - Test Loss=0.6915, Test top-1 acc=0.8200
+2022-01-21 12:43:34,961 - INFO - Group Accuracy:
+
+2022-01-21 12:43:34,961 - INFO - [0.8479518  0.96771085 0.9939759 ]
+2022-01-21 12:43:34,962 - INFO - Saving...
+2022-01-21 12:43:35,216 - INFO - Epoch time: 397.282532453537
+2022-01-21 12:43:35,217 - INFO - 
+Epoch: 61
+2022-01-21 12:43:35,217 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 12:44:07,364 - INFO - [Step=51000]	Loss=0.4599	253.4 examples/second
+2022-01-21 12:46:03,554 - INFO - [Step=51250]	Loss=0.4670	275.4 examples/second
+2022-01-21 12:47:59,765 - INFO - [Step=51500]	Loss=0.4559	275.4 examples/second
+2022-01-21 12:49:56,120 - INFO - [Step=51750]	Loss=0.4593	275.0 examples/second
+2022-01-21 12:50:12,750 - INFO - Test Loss=0.6959, Test top-1 acc=0.8173
+2022-01-21 12:50:12,751 - INFO - Group Accuracy:
+
+2022-01-21 12:50:12,751 - INFO - [0.84722894 0.9655422  0.9946988 ]
+2022-01-21 12:50:12,752 - INFO - Epoch time: 397.5349099636078
+2022-01-21 12:50:12,752 - INFO - 
+Epoch: 62
+2022-01-21 12:50:12,752 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 12:52:02,047 - INFO - [Step=52000]	Loss=0.4573	254.1 examples/second
+2022-01-21 12:53:58,041 - INFO - [Step=52250]	Loss=0.4516	275.9 examples/second
+2022-01-21 12:55:54,209 - INFO - [Step=52500]	Loss=0.4491	275.5 examples/second
+2022-01-21 12:56:50,226 - INFO - Test Loss=0.6946, Test top-1 acc=0.8145
+2022-01-21 12:56:50,226 - INFO - Group Accuracy:
+
+2022-01-21 12:56:50,226 - INFO - [0.8433735 0.9662651 0.9954217]
+2022-01-21 12:56:50,227 - INFO - Epoch time: 397.4748992919922
+2022-01-21 12:56:50,227 - INFO - 
+Epoch: 63
+2022-01-21 12:56:50,227 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 12:57:59,498 - INFO - [Step=52750]	Loss=0.4452	255.4 examples/second
+2022-01-21 12:59:55,276 - INFO - [Step=53000]	Loss=0.4585	276.4 examples/second
+2022-01-21 13:01:51,115 - INFO - [Step=53250]	Loss=0.4501	276.2 examples/second
+2022-01-21 13:03:26,287 - INFO - Test Loss=0.6975, Test top-1 acc=0.8111
+2022-01-21 13:03:26,287 - INFO - Group Accuracy:
+
+2022-01-21 13:03:26,287 - INFO - [0.8407229  0.96481925 0.99493974]
+2022-01-21 13:03:26,288 - INFO - Epoch time: 396.06133794784546
+2022-01-21 13:03:26,288 - INFO - 
+Epoch: 64
+2022-01-21 13:03:26,288 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 13:03:55,876 - INFO - [Step=53500]	Loss=0.4378	256.5 examples/second
+2022-01-21 13:05:51,694 - INFO - [Step=53750]	Loss=0.4437	276.3 examples/second
+2022-01-21 13:07:47,578 - INFO - [Step=54000]	Loss=0.4501	276.1 examples/second
+2022-01-21 13:09:43,269 - INFO - [Step=54250]	Loss=0.4414	276.6 examples/second
+2022-01-21 13:10:02,894 - INFO - Test Loss=0.7014, Test top-1 acc=0.8104
+2022-01-21 13:10:02,894 - INFO - Group Accuracy:
+
+2022-01-21 13:10:02,894 - INFO - [0.8412048  0.9653012  0.99421686]
+2022-01-21 13:10:02,894 - INFO - Epoch time: 396.6063356399536
+2022-01-21 13:10:02,895 - INFO - 
+Epoch: 65
+2022-01-21 13:10:02,895 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 13:11:48,933 - INFO - [Step=54500]	Loss=0.4453	254.6 examples/second
+2022-01-21 13:13:44,730 - INFO - [Step=54750]	Loss=0.4374	276.3 examples/second
+2022-01-21 13:15:40,655 - INFO - [Step=55000]	Loss=0.4448	276.0 examples/second
+2022-01-21 13:16:39,609 - INFO - Test Loss=0.7029, Test top-1 acc=0.8130
+2022-01-21 13:16:39,610 - INFO - Group Accuracy:
+
+2022-01-21 13:16:39,610 - INFO - [0.8414458  0.9674699  0.99493974]
+2022-01-21 13:16:39,610 - INFO - Epoch time: 396.71591567993164
+2022-01-21 13:16:39,611 - INFO - 
+Epoch: 66
+2022-01-21 13:16:39,611 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 13:17:46,446 - INFO - [Step=55250]	Loss=0.4427	254.4 examples/second
+2022-01-21 13:19:42,204 - INFO - [Step=55500]	Loss=0.4290	276.4 examples/second
+2022-01-21 13:21:38,246 - INFO - [Step=55750]	Loss=0.4338	275.8 examples/second
+2022-01-21 13:23:16,016 - INFO - Test Loss=0.6985, Test top-1 acc=0.8116
+2022-01-21 13:23:16,017 - INFO - Group Accuracy:
+
+2022-01-21 13:23:16,017 - INFO - [0.84       0.96795183 0.9939759 ]
+2022-01-21 13:23:16,017 - INFO - Epoch time: 396.4067211151123
+2022-01-21 13:23:16,017 - INFO - 
+Epoch: 67
+2022-01-21 13:23:16,017 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 13:23:43,490 - INFO - [Step=56000]	Loss=0.4349	255.5 examples/second
+2022-01-21 13:25:39,941 - INFO - [Step=56250]	Loss=0.4250	274.8 examples/second
+2022-01-21 13:27:35,844 - INFO - [Step=56500]	Loss=0.4402	276.1 examples/second
+2022-01-21 13:29:31,788 - INFO - [Step=56750]	Loss=0.4368	276.0 examples/second
+2022-01-21 13:29:52,900 - INFO - Test Loss=0.6987, Test top-1 acc=0.8147
+2022-01-21 13:29:52,900 - INFO - Group Accuracy:
+
+2022-01-21 13:29:52,901 - INFO - [0.84313256 0.9686747  0.99445784]
+2022-01-21 13:29:52,901 - INFO - Epoch time: 396.88385009765625
+2022-01-21 13:29:52,901 - INFO - 
+Epoch: 68
+2022-01-21 13:29:52,901 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 13:31:36,890 - INFO - [Step=57000]	Loss=0.4324	255.8 examples/second
+2022-01-21 13:33:32,725 - INFO - [Step=57250]	Loss=0.4347	276.3 examples/second
+2022-01-21 13:35:28,717 - INFO - [Step=57500]	Loss=0.4199	275.9 examples/second
+2022-01-21 13:36:29,222 - INFO - Test Loss=0.7096, Test top-1 acc=0.8137
+2022-01-21 13:36:29,222 - INFO - Group Accuracy:
+
+2022-01-21 13:36:29,222 - INFO - [0.8428916  0.96795183 0.99445784]
+2022-01-21 13:36:29,223 - INFO - Epoch time: 396.32162976264954
+2022-01-21 13:36:29,223 - INFO - 
+Epoch: 69
+2022-01-21 13:36:29,223 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 13:37:33,538 - INFO - [Step=57750]	Loss=0.4372	256.4 examples/second
+2022-01-21 13:39:29,433 - INFO - [Step=58000]	Loss=0.4339	276.1 examples/second
+2022-01-21 13:41:25,475 - INFO - [Step=58250]	Loss=0.4314	275.8 examples/second
+2022-01-21 13:43:05,338 - INFO - Test Loss=0.7139, Test top-1 acc=0.8145
+2022-01-21 13:43:05,338 - INFO - Group Accuracy:
+
+2022-01-21 13:43:05,338 - INFO - [0.8428916  0.96771085 0.9946988 ]
+2022-01-21 13:43:05,339 - INFO - Epoch time: 396.11584663391113
+2022-01-21 13:43:05,339 - INFO - 
+Epoch: 70
+2022-01-21 13:43:05,339 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 13:43:30,165 - INFO - [Step=58500]	Loss=0.4157	256.6 examples/second
+2022-01-21 13:45:26,582 - INFO - [Step=58750]	Loss=0.4259	274.9 examples/second
+2022-01-21 13:47:22,625 - INFO - [Step=59000]	Loss=0.4205	275.8 examples/second
+2022-01-21 13:49:18,647 - INFO - [Step=59250]	Loss=0.4270	275.8 examples/second
+2022-01-21 13:49:41,929 - INFO - Test Loss=0.7119, Test top-1 acc=0.8169
+2022-01-21 13:49:41,930 - INFO - Group Accuracy:
+
+2022-01-21 13:49:41,930 - INFO - [0.84385544 0.96819276 0.9951807 ]
+2022-01-21 13:49:41,930 - INFO - Epoch time: 396.5911817550659
+2022-01-21 13:49:41,930 - INFO - 
+Epoch: 71
+2022-01-21 13:49:41,930 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 13:51:21,656 - INFO - [Step=59500]	Loss=0.4312	260.1 examples/second
+2022-01-21 13:53:15,509 - INFO - [Step=59750]	Loss=0.4157	281.1 examples/second
+2022-01-21 13:55:09,652 - INFO - [Step=60000]	Loss=0.4289	280.4 examples/second
+2022-01-21 13:56:11,390 - INFO - Test Loss=0.7030, Test top-1 acc=0.8140
+2022-01-21 13:56:11,391 - INFO - Group Accuracy:
+
+2022-01-21 13:56:11,391 - INFO - [0.8424096  0.96795183 0.99445784]
+2022-01-21 13:56:11,392 - INFO - Epoch time: 389.46150064468384
+2022-01-21 13:56:11,392 - INFO - 
+Epoch: 72
+2022-01-21 13:56:11,392 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 13:57:13,903 - INFO - [Step=60250]	Loss=0.4195	257.5 examples/second
+2022-01-21 13:59:10,196 - INFO - [Step=60500]	Loss=0.4217	275.2 examples/second
+2022-01-21 14:01:06,446 - INFO - [Step=60750]	Loss=0.4197	275.3 examples/second
+2022-01-21 14:02:48,722 - INFO - Test Loss=0.7157, Test top-1 acc=0.8140
+2022-01-21 14:02:48,723 - INFO - Group Accuracy:
+
+2022-01-21 14:02:48,723 - INFO - [0.8416867  0.96771085 0.99445784]
+2022-01-21 14:02:48,723 - INFO - Epoch time: 397.33152747154236
+2022-01-21 14:02:48,723 - INFO - 
+Epoch: 73
+2022-01-21 14:02:48,723 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 14:03:11,067 - INFO - [Step=61000]	Loss=0.4280	256.8 examples/second
+2022-01-21 14:05:05,942 - INFO - [Step=61250]	Loss=0.4101	278.6 examples/second
+2022-01-21 14:07:00,657 - INFO - [Step=61500]	Loss=0.4228	279.0 examples/second
+2022-01-21 14:08:55,452 - INFO - [Step=61750]	Loss=0.4247	278.8 examples/second
+2022-01-21 14:09:20,889 - INFO - Test Loss=0.7079, Test top-1 acc=0.8181
+2022-01-21 14:09:20,890 - INFO - Group Accuracy:
+
+2022-01-21 14:09:20,890 - INFO - [0.8462651  0.96771085 0.9946988 ]
+2022-01-21 14:09:20,891 - INFO - Epoch time: 392.1673378944397
+2022-01-21 14:09:20,891 - INFO - 
+Epoch: 74
+2022-01-21 14:09:20,891 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 14:10:58,660 - INFO - [Step=62000]	Loss=0.4162	259.7 examples/second
+2022-01-21 14:12:52,726 - INFO - [Step=62250]	Loss=0.4146	280.5 examples/second
+2022-01-21 14:14:46,772 - INFO - [Step=62500]	Loss=0.4249	280.6 examples/second
+2022-01-21 14:15:50,879 - INFO - Test Loss=0.7161, Test top-1 acc=0.8157
+2022-01-21 14:15:50,879 - INFO - Group Accuracy:
+
+2022-01-21 14:15:50,879 - INFO - [0.84385544 0.96819276 0.9946988 ]
+2022-01-21 14:15:50,880 - INFO - Epoch time: 389.98891735076904
+2022-01-21 14:15:50,880 - INFO - 
+Epoch: 75
+2022-01-21 14:15:50,880 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 14:16:50,663 - INFO - [Step=62750]	Loss=0.4189	258.3 examples/second
+2022-01-21 14:18:46,990 - INFO - [Step=63000]	Loss=0.4103	275.1 examples/second
+2022-01-21 14:20:43,152 - INFO - [Step=63250]	Loss=0.4220	275.5 examples/second
+2022-01-21 14:22:27,590 - INFO - Test Loss=0.7165, Test top-1 acc=0.8147
+2022-01-21 14:22:27,591 - INFO - Group Accuracy:
+
+2022-01-21 14:22:27,591 - INFO - [0.84385544 0.96698797 0.99493974]
+2022-01-21 14:22:27,592 - INFO - Epoch time: 396.7123773097992
+2022-01-21 14:22:27,592 - INFO - 
+Epoch: 76
+2022-01-21 14:22:27,592 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 14:22:47,699 - INFO - [Step=63500]	Loss=0.4133	256.9 examples/second
+2022-01-21 14:24:41,263 - INFO - [Step=63750]	Loss=0.4154	281.8 examples/second
+2022-01-21 14:26:34,791 - INFO - [Step=64000]	Loss=0.4047	281.9 examples/second
+2022-01-21 14:28:28,493 - INFO - [Step=64250]	Loss=0.4055	281.4 examples/second
+2022-01-21 14:28:56,119 - INFO - Test Loss=0.7229, Test top-1 acc=0.8159
+2022-01-21 14:28:56,119 - INFO - Group Accuracy:
+
+2022-01-21 14:28:56,119 - INFO - [0.8428916  0.96819276 0.9951807 ]
+2022-01-21 14:28:56,120 - INFO - Epoch time: 388.52788186073303
+2022-01-21 14:28:56,120 - INFO - 
+Epoch: 77
+2022-01-21 14:28:56,120 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 14:30:32,181 - INFO - [Step=64500]	Loss=0.4029	258.7 examples/second
+2022-01-21 14:32:27,031 - INFO - [Step=64750]	Loss=0.4077	278.6 examples/second
+2022-01-21 14:34:21,752 - INFO - [Step=65000]	Loss=0.4059	278.9 examples/second
+2022-01-21 14:35:28,523 - INFO - Test Loss=0.7193, Test top-1 acc=0.8135
+2022-01-21 14:35:28,524 - INFO - Group Accuracy:
+
+2022-01-21 14:35:28,524 - INFO - [0.8414458 0.9672289 0.9946988]
+2022-01-21 14:35:28,525 - INFO - Epoch time: 392.4046540260315
+2022-01-21 14:35:28,525 - INFO - 
+Epoch: 78
+2022-01-21 14:35:28,525 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 14:36:25,497 - INFO - [Step=65250]	Loss=0.4170	258.6 examples/second
+2022-01-21 14:38:20,638 - INFO - [Step=65500]	Loss=0.4139	277.9 examples/second
+2022-01-21 14:40:15,798 - INFO - [Step=65750]	Loss=0.4084	277.9 examples/second
+2022-01-21 14:42:01,954 - INFO - Test Loss=0.7244, Test top-1 acc=0.8147
+2022-01-21 14:42:01,954 - INFO - Group Accuracy:
+
+2022-01-21 14:42:01,954 - INFO - [0.8416867  0.96771085 0.9954217 ]
+2022-01-21 14:42:01,955 - INFO - Epoch time: 393.4298439025879
+2022-01-21 14:42:01,955 - INFO - 
+Epoch: 79
+2022-01-21 14:42:01,955 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 14:42:19,788 - INFO - [Step=66000]	Loss=0.4042	258.1 examples/second
+2022-01-21 14:44:14,134 - INFO - [Step=66250]	Loss=0.4018	279.9 examples/second
+2022-01-21 14:46:08,488 - INFO - [Step=66500]	Loss=0.4175	279.8 examples/second
+2022-01-21 14:48:02,844 - INFO - [Step=66750]	Loss=0.4141	279.8 examples/second
+2022-01-21 14:48:32,700 - INFO - Test Loss=0.7339, Test top-1 acc=0.8108
+2022-01-21 14:48:32,701 - INFO - Group Accuracy:
+
+2022-01-21 14:48:32,701 - INFO - [0.84       0.96843374 0.9939759 ]
+2022-01-21 14:48:32,702 - INFO - Epoch time: 390.74663066864014
+2022-01-21 14:48:32,702 - INFO - 
+Epoch: 80
+2022-01-21 14:48:32,702 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 14:50:05,708 - INFO - [Step=67000]	Loss=0.4083	260.5 examples/second
+2022-01-21 14:51:59,607 - INFO - [Step=67250]	Loss=0.4155	281.0 examples/second
+2022-01-21 14:53:53,505 - INFO - [Step=67500]	Loss=0.4033	281.0 examples/second
+2022-01-21 14:55:01,957 - INFO - Test Loss=0.7216, Test top-1 acc=0.8173
+2022-01-21 14:55:01,957 - INFO - Group Accuracy:
+
+2022-01-21 14:55:01,957 - INFO - [0.8445783  0.96843374 0.99445784]
+2022-01-21 14:55:01,958 - INFO - Epoch time: 389.2566111087799
+2022-01-21 14:55:01,958 - INFO - 
+Epoch: 81
+2022-01-21 14:55:01,958 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 14:55:56,878 - INFO - [Step=67750]	Loss=0.4104	259.4 examples/second
+2022-01-21 14:57:53,547 - INFO - [Step=68000]	Loss=0.4063	274.3 examples/second
+2022-01-21 14:59:50,397 - INFO - [Step=68250]	Loss=0.4186	273.9 examples/second
+2022-01-21 15:01:41,603 - INFO - Test Loss=0.7269, Test top-1 acc=0.8135
+2022-01-21 15:01:41,604 - INFO - Group Accuracy:
+
+2022-01-21 15:01:41,604 - INFO - [0.8419277  0.96819276 0.99445784]
+2022-01-21 15:01:41,604 - INFO - Epoch time: 399.6458442211151
+2022-01-21 15:01:41,604 - INFO - 
+Epoch: 82
+2022-01-21 15:01:41,604 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 15:01:57,847 - INFO - [Step=68500]	Loss=0.4084	251.1 examples/second
+2022-01-21 15:03:54,662 - INFO - [Step=68750]	Loss=0.3950	273.9 examples/second
+2022-01-21 15:05:51,798 - INFO - [Step=69000]	Loss=0.3980	273.2 examples/second
+2022-01-21 15:07:48,534 - INFO - [Step=69250]	Loss=0.4040	274.1 examples/second
+2022-01-21 15:08:21,681 - INFO - Test Loss=0.7261, Test top-1 acc=0.8152
+2022-01-21 15:08:21,682 - INFO - Group Accuracy:
+
+2022-01-21 15:08:21,682 - INFO - [0.8426506  0.96795183 0.9954217 ]
+2022-01-21 15:08:21,683 - INFO - Epoch time: 400.0782427787781
+2022-01-21 15:08:21,683 - INFO - 
+Epoch: 83
+2022-01-21 15:08:21,683 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 15:09:54,581 - INFO - [Step=69500]	Loss=0.3872	253.9 examples/second
+2022-01-21 15:11:50,569 - INFO - [Step=69750]	Loss=0.3917	275.9 examples/second
+2022-01-21 15:13:46,924 - INFO - [Step=70000]	Loss=0.3972	275.0 examples/second
+2022-01-21 15:14:59,752 - INFO - Test Loss=0.7327, Test top-1 acc=0.8164
+2022-01-21 15:14:59,752 - INFO - Group Accuracy:
+
+2022-01-21 15:14:59,752 - INFO - [0.8450602 0.9674699 0.9954217]
+2022-01-21 15:14:59,753 - INFO - Epoch time: 398.0702397823334
+2022-01-21 15:14:59,753 - INFO - 
+Epoch: 84
+2022-01-21 15:14:59,753 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 15:15:52,668 - INFO - [Step=70250]	Loss=0.3963	254.5 examples/second
+2022-01-21 15:17:48,404 - INFO - [Step=70500]	Loss=0.3954	276.5 examples/second
+2022-01-21 15:19:44,474 - INFO - [Step=70750]	Loss=0.3926	275.7 examples/second
+2022-01-21 15:21:35,848 - INFO - Test Loss=0.7347, Test top-1 acc=0.8142
+2022-01-21 15:21:35,848 - INFO - Group Accuracy:
+
+2022-01-21 15:21:35,848 - INFO - [0.84481925 0.9657831  0.9959036 ]
+2022-01-21 15:21:35,849 - INFO - Epoch time: 396.09635519981384
+2022-01-21 15:21:35,849 - INFO - 
+Epoch: 85
+2022-01-21 15:21:35,850 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 15:21:49,582 - INFO - [Step=71000]	Loss=0.4046	255.8 examples/second
+2022-01-21 15:23:45,393 - INFO - [Step=71250]	Loss=0.3943	276.3 examples/second
+2022-01-21 15:25:41,238 - INFO - [Step=71500]	Loss=0.4000	276.2 examples/second
+2022-01-21 15:27:36,897 - INFO - [Step=71750]	Loss=0.3949	276.7 examples/second
+2022-01-21 15:28:12,186 - INFO - Test Loss=0.7367, Test top-1 acc=0.8140
+2022-01-21 15:28:12,186 - INFO - Group Accuracy:
+
+2022-01-21 15:28:12,186 - INFO - [0.8433735 0.9674699 0.9946988]
+2022-01-21 15:28:12,186 - INFO - Epoch time: 396.3370339870453
+2022-01-21 15:28:12,187 - INFO - 
+Epoch: 86
+2022-01-21 15:28:12,187 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 15:29:41,836 - INFO - [Step=72000]	Loss=0.3916	256.1 examples/second
+2022-01-21 15:31:38,246 - INFO - [Step=72250]	Loss=0.3988	274.9 examples/second
+2022-01-21 15:33:34,587 - INFO - [Step=72500]	Loss=0.3855	275.1 examples/second
+2022-01-21 15:34:48,825 - INFO - Test Loss=0.7460, Test top-1 acc=0.8152
+2022-01-21 15:34:48,825 - INFO - Group Accuracy:
+
+2022-01-21 15:34:48,825 - INFO - [0.8419277  0.9693976  0.99493974]
+2022-01-21 15:34:48,826 - INFO - Epoch time: 396.63975524902344
+2022-01-21 15:34:48,826 - INFO - 
+Epoch: 87
+2022-01-21 15:34:48,827 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 15:35:39,227 - INFO - [Step=72750]	Loss=0.3876	256.7 examples/second
+2022-01-21 15:37:35,161 - INFO - [Step=73000]	Loss=0.3901	276.0 examples/second
+2022-01-21 15:39:31,101 - INFO - [Step=73250]	Loss=0.3966	276.0 examples/second
+2022-01-21 15:41:24,654 - INFO - Test Loss=0.7368, Test top-1 acc=0.8161
+2022-01-21 15:41:24,654 - INFO - Group Accuracy:
+
+2022-01-21 15:41:24,654 - INFO - [0.84313256 0.96819276 0.99493974]
+2022-01-21 15:41:24,655 - INFO - Epoch time: 395.8282072544098
+2022-01-21 15:41:24,655 - INFO - 
+Epoch: 88
+2022-01-21 15:41:24,655 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 15:41:35,543 - INFO - [Step=73500]	Loss=0.3941	257.1 examples/second
+2022-01-21 15:43:30,692 - INFO - [Step=73750]	Loss=0.3862	277.9 examples/second
+2022-01-21 15:45:26,387 - INFO - [Step=74000]	Loss=0.3883	276.6 examples/second
+2022-01-21 15:47:21,799 - INFO - [Step=74250]	Loss=0.3928	277.3 examples/second
+2022-01-21 15:47:59,183 - INFO - Test Loss=0.7410, Test top-1 acc=0.8178
+2022-01-21 15:47:59,183 - INFO - Group Accuracy:
+
+2022-01-21 15:47:59,184 - INFO - [0.84361446 0.96843374 0.9956626 ]
+2022-01-21 15:47:59,184 - INFO - Epoch time: 394.5293769836426
+2022-01-21 15:47:59,184 - INFO - 
+Epoch: 89
+2022-01-21 15:47:59,184 - INFO - 
+Learning Rate: 0.0010
+2022-01-21 15:49:26,502 - INFO - [Step=74500]	Loss=0.3883	256.6 examples/second
+2022-01-21 15:51:22,551 - INFO - [Step=74750]	Loss=0.3938	275.7 examples/second
+2022-01-21 15:53:17,430 - INFO - [Step=75000]	Loss=0.3972	278.6 examples/second
+2022-01-21 15:54:34,193 - INFO - Test Loss=0.7409, Test top-1 acc=0.8130
+2022-01-21 15:54:34,194 - INFO - Group Accuracy:
+
+2022-01-21 15:54:34,194 - INFO - [0.8407229  0.96843374 0.99421686]
+2022-01-21 15:54:34,194 - INFO - Epoch time: 395.0099878311157
+2022-01-21 15:54:43,990 - INFO - Computing OOD Statistics...
+2022-01-21 15:54:44,000 - INFO - 	Baseline.          AUROC: 0.6792. TNR@95TPR: 0.0894. AUPR OUT: 0.2499
+2022-01-21 15:54:44,005 - INFO - 	ODIN (T=1000).     AUROC: 0.9327. TNR@95TPR: 0.7412. AUPR OUT: 0.7332
+2022-01-21 15:54:44,005 - INFO - Printing Final Accuracy + OOD Detection stats
+2022-01-21 15:54:44,005 - INFO - Top 1 Accuracy:  Min: 0.8200; Max: 0.8200; Avg: 0.8200; Std: 0.0000; Len: 1
+2022-01-21 15:54:44,005 - INFO - Top 5 Accuracy:  Min: 0.9365; Max: 0.9365; Avg: 0.9365; Std: 0.0000; Len: 1
+2022-01-21 15:54:44,005 - INFO - **********************************************************************
+2022-01-21 15:54:44,005 - INFO - 	MSP (auroc): [0.6792331679659815] Min: 0.6792; Max: 0.6792; Avg: 0.6792; Std: 0.0000; Len: 1
+2022-01-21 15:54:44,005 - INFO - 	MSP (tnr): [0.0894117647058823] Min: 0.0894; Max: 0.0894; Avg: 0.0894; Std: 0.0000; Len: 1
+2022-01-21 15:54:44,005 - INFO - 	MSP (aupr): [0.24989173541054177] Min: 0.2499; Max: 0.2499; Avg: 0.2499; Std: 0.0000; Len: 1
+2022-01-21 15:54:44,006 - INFO - 	ODIN (auroc): [0.9326837703756201] Min: 0.9327; Max: 0.9327; Avg: 0.9327; Std: 0.0000; Len: 1
+2022-01-21 15:54:44,006 - INFO - 	ODIN (tnr): [0.7411764705882353] Min: 0.7412; Max: 0.7412; Avg: 0.7412; Std: 0.0000; Len: 1
+2022-01-21 15:54:44,006 - INFO - 	ODIN (aupr): [0.7332089826372893] Min: 0.7332; Max: 0.7332; Avg: 0.7332; Std: 0.0000; Len: 1

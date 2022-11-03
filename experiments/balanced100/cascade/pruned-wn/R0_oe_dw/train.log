@@ -1,0 +1,9 @@
+2022-09-27 22:56:39,411 - INFO - ==> Preparing data..
+2022-09-27 22:56:39,764 - INFO - # ID Train: 89972
+2022-09-27 22:56:39,764 - INFO - # ID Test:  3500
+2022-09-27 22:56:39,764 - INFO - # OOD Test: 1500
+2022-09-27 22:56:39,764 - INFO - checkpoint filename: experiments/balanced100/cascade/pruned-wn/R0_oe_dw/checkpoint.pt
+2022-09-27 22:56:39,764 - INFO - log filename: experiments/balanced100/cascade/pruned-wn/R0_oe_dw/train.log
+2022-09-27 22:56:39,765 - INFO - ********************************************************
+2022-09-27 22:56:39,765 - INFO - Starting Iter: 0 / 1
+2022-09-27 22:56:39,765 - INFO - ********************************************************

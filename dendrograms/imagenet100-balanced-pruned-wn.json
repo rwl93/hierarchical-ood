@@ -1,0 +1,961 @@
+{
+  "children": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "colname": "level3",
+              "gt": false,
+              "name": "sweatshirt",
+              "ood": false,
+              "pred": false
+            },
+            {
+              "colname": "level3",
+              "gt": false,
+              "name": "cardigan",
+              "ood": false,
+              "pred": false
+            },
+            {
+              "colname": "level3",
+              "gt": false,
+              "name": "lab coat",
+              "ood": false,
+              "pred": false
+            },
+            {
+              "colname": "level3",
+              "gt": false,
+              "name": "trench coat",
+              "ood": false,
+              "pred": false
+            },
+            {
+              "colname": "level3",
+              "gt": false,
+              "name": "suit",
+              "ood": false,
+              "pred": false
+            }
+          ],
+          "colname": "level2",
+          "gt": false,
+          "name": "clothing",
+          "ood": false,
+          "pred": false
+        },
+        {
+          "children": [
+            {
+              "colname": "level3",
+              "gt": false,
+              "name": "volleyball",
+              "ood": false,
+              "pred": false
+            },
+            {
+              "colname": "level3",
+              "gt": false,
+              "name": "soccer ball",
+              "ood": true,
+              "pred": false
+            },
+            {
+              "colname": "level3",
+              "gt": false,
+              "name": "baseball",
+              "ood": false,
+              "pred": false
+            },
+            {
+              "colname": "level3",
+              "gt": false,
+              "name": "basketball",
+              "ood": false,
+              "pred": false
+            },
+            {
+              "colname": "level3",
+              "gt": false,
+              "name": "rugby ball",
+              "ood": true,
+              "pred": false
+            }
+          ],
+          "colname": "level2",
+          "gt": false,
+          "name": "ball",
+          "ood": false,
+          "pred": false
+        },
+        {
+          "children": [
+            {
+              "colname": "level3",
+              "gt": false,
+              "name": "electric guitar",
+              "ood": false,
+              "pred": false
+            },
+            {
+              "colname": "level3",
+              "gt": false,
+              "name": "acoustic guitar",
+              "ood": false,
+              "pred": false
+            },
+            {
+              "colname": "level3",
+              "gt": false,
+              "name": "banjo",
+              "ood": false,
+              "pred": false
+            },
+            {
+              "colname": "level3",
+              "gt": false,
+              "name": "cello",
+              "ood": false,
+              "pred": false
+            },
+            {
+              "colname": "level3",
+              "gt": false,
+              "name": "harp",
+              "ood": false,
+              "pred": false
+            }
+          ],
+          "colname": "level2",
+          "gt": false,
+          "name": "stringed instrument",
+          "ood": false,
+          "pred": false
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "bullet train",
+                  "ood": true,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "freight car",
+                  "ood": true,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "electric locomotive",
+                  "ood": true,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "steam locomotive",
+                  "ood": true,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "streetcar",
+                  "ood": true,
+                  "pred": false
+                }
+              ],
+              "colname": "level3",
+              "gt": false,
+              "name": "train",
+              "ood": true,
+              "pred": false
+            },
+            {
+              "children": [
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "pickup",
+                  "ood": true,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "police van",
+                  "ood": true,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "sports car",
+                  "ood": true,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "jeep",
+                  "ood": true,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "minivan",
+                  "ood": true,
+                  "pred": false
+                }
+              ],
+              "colname": "level3",
+              "gt": false,
+              "name": "car/truck",
+              "ood": true,
+              "pred": false
+            },
+            {
+              "children": [
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "container ship",
+                  "ood": true,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "liner",
+                  "ood": true,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "aircraft carrier",
+                  "ood": true,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "fireboat",
+                  "ood": true,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "lifeboat",
+                  "ood": true,
+                  "pred": false
+                }
+              ],
+              "colname": "level3",
+              "gt": false,
+              "name": "vessel",
+              "ood": true,
+              "pred": false
+            }
+          ],
+          "colname": "level2",
+          "gt": false,
+          "name": "vehicle",
+          "ood": true,
+          "pred": false
+        }
+      ],
+      "colname": "level1",
+      "gt": false,
+      "name": "artifact",
+      "ood": false,
+      "pred": false
+    },
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "colname": "level3",
+              "gt": false,
+              "name": "agaric",
+              "ood": false,
+              "pred": false
+            },
+            {
+              "colname": "level3",
+              "gt": false,
+              "name": "gyromitra",
+              "ood": false,
+              "pred": false
+            },
+            {
+              "colname": "level3",
+              "gt": false,
+              "name": "stinkhorn",
+              "ood": false,
+              "pred": false
+            },
+            {
+              "colname": "level3",
+              "gt": false,
+              "name": "earthstar",
+              "ood": false,
+              "pred": false
+            },
+            {
+              "colname": "level3",
+              "gt": false,
+              "name": "hen-of-the-woods",
+              "ood": false,
+              "pred": false
+            }
+          ],
+          "colname": "level2",
+          "gt": false,
+          "name": "fungus",
+          "ood": false,
+          "pred": false
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "colname": "level5",
+                      "gt": false,
+                      "name": "ground beetle",
+                      "ood": false,
+                      "pred": false
+                    },
+                    {
+                      "colname": "level5",
+                      "gt": false,
+                      "name": "long-horned beetle",
+                      "ood": false,
+                      "pred": false
+                    },
+                    {
+                      "colname": "level5",
+                      "gt": false,
+                      "name": "leaf beetle",
+                      "ood": false,
+                      "pred": false
+                    },
+                    {
+                      "colname": "level5",
+                      "gt": false,
+                      "name": "dung beetle",
+                      "ood": false,
+                      "pred": false
+                    },
+                    {
+                      "colname": "level5",
+                      "gt": false,
+                      "name": "rhinoceros beetle",
+                      "ood": false,
+                      "pred": false
+                    }
+                  ],
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "beetle",
+                  "ood": false,
+                  "pred": false
+                },
+                {
+                  "children": [
+                    {
+                      "colname": "level5",
+                      "gt": false,
+                      "name": "ringlet butterfly",
+                      "ood": false,
+                      "pred": false
+                    },
+                    {
+                      "colname": "level5",
+                      "gt": false,
+                      "name": "monarch butterfly",
+                      "ood": false,
+                      "pred": false
+                    },
+                    {
+                      "colname": "level5",
+                      "gt": false,
+                      "name": "cabbage butterfly",
+                      "ood": false,
+                      "pred": false
+                    },
+                    {
+                      "colname": "level5",
+                      "gt": false,
+                      "name": "sulphur butterfly",
+                      "ood": false,
+                      "pred": false
+                    },
+                    {
+                      "colname": "level5",
+                      "gt": false,
+                      "name": "lycaenid butterfly",
+                      "ood": false,
+                      "pred": false
+                    }
+                  ],
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "butterfly",
+                  "ood": false,
+                  "pred": false
+                }
+              ],
+              "colname": "level3",
+              "gt": false,
+              "name": "insect",
+              "ood": false,
+              "pred": false
+            },
+            {
+              "children": [
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "American lobster",
+                  "ood": false,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "Dungeness crab",
+                  "ood": false,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "rock crab",
+                  "ood": false,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "fiddler crab",
+                  "ood": false,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "king crab",
+                  "ood": false,
+                  "pred": false
+                }
+              ],
+              "colname": "level3",
+              "gt": false,
+              "name": "crab",
+              "ood": false,
+              "pred": false
+            },
+            {
+              "children": [
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "black widow",
+                  "ood": false,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "tarantula",
+                  "ood": false,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "garden spider",
+                  "ood": false,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "barn spider",
+                  "ood": false,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "black and gold garden spider",
+                  "ood": false,
+                  "pred": false
+                }
+              ],
+              "colname": "level3",
+              "gt": false,
+              "name": "spider",
+              "ood": false,
+              "pred": false
+            }
+          ],
+          "colname": "level2",
+          "gt": false,
+          "name": "invertebrate",
+          "ood": false,
+          "pred": false
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "brambling",
+                  "ood": false,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "goldfinch",
+                  "ood": true,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "house finch",
+                  "ood": true,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "junco",
+                  "ood": true,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "indigo bunting",
+                  "ood": false,
+                  "pred": false
+                }
+              ],
+              "colname": "level3",
+              "gt": false,
+              "name": "bird",
+              "ood": false,
+              "pred": false
+            },
+            {
+              "children": [
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "loggerhead",
+                  "ood": false,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "leatherback turtle",
+                  "ood": false,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "mud turtle",
+                  "ood": false,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "terrapin",
+                  "ood": false,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "box turtle",
+                  "ood": false,
+                  "pred": false
+                }
+              ],
+              "colname": "level3",
+              "gt": false,
+              "name": "turtle",
+              "ood": false,
+              "pred": false
+            },
+            {
+              "children": [
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "Gila monster",
+                  "ood": false,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "green lizard",
+                  "ood": false,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "alligator lizard",
+                  "ood": false,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "frilled lizard",
+                  "ood": false,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "agama",
+                  "ood": false,
+                  "pred": false
+                }
+              ],
+              "colname": "level3",
+              "gt": false,
+              "name": "lizard",
+              "ood": false,
+              "pred": false
+            },
+            {
+              "children": [
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "puffer",
+                  "ood": false,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "lionfish",
+                  "ood": false,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "anemone fish",
+                  "ood": false,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "sturgeon",
+                  "ood": true,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "gar",
+                  "ood": true,
+                  "pred": false
+                }
+              ],
+              "colname": "level3",
+              "gt": false,
+              "name": "fish",
+              "ood": false,
+              "pred": false
+            },
+            {
+              "children": [
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "night snake",
+                  "ood": false,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "rock python",
+                  "ood": false,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "boa constrictor",
+                  "ood": false,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "Indian cobra",
+                  "ood": false,
+                  "pred": false
+                },
+                {
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "green mamba",
+                  "ood": false,
+                  "pred": false
+                }
+              ],
+              "colname": "level3",
+              "gt": false,
+              "name": "snake",
+              "ood": false,
+              "pred": false
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "colname": "level6",
+                          "gt": false,
+                          "name": "cheetah",
+                          "ood": true,
+                          "pred": false
+                        },
+                        {
+                          "colname": "level6",
+                          "gt": false,
+                          "name": "tiger",
+                          "ood": true,
+                          "pred": false
+                        },
+                        {
+                          "colname": "level6",
+                          "gt": false,
+                          "name": "lion",
+                          "ood": true,
+                          "pred": false
+                        },
+                        {
+                          "colname": "level6",
+                          "gt": false,
+                          "name": "jaguar",
+                          "ood": true,
+                          "pred": false
+                        },
+                        {
+                          "colname": "level6",
+                          "gt": false,
+                          "name": "snow leopard",
+                          "ood": true,
+                          "pred": false
+                        }
+                      ],
+                      "colname": "level5",
+                      "gt": false,
+                      "name": "big cat",
+                      "ood": true,
+                      "pred": false
+                    },
+                    {
+                      "children": [
+                        {
+                          "colname": "level6",
+                          "gt": false,
+                          "name": "Egyptian cat",
+                          "ood": false,
+                          "pred": false
+                        },
+                        {
+                          "colname": "level6",
+                          "gt": false,
+                          "name": "Siamese cat",
+                          "ood": false,
+                          "pred": false
+                        },
+                        {
+                          "colname": "level6",
+                          "gt": false,
+                          "name": "Persian cat",
+                          "ood": false,
+                          "pred": false
+                        },
+                        {
+                          "colname": "level6",
+                          "gt": false,
+                          "name": "tiger cat",
+                          "ood": false,
+                          "pred": false
+                        },
+                        {
+                          "colname": "level6",
+                          "gt": false,
+                          "name": "tabby cat",
+                          "ood": false,
+                          "pred": false
+                        }
+                      ],
+                      "colname": "level5",
+                      "gt": false,
+                      "name": "domestic cat",
+                      "ood": false,
+                      "pred": false
+                    }
+                  ],
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "feline",
+                  "ood": false,
+                  "pred": false
+                },
+                {
+                  "children": [
+                    {
+                      "colname": "level5",
+                      "gt": false,
+                      "name": "Chesapeake Bay retriever",
+                      "ood": false,
+                      "pred": false
+                    },
+                    {
+                      "colname": "level5",
+                      "gt": false,
+                      "name": "Labrador retriever",
+                      "ood": true,
+                      "pred": false
+                    },
+                    {
+                      "colname": "level5",
+                      "gt": false,
+                      "name": "golden retriever",
+                      "ood": true,
+                      "pred": false
+                    },
+                    {
+                      "colname": "level5",
+                      "gt": false,
+                      "name": "curly-coated retriever",
+                      "ood": true,
+                      "pred": false
+                    },
+                    {
+                      "colname": "level5",
+                      "gt": false,
+                      "name": "flat-coated retriever",
+                      "ood": false,
+                      "pred": false
+                    }
+                  ],
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "dog",
+                  "ood": false,
+                  "pred": false
+                },
+                {
+                  "children": [
+                    {
+                      "colname": "level5",
+                      "gt": false,
+                      "name": "colobus",
+                      "ood": false,
+                      "pred": false
+                    },
+                    {
+                      "colname": "level5",
+                      "gt": false,
+                      "name": "langur",
+                      "ood": false,
+                      "pred": false
+                    },
+                    {
+                      "colname": "level5",
+                      "gt": false,
+                      "name": "macaque",
+                      "ood": false,
+                      "pred": false
+                    },
+                    {
+                      "colname": "level5",
+                      "gt": false,
+                      "name": "baboon",
+                      "ood": false,
+                      "pred": false
+                    },
+                    {
+                      "colname": "level5",
+                      "gt": false,
+                      "name": "patas",
+                      "ood": false,
+                      "pred": false
+                    }
+                  ],
+                  "colname": "level4",
+                  "gt": false,
+                  "name": "monkey",
+                  "ood": false,
+                  "pred": false
+                }
+              ],
+              "colname": "level3",
+              "gt": false,
+              "name": "mammal",
+              "ood": false,
+              "pred": false
+            }
+          ],
+          "colname": "level2",
+          "gt": false,
+          "name": "vertebrate",
+          "ood": false,
+          "pred": false
+        }
+      ],
+      "colname": "level1",
+      "gt": false,
+      "name": "living thing",
+      "ood": false,
+      "pred": false
+    }
+  ],
+  "colname": "level0",
+  "gt": false,
+  "name": "Physical object",
+  "ood": false,
+  "pred": false
+}

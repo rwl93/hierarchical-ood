@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>nbdt-Imagenet100-wn</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <style>
+html {
+  background-color: #FFFFFF;
+}
+    </style>
+  </head>
+  <body>
+    <div class="tree-main">
+      
+    </div>
+
+<!-- load the d3.js library -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+<!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.15.0/d3.min.js" integrity="sha255-Xb5SSzhH3wEPC4Vy3W70Lqh9Y3Du/3KxPqI2JHQSpTw=" crossorigin="anonymous"></script> -->
+
+<script>
+
+window.d3_onload_run = false;
+
+// CONSTANTS that python will impute
+var zoom_factor = 1.0;
+var show_sublabels = false;
+var straight_lines = true;
+var treeData = [{"sublabel": "n00003553", "label": "whole", "parent": "null", "children": [{"sublabel": "n00021939", "label": "artifact", "parent": "n00003553", "children": [{"sublabel": "n03575240", "label": "instrumentality", "parent": "n00021939", "children": [{"sublabel": "n03100490", "label": "conveyance", "parent": "n03575240", "children": [{"sublabel": "n04524313", "label": "vehicle", "parent": "n03100490", "children": [{"sublabel": "n02687172", "label": "aircraft_carrier", "parent": "n04524313", "children": [], "alt": "aircraft_carrier", "id": "n02687172", "color": "gray", "theme": "regular"}, {"sublabel": "n04530566", "label": "vessel", "parent": "n04524313", "children": [{"sublabel": "n04194289", "label": "ship", "parent": "n04530566", "children": [{"sublabel": "n03095699", "label": "container_ship", "parent": "n04194289", "children": [], "alt": "container_ship", "id": "n03095699", "color": "gray", "theme": "regular"}, {"sublabel": "n03673027", "label": "liner", "parent": "n04194289", "children": [], "alt": "liner", "id": "n03673027", "color": "gray", "theme": "regular"}], "alt": "liner, container_ship", "id": "n04194289", "color": "gray", "theme": "regular"}, {"sublabel": "n02858304", "label": "boat", "parent": "n04530566", "children": [{"sublabel": "n03344393", "label": "fireboat", "parent": "n02858304", "children": [], "alt": "fireboat", "id": "n03344393", "color": "gray", "theme": "regular"}, {"sublabel": "n03662601", "label": "lifeboat", "parent": "n02858304", "children": [], "alt": "lifeboat", "id": "n03662601", "color": "gray", "theme": "regular"}], "alt": "lifeboat, fireboat", "id": "n02858304", "color": "gray", "theme": "regular"}], "alt": "lifeboat, fireboat, liner, container_ship", "id": "n04530566", "color": "gray", "theme": "regular"}], "alt": "aircraft_carrier, lifeboat, container_ship, fireboat, liner", "id": "n04524313", "color": "gray", "theme": "regular"}, {"sublabel": "n02917067", "label": "bullet_train", "parent": "n03100490", "children": [], "alt": "bullet_train", "id": "n02917067", "color": "gray", "theme": "regular"}], "alt": "aircraft_carrier, lifeboat, container_ship, fireboat, bullet_train, liner", "id": "n03100490", "color": "gray", "theme": "regular"}, {"sublabel": "n04338517", "label": "stringed_instrument", "parent": "n03575240", "children": [{"sublabel": "n03467517", "label": "guitar", "parent": "n04338517", "children": [{"sublabel": "n02676566", "label": "acoustic_guitar", "parent": "n03467517", "children": [], "alt": "acoustic_guitar", "id": "n02676566", "color": "gray", "theme": "regular"}, {"sublabel": "n03272010", "label": "electric_guitar", "parent": "n03467517", "children": [], "alt": "electric_guitar", "id": "n03272010", "color": "gray", "theme": "regular"}], "alt": "acoustic_guitar, electric_guitar", "id": "n03467517", "color": "gray", "theme": "regular"}, {"sublabel": "n02787622", "label": "banjo", "parent": "n04338517", "children": [], "alt": "banjo", "id": "n02787622", "color": "gray", "theme": "regular"}, {"sublabel": "n02992211", "label": "cello", "parent": "n04338517", "children": [], "alt": "cello", "id": "n02992211", "color": "gray", "theme": "regular"}, {"sublabel": "n03495258", "label": "harp", "parent": "n04338517", "children": [], "alt": "harp", "id": "n03495258", "color": "gray", "theme": "regular"}], "alt": "acoustic_guitar, banjo, cello, electric_guitar, harp", "id": "n04338517", "color": "gray", "theme": "regular"}, {"sublabel": "n02778669", "label": "ball", "parent": "n03575240", "children": [{"sublabel": "n02799071", "label": "baseball", "parent": "n02778669", "children": [], "alt": "baseball", "id": "n02799071", "color": "gray", "theme": "regular"}, {"sublabel": "n02802426", "label": "basketball", "parent": "n02778669", "children": [], "alt": "basketball", "id": "n02802426", "color": "gray", "theme": "regular"}, {"sublabel": "n04118538", "label": "rugby_ball", "parent": "n02778669", "children": [], "alt": "rugby_ball", "id": "n04118538", "color": "gray", "theme": "regular"}, {"sublabel": "n04254680", "label": "soccer_ball", "parent": "n02778669", "children": [], "alt": "soccer_ball", "id": "n04254680", "color": "gray", "theme": "regular"}, {"sublabel": "n04540053", "label": "volleyball", "parent": "n02778669", "children": [], "alt": "volleyball", "id": "n04540053", "color": "gray", "theme": "regular"}], "alt": "rugby_ball, soccer_ball, volleyball, baseball, basketball", "id": "n02778669", "color": "gray", "theme": "regular"}, {"sublabel": "n04576211", "label": "wheeled_vehicle", "parent": "n03575240", "children": [{"sublabel": "n04170037", "label": "self-propelled_vehicle", "parent": "n04576211", "children": [{"sublabel": "n03684823", "label": "locomotive", "parent": "n04170037", "children": [{"sublabel": "n03272562", "label": "electric_locomotive", "parent": "n03684823", "children": [], "alt": "electric_locomotive", "id": "n03272562", "color": "gray", "theme": "regular"}, {"sublabel": "n04310018", "label": "steam_locomotive", "parent": "n03684823", "children": [], "alt": "steam_locomotive", "id": "n04310018", "color": "gray", "theme": "regular"}], "alt": "steam_locomotive, electric_locomotive", "id": "n03684823", "color": "gray", "theme": "regular"}, {"sublabel": "n03791235", "label": "motor_vehicle", "parent": "n04170037", "children": [{"sublabel": "n02958343", "label": "car", "parent": "n03791235", "children": [{"sublabel": "n03594945", "label": "jeep", "parent": "n02958343", "children": [], "alt": "jeep", "id": "n03594945", "color": "gray", "theme": "regular"}, {"sublabel": "n03770679", "label": "minivan", "parent": "n02958343", "children": [], "alt": "minivan", "id": "n03770679", "color": "gray", "theme": "regular"}, {"sublabel": "n04285008", "label": "sports_car", "parent": "n02958343", "children": [], "alt": "sports_car", "id": "n04285008", "color": "gray", "theme": "regular"}], "alt": "minivan, sports_car, jeep", "id": "n02958343", "color": "gray", "theme": "regular"}, {"sublabel": "n04490091", "label": "truck", "parent": "n03791235", "children": [{"sublabel": "n03930630", "label": "pickup", "parent": "n04490091", "children": [], "alt": "pickup", "id": "n03930630", "color": "gray", "theme": "regular"}, {"sublabel": "n03977966", "label": "police_van", "parent": "n04490091", "children": [], "alt": "police_van", "id": "n03977966", "color": "gray", "theme": "regular"}], "alt": "pickup, police_van", "id": "n04490091", "color": "gray", "theme": "regular"}], "alt": "sports_car, pickup, jeep, police_van, minivan", "id": "n03791235", "color": "gray", "theme": "regular"}, {"sublabel": "n04335435", "label": "streetcar", "parent": "n04170037", "children": [], "alt": "streetcar", "id": "n04335435", "color": "gray", "theme": "regular"}], "alt": "steam_locomotive, pickup, sports_car, jeep, minivan, police_van, streetcar, electric_locomotive", "id": "n04170037", "color": "gray", "theme": "regular"}, {"sublabel": "n03393912", "label": "freight_car", "parent": "n04576211", "children": [], "alt": "freight_car", "id": "n03393912", "color": "gray", "theme": "regular"}], "alt": "steam_locomotive, pickup, sports_car, jeep, freight_car, minivan, police_van, streetcar, electric_locomotive", "id": "n04576211", "color": "gray", "theme": "regular"}], "alt": "acoustic_guitar, police_van, basketball, aircraft_carrier, cello, container_ship, electric_guitar, bullet_train, banjo, soccer_ball, liner, steam_locomotive, pickup, jeep, volleyball, fireboat, rugby_ball, freight_car, streetcar, sports_car, lifeboat, baseball, minivan, harp, electric_locomotive", "id": "n03575240", "color": "gray", "theme": "regular"}, {"sublabel": "n03419014", "label": "garment", "parent": "n00021939", "children": [{"sublabel": "n04370048", "label": "sweater", "parent": "n03419014", "children": [{"sublabel": "n02963159", "label": "cardigan", "parent": "n04370048", "children": [], "alt": "cardigan", "id": "n02963159", "color": "gray", "theme": "regular"}, {"sublabel": "n04370456", "label": "sweatshirt", "parent": "n04370048", "children": [], "alt": "sweatshirt", "id": "n04370456", "color": "gray", "theme": "regular"}], "alt": "sweatshirt, cardigan", "id": "n04370048", "color": "gray", "theme": "regular"}, {"sublabel": "n04350905", "label": "suit", "parent": "n03419014", "children": [], "alt": "suit", "id": "n04350905", "color": "gray", "theme": "regular"}, {"sublabel": "n03057021", "label": "coat", "parent": "n03419014", "children": [{"sublabel": "n03630383", "label": "lab_coat", "parent": "n03057021", "children": [], "alt": "lab_coat", "id": "n03630383", "color": "gray", "theme": "regular"}, {"sublabel": "n04479046", "label": "trench_coat", "parent": "n03057021", "children": [], "alt": "trench_coat", "id": "n04479046", "color": "gray", "theme": "regular"}], "alt": "trench_coat, lab_coat", "id": "n03057021", "color": "gray", "theme": "regular"}], "alt": "suit, trench_coat, lab_coat, sweatshirt, cardigan", "id": "n03419014", "color": "gray", "theme": "regular"}], "alt": "suit, acoustic_guitar, police_van, basketball, aircraft_carrier, cello, lab_coat, electric_guitar, bullet_train, banjo, container_ship, soccer_ball, liner, sweatshirt, steam_locomotive, pickup, jeep, volleyball, fireboat, rugby_ball, freight_car, streetcar, trench_coat, sports_car, baseball, lifeboat, minivan, harp, cardigan, electric_locomotive", "id": "n00021939", "color": "gray", "theme": "regular"}, {"sublabel": "n00004475", "label": "organism", "parent": "n00003553", "children": [{"sublabel": "n00015388", "label": "animal", "parent": "n00004475", "children": [{"sublabel": "n01471682", "label": "vertebrate", "parent": "n00015388", "children": [{"sublabel": "n01661091", "label": "reptile", "parent": "n01471682", "children": [{"sublabel": "n01661818", "label": "diapsid", "parent": "n01661091", "children": [{"sublabel": "n01726692", "label": "snake", "parent": "n01661818", "children": [{"sublabel": "n01745125", "label": "elapid", "parent": "n01726692", "children": [{"sublabel": "n01748264", "label": "indian_cobra", "parent": "n01745125", "children": [], "alt": "indian_cobra", "id": "n01748264", "color": "gray", "theme": "regular"}, {"sublabel": "n01749939", "label": "green_mamba", "parent": "n01745125", "children": [], "alt": "green_mamba", "id": "n01749939", "color": "gray", "theme": "regular"}], "alt": "indian_cobra, green_mamba", "id": "n01745125", "color": "gray", "theme": "regular"}, {"sublabel": "n01740131", "label": "night_snake", "parent": "n01726692", "children": [], "alt": "night_snake", "id": "n01740131", "color": "gray", "theme": "regular"}, {"sublabel": "n01741943", "label": "boa", "parent": "n01726692", "children": [{"sublabel": "n01742172", "label": "boa_constrictor", "parent": "n01741943", "children": [], "alt": "boa_constrictor", "id": "n01742172", "color": "gray", "theme": "regular"}, {"sublabel": "n01744401", "label": "rock_python", "parent": "n01741943", "children": [], "alt": "rock_python", "id": "n01744401", "color": "gray", "theme": "regular"}], "alt": "boa_constrictor, rock_python", "id": "n01741943", "color": "gray", "theme": "regular"}], "alt": "indian_cobra, boa_constrictor, rock_python, night_snake, green_mamba", "id": "n01726692", "color": "gray", "theme": "regular"}, {"sublabel": "n01674464", "label": "lizard", "parent": "n01661818", "children": [{"sublabel": "n01687665", "label": "agamid", "parent": "n01674464", "children": [{"sublabel": "n01687978", "label": "agama", "parent": "n01687665", "children": [], "alt": "agama", "id": "n01687978", "color": "gray", "theme": "regular"}, {"sublabel": "n01688243", "label": "frilled_lizard", "parent": "n01687665", "children": [], "alt": "frilled_lizard", "id": "n01688243", "color": "gray", "theme": "regular"}], "alt": "agama, frilled_lizard", "id": "n01687665", "color": "gray", "theme": "regular"}, {"sublabel": "n01689811", "label": "alligator_lizard", "parent": "n01674464", "children": [], "alt": "alligator_lizard", "id": "n01689811", "color": "gray", "theme": "regular"}, {"sublabel": "n01692333", "label": "gila_monster", "parent": "n01674464", "children": [], "alt": "gila_monster", "id": "n01692333", "color": "gray", "theme": "regular"}, {"sublabel": "n01693334", "label": "green_lizard", "parent": "n01674464", "children": [], "alt": "green_lizard", "id": "n01693334", "color": "gray", "theme": "regular"}], "alt": "alligator_lizard, green_lizard, gila_monster, agama, frilled_lizard", "id": "n01674464", "color": "gray", "theme": "regular"}], "alt": "indian_cobra, boa_constrictor, rock_python, night_snake, agama, green_mamba, alligator_lizard, green_lizard, gila_monster, frilled_lizard", "id": "n01661818", "color": "gray", "theme": "regular"}, {"sublabel": "n01662784", "label": "turtle", "parent": "n01661091", "children": [{"sublabel": "n01663401", "label": "sea_turtle", "parent": "n01662784", "children": [{"sublabel": "n01664065", "label": "loggerhead", "parent": "n01663401", "children": [], "alt": "loggerhead", "id": "n01664065", "color": "gray", "theme": "regular"}, {"sublabel": "n01665541", "label": "leatherback_turtle", "parent": "n01663401", "children": [], "alt": "leatherback_turtle", "id": "n01665541", "color": "gray", "theme": "regular"}], "alt": "leatherback_turtle, loggerhead", "id": "n01663401", "color": "gray", "theme": "regular"}, {"sublabel": "n01667114", "label": "mud_turtle", "parent": "n01662784", "children": [], "alt": "mud_turtle", "id": "n01667114", "color": "gray", "theme": "regular"}, {"sublabel": "n01667778", "label": "terrapin", "parent": "n01662784", "children": [], "alt": "terrapin", "id": "n01667778", "color": "gray", "theme": "regular"}, {"sublabel": "n01669191", "label": "box_turtle", "parent": "n01662784", "children": [], "alt": "box_turtle", "id": "n01669191", "color": "gray", "theme": "regular"}], "alt": "mud_turtle, leatherback_turtle, loggerhead, box_turtle, terrapin", "id": "n01662784", "color": "gray", "theme": "regular"}], "alt": "indian_cobra, leatherback_turtle, loggerhead, agama, terrapin, gila_monster, frilled_lizard, boa_constrictor, rock_python, night_snake, green_mamba, alligator_lizard, green_lizard, mud_turtle, box_turtle", "id": "n01661091", "color": "gray", "theme": "regular"}, {"sublabel": "n01529672", "label": "finch", "parent": "n01471682", "children": [{"sublabel": "n01530575", "label": "brambling", "parent": "n01529672", "children": [], "alt": "brambling", "id": "n01530575", "color": "gray", "theme": "regular"}, {"sublabel": "n01531178", "label": "goldfinch", "parent": "n01529672", "children": [], "alt": "goldfinch", "id": "n01531178", "color": "gray", "theme": "regular"}, {"sublabel": "n01532829", "label": "house_finch", "parent": "n01529672", "children": [], "alt": "house_finch", "id": "n01532829", "color": "gray", "theme": "regular"}, {"sublabel": "n01534433", "label": "junco", "parent": "n01529672", "children": [], "alt": "junco", "id": "n01534433", "color": "gray", "theme": "regular"}, {"sublabel": "n01537544", "label": "indigo_bunting", "parent": "n01529672", "children": [], "alt": "indigo_bunting", "id": "n01537544", "color": "gray", "theme": "regular"}], "alt": "indigo_bunting, goldfinch, junco, brambling, house_finch", "id": "n01529672", "color": "gray", "theme": "regular"}, {"sublabel": "n01886756", "label": "placental", "parent": "n01471682", "children": [{"sublabel": "n02075296", "label": "carnivore", "parent": "n01886756", "children": [{"sublabel": "n02120997", "label": "feline", "parent": "n02075296", "children": [{"sublabel": "n02127808", "label": "big_cat", "parent": "n02120997", "children": [{"sublabel": "n02128757", "label": "snow_leopard", "parent": "n02127808", "children": [], "alt": "snow_leopard", "id": "n02128757", "color": "gray", "theme": "regular"}, {"sublabel": "n02128925", "label": "jaguar", "parent": "n02127808", "children": [], "alt": "jaguar", "id": "n02128925", "color": "gray", "theme": "regular"}, {"sublabel": "n02129165", "label": "lion", "parent": "n02127808", "children": [], "alt": "lion", "id": "n02129165", "color": "gray", "theme": "regular"}, {"sublabel": "n02129604", "label": "tiger", "parent": "n02127808", "children": [], "alt": "tiger", "id": "n02129604", "color": "gray", "theme": "regular"}, {"sublabel": "n02130308", "label": "cheetah", "parent": "n02127808", "children": [], "alt": "cheetah", "id": "n02130308", "color": "gray", "theme": "regular"}], "alt": "lion, snow_leopard, cheetah, tiger, jaguar", "id": "n02127808", "color": "gray", "theme": "regular"}, {"sublabel": "n02121808", "label": "domestic_cat", "parent": "n02120997", "children": [{"sublabel": "n02123045", "label": "tabby", "parent": "n02121808", "children": [], "alt": "tabby", "id": "n02123045", "color": "gray", "theme": "regular"}, {"sublabel": "n02123159", "label": "tiger_cat", "parent": "n02121808", "children": [], "alt": "tiger_cat", "id": "n02123159", "color": "gray", "theme": "regular"}, {"sublabel": "n02123394", "label": "persian_cat", "parent": "n02121808", "children": [], "alt": "persian_cat", "id": "n02123394", "color": "gray", "theme": "regular"}, {"sublabel": "n02123597", "label": "siamese_cat", "parent": "n02121808", "children": [], "alt": "siamese_cat", "id": "n02123597", "color": "gray", "theme": "regular"}, {"sublabel": "n02124075", "label": "egyptian_cat", "parent": "n02121808", "children": [], "alt": "egyptian_cat", "id": "n02124075", "color": "gray", "theme": "regular"}], "alt": "tiger_cat, siamese_cat, egyptian_cat, tabby, persian_cat", "id": "n02121808", "color": "gray", "theme": "regular"}], "alt": "lion, tiger_cat, siamese_cat, egyptian_cat, jaguar, persian_cat, snow_leopard, cheetah, tiger, tabby", "id": "n02120997", "color": "gray", "theme": "regular"}, {"sublabel": "n02099029", "label": "retriever", "parent": "n02075296", "children": [{"sublabel": "n02099267", "label": "flat-coated_retriever", "parent": "n02099029", "children": [], "alt": "flat-coated_retriever", "id": "n02099267", "color": "gray", "theme": "regular"}, {"sublabel": "n02099429", "label": "curly-coated_retriever", "parent": "n02099029", "children": [], "alt": "curly-coated_retriever", "id": "n02099429", "color": "gray", "theme": "regular"}, {"sublabel": "n02099601", "label": "golden_retriever", "parent": "n02099029", "children": [], "alt": "golden_retriever", "id": "n02099601", "color": "gray", "theme": "regular"}, {"sublabel": "n02099712", "label": "labrador_retriever", "parent": "n02099029", "children": [], "alt": "labrador_retriever", "id": "n02099712", "color": "gray", "theme": "regular"}, {"sublabel": "n02099849", "label": "chesapeake_bay_retriever", "parent": "n02099029", "children": [], "alt": "chesapeake_bay_retriever", "id": "n02099849", "color": "gray", "theme": "regular"}], "alt": "flat-coated_retriever, curly-coated_retriever, chesapeake_bay_retriever, golden_retriever, labrador_retriever", "id": "n02099029", "color": "gray", "theme": "regular"}], "alt": "flat-coated_retriever, siamese_cat, tiger_cat, jaguar, labrador_retriever, snow_leopard, tiger, tabby, lion, curly-coated_retriever, chesapeake_bay_retriever, golden_retriever, egyptian_cat, persian_cat, cheetah", "id": "n02075296", "color": "gray", "theme": "regular"}, {"sublabel": "n02484473", "label": "old_world_monkey", "parent": "n01886756", "children": [{"sublabel": "n02486261", "label": "patas", "parent": "n02484473", "children": [], "alt": "patas", "id": "n02486261", "color": "gray", "theme": "regular"}, {"sublabel": "n02486410", "label": "baboon", "parent": "n02484473", "children": [], "alt": "baboon", "id": "n02486410", "color": "gray", "theme": "regular"}, {"sublabel": "n02487347", "label": "macaque", "parent": "n02484473", "children": [], "alt": "macaque", "id": "n02487347", "color": "gray", "theme": "regular"}, {"sublabel": "n02488291", "label": "langur", "parent": "n02484473", "children": [], "alt": "langur", "id": "n02488291", "color": "gray", "theme": "regular"}, {"sublabel": "n02488702", "label": "colobus", "parent": "n02484473", "children": [], "alt": "colobus", "id": "n02488702", "color": "gray", "theme": "regular"}], "alt": "colobus, langur, baboon, patas, macaque", "id": "n02484473", "color": "gray", "theme": "regular"}], "alt": "flat-coated_retriever, siamese_cat, colobus, tiger_cat, baboon, jaguar, labrador_retriever, snow_leopard, langur, tiger, tabby, macaque, lion, curly-coated_retriever, chesapeake_bay_retriever, golden_retriever, egyptian_cat, persian_cat, patas, cheetah", "id": "n01886756", "color": "gray", "theme": "regular"}, {"sublabel": "n02528163", "label": "teleost_fish", "parent": "n01471682", "children": [{"sublabel": "n02552171", "label": "spiny-finned_fish", "parent": "n02528163", "children": [{"sublabel": "n02607072", "label": "anemone_fish", "parent": "n02552171", "children": [], "alt": "anemone_fish", "id": "n02607072", "color": "gray", "theme": "regular"}, {"sublabel": "n02643566", "label": "lionfish", "parent": "n02552171", "children": [], "alt": "lionfish", "id": "n02643566", "color": "gray", "theme": "regular"}, {"sublabel": "n02655020", "label": "puffer", "parent": "n02552171", "children": [], "alt": "puffer", "id": "n02655020", "color": "gray", "theme": "regular"}], "alt": "lionfish, anemone_fish, puffer", "id": "n02552171", "color": "gray", "theme": "regular"}, {"sublabel": "n02638596", "label": "ganoid", "parent": "n02528163", "children": [{"sublabel": "n02640242", "label": "sturgeon", "parent": "n02638596", "children": [], "alt": "sturgeon", "id": "n02640242", "color": "gray", "theme": "regular"}, {"sublabel": "n02641379", "label": "gar", "parent": "n02638596", "children": [], "alt": "gar", "id": "n02641379", "color": "gray", "theme": "regular"}], "alt": "gar, sturgeon", "id": "n02638596", "color": "gray", "theme": "regular"}], "alt": "lionfish, puffer, gar, sturgeon, anemone_fish", "id": "n02528163", "color": "gray", "theme": "regular"}], "alt": "flat-coated_retriever, siamese_cat, brambling, agama, langur, tabby, frilled_lizard, lion, goldfinch, chesapeake_bay_retriever, night_snake, lionfish, junco, cheetah, anemone_fish, colobus, tiger_cat, indian_cobra, baboon, sturgeon, snow_leopard, tiger, golden_retriever, persian_cat, patas, green_mamba, green_lizard, puffer, leatherback_turtle, loggerhead, gar, gila_monster, indigo_bunting, curly-coated_retriever, boa_constrictor, alligator_lizard, jaguar, labrador_retriever, terrapin, macaque, egyptian_cat, rock_python, mud_turtle, box_turtle, house_finch", "id": "n01471682", "color": "gray", "theme": "regular"}, {"sublabel": "n01767661", "label": "arthropod", "parent": "n00015388", "children": [{"sublabel": "n02159955", "label": "insect", "parent": "n01767661", "children": [{"sublabel": "n02164464", "label": "beetle", "parent": "n02159955", "children": [{"sublabel": "n02167151", "label": "ground_beetle", "parent": "n02164464", "children": [], "alt": "ground_beetle", "id": "n02167151", "color": "gray", "theme": "regular"}, {"sublabel": "n02168699", "label": "long-horned_beetle", "parent": "n02164464", "children": [], "alt": "long-horned_beetle", "id": "n02168699", "color": "gray", "theme": "regular"}, {"sublabel": "n02169497", "label": "leaf_beetle", "parent": "n02164464", "children": [], "alt": "leaf_beetle", "id": "n02169497", "color": "gray", "theme": "regular"}, {"sublabel": "n02171869", "label": "scarabaeid_beetle", "parent": "n02164464", "children": [{"sublabel": "n02172182", "label": "dung_beetle", "parent": "n02171869", "children": [], "alt": "dung_beetle", "id": "n02172182", "color": "gray", "theme": "regular"}, {"sublabel": "n02174001", "label": "rhinoceros_beetle", "parent": "n02171869", "children": [], "alt": "rhinoceros_beetle", "id": "n02174001", "color": "gray", "theme": "regular"}], "alt": "dung_beetle, rhinoceros_beetle", "id": "n02171869", "color": "gray", "theme": "regular"}], "alt": "ground_beetle, long-horned_beetle, dung_beetle, rhinoceros_beetle, leaf_beetle", "id": "n02164464", "color": "gray", "theme": "regular"}, {"sublabel": "n02274259", "label": "butterfly", "parent": "n02159955", "children": [{"sublabel": "n02277742", "label": "ringlet", "parent": "n02274259", "children": [], "alt": "ringlet", "id": "n02277742", "color": "gray", "theme": "regular"}, {"sublabel": "n02281406", "label": "sulphur_butterfly", "parent": "n02274259", "children": [], "alt": "sulphur_butterfly", "id": "n02281406", "color": "gray", "theme": "regular"}, {"sublabel": "n02281787", "label": "lycaenid", "parent": "n02274259", "children": [], "alt": "lycaenid", "id": "n02281787", "color": "gray", "theme": "regular"}, {"sublabel": "n02279972", "label": "monarch", "parent": "n02274259", "children": [], "alt": "monarch", "id": "n02279972", "color": "gray", "theme": "regular"}, {"sublabel": "n02280649", "label": "cabbage_butterfly", "parent": "n02274259", "children": [], "alt": "cabbage_butterfly", "id": "n02280649", "color": "gray", "theme": "regular"}], "alt": "cabbage_butterfly, monarch, lycaenid, sulphur_butterfly, ringlet", "id": "n02274259", "color": "gray", "theme": "regular"}], "alt": "rhinoceros_beetle, leaf_beetle, ground_beetle, long-horned_beetle, dung_beetle, cabbage_butterfly, lycaenid, monarch, sulphur_butterfly, ringlet", "id": "n02159955", "color": "gray", "theme": "regular"}, {"sublabel": "n01772222", "label": "spider", "parent": "n01767661", "children": [{"sublabel": "n01773157", "label": "black_and_gold_garden_spider", "parent": "n01772222", "children": [], "alt": "black_and_gold_garden_spider", "id": "n01773157", "color": "gray", "theme": "regular"}, {"sublabel": "n01773549", "label": "barn_spider", "parent": "n01772222", "children": [], "alt": "barn_spider", "id": "n01773549", "color": "gray", "theme": "regular"}, {"sublabel": "n01773797", "label": "garden_spider", "parent": "n01772222", "children": [], "alt": "garden_spider", "id": "n01773797", "color": "gray", "theme": "regular"}, {"sublabel": "n01774384", "label": "black_widow", "parent": "n01772222", "children": [], "alt": "black_widow", "id": "n01774384", "color": "gray", "theme": "regular"}, {"sublabel": "n01774750", "label": "tarantula", "parent": "n01772222", "children": [], "alt": "tarantula", "id": "n01774750", "color": "gray", "theme": "regular"}], "alt": "tarantula, barn_spider, garden_spider, black_widow, black_and_gold_garden_spider", "id": "n01772222", "color": "gray", "theme": "regular"}, {"sublabel": "n01976146", "label": "decapod_crustacean", "parent": "n01767661", "children": [{"sublabel": "n01976957", "label": "crab", "parent": "n01976146", "children": [{"sublabel": "n01978287", "label": "dungeness_crab", "parent": "n01976957", "children": [], "alt": "dungeness_crab", "id": "n01978287", "color": "gray", "theme": "regular"}, {"sublabel": "n01978455", "label": "rock_crab", "parent": "n01976957", "children": [], "alt": "rock_crab", "id": "n01978455", "color": "gray", "theme": "regular"}, {"sublabel": "n01980166", "label": "fiddler_crab", "parent": "n01976957", "children": [], "alt": "fiddler_crab", "id": "n01980166", "color": "gray", "theme": "regular"}, {"sublabel": "n01981276", "label": "king_crab", "parent": "n01976957", "children": [], "alt": "king_crab", "id": "n01981276", "color": "gray", "theme": "regular"}], "alt": "rock_crab, king_crab, dungeness_crab, fiddler_crab", "id": "n01976957", "color": "gray", "theme": "regular"}, {"sublabel": "n01983481", "label": "american_lobster", "parent": "n01976146", "children": [], "alt": "american_lobster", "id": "n01983481", "color": "gray", "theme": "regular"}], "alt": "rock_crab, king_crab, dungeness_crab, american_lobster, fiddler_crab", "id": "n01976146", "color": "gray", "theme": "regular"}], "alt": "garden_spider, dungeness_crab, long-horned_beetle, lycaenid, dung_beetle, american_lobster, cabbage_butterfly, fiddler_crab, tarantula, barn_spider, black_widow, black_and_gold_garden_spider, king_crab, rhinoceros_beetle, leaf_beetle, ground_beetle, rock_crab, monarch, sulphur_butterfly, ringlet", "id": "n01767661", "color": "gray", "theme": "regular"}], "alt": "flat-coated_retriever, siamese_cat, brambling, agama, lycaenid, langur, tabby, frilled_lizard, lion, goldfinch, chesapeake_bay_retriever, black_widow, night_snake, lionfish, junco, rock_crab, cheetah, anemone_fish, colobus, tiger_cat, indian_cobra, baboon, sturgeon, dung_beetle, snow_leopard, tiger, barn_spider, golden_retriever, persian_cat, patas, green_mamba, green_lizard, ringlet, garden_spider, puffer, leatherback_turtle, loggerhead, long-horned_beetle, american_lobster, gar, gila_monster, fiddler_crab, indigo_bunting, curly-coated_retriever, king_crab, boa_constrictor, black_and_gold_garden_spider, ground_beetle, alligator_lizard, sulphur_butterfly, dungeness_crab, jaguar, labrador_retriever, cabbage_butterfly, terrapin, macaque, tarantula, egyptian_cat, rhinoceros_beetle, rock_python, leaf_beetle, monarch, mud_turtle, box_turtle, house_finch", "id": "n00015388", "color": "gray", "theme": "regular"}, {"sublabel": "n12992868", "label": "fungus", "parent": "n00004475", "children": [{"sublabel": "n13037406", "label": "gyromitra", "parent": "n12992868", "children": [], "alt": "gyromitra", "id": "n13037406", "color": "gray", "theme": "regular"}, {"sublabel": "n13040303", "label": "stinkhorn", "parent": "n12992868", "children": [], "alt": "stinkhorn", "id": "n13040303", "color": "gray", "theme": "regular"}, {"sublabel": "n13044778", "label": "earthstar", "parent": "n12992868", "children": [], "alt": "earthstar", "id": "n13044778", "color": "gray", "theme": "regular"}, {"sublabel": "n13052670", "label": "hen-of-the-woods", "parent": "n12992868", "children": [], "alt": "hen-of-the-woods", "id": "n13052670", "color": "gray", "theme": "regular"}, {"sublabel": "n12998815", "label": "agaric", "parent": "n12992868", "children": [], "alt": "agaric", "id": "n12998815", "color": "gray", "theme": "regular"}], "alt": "earthstar, stinkhorn, gyromitra, agaric, hen-of-the-woods", "id": "n12992868", "color": "gray", "theme": "regular"}], "alt": "flat-coated_retriever, siamese_cat, brambling, agama, lycaenid, langur, tabby, frilled_lizard, lion, goldfinch, chesapeake_bay_retriever, black_widow, night_snake, lionfish, junco, rock_crab, cheetah, anemone_fish, colobus, tiger_cat, indian_cobra, baboon, sturgeon, dung_beetle, snow_leopard, earthstar, tiger, barn_spider, golden_retriever, persian_cat, patas, hen-of-the-woods, green_mamba, green_lizard, ringlet, garden_spider, puffer, leatherback_turtle, agaric, loggerhead, long-horned_beetle, american_lobster, gar, gila_monster, fiddler_crab, indigo_bunting, curly-coated_retriever, king_crab, boa_constrictor, black_and_gold_garden_spider, ground_beetle, alligator_lizard, sulphur_butterfly, dungeness_crab, gyromitra, jaguar, labrador_retriever, cabbage_butterfly, stinkhorn, terrapin, macaque, tarantula, egyptian_cat, rhinoceros_beetle, rock_python, leaf_beetle, monarch, mud_turtle, box_turtle, house_finch", "id": "n00004475", "color": "gray", "theme": "regular"}], "alt": "lycaenid, langur, frilled_lizard, black_widow, cello, lab_coat, soccer_ball, cheetah, sweatshirt, anemone_fish, colobus, pickup, tiger_cat, snow_leopard, freight_car, sports_car, golden_retriever, persian_cat, hen-of-the-woods, green_lizard, ringlet, garden_spider, leatherback_turtle, long-horned_beetle, american_lobster, gar, gila_monster, king_crab, boa_constrictor, banjo, alligator_lizard, sulphur_butterfly, liner, steam_locomotive, jeep, volleyball, dungeness_crab, gyromitra, jaguar, labrador_retriever, rugby_ball, cabbage_butterfly, stinkhorn, terrapin, trench_coat, egyptian_cat, baseball, minivan, harp, mud_turtle, box_turtle, house_finch, suit, flat-coated_retriever, siamese_cat, brambling, agama, police_van, tabby, lion, goldfinch, chesapeake_bay_retriever, container_ship, electric_guitar, night_snake, lionfish, junco, rock_crab, indian_cobra, fireboat, baboon, sturgeon, dung_beetle, earthstar, tiger, streetcar, barn_spider, patas, green_mamba, cardigan, puffer, agaric, loggerhead, acoustic_guitar, basketball, fiddler_crab, indigo_bunting, curly-coated_retriever, aircraft_carrier, black_and_gold_garden_spider, bullet_train, ground_beetle, macaque, tarantula, lifeboat, rhinoceros_beetle, rock_python, leaf_beetle, monarch, electric_locomotive", "id": "n00003553", "color": "gray", "theme": "regular"}];
+
+// copy-pasta'ed the code in this file from https://bl.ocks.org/d3noob/8375092
+
+// ************** Generate the tree diagram	 *****************
+var margin = {
+        top: 20 * 0.5,
+        right: 120 * 0.5,
+        bottom: 10 * 0.5,
+        left: 250 * 0.5
+    },
+	  width = 9000 - margin.right - margin.left,
+	  height = 4000 - margin.top - margin.bottom;
+
+var i = 0,
+	duration = 750,
+	root;
+
+var tree = d3.layout.tree().size([height, width]);
+var zoom = d3.behavior.zoom()
+    .translate([margin.left, margin.top])
+    .scale(0.5);
+
+var diagonal = d3.svg.diagonal()
+	.projection(function(d) { return [d.y, d.x]; });
+
+var svg = d3.select("div.tree-main").append("svg")
+	.attr("width", width + margin.right + margin.left)
+	.attr("height", height + margin.top + margin.bottom)
+  .style("background-color", "#FFFFFF")
+  .style("font-size", 10 * 1.0)
+    .append("g")
+  	.attr("transform", "translate(" + margin.left + "," + margin.top + ")scale(" + 0.5 + "," + 0.5 +")")
+    .call(zoom)
+    .on(".zoom", null);
+
+// define custom reusable elements
+
+// gradient
+var gradient = svg.append("svg:defs")
+    .append("svg:linearGradient")
+    .attr("id", "gradientGray")
+    .attr("x1", "0%")
+    .attr("y1", "0%")
+    .attr("x2", "100%")
+    .attr("y2", "100%")
+    .attr("spreadMethod", "pad");
+
+// Define the gradient colors
+gradient.append("svg:stop")
+    .attr("offset", "0%")
+    .attr("stop-color", "#bfbfbfff")
+    .attr("stop-opacity", 1);
+
+gradient.append("svg:stop")
+    .attr("offset", "100%")
+    .attr("stop-color", "#737373ff")
+    .attr("stop-opacity", 1);
+
+// gradient
+var gradientBlue = svg.append("svg:defs")
+    .append("svg:linearGradient")
+    .attr("id", "gradientBlue")
+    .attr("x1", "0%")
+    .attr("y1", "0%")
+    .attr("x2", "100%")
+    .attr("y2", "100%")
+    .attr("spreadMethod", "pad");
+
+// Define the gradient colors
+gradientBlue.append("svg:stop")
+    .attr("offset", "0%")
+    .attr("stop-color", "#dfe9fbff")
+    .attr("stop-opacity", 1);
+
+gradientBlue.append("svg:stop")
+    .attr("offset", "100%")
+    .attr("stop-color", "#5e9be7ff")
+    .attr("stop-opacity", 1);
+
+// gradient
+var gradientBlueGreen = svg.append("svg:defs")
+    .append("svg:linearGradient")
+    .attr("id", "gradientBlueGreen")
+    .attr("x1", "0%")
+    .attr("y1", "0%")
+    .attr("x2", "100%")
+    .attr("y2", "100%")
+    .attr("spreadMethod", "pad");
+
+// Define the gradient colors
+gradientBlueGreen.append("svg:stop")
+    .attr("offset", "0%")
+    .attr("stop-color", "#00c750")
+    .attr("stop-opacity", 1);
+
+gradientBlueGreen.append("svg:stop")
+    .attr("offset", "100%")
+    .attr("stop-color", "#0450b4")
+    .attr("stop-opacity", 1);
+
+
+function fontWeight(d) {
+  if (d.theme == "minimal" && !d.highlighted) return "normal";
+  return "bold";
+}
+
+
+function gradientFill(d) {
+  if (d.color == "blue-minimal") return "#2C60E5";
+  if (d.color == "blue") return "url(#gradientBlue)";
+  if (d.color == "blue-green") return "url(#gradientBlueGreen)";
+  if (d.theme == "minimal") return "#CCC";
+  return d.color || "url(#gradientGray)";
+}
+
+function gradientStroke(d) {
+  if (d.target && d.target.color_incident_edge) d = d.target;
+  if (d.color == "blue-green") return "#0450b4";
+  if (d.color == "blue") return "#1155cc";
+  if (d.color == "blue-minimal") return "#2C60E5";
+  if (d.theme == "minimal") return "#CCCCCC";
+  if (d.target && d.target.theme == "minimal") return "#CCCCCC";
+  if (d.color == "white") return "#FFFFFF";
+  return d.color || "#999999"
+}
+
+function gradientFontColor(d) {
+  if (d.target && d.target.color_incident_edge) d = d.target;
+  if (d.color == "blue-green") return "#0450b4";
+  if (d.color == "blue") return "#1155cc";
+  if (d.color == "blue-minimal") return "#2C60E5";
+  if (d.color == "white") return "#FFFFFF";
+  if (d.color == "gray") return "#CCCCCC";
+  return d.color
+}
+
+
+// arrow
+function makeArrow(d, fill) {
+  if (!fill || typeof(fill) == 'number') {
+    fill = gradientStroke(d);
+  }
+  var id = "arrow" + fill.replace("#", "");
+
+  var arrow = svg.append("svg:defs").append("svg:marker")
+      .attr("id", id)
+      .attr("viewBox", "0 -5 10 10")
+      .attr("markerWidth", 5)
+      .attr("markerHeight", 5)
+      .attr("orient", "auto")
+      .style("fill", fill);
+
+  arrow.append("svg:path")
+      .attr("d", "M0,-5L10,0L0,5");
+
+  return "url(#" +  id +  ")";
+}
+
+// diagonal hatch - https://stackoverflow.com/a/14500054
+
+var diagonalHatch = svg.append("svg:defs").append("pattern")
+    .attr('id', 'diagonalHatch')
+    .attr('patternUnits', 'userSpaceOnUse')
+    .attr('width', 4)
+    .attr('height', 4)
+    .append('path')
+      .attr('d', `M-1,1 l2,-2
+                  M0,4 l4,-4
+                  M3,5 l2,-2`)
+      .style('stroke', '#CCCCCC')
+      .style('stroke-width', 1);
+
+// end custom elements
+
+root = treeData[0];
+root['force_text_on_left'] = true;
+root.x0 = -1 != null ? -1 : height / 2;
+root.y0 = 0;
+
+update(root);
+
+d3.select(self.frameElement).style("height", height + "px");
+
+function update(source) {
+
+  // Compute the new tree layout.
+  var nodes = tree.nodes(root).reverse(),
+	  links = tree.links(nodes);
+
+  // Normalize for fixed-depth.
+  nodes.forEach(function(d) { d.y = d.depth * 200; });
+
+  // Update the nodes…
+  var node = svg.selectAll("g.node")
+	  .data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+  // Enter any new nodes at the parent's previous position.
+  var nodeEnter = node.enter().append("g")
+	  .attr("class", "node")
+    .attr("id", function(d) { return d.id })
+	  .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
+	  .on("click", click)
+    .attr("d", function(d) {
+          d.radius = 21 * 1.0;
+          d.marker_end = 7 * 1.0;
+          d.marker_start = 0 * 1.0;
+          d.padding = 40 * 1.0;  // enabled by getTargetNodeCircumferencePoint
+    });
+
+  nodeEnter.append("svg:image")
+    .attr("xlink:href", function(d) { return d.image ? d.image.href : '' })
+    .attr("x", function(d) { return this.parentNode.getBBox().width + 40; })
+    .attr("y", function(d) { return d.image ? -d.image.height / 2 : 0; })
+    .attr("height", function(d) { return d.image ? d.image.height : 0 })
+    .attr("width", function(d) { return d.image ? d.image.width : 0 });
+
+  nodeEnter.append("circle")
+	  .attr("r", 1e-5)
+	  .style("fill", function(d) {
+      if (d._children) return "#fff";
+      return gradientFill(d);
+    })
+    .style("cursor", "pointer")
+    .style("stroke-width", "0.45em")
+    .style("stroke", gradientStroke);
+
+  function get_sublabel(d) {
+      if (d._children) return d.alt;
+      return show_sublabels ? d.sublabel : "";
+  }
+
+  nodeEnter.append("text")
+    .text(function(d) { return d.label; })
+    .call(setBBGenerator('bbox'));
+
+  function setBBGenerator(name) {
+    function setBB(selection) {
+      selection.each(function(d) {
+        d[name] = this.getBBox();
+      })
+    }
+    return setBB;
+  }
+
+  nodeEnter.append("text")
+    .attr("class", "small")
+    .attr("dy", function(d) { return d.label ? "0.8em" : "0.25em"; })
+    .text(function(d) { return show_sublabels ? d.sublabel : ""; })
+    .call(setBBGenerator('bbox_small'))
+
+  function textOnLeft(d) {
+    if (d.force_text_on_left) return true;
+    if (!d.children) return false;  // if effectively a leaf
+    return true;
+  }
+
+  dx = 5 * Math.pow(2.5, 2);
+  x = 13;
+  nodeEnter.selectAll("text")
+	  .attr("x", function(d) { return textOnLeft(d) ? -x : x; })
+    .attr("dx", function(d) { return textOnLeft(d) ? -dx + "px" : dx + "px"; })
+	  .attr("text-anchor", function(d) { return textOnLeft(d) ? "end" : "start"; })
+    .attr("font-weight", fontWeight)
+    .attr("fill", gradientFontColor);
+
+  function em2px(em) {
+    return em * parseFloat(getComputedStyle(document.querySelector('html')).fontSize);
+  }
+
+  const default_dim = 125;
+
+  /**
+   * Left, copy-pasta lol
+   **/
+
+  left_dx = 200;
+  left_padding = 5;
+
+  nodeEnter.insert("rect", "circle")
+    .attr("x", -left_dx)
+    .attr("y", function(d) {
+        if (d.left && !d.left.w) d.left.w = default_dim;
+        if (d.left && !d.left.h) d.left.h = default_dim;
+        return d.left ? -d.left.h / 2 : 0
+    })
+    .attr("width", function(d) { return d.left ? d.left.w : 0 })
+    .attr("height", function(d) { return d.left ? d.left.h : 0 })
+    .style("fill", function(d) {
+        if (d.left && d.left.rect) return gradientStroke(d);
+        return '#FFFFFF'
+    });
+
+  nodeEnter.append("svg:image", "circle")
+    .attr("xlink:href", function(d) { return d.left ? d.left.href : '' })
+    .attr("x", -(left_dx - left_padding))
+    .attr("y", function(d) { return d.left ? -(d.left.w / 2 - left_padding) : 0})
+    .attr("height", function(d) { return d.left ? (d.left.h - left_padding * 2) : 0 })
+    .attr("width", function(d) { return d.left ? (d.left.w - left_padding * 2) : 0 });
+
+  nodeEnter.append("rect", "image")
+    .attr("x", function (d) { return d.left ? - left_dx + d.left.w / 2 : 0 })
+    .attr("y", -1)
+    .attr("width", function(d) { return 5; })
+    .attr("height", function(d) { return 5; })
+    .style("stroke-width", function (d) { return d.left ? 2 : 0; })
+    .style("stroke", '#39ff14')
+    .style('fill-opacity', '0')
+
+  nodeEnter.append("line", "image")
+    .attr("x1", function (d) { return d.left ? - left_dx + d.left.w - 20: 0 })
+    .attr("y1", function(d) { return d.left ? - d.left.h / 2 + 20 : 0})
+    .attr("x2", function (d) { return d.left ? - left_dx + d.left.w / 2 + 25 : 0 })
+    .attr("y2", -25)
+    .style("stroke-width", function(d) { return d.left ? 4 : 0 })
+    .style("stroke", '#39ff14')
+    .attr('marker-end', function(d) { if(d.left) return makeArrow(d, '#39ff14'); })
+
+  var x1 = - (em2px(1.0 * 0.5) + left_padding * 4);
+  nodeEnter.append("line", "svg:image")
+    .attr("x1", function(d) { return d.left ? - (left_dx - d.left.w - left_padding * 2) : x1 })
+    .attr("y1", 0)
+    .attr("x2", x1)
+    .attr("y2", 0)
+    .style("stroke-width", 2)
+    .style("stroke", gradientStroke)
+    .attr('marker-end', function(d) { if (d.left) return makeArrow(d); });
+
+  nodeEnter.append("text", "line")
+    .attr("class", "left")
+    .attr("x", function(d) { return d.left ? - (left_dx - d.left.w / 2) : 0 })
+    .attr("y", function(d) { return d.left ? d.left.h / 2 + left_padding * 5 : 0 })
+    .text(function(d) { return d.left ? d.left.label || '' : ''; })
+    .attr("text-anchor", "middle")
+    .call(setBBGenerator('bbox_left'))
+
+  nodeEnter.append("text", "text.left")
+    .attr("class", "left small")
+    .attr("x", function(d) { return d.left ? - (left_dx - d.left.w / 2) : 0 })
+    .attr("y", function(d) { return d.left ? d.left.h / 2 + left_padding * 5 + em2px(1.0) : 0 })
+    .text(function(d) { return d.left ? d.left.sublabel || '' : ''; })
+    .attr("text-anchor", "middle")
+    .call(setBBGenerator('bbox_left_small'))
+
+  /**
+   * Saliency vis for each node
+   **/
+
+  above_dy = 325;
+  above_padding = 7;
+
+  nodeEnter.insert("rect", "circle")
+    .attr("x", function(d) {
+        if (d.above && !d.above.w) d.above.w = default_dim;
+        if (d.above && !d.above.h) d.above.h = default_dim;
+        return d.above ? -d.above.w / 2 : 0
+    })
+    .attr("y", -above_dy)
+    .attr("width", function(d) { return d.above ? d.above.w : 0 })
+    .attr("height", function(d) { return d.above ? d.above.h : 0 })
+    .style("fill", '#333333');
+
+  nodeEnter.append("svg:image", "circle")
+    .attr("xlink:href", function(d) { return d.above ? d.above.href : '' })
+    .attr("x", function(d) { return d.above ? -(d.above.w / 2 - above_padding) : 0})
+    .attr("y", -(above_dy - above_padding))
+    .attr("height", function(d) { return d.above ? (d.above.h - above_padding * 2) : 0 })
+    .attr("width", function(d) { return d.above ? (d.above.w - above_padding * 2) : 0 });
+
+  var y1 = - (em2px(1.0 * 0.5) + above_padding);
+
+  nodeEnter.append("line", "svg:image")
+    .attr("x1", 0)
+    .attr("y1", y1)
+    .attr("x2", 0)
+    .attr("y2", function(d) { return d.above ? - (above_dy - d.above.h - above_padding * 2) : y1 })
+    .style("stroke-width", 2)
+    .style("stroke", '#cccccc');
+
+  // Text for saliency popup
+  nodeEnter.append("text", "line")
+    .attr("class", "above")
+    .attr("x", 0)
+    .attr("y", function(d) { return d.above ? - (above_dy - d.above.h - above_padding * 5) : y1 })
+    .text(function(d) { return d.above ? d.above.label || '' : ''; })
+    .attr("text-anchor", "middle")
+    .call(setBBGenerator('bbox_above'))
+
+  nodeEnter.append("text", "text.above")
+    .attr("class", "above small")
+    .attr("x", 0)
+    .attr("y", function(d) { return d.above ? - (above_dy - d.above.h - above_padding * 5 - em2px(1.0)) : y1 })
+    .text(function(d) { return d.above ? d.above.sublabel || '' : ''; })
+    .attr("text-anchor", "middle")
+    .style("fill", "#999999")
+    .call(setBBGenerator('bbox_above_small'))
+
+  /**
+   * BELOW saliency vis
+   **/
+
+   below_dy = 200;
+   below_padding = 5;
+
+   nodeEnter.insert("rect", "circle")
+     .attr("x", function(d) {
+         if (d.below && !d.below.w) d.below.w = default_dim;
+         if (d.below && !d.below.h) d.below.h = default_dim;
+         return d.below ? -d.below.w / 2 : 0
+     })
+     .attr("y", function(d) { return d.below ? (d.below.dy || below_dy) - d.below.h : 0 })
+     .attr("width", function(d) { return d.below ? d.below.w : 0 })
+     .attr("height", function(d) { return d.below ? d.below.h : 0 })
+     .style("fill", function(d) {
+         if (d.below && d.below.rect) return gradientStroke(d);
+         return '#FFFFFF'
+     });
+
+   nodeEnter.append("svg:image", "circle")
+     .attr("xlink:href", function(d) { return d.below ? d.below.href : '' })
+     .attr("x", function(d) { return d.below ? -(d.below.w / 2 - below_padding) : 0})
+     .attr("y", function(d) { return d.below ? (d.below.dy || below_dy) - d.below.h + below_padding : 0 })
+     .attr("height", function(d) { return d.below ? (d.below.h - below_padding * 2) : 0 })
+     .attr("width", function(d) { return d.below ? (d.below.w - below_padding * 2) : 0 });
+
+   nodeEnter.append("rect", "image")
+     .attr("x", -1)
+     .attr("y", function (d) { return d.below ? (d.below.dy || below_dy) - d.below.h / 2 : 0 })
+     .attr("width", function(d) { return 5; })
+     .attr("height", function(d) { return 5; })
+     .attr("stroke-width", function (d) { return d.below ? 2 : 0; })
+     .attr("stroke", '#39ff14')
+     .style('fill-opacity', '0')
+
+   var y1 = (em2px(1.0 * 0.5) + below_padding);
+   nodeEnter.append("line", "svg:image")
+     .attr("x1", 0)
+     .attr("y1", y1)
+     .attr("x2", 0)
+     .attr("y2", function(d) { return d.below ? ((d.below.dy || below_dy) - d.below.h - below_padding * 2) : y1 })
+     .style("stroke-width", 8)
+     .style("stroke", '#ffffff');
+
+   nodeEnter.append("line", "svg:image")
+     .attr("x1", 0)
+     .attr("y1", y1)
+     .attr("x2", 0)
+     .attr("y2", function(d) { return d.below ? ((d.below.dy || below_dy) - d.below.h - below_padding * 2) : y1 })
+     .style("stroke-width", 2)
+     .style("stroke", '#cccccc');
+
+   // Text for saliency popup
+   nodeEnter.append("text", "line")
+     .attr("class", "below")
+     .attr("x", 0)
+     .attr("y", function(d) { return d.below ? ((d.below.dy || below_dy) + below_padding * 5) : y1 })
+     .text(function(d) { return d.below ? d.below.label || '' : ''; })
+     .attr("text-anchor", "middle")
+     .call(setBBGenerator('bbox_below'))
+
+   nodeEnter.append("text", "text.below")
+     .attr("class", "below small")
+     .attr("x", 0)
+     .attr("y", function(d) { return d.below ? ((d.below.dy || below_dy) + below_padding * 5 + em2px(1.0)) : y1 })
+     .text(function(d) { return d.below ? d.below.sublabel || '' : ''; })
+     .attr("text-anchor", "middle")
+     .style("fill", "#999999")
+     .call(setBBGenerator('bbox_below_small'))
+
+  /**
+   * GGeneral text
+   */
+
+   nodeEnter.selectAll("text")
+     .style("font-size", "0.9em")
+     .style("font-family", "Montserrat-Regular")
+
+   nodeEnter.selectAll("text.small")
+     .style("font-size", "0.7em")
+     .style("font-family", "Montserrat-Regular")
+
+
+  /**
+   * Text BG
+   **/
+
+  function text_x(d){
+      if (textOnLeft(d)) {
+        return d[name].x - dx - (x / 2) - d[name].width;
+      }
+      return d[name].x + dx + (x / 2);
+  }
+
+  function half_x(d) {
+      return - d[name].width / 2;
+  }
+
+  var bboxes = [
+    {'attr': 'bbox', 'el': 'text', 'x': text_x},
+    {'attr': 'bbox_small', 'el': 'text', 'x': text_x},
+    {'attr': 'bbox_above', 'el': 'text.above', 'x': half_x, 'ratio_width': 0.9, 'ratio_x': 0.9},
+    {'attr': 'bbox_above_small', 'el': 'text.above', 'x': half_x, 'ratio_width': 0.7, 'ratio_x': 0.7}
+  ]
+  for (var k = 0; k < bboxes.length; k++) {
+   var bbox = bboxes[k];
+   var name = bbox.attr;
+   nodeEnter.insert("rect", bbox.el)
+     .attr("x", function(d) { return bbox.x(d) * (bbox.ratio_x || 1) })
+     .attr("y", function(d) { return d[name].y * (bbox.ratio_y || 1)})
+     .attr("width", function(d){ return d[name].width * (bbox.ratio_width || 1); })
+     .attr("height", function(d) {return d[name].height; })
+     .style("fill", "rgba(255,255,255,0.8)");
+  }
+
+  // End text bg
+
+  // Transition nodes to their new position.
+  var nodeUpdate = node.transition()
+	  .duration(duration)
+	  .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
+
+  nodeUpdate.select("circle")
+	  .attr("r", "0.5em")
+	  .style("fill", function(d) {
+      if (d._children) return "url(#diagonalHatch)";
+      return gradientFill(d);
+    })
+    .style("stroke", function(d) {
+      if (!d.children && !d.highlighted) {
+        if (d.theme == "minimal") return "#EEEEEE";
+        return "#FFFFFF";
+      }
+      return gradientStroke(d);
+    });
+
+  nodeUpdate.select("text")
+    .attr("x", function(d) { return textOnLeft(d) ? -x : x; })
+    .attr("dx", function(d) { return textOnLeft(d) ? -dx + "px" : dx + "px"; })
+    .attr("dy", function(d) { return get_sublabel(d) ? "-0.2em" : "0.3em"})
+    .attr("text-anchor", function(d) { return textOnLeft(d) ? "end" : "start"; })
+	  .style("fill-opacity", 1);
+
+  nodeUpdate.select("text.small")
+    .text(get_sublabel)
+    .attr("x", function(d) { return textOnLeft(d) ? -x : x; })
+    .attr("dx", function(d) { return textOnLeft(d) ? -dx + "px" : dx + "px"; })
+	  .attr("text-anchor", function(d) { return textOnLeft(d) ? "end" : "start"; })
+	  .style("fill-opacity", 1);
+
+  nodeUpdate.select("rect")
+    .style("opacity", 1);
+
+  nodeUpdate.select("image")
+    .style("opacity", 1);
+
+  // Transition exiting nodes to the parent's new position.
+  var nodeExit = node.exit().transition()
+	  .duration(duration)
+	  .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
+	  .remove();
+
+  nodeExit.select("circle")
+	  .attr("r", 1e-5);
+
+  nodeExit.select("text")
+	  .style("fill-opacity", 1e-5);
+
+  nodeExit.select("text.small")
+	  .style("fill-opacity", 1e-5);
+
+  nodeExit.select("rect")
+    .style("opacity", 1e-5);
+
+  nodeExit.select("image")
+    .style("opacity", 1e-5);
+
+  if (straight_lines) {
+
+    // Update the links…
+    var link = svg.selectAll("line.link")
+  	  .data(links, function(d) { return d.target.id; });
+
+    link.enter().insert("line", "g")
+          .attr("class", "link")
+          .style("stroke-width", function(d) {
+              if (d.source.highlighted && d.target.highlighted) return 3;
+              return 2
+          })
+          .style("stroke", gradientStroke);
+
+    link.attr('x1', function(d) {
+             return getTargetNodeCircumferencePoint(d.target, d.source, d.target.marker_start)[1];
+        })
+        .attr('y1', function(d) {
+             return getTargetNodeCircumferencePoint(d.target, d.source, d.target.marker_start)[0];
+        })
+        .attr("x2", function(d) {
+             return getTargetNodeCircumferencePoint(d.source, d.target, d.target.marker_end)[1];
+        })
+        .attr("y2", function(d) {
+             return getTargetNodeCircumferencePoint(d.source, d.target, d.target.marker_end)[0];
+        })
+        .attr('marker-end', makeArrow)
+
+
+
+    function getTargetNodeCircumferencePoint(source, target, end) {
+
+        var t_radius = (target.radius + target.padding) / 2.0 + end;
+        var dx = target.x - source.x;
+        var dy = target.y - source.y;
+        var gamma = Math.atan2(dy, dx); // Math.atan2 returns the angle in the correct quadrant as opposed to Math.atan
+        var tx = target.x - (Math.cos(gamma) * t_radius);
+        var ty = target.y - (Math.sin(gamma) * t_radius);
+
+        return [tx, ty];
+    }
+  } else {
+
+    // Update the links…
+    var link = svg.selectAll("path.link")
+  	  .data(links, function(d) { return d.target.id; });
+
+    // Enter any new links at the parent's previous position.
+    link.enter().insert("path", "g")
+  	  .attr("class", "link")
+      .style("stroke-width", 2)
+  	  .attr("d", function(d) {
+    		var o = {x: source.x0, y: source.y0};
+    		return diagonal({source: o, target: o});
+  	  });
+  }
+
+  // Transition links to their new position.
+  link.transition()
+    .duration(duration)
+    .attr("d", diagonal);
+
+  // Transition exiting nodes to the parent's new position.
+  link.exit().transition()
+    .duration(duration)
+    .attr("d", function(d) {
+      var o = {x: source.x, y: source.y};
+      return diagonal({source: o, target: o});
+    })
+    .remove();
+
+  // Stash the old positions for transition.
+  nodes.forEach(function(d) {
+  	d.x0 = d.x;
+  	d.y0 = d.y;
+  });
+
+  d3_onload();
+}
+
+// Toggle children on click.
+function click(d) {
+  if (d.children) {
+	d._children = d.children;
+	d.children = null;
+  } else {
+	d.children = d._children;
+	d._children = null;
+  }
+  update(d);
+}
+
+function d3_onload() {
+  if (window.d3_onload_run) return;
+  window.d3_onload_run = true;
+  setTimeout(function() {
+    var hide = [];
+    for (var i = 0; i < hide.length; i++) {
+        document.getElementById(hide[i]).dispatchEvent(new Event('click'))
+    }
+
+    if (false) {
+      setTimeout(print, 1000);
+    }
+
+  }, 1000);
+}
+
+window.onload = d3_onload;
+
+// function saveImage() {
+//   var doctype = '<?xml version="1.0" standalone="no"?>'
+//   + '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">';
+//
+// // serialize our SVG XML to a string.
+// var source = (new XMLSerializer()).serializeToString(d3.select('svg').node());
+//
+// // create a file blob of our SVG.
+// var blob = new Blob([ doctype + source], { type: 'image/svg+xml;charset=utf-8' });
+//
+// var url = window.URL.createObjectURL(blob);
+//
+// // Put the svg into an image tag so that the Canvas element can read it in.
+// var img = d3.select('body').append('img')
+//  .attr('width', 100)
+//  .attr('height', 100)
+//  .node();
+//
+//
+// img.onload = function(){
+//   // Now that the image has loaded, put the image into a canvas element.
+//   var canvas = d3.select('body').append('canvas').node();
+//   canvas.width = width;
+//   canvas.height = height;
+//   var ctx = canvas.getContext('2d');
+//   ctx.drawImage(img, 0, 0);
+//   var canvasUrl = canvas.toDataURL("image/png");
+//   var img2 = d3.select('body').append('img')
+//     .attr('width', width)
+//     .attr('height', height)
+//     .node();
+//   // this is now the base54 encoded version of our PNG! you could optionally
+//   // redirect the user to download the PNG by sending them to the url with
+//   // `window.location.href= canvasUrl`.
+//   img2.src = canvasUrl;
+// }
+// // start loading the image.
+// img.src = url;
+// }
+//
+// window.onload = function() {
+//   setTimeout(saveImage, 5000);
+// }
+
+</script>
+  </body>
+</html>

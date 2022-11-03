@@ -1,0 +1,33 @@
+2022-01-23 22:01:11,000 - INFO - Reading Feature Extractor Config
+2022-01-23 22:01:11,001 - INFO - ==> Preparing data..
+2022-01-23 22:01:11,664 - INFO - # ID Train: 106872
+2022-01-23 22:01:11,664 - INFO - # ID Test:  4150
+2022-01-23 22:01:11,664 - INFO - # OOD Test: 850
+2022-01-23 22:01:11,664 - INFO - checkpoint filename: experiments/coarse/cascade/pruned-wn/softpred_finetune_bbfreeze_R0/checkpoint.pt
+2022-01-23 22:01:11,664 - INFO - log filename: experiments/coarse/cascade/pruned-wn/softpred_finetune_bbfreeze_R0/train.log
+2022-01-23 22:01:11,665 - INFO - ********************************************************
+2022-01-23 22:01:11,665 - INFO - Starting Iter: 0 / 1
+2022-01-23 22:01:11,665 - INFO - ********************************************************
+2022-01-23 22:01:18,025 - INFO - Loading weights from feature extractor
+2022-01-23 22:01:18,282 - INFO - cuda
+2022-01-23 22:01:18,328 - INFO - 
+Epoch: 0
+2022-01-23 22:01:18,328 - INFO - 
+Learning Rate: 0.0010
+2022-01-23 22:01:18,329 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.0
+2022-01-23 22:03:38,269 - INFO - [Step=250]	Loss=3.8898	228.7 examples/second
+2022-01-23 22:05:45,590 - INFO - [Step=500]	Loss=2.7408	251.3 examples/second
+2022-01-23 22:07:57,618 - INFO - [Step=750]	Loss=2.1561	242.4 examples/second
+2022-01-23 22:08:57,970 - INFO - Test Loss=1.7472, Test top-1 acc=0.6802, Test mean synset acc=0.8063
+2022-01-23 22:08:57,971 - INFO - Error Depth: [  18.   53.  395.  499.  255.  107. 2823.]
+2022-01-23 22:08:57,971 - INFO - Saving...
+2022-01-23 22:08:58,646 - INFO - Epoch time: 460.3181245326996
+2022-01-23 22:08:58,647 - INFO - 
+Epoch: 1
+2022-01-23 22:08:58,647 - INFO - 
+Learning Rate: 0.0010
+2022-01-23 22:08:58,647 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.0

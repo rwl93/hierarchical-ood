@@ -1,0 +1,411 @@
+<!-- Code adapted from d3-graph-gallery.com, https://observablehq.com/@d3/radial-dendrogram
+     as well as from Wan et al. 2020 Neural backed decision trees github repo at 
+     https://github.com/alvinwan/neural-backed-decision-trees
+     and from https://bl.ocks.org/d3noob/8375092
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Tree Example</title>
+  <style>
+.node {
+  cursor: pointer;
+}
+
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 3px;
+}
+
+.node text {
+  font: 12px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2px;
+}
+  </style>
+</head>
+<body>
+<!-- Create a div where the graph will take place -->
+  <div class="tree-main">
+  </div>
+
+</body>
+
+<!-- Load d3.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
+
+<!-- Create tree -->
+<script>
+
+window.d3_onload_run = false;
+
+var margin = {
+        top: CONFIG_MARGIN_TOP * CONFIG_SCALE,
+        right: 120 * CONFIG_SCALE,
+        bottom: 10 * CONFIG_SCALE,
+        left: CONFIG_MARGIN_LEFT * CONFIG_SCALE
+    },
+    textsize=CONFIG_TEXT_SIZE,
+	width = CONFIG_VIS_WIDTH - margin.right - margin.left,
+	height = CONFIG_VIS_HEIGHT - textsize - margin.top - margin.bottom;
+
+var i = 0,
+	duration = 750,
+	root;
+
+var tree = d3.layout.tree().size([height, width]);
+var zoom = d3.behavior.zoom()
+    .translate([margin.left, margin.top])
+    .scale(CONFIG_SCALE);
+
+//var diagonal = d3.svg.diagonal()
+//	.projection(function(d) { return [d.y, d.x]; });
+
+// append the svg object to the body of the page
+var svg = d3.select("div.tree-main").append("svg")
+    .attr("width", width + margin.right + margin.left)
+    .attr("height", height + textsize + margin.top + margin.bottom)
+  .style("font-size", 10)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")")
+  .call(zoom)
+  .on(".zoom", null);
+
+var diagonal = d3.svg.diagonal()
+	.projection(function(d) { return [d.y, d.x]; });
+
+//d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_dendrogram.json", function(data) {
+var treeData = CONFIG_TREE_DATA;
+
+var tree = d3.layout.tree()
+	.size([height, width]);
+
+root = treeData[0];
+root.x0 = height / 2;
+root.y0 = 0;
+  
+update(root);
+
+if (CONFIG_CAPTION) {
+  svg.append('line')
+      .style("stroke", "black")
+      .style("stroke-width", 5)
+      .attr("x1", -50)
+      .attr("y1", height)
+      .attr("x2", width)
+      .attr("y2", height); 
+  svg.append('text')
+      .attr("x", 0)
+      .attr("y", height+20)
+      .attr("dy", ".35em")
+      .text("Prediction:")
+      .style("fill", "purple")
+      .style("font-size", "0.9em")
+      .style("font-family", "Montserrat-Regular");
+  svg.append('text')
+      .attr("x", -26)
+      .attr("y", height+40)
+      .attr("dy", ".35em")
+      .text("Hierarchy Dist:")
+      .style("fill", "purple")
+      .style("font-size", "0.9em")
+      .style("font-family", "Montserrat-Regular");
+  svg.append('text')
+      .attr("x", 100)
+      .attr("y", height+20)
+      .attr("dy", ".35em")
+      .text("CONFIG_PRED_DESC")
+      .style("font-size", "0.9em")
+      .style("font-family", "Montserrat-Regular");
+      //.style("font-size", 10);
+  svg.append('text')
+      .attr("x", 100)
+      .attr("y", height+40)
+      .attr("dy", ".35em")
+      .text("CONFIG_PRED_DIST")
+      .style("font-size", "0.9em")
+      .style("font-family", "Montserrat-Regular");
+      //.style("font-size", 10);
+  svg.append('text')
+      .attr("x", 250)
+      .attr("y", height+20)
+      .attr("dy", ".35em")
+      .text("Groundtruth:")
+      .style("fill", "green")
+      .style("font-size", "0.9em")
+      .style("font-family", "Montserrat-Regular");
+  svg.append('text')
+      .attr("x", 239)
+      .attr("y", height+40)
+      .attr("dy", ".35em")
+      .text("Hierarchy Dist:")
+      .style("fill", "green")
+      .style("font-size", "0.9em")
+      .style("font-family", "Montserrat-Regular");
+  svg.append('text')
+      .attr("x", 350)
+      .attr("y", height+20)
+      .attr("dy", ".35em")
+      .text("CONFIG_GT_DESC")
+      .style("font-size", "0.9em")
+      .style("font-family", "Montserrat-Regular");
+      //.style("font-size", 10);
+  svg.append('text')
+      .attr("x", 350)
+      .attr("y", height+40)
+      .attr("dy", ".35em")
+      .text("CONFIG_GT_DIST")
+      .style("font-size", "0.9em")
+      .style("font-family", "Montserrat-Regular");
+      //.style("font-size", 10);
+}
+
+d3.select(self.frameElement).style("height", "500px");
+
+function update(source) {
+
+  // Compute the new tree layout.
+  var nodes = tree.nodes(root).reverse(),
+	  links = tree.links(nodes);
+
+  // Normalize for fixed-depth.
+  nodes.forEach(function(d) { d.y = 200 + d.depth * 100; });
+
+  // Update the nodes…
+  var node = svg.selectAll("g.node")
+	  .data(nodes, function(d) { return d.id || (d.id = ++i); });
+
+  // Enter any new nodes at the parent's previous position.
+  var nodeEnter = node.enter().append("g")
+	  .attr("class", "node")
+	  .attr("transform", function(d) { return "translate(" + source.y0 + "," + source.x0 + ")"; })
+	  .on("click", click);
+
+
+
+  nodeEnter.append("circle")
+	  .attr("r", 2.5)
+    .style("stroke", function(d) {
+        if (d._children) return "#555";
+        return "#999";
+      })
+	  .style("fill", function(d) {
+          if (d._children) return "#555";
+          return "#999";
+      });
+
+  nodeEnter.append("text")
+	  .attr("x", function(d) { return d.children || d._children ? -13 : 13; })
+	  .attr("dy", ".35em")
+	  .attr("text-anchor", function(d) { return d.children || d._children ? "end" : "start"; })
+	  .text(function(d) { return d.name; })
+	  .style("fill-opacity", 1e-6);
+
+  // Handle image 
+  nodeEnter.append("svg:image")
+    .attr("xlink:href", function(d) { return d.image ? d.image.href : '' })
+    .attr("x", -225)
+    .attr("y", function(d) { return d.image ? -d.image.height/ 2 : 0 })
+    .attr("height", function(d) { return d.image ? d.image.height : 0 })
+    .attr("width", function(d) { return d.image ? d.image.width : 0 })
+
+  nodeEnter.append("text")
+    .attr("x", function(d) {return d.image ? -185 : 0})
+    .attr("y", function(d) { return d.image ? -d.image.height+110 : 0 })
+	  .attr("dy", ".35em")
+    .text(function(d) {return d.image ? "CONFIG_IMG_CAPTION" : ""})
+    .style("font-size", "0.9em")
+    .style("font-family", "Montserrat-Regular");
+
+  // Transition nodes to their new position.
+  var nodeUpdate = node.transition()
+	  .duration(duration)
+	  .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; });
+
+  nodeUpdate.select("circle")
+    .attr("r", function(d) {
+        if (d.pred || d.gt) return 6;
+        return 2.5;
+      })
+    .style("stroke", function(d) {
+        if (d.pred) return "purple"
+        if (d.gt) return "green"
+        if (d._children) return "#555";
+        return "#999";
+       })
+    .style("fill", function(d) {
+        if (d.pred) return "purple"
+        if (d.gt) return "green"
+        if (d._children) return "#555";
+        return "#999";
+      });
+
+  nodeUpdate.select("text")
+	  .style("fill-opacity", 1);
+
+  // Transition exiting nodes to the parent's new position.
+  var nodeExit = node.exit().transition()
+	  .duration(duration)
+	  .attr("transform", function(d) { return "translate(" + source.y + "," + source.x + ")"; })
+	  .remove();
+
+  nodeExit.select("circle")
+	  .attr("r", 1e-6);
+
+  nodeExit.select("text")
+	  .style("fill-opacity", 1e-6);
+
+  // Update the links…
+  var link = svg.selectAll("path.link")
+	  .data(links, function(d) { return d.target.id; });
+
+  // Enter any new links at the parent's previous position.
+  link.enter().insert("path", "g")
+	  .attr("class", "link")
+    .style("stroke", function(d) {
+      if (d.target.ood) return "red";
+      return "steelblue";
+      })
+    .style("stroke-opacity", function(d) {
+        if (d.target.ood) return 0.8;
+        return 0.8;
+      })
+    .style("stroke-width", function(d) {
+        if (d.target.ood) return 2;
+        return 2;
+      })
+	  .attr("d", function(d) {
+		var o = {x: source.x0, y: source.y0};
+		return diagonal({source: o, target: o});
+	  });
+
+  // Transition links to their new position.
+  link.transition()
+	  .duration(duration)
+	  .attr("d", diagonal);
+
+  // Transition exiting nodes to the parent's new position.
+  link.exit().transition()
+	  .duration(duration)
+	  .attr("d", function(d) {
+		var o = {x: source.x, y: source.y};
+		return diagonal({source: o, target: o});
+	  })
+	  .remove();
+
+  // Stash the old positions for transition.
+  nodes.forEach(function(d) {
+	d.x0 = d.x;
+	d.y0 = d.y;
+  });
+  nodeEnter.selectAll("text")
+   .style("font-size", "0.9em")
+   .style("font-family", "Montserrat-Regular")
+
+  d3_onload();
+}
+
+// Toggle children on click.
+function click(d) {
+  if (d.children) {
+	d._children = d.children;
+	d.children = null;
+  } else {
+	d.children = d._children;
+	d._children = null;
+  }
+  update(d);
+}
+
+function d3_onload() {
+  if (window.d3_onload_run) return;
+  window.d3_onload_run = true;
+  setTimeout(function() {
+    var hide = false;
+    for (var i = 0; i < hide.length; i++) {
+        document.getElementById(hide[i]).dispatchEvent(new Event('click'))
+    }
+
+    if (true) {
+      setTimeout(print, 1000);
+    }
+
+  }, 1000);
+}
+window.onload =d3_onload;
+
+function saveImage() {
+  //get svg element.
+  var svg = document.getElementById("svg");
+
+  //get svg source.
+  var serializer = new XMLSerializer();
+  var source = serializer.serializeToString(svg);
+
+  //add name spaces.
+  if(!source.match(/^<svg[^>]+xmlns="http\:\/\/www\.w3\.org\/2000\/svg"/)){
+      source = source.replace(/^<svg/, '<svg xmlns="http://www.w3.org/2000/svg"');
+  }
+  if(!source.match(/^<svg[^>]+"http\:\/\/www\.w3\.org\/1999\/xlink"/)){
+      source = source.replace(/^<svg/, '<svg xmlns:xlink="http://www.w3.org/1999/xlink"');
+  }
+
+  //add xml declaration
+  source = '<?xml version="1.0" standalone="no"?>\r\n' + source;
+
+  //convert svg source to URI data scheme.
+  var url = "data:image/svg+xml;charset=utf-8,"+encodeURIComponent(source);
+
+  //set url value to a element's href attribute.
+  document.getElementById("link").href = url;
+  //you can download svg file by right click menu.
+  var doctype = '<?xml version="1.0" standalone="no"?>'
+  + '<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">';
+
+  // serialize our SVG XML to a string.
+  var source = (new XMLSerializer()).serializeToString(d3.select('svg').node());
+
+  // create a file blob of our SVG.
+  var blob = new Blob([ doctype + source], { type: 'image/svg+xml;charset=utf-8' });
+
+  var url = window.URL.createObjectURL(blob);
+
+  // Put the svg into an image tag so that the Canvas element can read it in.
+  var img = d3.select('body').append('img')
+   .attr('width', 400)
+   .attr('height', 400)
+   .node();
+
+
+  img.onload = function(){
+    // Now that the image has loaded, put the image into a canvas element.
+    var canvas = d3.select('body').append('canvas').node();
+    canvas.width = width;
+    canvas.height = height;
+    var ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0);
+    var canvasUrl = canvas.toDataURL("image/png");
+    var img2 = d3.select('body').append('img')
+      .attr('width', width)
+      .attr('height', height)
+      .node();
+    // this is now the base54 encoded version of our PNG! you could optionally
+    // redirect the user to download the PNG by sending them to the url with
+    // `window.location.href= canvasUrl`.
+    img2.src = canvasUrl;
+  }
+  // start loading the image.
+  img.src = url;
+}
+
+window.onload = function() {
+  setTimeout(saveImage, 5000);
+}
+
+</script>

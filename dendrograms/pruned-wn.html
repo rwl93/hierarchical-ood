@@ -1,0 +1,849 @@
+<!-- Code adapted from d3-graph-gallery.com -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Radial Example</title>
+  <style>
+.node {
+  cursor: pointer;
+}
+
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 3px;
+}
+
+.node text {
+  font: 12px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2px;
+}
+  </style>
+</head>
+<body>
+<!-- Create a div where the graph will take place -->
+  <div class="tree-main">
+  </div>
+
+</body>
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<!-- Create tree -->
+<script>
+
+
+// set the dimensions and margins of the graph
+var margin = {
+        top: 50,
+        right: 50,
+        bottom: 50,
+        left: 50
+    },
+	  width = 1100 - margin.right - margin.left,
+	  height = 1100 - margin.top - margin.bottom;
+
+// radius of the dendrogram 
+var radius = width / 2
+
+// append the svg object to the body of the page
+var svg = d3.select("div.tree-main").append("svg")
+    .attr("width", width + margin.right + margin.left)
+    .attr("height", height + margin.top + margin.bottom)
+  .style("font-size", 10)
+  .append("g")
+    .attr("transform", "translate(" + (radius + margin.left) + "," + (radius +
+        margin.top) + ")");
+
+//d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_dendrogram.json", function(data) {
+var treeData = [
+{
+  "children": [
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "colname": "level3",
+              "name": "sweatshirt",
+              "ood": false
+            },
+            {
+              "colname": "level3",
+              "name": "cardigan",
+              "ood": false
+            },
+            {
+              "colname": "level3",
+              "name": "lab coat",
+              "ood": false
+            },
+            {
+              "colname": "level3",
+              "name": "trench coat",
+              "ood": false
+            },
+            {
+              "colname": "level3",
+              "name": "suit",
+              "ood": false
+            }
+          ],
+          "colname": "level2",
+          "name": "clothing",
+          "ood": false
+        },
+        {
+          "children": [
+            {
+              "colname": "level3",
+              "name": "volleyball",
+              "ood": false
+            },
+            {
+              "colname": "level3",
+              "name": "soccer ball",
+              "ood": false
+            },
+            {
+              "colname": "level3",
+              "name": "baseball",
+              "ood": false
+            },
+            {
+              "colname": "level3",
+              "name": "basketball",
+              "ood": false
+            },
+            {
+              "colname": "level3",
+              "name": "rugby ball",
+              "ood": false
+            }
+          ],
+          "colname": "level2",
+          "name": "ball",
+          "ood": false
+        },
+        {
+          "children": [
+            {
+              "colname": "level3",
+              "name": "electric guitar",
+              "ood": false
+            },
+            {
+              "colname": "level3",
+              "name": "acoustic guitar",
+              "ood": false
+            },
+            {
+              "colname": "level3",
+              "name": "banjo",
+              "ood": false
+            },
+            {
+              "colname": "level3",
+              "name": "cello",
+              "ood": false
+            },
+            {
+              "colname": "level3",
+              "name": "harp",
+              "ood": false
+            }
+          ],
+          "colname": "level2",
+          "name": "stringed instrument",
+          "ood": false
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "colname": "level4",
+                  "name": "bullet train",
+                  "ood": true
+                },
+                {
+                  "colname": "level4",
+                  "name": "freight car",
+                  "ood": true
+                },
+                {
+                  "colname": "level4",
+                  "name": "electric locomotive",
+                  "ood": true
+                },
+                {
+                  "colname": "level4",
+                  "name": "steam locomotive",
+                  "ood": true
+                },
+                {
+                  "colname": "level4",
+                  "name": "streetcar",
+                  "ood": true
+                }
+              ],
+              "colname": "level3",
+              "name": "train",
+              "ood": true
+            },
+            {
+              "children": [
+                {
+                  "colname": "level4",
+                  "name": "pickup",
+                  "ood": true
+                },
+                {
+                  "colname": "level4",
+                  "name": "police van",
+                  "ood": true
+                },
+                {
+                  "colname": "level4",
+                  "name": "sports car",
+                  "ood": true
+                },
+                {
+                  "colname": "level4",
+                  "name": "jeep",
+                  "ood": true
+                },
+                {
+                  "colname": "level4",
+                  "name": "minivan",
+                  "ood": true
+                }
+              ],
+              "colname": "level3",
+              "name": "car/truck",
+              "ood": true
+            },
+            {
+              "children": [
+                {
+                  "colname": "level4",
+                  "name": "container ship",
+                  "ood": true
+                },
+                {
+                  "colname": "level4",
+                  "name": "liner",
+                  "ood": true
+                },
+                {
+                  "colname": "level4",
+                  "name": "aircraft carrier",
+                  "ood": true
+                },
+                {
+                  "colname": "level4",
+                  "name": "fireboat",
+                  "ood": true
+                },
+                {
+                  "colname": "level4",
+                  "name": "lifeboat",
+                  "ood": true
+                }
+              ],
+              "colname": "level3",
+              "name": "vessel",
+              "ood": true
+            }
+          ],
+          "colname": "level2",
+          "name": "vehicle",
+          "ood": true
+        }
+      ],
+      "colname": "level1",
+      "name": "artifact",
+      "ood": false
+    },
+    {
+      "children": [
+        {
+          "children": [
+            {
+              "colname": "level3",
+              "name": "agaric",
+              "ood": false
+            },
+            {
+              "colname": "level3",
+              "name": "gyromitra",
+              "ood": false
+            },
+            {
+              "colname": "level3",
+              "name": "stinkhorn",
+              "ood": false
+            },
+            {
+              "colname": "level3",
+              "name": "earthstar",
+              "ood": false
+            },
+            {
+              "colname": "level3",
+              "name": "hen-of-the-woods",
+              "ood": false
+            }
+          ],
+          "colname": "level2",
+          "name": "fungus",
+          "ood": false
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "colname": "level5",
+                      "name": "ground beetle",
+                      "ood": false
+                    },
+                    {
+                      "colname": "level5",
+                      "name": "long-horned beetle",
+                      "ood": false
+                    },
+                    {
+                      "colname": "level5",
+                      "name": "leaf beetle",
+                      "ood": false
+                    },
+                    {
+                      "colname": "level5",
+                      "name": "dung beetle",
+                      "ood": false
+                    },
+                    {
+                      "colname": "level5",
+                      "name": "rhinoceros beetle",
+                      "ood": false
+                    }
+                  ],
+                  "colname": "level4",
+                  "name": "beetle",
+                  "ood": false
+                },
+                {
+                  "children": [
+                    {
+                      "colname": "level5",
+                      "name": "ringlet butterfly",
+                      "ood": false
+                    },
+                    {
+                      "colname": "level5",
+                      "name": "monarch butterfly",
+                      "ood": false
+                    },
+                    {
+                      "colname": "level5",
+                      "name": "cabbage butterfly",
+                      "ood": false
+                    },
+                    {
+                      "colname": "level5",
+                      "name": "sulphur butterfly",
+                      "ood": false
+                    },
+                    {
+                      "colname": "level5",
+                      "name": "lycaenid butterfly",
+                      "ood": false
+                    }
+                  ],
+                  "colname": "level4",
+                  "name": "butterfly",
+                  "ood": false
+                }
+              ],
+              "colname": "level3",
+              "name": "insect",
+              "ood": false
+            },
+            {
+              "children": [
+                {
+                  "colname": "level4",
+                  "name": "American lobster",
+                  "ood": false
+                },
+                {
+                  "colname": "level4",
+                  "name": "Dungeness crab",
+                  "ood": false
+                },
+                {
+                  "colname": "level4",
+                  "name": "rock crab",
+                  "ood": false
+                },
+                {
+                  "colname": "level4",
+                  "name": "fiddler crab",
+                  "ood": false
+                },
+                {
+                  "colname": "level4",
+                  "name": "king crab",
+                  "ood": false
+                }
+              ],
+              "colname": "level3",
+              "name": "crab",
+              "ood": false
+            },
+            {
+              "children": [
+                {
+                  "colname": "level4",
+                  "name": "black widow",
+                  "ood": false
+                },
+                {
+                  "colname": "level4",
+                  "name": "tarantula",
+                  "ood": false
+                },
+                {
+                  "colname": "level4",
+                  "name": "garden spider",
+                  "ood": false
+                },
+                {
+                  "colname": "level4",
+                  "name": "barn spider",
+                  "ood": false
+                },
+                {
+                  "colname": "level4",
+                  "name": "black and gold garden spider",
+                  "ood": false
+                }
+              ],
+              "colname": "level3",
+              "name": "spider",
+              "ood": false
+            }
+          ],
+          "colname": "level2",
+          "name": "invertebrate",
+          "ood": false
+        },
+        {
+          "children": [
+            {
+              "children": [
+                {
+                  "colname": "level4",
+                  "name": "brambling",
+                  "ood": false
+                },
+                {
+                  "colname": "level4",
+                  "name": "goldfinch",
+                  "ood": false
+                },
+                {
+                  "colname": "level4",
+                  "name": "house finch",
+                  "ood": false
+                },
+                {
+                  "colname": "level4",
+                  "name": "junco",
+                  "ood": true
+                },
+                {
+                  "colname": "level4",
+                  "name": "indigo bunting",
+                  "ood": false
+                }
+              ],
+              "colname": "level3",
+              "name": "bird",
+              "ood": false
+            },
+            {
+              "children": [
+                {
+                  "colname": "level4",
+                  "name": "loggerhead",
+                  "ood": false
+                },
+                {
+                  "colname": "level4",
+                  "name": "leatherback turtle",
+                  "ood": false
+                },
+                {
+                  "colname": "level4",
+                  "name": "mud turtle",
+                  "ood": false
+                },
+                {
+                  "colname": "level4",
+                  "name": "terrapin",
+                  "ood": false
+                },
+                {
+                  "colname": "level4",
+                  "name": "box turtle",
+                  "ood": false
+                }
+              ],
+              "colname": "level3",
+              "name": "turtle",
+              "ood": false
+            },
+            {
+              "children": [
+                {
+                  "colname": "level4",
+                  "name": "Gila monster",
+                  "ood": false
+                },
+                {
+                  "colname": "level4",
+                  "name": "green lizard",
+                  "ood": false
+                },
+                {
+                  "colname": "level4",
+                  "name": "alligator lizard",
+                  "ood": false
+                },
+                {
+                  "colname": "level4",
+                  "name": "frilled lizard",
+                  "ood": false
+                },
+                {
+                  "colname": "level4",
+                  "name": "agama",
+                  "ood": false
+                }
+              ],
+              "colname": "level3",
+              "name": "lizard",
+              "ood": false
+            },
+            {
+              "children": [
+                {
+                  "colname": "level4",
+                  "name": "puffer",
+                  "ood": false
+                },
+                {
+                  "colname": "level4",
+                  "name": "lionfish",
+                  "ood": false
+                },
+                {
+                  "colname": "level4",
+                  "name": "anemone fish",
+                  "ood": false
+                },
+                {
+                  "colname": "level4",
+                  "name": "sturgeon",
+                  "ood": false
+                },
+                {
+                  "colname": "level4",
+                  "name": "gar",
+                  "ood": false
+                }
+              ],
+              "colname": "level3",
+              "name": "fish",
+              "ood": false
+            },
+            {
+              "children": [
+                {
+                  "colname": "level4",
+                  "name": "night snake",
+                  "ood": false
+                },
+                {
+                  "colname": "level4",
+                  "name": "rock python",
+                  "ood": false
+                },
+                {
+                  "colname": "level4",
+                  "name": "boa constrictor",
+                  "ood": false
+                },
+                {
+                  "colname": "level4",
+                  "name": "Indian cobra",
+                  "ood": false
+                },
+                {
+                  "colname": "level4",
+                  "name": "green mamba",
+                  "ood": false
+                }
+              ],
+              "colname": "level3",
+              "name": "snake",
+              "ood": false
+            },
+            {
+              "children": [
+                {
+                  "children": [
+                    {
+                      "children": [
+                        {
+                          "colname": "level6",
+                          "name": "cheetah",
+                          "ood": false
+                        },
+                        {
+                          "colname": "level6",
+                          "name": "tiger",
+                          "ood": false
+                        },
+                        {
+                          "colname": "level6",
+                          "name": "lion",
+                          "ood": false
+                        },
+                        {
+                          "colname": "level6",
+                          "name": "jaguar",
+                          "ood": false
+                        },
+                        {
+                          "colname": "level6",
+                          "name": "snow leopard",
+                          "ood": false
+                        }
+                      ],
+                      "colname": "level5",
+                      "name": "big cat",
+                      "ood": false
+                    },
+                    {
+                      "children": [
+                        {
+                          "colname": "level6",
+                          "name": "Egyptian cat",
+                          "ood": false
+                        },
+                        {
+                          "colname": "level6",
+                          "name": "Siamese cat",
+                          "ood": false
+                        },
+                        {
+                          "colname": "level6",
+                          "name": "Persian cat",
+                          "ood": false
+                        },
+                        {
+                          "colname": "level6",
+                          "name": "tiger cat",
+                          "ood": false
+                        },
+                        {
+                          "colname": "level6",
+                          "name": "tabby cat",
+                          "ood": false
+                        }
+                      ],
+                      "colname": "level5",
+                      "name": "domestic cat",
+                      "ood": false
+                    }
+                  ],
+                  "colname": "level4",
+                  "name": "feline",
+                  "ood": false
+                },
+                {
+                  "children": [
+                    {
+                      "colname": "level5",
+                      "name": "Chesapeake Bay retriever",
+                      "ood": false
+                    },
+                    {
+                      "colname": "level5",
+                      "name": "Labrador retriever",
+                      "ood": false
+                    },
+                    {
+                      "colname": "level5",
+                      "name": "golden retriever",
+                      "ood": false
+                    },
+                    {
+                      "colname": "level5",
+                      "name": "curly-coated retriever",
+                      "ood": true
+                    },
+                    {
+                      "colname": "level5",
+                      "name": "flat-coated retriever",
+                      "ood": false
+                    }
+                  ],
+                  "colname": "level4",
+                  "name": "dog",
+                  "ood": false
+                },
+                {
+                  "children": [
+                    {
+                      "colname": "level5",
+                      "name": "colobus",
+                      "ood": false
+                    },
+                    {
+                      "colname": "level5",
+                      "name": "langur",
+                      "ood": false
+                    },
+                    {
+                      "colname": "level5",
+                      "name": "macaque",
+                      "ood": false
+                    },
+                    {
+                      "colname": "level5",
+                      "name": "baboon",
+                      "ood": false
+                    },
+                    {
+                      "colname": "level5",
+                      "name": "patas",
+                      "ood": false
+                    }
+                  ],
+                  "colname": "level4",
+                  "name": "monkey",
+                  "ood": false
+                }
+              ],
+              "colname": "level3",
+              "name": "mammal",
+              "ood": false
+            }
+          ],
+          "colname": "level2",
+          "name": "vertebrate",
+          "ood": false
+        }
+      ],
+      "colname": "level1",
+      "name": "living thing",
+      "ood": false
+    }
+  ],
+  "colname": "level0",
+  "name": "Physical object",
+  "ood": false
+}
+  ];
+
+root = treeData[0];
+var tree = d3.cluster().size([2 * Math.PI, radius - 100])
+
+update(root);
+
+function update(data) {
+
+  const nodes = tree(d3.hierarchy(data)
+      .sort((a, b) => d3.ascending(a.data.name, b.data.name)));
+
+  svg.append("g")
+      .attr("fill", "none")
+    .selectAll("path")
+    .data(nodes.links())
+    .enter().append("path")
+      .attr("d", d3.linkRadial()
+          .angle(d => d.x)
+          .radius(d => d.y))
+      .attr("stroke", function(d) {
+          if (d.target.data.ood) return "red";
+          return "steelblue";
+        })
+      .attr("stroke-opacity", function(d) {
+          if (d.target.data.ood) return 0.8;
+          return 0.8;
+        })
+      .attr("stroke-width", function(d) {
+          if (d.target.data.ood) return 2;
+          return 2;
+        });
+      //.attr("stroke", "steelblue")
+  
+  svg.append("g")
+    .selectAll("circle")
+    .data(nodes.descendants())
+    .enter().append("circle")
+      .attr("transform", d => `
+        rotate(${d.x * 180 / Math.PI - 90})
+        translate(${d.y},0)
+      `)
+      .attr("fill", function(d) {
+          if (d.children) return "#555";
+          return "#999";
+        })
+      .attr("r", 2.5);
+
+  svg.append("g")
+      .attr("font-family", "sans-serif")
+      .attr("font-size", 10)
+      .attr("stroke-linejoin", "round")
+      .attr("stroke-width", 3)
+    .selectAll("text")
+    .data(nodes.descendants())
+    .enter().append("text")
+      .attr("transform", d => `
+        rotate(${d.x * 180 / Math.PI - 90}) 
+        translate(${d.y},0) 
+        rotate(${d.x >= Math.PI ? 180 : 0})
+      `)
+      .attr("dy", "0.31em")
+      .attr("x", d => d.x < Math.PI === !d.children ? 6 : -6)
+      .attr("text-anchor", d => d.x < Math.PI === !d.children ? "start" : "end")
+      .text(d => d.data.name)
+    .clone(true).lower()
+      .attr("stroke", "white");
+
+}
+
+// Colors
+function gradientFill(d) {
+  if (d.color == "blue-minimal") return "#2C60E5";
+  if (d.color == "blue") return "url(#gradientBlue)";
+  if (d.color == "blue-green") return "url(#gradientBlueGreen)";
+  if (d.theme == "minimal") return "#CCC";
+  return d.color || "url(#gradientGray)";
+}
+
+</script>

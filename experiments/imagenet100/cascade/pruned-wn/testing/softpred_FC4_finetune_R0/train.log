@@ -1,0 +1,10 @@
+2022-01-23 23:56:13,555 - INFO - Reading Feature Extractor Config
+2022-01-23 23:56:13,557 - INFO - ==> Preparing data..
+2022-01-23 23:56:14,395 - INFO - # ID Train: 106872
+2022-01-23 23:56:14,396 - INFO - # ID Test:  4150
+2022-01-23 23:56:14,397 - INFO - # OOD Test: 850
+2022-01-23 23:56:14,397 - INFO - checkpoint filename: experiments/coarse/cascade/pruned-wn/softpred_FC4_finetune_R0/checkpoint.pt
+2022-01-23 23:56:14,397 - INFO - log filename: experiments/coarse/cascade/pruned-wn/softpred_FC4_finetune_R0/train.log
+2022-01-23 23:56:14,398 - INFO - ********************************************************
+2022-01-23 23:56:14,398 - INFO - Starting Iter: 0 / 1
+2022-01-23 23:56:14,398 - INFO - ********************************************************

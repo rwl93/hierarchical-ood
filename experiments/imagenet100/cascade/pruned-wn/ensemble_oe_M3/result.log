@@ -1,0 +1,11 @@
+2022-05-19 13:05:01,609 - INFO - ==> Preparing data..
+2022-05-19 13:05:02,172 - INFO - # ID Test: 4150
+2022-05-19 13:05:02,172 - INFO - # OOD: 850
+2022-05-19 13:05:02,204 - INFO - # iNaturalist: 10000
+2022-05-19 13:05:02,233 - INFO - # SUN: 10000
+2022-05-19 13:05:02,263 - INFO - # Places: 10000
+2022-05-19 13:05:02,313 - INFO - # Textures: 5640
+2022-05-19 13:05:02,325 - INFO - # coarseid-coarseood: 700
+2022-05-19 13:05:02,328 - INFO - # coarseid-fineood: 150
+2022-05-19 13:05:26,273 - INFO - No distribution strategy
+2022-05-19 13:05:27,555 - INFO - Model R0 Results

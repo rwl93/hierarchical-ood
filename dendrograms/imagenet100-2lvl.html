@@ -1,0 +1,135 @@
+<!-- Code adapted from d3-graph-gallery.com, https://observablehq.com/@d3/radial-dendrogram -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Radial Example</title>
+  <style>
+.node {
+  cursor: pointer;
+}
+
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 3px;
+}
+
+.node text {
+  font: 12px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 2px;
+}
+  </style>
+</head>
+<body>
+<!-- Create a div where the graph will take place -->
+  <div class="tree-main">
+  </div>
+
+</body>
+
+<!-- Load d3.js -->
+<script src="https://d3js.org/d3.v4.js"></script>
+
+<!-- Create tree -->
+<script>
+
+
+var margin = {
+        top: 50,
+        right: 50,
+        bottom: 50,
+        left: 50
+    },
+	  width = 1100 - margin.right - margin.left,
+	  height = 1100 - margin.top - margin.bottom;
+
+// radius of the dendrogram 
+var radius = width / 2
+
+// append the svg object to the body of the page
+var svg = d3.select("div.tree-main").append("svg")
+    .attr("width", width + margin.right + margin.left)
+    .attr("height", height + margin.top + margin.bottom)
+  .style("font-size", 10)
+  .append("g")
+    .attr("transform", "translate(" + (radius + margin.left) + "," + (radius +
+        margin.top) + ")");
+
+//d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/data_dendrogram.json", function(data) {
+var treeData = [{"name": "Physical object", "children": [{"name": "turtle", "children": [{"name": "loggerhead", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "leatherback turtle", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "mud turtle", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "terrapin", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "box turtle", "colname": "level2", "ood": false, "pred": false, "gt": false}], "colname": "level1", "ood": false, "pred": false, "gt": false}, {"name": "lizard", "children": [{"name": "Gila monster", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "green lizard", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "alligator lizard", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "frilled lizard", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "agama", "colname": "level2", "ood": false, "pred": false, "gt": false}], "colname": "level1", "ood": false, "pred": false, "gt": false}, {"name": "stringed instrument", "children": [{"name": "electric guitar", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "acoustic guitar", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "banjo", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "cello", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "harp", "colname": "level2", "ood": false, "pred": false, "gt": false}], "colname": "level1", "ood": false, "pred": false, "gt": false}, {"name": "vessel", "children": [{"name": "container ship", "colname": "level2", "ood": true, "pred": false, "gt": false}, {"name": "liner", "colname": "level2", "ood": true, "pred": false, "gt": false}, {"name": "aircraft carrier", "colname": "level2", "ood": true, "pred": false, "gt": false}, {"name": "fireboat", "colname": "level2", "ood": true, "pred": false, "gt": false}, {"name": "lifeboat", "colname": "level2", "ood": true, "pred": false, "gt": false}], "colname": "level1", "ood": true, "pred": false, "gt": false}, {"name": "car/truck", "children": [{"name": "pickup", "colname": "level2", "ood": true, "pred": false, "gt": false}, {"name": "police van", "colname": "level2", "ood": true, "pred": false, "gt": false}, {"name": "sports car", "colname": "level2", "ood": true, "pred": false, "gt": false}, {"name": "jeep", "colname": "level2", "ood": true, "pred": false, "gt": false}, {"name": "minivan", "colname": "level2", "ood": true, "pred": false, "gt": false}], "colname": "level1", "ood": true, "pred": false, "gt": false}, {"name": "big cat", "children": [{"name": "cheetah", "colname": "level2", "ood": true, "pred": false, "gt": false}, {"name": "tiger", "colname": "level2", "ood": true, "pred": false, "gt": false}, {"name": "lion", "colname": "level2", "ood": true, "pred": false, "gt": false}, {"name": "jaguar", "colname": "level2", "ood": true, "pred": false, "gt": false}, {"name": "snow leopard", "colname": "level2", "ood": true, "pred": false, "gt": false}], "colname": "level1", "ood": true, "pred": false, "gt": false}, {"name": "clothing", "children": [{"name": "sweatshirt", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "cardigan", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "lab coat", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "trench coat", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "suit", "colname": "level2", "ood": false, "pred": false, "gt": false}], "colname": "level1", "ood": false, "pred": false, "gt": false}, {"name": "monkey", "children": [{"name": "colobus", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "langur", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "macaque", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "baboon", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "patas", "colname": "level2", "ood": false, "pred": false, "gt": false}], "colname": "level1", "ood": false, "pred": false, "gt": false}, {"name": "ball", "children": [{"name": "volleyball", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "soccer ball", "colname": "level2", "ood": true, "pred": false, "gt": false}, {"name": "baseball", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "basketball", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "rugby ball", "colname": "level2", "ood": true, "pred": false, "gt": false}], "colname": "level1", "ood": false, "pred": false, "gt": false}, {"name": "fungus", "children": [{"name": "agaric", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "gyromitra", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "stinkhorn", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "earthstar", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "hen-of-the-woods", "colname": "level2", "ood": false, "pred": false, "gt": false}], "colname": "level1", "ood": false, "pred": false, "gt": false}, {"name": "beetle", "children": [{"name": "ground beetle", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "long-horned beetle", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "leaf beetle", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "dung beetle", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "rhinoceros beetle", "colname": "level2", "ood": false, "pred": false, "gt": false}], "colname": "level1", "ood": false, "pred": false, "gt": false}, {"name": "spider", "children": [{"name": "black widow", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "tarantula", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "garden spider", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "barn spider", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "black and gold garden spider", "colname": "level2", "ood": false, "pred": false, "gt": false}], "colname": "level1", "ood": false, "pred": false, "gt": false}, {"name": "snake", "children": [{"name": "night snake", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "rock python", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "boa constrictor", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "Indian cobra", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "green mamba", "colname": "level2", "ood": false, "pred": false, "gt": false}], "colname": "level1", "ood": false, "pred": false, "gt": false}, {"name": "crab", "children": [{"name": "American lobster", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "Dungeness crab", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "rock crab", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "fiddler crab", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "king crab", "colname": "level2", "ood": false, "pred": false, "gt": false}], "colname": "level1", "ood": false, "pred": false, "gt": false}, {"name": "fish", "children": [{"name": "puffer", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "lionfish", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "anemone fish", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "sturgeon", "colname": "level2", "ood": true, "pred": false, "gt": false}, {"name": "gar", "colname": "level2", "ood": true, "pred": false, "gt": false}], "colname": "level1", "ood": false, "pred": false, "gt": false}, {"name": "domestic cat", "children": [{"name": "Egyptian cat", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "Siamese cat", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "Persian cat", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "tiger cat", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "tabby cat", "colname": "level2", "ood": false, "pred": false, "gt": false}], "colname": "level1", "ood": false, "pred": false, "gt": false}, {"name": "train", "children": [{"name": "bullet train", "colname": "level2", "ood": true, "pred": false, "gt": false}, {"name": "freight car", "colname": "level2", "ood": true, "pred": false, "gt": false}, {"name": "electric locomotive", "colname": "level2", "ood": true, "pred": false, "gt": false}, {"name": "steam locomotive", "colname": "level2", "ood": true, "pred": false, "gt": false}, {"name": "streetcar", "colname": "level2", "ood": true, "pred": false, "gt": false}], "colname": "level1", "ood": true, "pred": false, "gt": false}, {"name": "bird", "children": [{"name": "brambling", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "goldfinch", "colname": "level2", "ood": true, "pred": false, "gt": false}, {"name": "house finch", "colname": "level2", "ood": true, "pred": false, "gt": false}, {"name": "junco", "colname": "level2", "ood": true, "pred": false, "gt": false}, {"name": "indigo bunting", "colname": "level2", "ood": false, "pred": false, "gt": false}], "colname": "level1", "ood": false, "pred": false, "gt": false}, {"name": "butterfly", "children": [{"name": "ringlet butterfly", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "monarch butterfly", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "cabbage butterfly", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "sulphur butterfly", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "lycaenid butterfly", "colname": "level2", "ood": false, "pred": false, "gt": false}], "colname": "level1", "ood": false, "pred": false, "gt": false}, {"name": "dog", "children": [{"name": "Chesapeake Bay retriever", "colname": "level2", "ood": false, "pred": false, "gt": false}, {"name": "Labrador retriever", "colname": "level2", "ood": true, "pred": false, "gt": false}, {"name": "golden retriever", "colname": "level2", "ood": true, "pred": false, "gt": false}, {"name": "curly-coated retriever", "colname": "level2", "ood": true, "pred": false, "gt": false}, {"name": "flat-coated retriever", "colname": "level2", "ood": false, "pred": false, "gt": false}], "colname": "level1", "ood": false, "pred": false, "gt": false}], "colname": "level0", "ood": false, "pred": false, "gt": false}];
+
+root = treeData[0];
+var tree = d3.cluster().size([2 * Math.PI, radius - 100])
+
+update(root);
+
+function update(data) {
+
+  const nodes = tree(d3.hierarchy(data)
+      .sort((a, b) => d3.ascending(a.data.name, b.data.name)));
+
+  svg.append("g")
+      .attr("fill", "none")
+    .selectAll("path")
+    .data(nodes.links())
+    .enter().append("path")
+      .attr("d", d3.linkRadial()
+          .angle(d => d.x)
+          .radius(d => d.y))
+      .attr("stroke", function(d) {
+          if (d.target.data.ood) return "red";
+          return "steelblue";
+        })
+      .attr("stroke-opacity", function(d) {
+          if (d.target.data.ood) return 0.8;
+          return 0.8;
+        })
+      .attr("stroke-width", function(d) {
+          if (d.target.data.ood) return 2;
+          return 2;
+        });
+      //.attr("stroke", "steelblue")
+  
+  svg.append("g")
+    .selectAll("circle")
+    .data(nodes.descendants())
+    .enter().append("circle")
+      .attr("transform", d => `
+        rotate(${d.x * 180 / Math.PI - 90})
+        translate(${d.y},0)
+      `)
+      .attr("fill", function(d) {
+          if (d.children) return "#555";
+          return "#999";
+        })
+      .attr("r", 2.5);
+
+  svg.append("g")
+      .attr("font-family", "sans-serif")
+      .attr("font-size", 10)
+      .attr("stroke-linejoin", "round")
+      .attr("stroke-width", 3)
+    .selectAll("text")
+    .data(nodes.descendants())
+    .enter().append("text")
+      .attr("transform", d => `
+        rotate(${d.x * 180 / Math.PI - 90}) 
+        translate(${d.y},0) 
+        rotate(${d.x >= Math.PI ? 180 : 0})
+      `)
+      .attr("dy", "0.31em")
+      .attr("x", d => d.x < Math.PI === !d.children ? 6 : -6)
+      .attr("text-anchor", d => d.x < Math.PI === !d.children ? "start" : "end")
+      .text(d => d.data.name)
+    .clone(true).lower()
+      .attr("stroke", "white");
+
+}
+
+</script>

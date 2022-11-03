@@ -1,0 +1,17 @@
+2022-04-11 17:12:02,361 - INFO - ==> Preparing data..
+2022-04-11 17:12:02,742 - INFO - # ID Train: 106872
+2022-04-11 17:12:02,742 - INFO - # ID Test:  4150
+2022-04-11 17:12:02,742 - INFO - # OOD Test: 850
+2022-04-11 17:12:02,742 - INFO - checkpoint filename: experiments/coarse/cascade/pruned-wn/softpred_R4/checkpoint.pt
+2022-04-11 17:12:02,742 - INFO - log filename: experiments/coarse/cascade/pruned-wn/softpred_R4/train.log
+2022-04-11 17:12:02,742 - INFO - ********************************************************
+2022-04-11 17:12:02,742 - INFO - Starting Iter: 0 / 1
+2022-04-11 17:12:02,742 - INFO - ********************************************************
+2022-04-11 17:12:05,968 - INFO - cuda
+2022-04-11 17:12:06,004 - INFO - 
+Epoch: 0
+2022-04-11 17:12:06,004 - INFO - 
+Learning Rate: 0.0100
+2022-04-11 17:12:06,004 - INFO - Synset CE Weight: 0.0
+Soft prediction CE Weight: 1.0
+Outlier Exposure Weight: 0.0
