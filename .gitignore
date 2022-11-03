@@ -36,5 +36,6 @@ train-imgnet1k-slurm*.sh
 slurm-*
 metrics-slurm.sh
 vallogits-slurm.sh
+nbdt/
 
 local/protoc-21.4-osx-aarch_64
