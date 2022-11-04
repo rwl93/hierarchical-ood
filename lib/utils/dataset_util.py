@@ -100,7 +100,7 @@ def gen_datasets(datadir,
 
 def gen_far_ood_datasets(dset: str = "iNaturalist"):
     if dset not in ['iNaturalist', 'SUN', 'Places', 'Textures',
-                    'coarseid-fineood', 'coarseid-coarseood',
+                    'imagenet100-fineood', 'imagenet100-coarseood',
                     'imagenet1000-fineood', 'imagenet1000-mediumood',
                     'imagenet1000-coarseood', 'balanced100-coarseood',
                     'balanced100-mediumood', 'balanced100-fineood',

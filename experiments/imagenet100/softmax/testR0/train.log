@@ -1,22 +1,30 @@
-2022-11-03 15:51:48,149 - INFO - ==> Preparing data..
-2022-11-03 15:51:48,471 - INFO - # ID Train: 106872
-2022-11-03 15:51:48,471 - INFO - # ID Val: 4150
-2022-11-03 15:51:48,471 - INFO - # OOD: 850
-2022-11-03 15:51:48,472 - INFO - checkpoint filename: experiments/imagenet100/softmax/testR0/checkpoint.pt
-2022-11-03 15:51:48,472 - INFO - log filename: experiments/imagenet100/softmax/testR0/train.log
-2022-11-03 15:51:48,764 - INFO - cuda
-2022-11-03 15:51:52,439 - INFO - 
+2022-11-03 16:29:48,475 - INFO - ==> Preparing data..
+2022-11-03 16:29:48,803 - INFO - # ID Train: 106872
+2022-11-03 16:29:48,804 - INFO - # ID Val: 4150
+2022-11-03 16:29:48,804 - INFO - # OOD: 850
+2022-11-03 16:29:48,804 - INFO - checkpoint filename: experiments/imagenet100/softmax/testR0/checkpoint.pt
+2022-11-03 16:29:48,804 - INFO - log filename: experiments/imagenet100/softmax/testR0/train.log
+2022-11-03 16:29:49,092 - INFO - cuda
+2022-11-03 16:29:52,876 - INFO - 
 Epoch: 0
-2022-11-03 15:51:52,439 - INFO - 
+2022-11-03 16:29:52,877 - INFO - 
 Learning Rate: 0.0100
-2022-11-03 15:53:50,765 - INFO - [Step=250]	Loss=4.4521	270.4 examples/second
-2022-11-03 15:55:46,846 - INFO - [Step=500]	Loss=3.9238	275.7 examples/second
-2022-11-03 15:57:43,128 - INFO - [Step=750]	Loss=3.7001	275.2 examples/second
-2022-11-03 15:58:30,061 - INFO - Test Loss=3.4905, Test top-1 acc=0.1564, Test top-5 acc=0.4219
-2022-11-03 15:58:30,061 - INFO - Saving...
-2022-11-03 15:58:30,229 - INFO - Epoch time: 397.7908375263214
-2022-11-03 15:58:30,230 - INFO - 
+2022-11-03 16:31:51,355 - INFO - [Step=250]	Loss=4.4256	270.1 examples/second
+2022-11-03 16:33:47,473 - INFO - [Step=500]	Loss=3.8953	275.6 examples/second
+2022-11-03 16:35:43,622 - INFO - [Step=750]	Loss=3.6614	275.5 examples/second
+2022-11-03 16:36:30,460 - INFO - Test Loss=3.4721, Test top-1 acc=0.1600, Test top-5 acc=0.4236
+2022-11-03 16:36:30,460 - INFO - Saving...
+2022-11-03 16:36:30,719 - INFO - Epoch time: 397.84282064437866
+2022-11-03 16:36:30,719 - INFO - 
 Epoch: 1
-2022-11-03 15:58:30,230 - INFO - 
+2022-11-03 16:36:30,720 - INFO - 
 Learning Rate: 0.0280
-2022-11-03 15:59:49,179 - INFO - [Step=1000]	Loss=3.6738	405.3 examples/second
+2022-11-03 16:37:49,553 - INFO - [Step=1000]	Loss=3.6999	405.9 examples/second
+2022-11-03 16:39:46,308 - INFO - [Step=1250]	Loss=3.4571	274.1 examples/second
+2022-11-03 16:41:42,820 - INFO - [Step=1500]	Loss=3.2228	274.7 examples/second
+2022-11-03 16:43:09,358 - INFO - Test Loss=3.0267, Test top-1 acc=0.2451, Test top-5 acc=0.5530
+2022-11-03 16:43:09,358 - INFO - Saving...
+2022-11-03 16:43:09,551 - INFO - Epoch time: 398.83134722709656
+2022-11-03 16:43:09,551 - INFO - Printing Final Accuracy + OOD Detection stats
+2022-11-03 16:43:09,551 - INFO - Top 1 Accuracy: 0.245060
+2022-11-03 16:43:09,551 - INFO - Top 5 Accuracy: 0.553012
