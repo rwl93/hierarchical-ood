@@ -90,3 +90,35 @@ of the `.proto` files.
 
 ## Datasets
 See [data/README](data/README.md).
+
+## Training
+To train a model pass your config file to the [main.py](main.py) script:
+```sh
+CUDA_VISIBLE_DEVICES=0 python main.py \
+    --config_fn experiments/imagenet100/softmax/R0/exp.config
+```
+The training log and checkpoint will be saved to the directory that contains
+`exp.config`.
+
+## Metrics
+We provide several scripts for calculating each of our reported performance
+metrics. The global OOD metrics are calculated with
+[gather_metrics](gather_metrics.py):
+```sh
+CUDA_VISIBLE_DEVICES=0 python gather_metrics.py \
+    --config_fn experiments/imagenet100/softmax/R0/exp.config
+```
+This will calculate AUROC, AUPR, TNR scores using MSP and temperature scaling
+(ODIN w/out preprocessing) for the fine-grain OOD dataset and any far OOD
+datasets specified in `exp.config`. If a hierarchical model is provided then it
+will also calculate the path probability and entropy metrics. The metrics will
+be saved to `exp.result`
+
+Additional scripts are provided for calculating ensemble, Mahalanobis, and
+hierarchy inference metrics.
+
+## Notebooks
+We provide 2 notebooks:
+1. [Results](Results.ipynb): Tabulate results from `exp.result` files
+2. [OODGamify](OODGamify.ipynb): Generate ROC plots and hierarchy inference
+   plots
