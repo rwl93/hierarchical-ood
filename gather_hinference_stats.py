@@ -1,33 +1,20 @@
 import argparse
 import numpy as np
-import sys
 import os
-import matplotlib.pyplot as plt
-import warnings
 import logging
 
 import torch
-import torch.nn as nn
-import torch.nn.functional as F
-import torch.optim as optim
-import torch.utils.data as utilsdata
-import torchvision
-import torchvision.transforms as transforms
-import torchvision.datasets as datasets
+from torch.utils.data import DataLoader
 
 from tqdm import tqdm
 # from tqdm.contrib.logging import logging_redirect_tqdm
 
-import models
-import train_util
-import ood_helpers
-import calculate_log as callog
-import hierarchy_util
-import hierarchy_loss
-import hierarchy_metrics as hm
-import hierarchy_inference as hi
-from utils import config_util
-from utils import dataset_util
+from lib import models
+from lib.hierarchy import Hierarchy
+from lib import hierarchy_metrics as hm
+from lib import hierarchy_inference as hi
+from lib.utils import config_util
+from lib.utils import dataset_util
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
@@ -114,18 +101,7 @@ def calc_tnr_threshstats(stopcriterion, hierarchy,
 
 
 def main(args):
-    # if args.gpu_devices is not None:
-    #     # Set GPU
-    #     os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu_devices
-
-    # If config file specified, read from it
-    if args.config_fn is not None:
-        config = config_util.read_config(args.config_fn, for_metrics=True)
-    else:
-        logger.warning(
-            "Passing hyperparameters via argparse is deprecated and " +
-            "may not function properly. Prefer to use protobuf configs.")
-        config = config_util.build_config_from_args(args, for_metrics=True)
+    config = config_util.read_config(args.config_fn, for_metrics=True)
 
     # Add file handler
     fh = logging.FileHandler(config.train_params.log_fn+'hinference', 'w')
@@ -143,22 +119,20 @@ def main(args):
     train_ds, val_ds, ood_ds = dataset_util.gen_datasets(config.data_dir)
     num_id_classes = len(train_ds.classes)
 
-    trainloader = torch.utils.data.DataLoader(
+    trainloader = DataLoader(
         train_ds, batch_size=batch_size, shuffle=False, num_workers=16)
     # trainloader = torch.utils.data.DataLoader(
     #     val_ds, batch_size=batch_size, shuffle=False, num_workers=16)
-    valloader = torch.utils.data.DataLoader(
+    valloader = DataLoader(
         val_ds, batch_size=batch_size, shuffle=False, num_workers=16)
-    oodloader = torch.utils.data.DataLoader(
+    oodloader = DataLoader(
         ood_ds, batch_size=batch_size, shuffle=False, num_workers=16)
-    logger.info("# ID Test: {}".format(len(val_ds.imgs)))
-    logger.info("# OOD: {}".format(len(ood_ds.imgs)))
 
     backbone = getattr(models, config.backbone)
     # Load Model
     if config.model in [config.CASCADE, config.CASCADEFCHEAD]:
-        id_hierarchy = hierarchy_util.Hierarchy(train_ds.classes, hierarchy_fn)
-        ood_hierarchy = hierarchy_util.Hierarchy(ood_ds.classes, hierarchy_fn)
+        id_hierarchy = Hierarchy(train_ds.classes, hierarchy_fn)
+        ood_hierarchy = Hierarchy(ood_ds.classes, hierarchy_fn)
         if config.model == config.CASCADEFCHEAD:
             net = models.build_softmax_cascade(
                 id_hierarchy, backbone=config.backbone)
@@ -166,21 +140,20 @@ def main(args):
             net = backbone(num_classes=id_hierarchy.num_classes)
         # Setup stopping criterion
         stopping_criterions = [
-            [hi.PathProb2StoppingCriterion, 'Path Prob 2 SC'],
+            [hi.PathProbStoppingCriterion, 'Path Prob SC'],
             [hi.SynsetPathProbStoppingCriterion, 'Synset Path Prob SC'],
             # hi.SynsetPathProbStoppingCriterion(id_hierarchy, tnr=0.95)
             # hi.SynsetSoftmaxStoppingCriterion(id_hierarchy,  tnr=0.95)
             # hi.SynsetEntropyStoppingCriterion(id_hierarchy,  tnr=0.95)
         ]
     elif config.model in [config.SOFTMAX, config.SOFTMAXFCHEAD]:
-        id_hierarchy = hierarchy_util.Hierarchy(train_ds.classes, args.hierarchy)
-        ood_hierarchy = hierarchy_util.Hierarchy(ood_ds.classes, args.hierarchy)
+        id_hierarchy = Hierarchy(train_ds.classes, args.hierarchy)
+        ood_hierarchy = Hierarchy(ood_ds.classes, args.hierarchy)
         if config.model == config.SOFTMAXFCHEAD:
             net = models.build_softmax_fchead(
                 num_id_classes,
                 backbone=config.backbone,
                 embed_layer=config.embed_layer,
-                **kwargs,
             )
         else:
             net = backbone(num_classes=num_id_classes)
@@ -193,7 +166,7 @@ def main(args):
     # Distribution strategy
     if config.distribution_strategy.lower() == 'dataparallel':
         logger.info("Using DataParallel")
-        net = torch.nn.DataParallel(net)
+        net = torch.nn.parallel.DataParallel(net)
     elif config.distribution_strategy.lower() == 'distributeddataparallel':
         logger.info("Using DistributedDataParallel")
         net = torch.nn.parallel.DistributedDataParallel(net)
@@ -220,7 +193,7 @@ def main(args):
         }
         for loader, logits in zip([trainloader, valloader, oodloader],
                                   [train_logits, val_logits, ood_logits]):
-            for batch_idx, (inputs, targets) in tqdm(enumerate(loader)):
+            for inputs, targets in tqdm(loader):
                 inputs = inputs.to(device)
                 outputs = net(inputs)
                 logits['logits'] = torch.cat(
@@ -229,7 +202,6 @@ def main(args):
                     (logits['targets'], targets.cpu()), 0)
 
 
-    train_ml, train_act = id_hierarchy.to_multilabel(train_logits['targets'].long())
     val_ml, val_act = id_hierarchy.to_multilabel(val_logits['targets'].long())
     full_ood_ml, full_ood_act = ood_hierarchy.to_full_multilabel(ood_logits['targets'].long())
     ood_ml, ood_act = id_hierarchy.trim_full_multilabel(full_ood_ml, full_ood_act)

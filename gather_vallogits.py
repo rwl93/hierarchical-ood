@@ -1,28 +1,13 @@
 import argparse
-import numpy as np
-import sys
-import os
-import matplotlib.pyplot as plt
-import warnings
 import logging
 
 import torch
-import torch.nn as nn
-import torch.nn.functional as F
-import torch.optim as optim
-import torch.utils.data as utilsdata
-import torchvision
-import torchvision.transforms as transforms
-import torchvision.datasets as datasets
+from torch.utils.data import DataLoader
 
-import models
-import train_util
-import ood_helpers
-import calculate_log as callog
-import hierarchy_util
-import hierarchy_loss
-import hierarchy_metrics as hm
-from utils import config_util
+from lib import models
+from lib.hierarchy import Hierarchy
+from lib.utils import config_util
+from lib.utils.dataset_util import gen_datasets, gen_far_ood_datasets
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
@@ -62,86 +47,8 @@ ch.setFormatter(ch_formatter)
 logger.addHandler(ch)
 
 
-def gen_datasets(datadir):
-    """Generate datasets for experiment.
-
-    Preprocessing from pytorch Imagenet example code
-
-    Parameters
-    ----------
-    datadir : string
-        path to directory of data
-
-    Returns
-    -------
-    Tuple of torchvision.datasets.Dataset objects:
-        val_dataset, ood_dataset
-    """
-    normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                                     std=[0.229, 0.224, 0.225])
-    train_dataset = datasets.ImageFolder(
-        os.path.join(datadir, 'train'),
-        transforms.Compose([
-            transforms.RandomResizedCrop(224),
-            transforms.RandomHorizontalFlip(),
-            transforms.ToTensor(),
-            normalize,
-        ]))
-
-    eval_transform = transforms.Compose([
-        transforms.Resize(256),
-        transforms.CenterCrop(224),
-        transforms.ToTensor(),
-        normalize,
-    ])
-    val_dataset = datasets.ImageFolder(os.path.join(datadir, 'val'),
-                                       eval_transform)
-    ood_dataset = datasets.ImageFolder(os.path.join(datadir, 'ood'),
-                                       eval_transform)
-    return train_dataset, val_dataset, ood_dataset
-
-
-def gen_far_ood_datasets(dset: str = "iNaturalist"):
-    if dset not in ['iNaturalist', 'SUN', 'Places', 'Textures',
-                    'coarseid-fineood', 'coarseid-coarseood',
-                    'imagenet1000-fineood', 'imagenet1000-mediumood',
-                    'imagenet1000-coarseood',
-                    ]:
-        raise ValueError("Unknown far ood dataset: " + dset)
-    datadir = "data/" + dset
-    normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                                     std=[0.229, 0.224, 0.225])
-    transform = transforms.Compose([
-        transforms.Resize(256),
-        transforms.CenterCrop(224),
-        transforms.ToTensor(),
-        normalize,
-    ])
-    ds = datasets.ImageFolder(datadir, transform)
-    return ds
-
-
-def print_stats_of_list(prefix,dat):
-    # Helper to print min/max/avg/std/len of values in a list
-    dat = np.array(dat)
-    logger.info("{} Min: {:.4f}; Max: {:.4f}; Avg: {:.4f}; Std: {:.4f}; Len: {}".format(
-            prefix, dat.min(), dat.max(), dat.mean(), dat.std(), len(dat))
-    )
-
-
 def main(args):
-    # if args.gpu_devices is not None:
-    #     # Set GPU
-    #     os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu_devices
-
-    # If config file specified, read from it
-    if args.config_fn is not None:
-        config = config_util.read_config(args.config_fn, for_metrics=True)
-    else:
-        logger.warning(
-            "Passing hyperparameters via argparse is deprecated and " +
-            "may not function properly. Prefer to use protobuf configs.")
-        config = config_util.build_config_from_args(args, for_metrics=True)
+    config = config_util.read_config(args.config_fn, for_metrics=True)
 
     # Training Params
     batch_size = config.train_params.batch_size
@@ -152,20 +59,18 @@ def main(args):
     train_ds, val_ds, ood_ds = gen_datasets(config.data_dir)
     num_id_classes = len(train_ds.classes)
 
-    trainloader = torch.utils.data.DataLoader(
+    trainloader = DataLoader(
         train_ds, batch_size=batch_size, shuffle=False, num_workers=16)
-    valloader = torch.utils.data.DataLoader(
+    valloader = DataLoader(
         val_ds, batch_size=batch_size, shuffle=False, num_workers=16)
-    oodloader = torch.utils.data.DataLoader(
+    oodloader = DataLoader(
         ood_ds, batch_size=batch_size, shuffle=False, num_workers=16)
-    logger.info("# ID Test: {}".format(len(val_ds.imgs)))
-    logger.info("# OOD: {}".format(len(ood_ds.imgs)))
 
     ood_dsets = [['ID', valloader],
                  ['OOD', oodloader],]
     for dset in config.far_ood_dsets:
         ds = gen_far_ood_datasets(dset)
-        loader = torch.utils.data.DataLoader(
+        loader = DataLoader(
             ds, batch_size=batch_size, shuffle=False, num_workers=16)
         ood_dsets.append([dset, loader])
         logger.info("# {}: {}".format(dset, len(ds.imgs)))
@@ -189,7 +94,7 @@ def main(args):
             net = backbone(num_classes=num_id_classes)
         id_hierarchy = None
     elif config.model in [config.CASCADE, config.HILR, config.CASCADEFCHEAD]:
-        id_hierarchy = hierarchy_util.Hierarchy(train_ds.classes, hierarchy_fn)
+        id_hierarchy = Hierarchy(train_ds.classes, 'hierarchies/' + hierarchy_fn)
         print(kwargs)
         if config.model == config.CASCADEFCHEAD:
             net = models.build_softmax_cascade(
@@ -198,14 +103,16 @@ def main(args):
         else:
             net = backbone(num_classes=id_hierarchy.num_classes)
     elif config.model == config.MOS:
-        id_hierarchy = hierarchy_util.Hierarchy(train_ds.classes, hierarchy_fn)
+        id_hierarchy = Hierarchy(train_ds.classes, 'hierarchies/' + hierarchy_fn)
         net = models.build_MOS(
             id_hierarchy, backbone=config.backbone, **kwargs)
+    else:
+        raise ValueError(f'Unsupported model: {config.model}')
 
     # Distribution strategy
     if config.distribution_strategy.lower() == 'dataparallel':
         logger.info("Using DataParallel")
-        net = torch.nn.DataParallel(net)
+        net = torch.nn.parallel.DataParallel(net)
     elif config.distribution_strategy.lower() == 'distributeddataparallel':
         logger.info("Using DistributedDataParallel")
         net = torch.nn.parallel.DistributedDataParallel(net)
@@ -215,8 +122,6 @@ def main(args):
     net.load_state_dict(torch.load(checkpoint_fn))
     net.eval()
 
-    # import pdb; pdb.set_trace()
-    dataset_results = {'config_fn': args.config_fn}
     logger.info("Generating Results")
     with torch.no_grad():
         for dset, loader in [['train', trainloader],
@@ -226,39 +131,14 @@ def main(args):
             logger.info("Working on " + dset + "...")
             logits = torch.empty((0,), device='cpu')
             targets = torch.empty((0,), dtype=torch.long, device='cpu')
-            # pp = np.empty((0,))
-            # Hmean = np.empty((0,))
-            # Hmin = np.empty((0,))
-            # Hpath = []
-            for batch_idx, (inputs, targs) in enumerate(loader):
-                #inputs, targets = inputs.to(device), targets.to(device)
+            for inputs, targs in loader:
                 inputs = inputs.to(device)
                 outputs = net(inputs)
                 logits = torch.cat((logits, outputs.detach().cpu()), 0)
                 targets = torch.cat((targets, targs.long()), 0)
-                # hlogits = id_hierarchy.split_logits_by_synset(logits)
-                # scores = hm.soft_predict(
-                #      hlogits, id_hierarchy, model='cascade',  #FIXME: Don't hardcode this
-                #      return_pathentropy=True)
-                # pathprob, _, _, entropys, entropy_stats, _, _ = scores
-                # # Get Pred Path Prob
-                # pp = np.concatenate((pp, pathprob), axis=0)
-                # # Get Mean Path Ent
-                # Hmean = np.concatenate((Hmean, entropy_stats[0]), axis=0)
-                # # Get Min Path Ent
-                # Hmin = np.concatenate((Hmin, entropy_stats[1]), axis=0)
-                # # Get all path ent
-                # Hpath.extend(entropys)
-            #dataset_results[dset] = {
-            #    'pathprob': pp,
-            #    'meanent': Hmean,
-            #    'minent': Hmin,
-            #    'entlist': Hpath,
-            #}
             torch.save({'logits':logits, 'targets': targets},
                        args.output+dset+'logits.out')
 
-    # Save metrics
     """
     Save:
         {
@@ -271,11 +151,6 @@ def main(args):
             }
         }
     """
-    #torch.save(
-    #    dataset_results,
-    #    os.path.join(os.path.dirname(config.train_params.log_fn),
-    #                 'dset.scores')
-    #)
 
 
 if __name__ == "__main__":

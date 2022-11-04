@@ -1,31 +1,18 @@
 import argparse
-import numpy as np
-import sys
 import os
-import matplotlib.pyplot as plt
-import warnings
 import logging
 
 import torch
-import torch.nn as nn
-import torch.nn.functional as F
-import torch.optim as optim
-import torch.utils.data as utilsdata
-import torchvision
-import torchvision.transforms as transforms
-import torchvision.datasets as datasets
+from torch.utils.data import DataLoader
 
 from lib import models
 from lib import train_util
-from lib import ood_helpers
-from lib.utils import calculate_log as callog
-from lib.utils.dataset_util import gen_datasets, gen_far_ood_datasets, print_stats_of_list
 from lib.hierarchy import Hierarchy
-from lib import hierarchy_loss
 from lib import hierarchy_metrics as hm
 from lib.utils import config_util
+from lib.utils.dataset_util import gen_datasets, gen_far_ood_datasets
 
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
+DEVICE = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 parser = argparse.ArgumentParser(description='Gather OOD metrics for checkpoint')
 parser.add_argument('-c', '--config_fn', metavar='FILENAME', default=None,
@@ -64,18 +51,7 @@ logger.addHandler(ch)
 
 
 def main(args):
-    # if args.gpu_devices is not None:
-    #     # Set GPU
-    #     os.environ['CUDA_VISIBLE_DEVICES'] = args.gpu_devices
-
-    # If config file specified, read from it
-    if args.config_fn is not None:
-        config = config_util.read_config(args.config_fn, for_metrics=True)
-    else:
-        logger.warning(
-            "Passing hyperparameters via argparse is deprecated and " +
-            "may not function properly. Prefer to use protobuf configs.")
-        config = config_util.build_config_from_args(args, for_metrics=True)
+    config = config_util.read_config(args.config_fn, for_metrics=True)
 
     # Add file handler
     fh = logging.FileHandler(config.train_params.log_fn, 'w')
@@ -86,27 +62,22 @@ def main(args):
 
     # Training Params
     batch_size = config.train_params.batch_size
-    hierarchy_fn = config.hierarchy_fn
+    hierarchy_fn = 'hierarchies/' + config.hierarchy_fn
     checkpoint_fn = config.train_params.checkpoint_fn
 
     logger.info('==> Preparing data..')
     train_ds, val_ds, ood_ds = gen_datasets(config.data_dir)
     num_id_classes = len(train_ds.classes)
 
-    valloader = torch.utils.data.DataLoader(
-        val_ds, batch_size=batch_size, shuffle=False, num_workers=16)
-    oodloader = torch.utils.data.DataLoader(
-        ood_ds, batch_size=batch_size, shuffle=False, num_workers=16)
-    logger.info("# ID Test: {}".format(len(val_ds.imgs)))
-    logger.info("# OOD: {}".format(len(ood_ds.imgs)))
+    valloader = DataLoader(val_ds, batch_size=batch_size, shuffle=False, num_workers=16)
+    oodloader = DataLoader(ood_ds, batch_size=batch_size, shuffle=False, num_workers=16)
 
     far_ood_dsets = []
     for dset in config.far_ood_dsets:
         ds = gen_far_ood_datasets(dset)
-        loader = torch.utils.data.DataLoader(
-            ds, batch_size=batch_size, shuffle=False, num_workers=16)
+        loader = DataLoader(ds, batch_size=batch_size, shuffle=False, num_workers=16)
         far_ood_dsets.append([dset, loader])
-        logger.info("# {}: {}".format(dset, len(ds.imgs)))
+        logger.info("# %s: %d", dset, len(ds.imgs))
 
     kwargs = {}
     if config.HasField('model_config'):
@@ -154,44 +125,17 @@ def main(args):
         net = models.build_MOS(id_hierarchy, backbone=config.backbone, **kwargs)
         acc = hm.MOSAccuracy(id_hierarchy)
         ood = hm.MOSOOD(id_hierarchy)
-    elif config.model == config.AMSOFTMAX:
-        id_hierarchy = None
-        ood_hierarchy = None
-        net = models.build_AMSoftmax(
-            num_id_classes,
-            feature_norm=config.ams_mc.feature_norm,
-            embed_layer=config.embed_layer,
-            backbone=config.backbone,
-            **kwargs)
-        acc = train_util.Accuracy((1, 5))
-        ood = train_util.OOD(config.model)
-    elif config.model == config.AMCASCADE:
-        id_hierarchy = Hierarchy(train_ds.classes,
-                                 config.hierarchy_fn)
-        ood_hierarchy = id_hierarchy
-        net = models.build_AMSoftmax(
-            id_hierarchy.num_classes,
-            feature_norm=config.amc_mc.feature_norm,
-            embed_layer=config.embed_layer,
-            backbone=config.backbone,
-            **kwargs)
-        acc = hm.HierarchicalAccuracy(id_hierarchy,
-                                      soft_preds=True)
-        ood = hm.HierarchicalOOD(ood_hierarchy, id_hierarchy,
-                                 model=config.model,
-                                 soft_preds=True)
-        ood_std = train_util.OOD(config.model)
     else:
         raise ValueError("Unsupported model type")
 
     # Distribution strategy
     if config.distribution_strategy.lower() == 'dataparallel':
         logger.info("Using DataParallel")
-        net = torch.nn.DataParallel(net)
+        net = torch.nn.parallel.DataParallel(net)
     elif config.distribution_strategy.lower() == 'distributeddataparallel':
         logger.info("Using DistributedDataParallel")
         net = torch.nn.parallel.DistributedDataParallel(net)
-    net = net.to(device)
+    net = net.to(DEVICE)
 
     # Load checkpoint
     net.load_state_dict(torch.load(checkpoint_fn))
@@ -199,12 +143,13 @@ def main(args):
 
     # Gather validation accuracy
     with torch.no_grad():
-        for batch_idx, (inputs, targets) in enumerate(valloader):
-            inputs, targets = inputs.to(device), targets.to(device)
+        for inputs, targets in valloader:
+            inputs, targets = inputs.to(DEVICE), targets.to(DEVICE)
             outputs = net(inputs)
             acc.update_state(outputs, targets)
     logger.info("Accuracy Results")
 
+    # TODO: Create ABC/parent Accuracy class for consistency
     ood_res = None
     acc_res = None
     top1_res = None
@@ -213,36 +158,35 @@ def main(args):
     if config.model == config.MOS:
         acc_res = top1_res = acc.result()
         gw_res = acc.result_groupwise()
-        logger.info("Accuracy: {}".format(top1_res))
-        logger.info("Groupwise Accuracy: {}".format(gw_res))
+        logger.info("Accuracy: %f", top1_res)
+        logger.info("Groupwise Accuracy: %f", gw_res)
     elif id_hierarchy is not None:
         acc_res = acc.result()
         top1_res = acc.result_top1()
         pred_res = acc.result_pred()
         error_depth_res = acc.result_error_depth()
-        logger.info("Mean Synset Accuracy: {}".format(acc_res))
-        logger.info("Top-1 Accuracy: {}".format(top1_res))
-        logger.info("Pred Accuracy: {}".format(pred_res))
+        logger.info("Mean Synset Accuracy: %f", acc_res)
+        logger.info("Top-1 Accuracy: %f", top1_res)
+        logger.info("Pred Accuracy: %f", pred_res)
         logger.info("Synset Accuracies:")
-        logger.info("{}".format(acc.result_full()))
+        logger.info("%f", acc.result_full())
         logger.info("Error Depth:")
         for i, ed in enumerate(error_depth_res):
-            logger.info("\tNum. Errors at Depth {} = {}".format(
-                i if i != len(error_depth_res)-1 else -1, ed))
+            logger.info("\tNum. Errors at Depth %d = %d",
+                i if i != len(error_depth_res)-1 else -1, ed)
     else:
         acc_res = acc.result()
         top1_res = acc_res[0]
         pred_res = acc_res[0]
-        logger.info("Top-1 Accuracy: {}".format(acc_res[0]))
-        logger.info("Top-5 Accuracy: {}".format(acc_res[1]))
+        logger.info("Top-1 Accuracy: %f", acc_res[0])
+        logger.info("Top-5 Accuracy: %f", acc_res[1])
 
     # Gather OOD metrics
     logger.info("OOD Results")
     ood.update_state(net, valloader, oodloader)
     for dset, loader in far_ood_dsets:
         ood.update_state(net, None, loader, dset)
-    if config.model in [config.CASCADE, config.HILR, config.CASCADEFCHEAD,
-            config.AMCASCADE]:
+    if config.model in [config.CASCADE, config.CASCADEFCHEAD,]:
         ood.print_result_full()
         ood_std.update_state(net, valloader, oodloader)
         for dset, loader in far_ood_dsets:

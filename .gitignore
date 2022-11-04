@@ -39,3 +39,5 @@ metrics-slurm.sh
 vallogits-slurm.sh
 nbdt/
 local/
+
+**.DS_Store

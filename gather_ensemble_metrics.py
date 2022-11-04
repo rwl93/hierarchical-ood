@@ -1,31 +1,17 @@
 import argparse
 from collections import defaultdict
-import numpy as np
-import sys
 import os
-import matplotlib.pyplot as plt
-import warnings
 import logging
 
 import torch
-import torch.nn as nn
-import torch.nn.functional as F
-import torch.optim as optim
-import torch.utils.data as utilsdata
-import torchvision
-import torchvision.transforms as transforms
-import torchvision.datasets as datasets
+from torch.nn.parallel import DataParallel, DistributedDataParallel
+from torch.utils.data import DataLoader
 
-import models
-import train_util
-import ood_helpers
-import calculate_log as callog
-import hierarchy_util
-import hierarchy_loss
-import hierarchy_metrics as hm
-from utils import config_util
-from utils import dataset_util
-from utils import model_util
+from lib.hierarchy import Hierarchy
+from lib import hierarchy_metrics as hm
+from lib.utils import config_util
+from lib.utils import dataset_util
+from lib.utils import model_util
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
@@ -75,34 +61,32 @@ def main(args):
     train_ds, val_ds, ood_ds = dataset_util.gen_datasets(config.data_dir)
     num_id_classes = len(train_ds.classes)
 
-    valloader = torch.utils.data.DataLoader(
+    valloader = DataLoader(
         val_ds, batch_size=batch_size, shuffle=False, num_workers=16)
-    oodloader = torch.utils.data.DataLoader(
+    oodloader = DataLoader(
         ood_ds, batch_size=batch_size, shuffle=False, num_workers=16)
-    logger.info("# ID Test: {}".format(len(val_ds.imgs)))
-    logger.info("# OOD: {}".format(len(ood_ds.imgs)))
 
     far_ood_dsets = []
     for dset in config.far_ood_dsets:
         ds = dataset_util.gen_far_ood_datasets(dset)
-        loader = torch.utils.data.DataLoader(
+        loader = DataLoader(
             ds, batch_size=batch_size, shuffle=False, num_workers=16)
         far_ood_dsets.append([dset, loader])
         logger.info("# {}: {}".format(dset, len(ds.imgs)))
 
-    hierarchy_fn = config.hierarchy_fn
+    hierarchy_fn = 'hierarchies/' + config.hierarchy_fn
     if hierarchy_fn.upper() not in ['', 'NONE']:
-        hierarchy = hierarchy_util.Hierarchy(train_ds.classes, hierarchy_fn)
+        hierarchy = Hierarchy(train_ds.classes, hierarchy_fn)
     else:
         hierarchy = None
 
     # Distribution strategy
     if config.distribution_strategy.lower() == 'dataparallel':
         logger.info("Using DataParallel")
-        dist_strat = torch.nn.DataParallel
+        dist_strat = DataParallel
     elif config.distribution_strategy.lower() == 'distributeddataparallel':
         logger.info("Using DistributedDataParallel")
-        dist_strat = torch.nn.parallel.DistributedDataParallel
+        dist_strat = DistributedDataParallel
     else:
         logger.info("No distribution strategy")
         dist_strat = lambda inp : inp
@@ -112,7 +96,7 @@ def main(args):
     # Loop over each model in ensemble
     net, acc, ood, ood_std = model_util.build_model(
         config, num_id_classes, train_ds.classes)
-    _, ens_acc, ens_ood, ens_ood_std = model_util.build_model(
+    _, ens_acc, ens_ood, _ = model_util.build_model(
         config, num_id_classes, train_ds.classes)
     net = dist_strat(net)
     net = net.to(device)
@@ -140,7 +124,7 @@ def main(args):
         # Gather validation accuracy
         vlogits_tmp = torch.empty((0,), device='cpu')
         with torch.no_grad():
-            for batch_idx, (inputs, targets) in enumerate(valloader):
+            for inputs, targets in valloader:
                 inputs, targets = inputs.to(device), targets.to(device)
                 outputs = net(inputs)
                 vlogits_tmp = torch.cat((vlogits_tmp, outputs.cpu()), 0)
@@ -150,7 +134,6 @@ def main(args):
         val_logits = torch.cat((val_logits, vlogits_tmp.expand(1,-1,-1)),0)
         logger.info(f'Model R{model_idx} Accuracy Results')
 
-        ood_res = None
         acc_res = None
         top1_res = None
         pred_res = None
@@ -187,7 +170,7 @@ def main(args):
         logger.info("OOD Results")
         with torch.no_grad():
             logits_tmp = torch.empty((0,), device='cpu')
-            for batch_idx, (inputs, _) in enumerate(oodloader):
+            for inputs, _ in oodloader:
                 inputs = inputs.to(device)
                 outputs = net(inputs)
                 logits_tmp = torch.cat((logits_tmp, outputs.cpu()), 0)
@@ -195,24 +178,11 @@ def main(args):
 
             for dset, loader in far_ood_dsets:
                 logits_tmp = torch.empty((0,), device='cpu')
-                for batch_idx, (inputs, _) in enumerate(loader):
+                for inputs, _ in loader:
                     inputs = inputs.to(device)
                     outputs = net(inputs)
                     logits_tmp = torch.cat((logits_tmp, outputs.cpu()), 0)
                 far_logits[dset] = torch.cat((far_logits[dset], logits_tmp.expand(1,-1,-1)),0)
-
-        # Skipping to reduce runtime
-        # ood.update_state(net, valloader, oodloader)
-        # for dset, loader in far_ood_dsets:
-        #     ood.update_state(net, None, loader, dset)
-        # if config.model in [config.CASCADE, config.HILR, config.CASCADEFCHEAD]:
-        #     ood.print_result_full()
-        #     ood_std.update_state(net, valloader, oodloader)
-        #     for dset, loader in far_ood_dsets:
-        #         ood_std.update_state(net, None, loader, dset)
-        #     ood_std.print_result()
-        # else:
-        #     ood.print_result()
 
     ens_acc = hm.calc_ensemble_accuracy(
         val_logits, val_targets, model=model, hierarchy=hierarchy)
