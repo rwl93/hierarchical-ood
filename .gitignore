@@ -41,3 +41,4 @@ nbdt/
 local/
 
 **.DS_Store
+lib/protos/*pb2.py
