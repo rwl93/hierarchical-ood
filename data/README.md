@@ -92,6 +92,6 @@ mkdir imagenet1000-{coarse,medium,fine}ood
 ln -s <INATURALISTDIR> iNaturalist
 ln -s <SUNDIR> SUN
 ln -s <PLACESDIR> Places
-ln -s <TexturesDIR> Textures
+ln -s <TexturesDIR>/images Textures
 ```
 Finally, ensure that your symlinks are not broken.

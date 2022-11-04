@@ -15,14 +15,15 @@ import torchvision
 import torchvision.transforms as transforms
 import torchvision.datasets as datasets
 
-import models
-import train_util
-import ood_helpers
-import calculate_log as callog
-import hierarchy_util
-import hierarchy_loss
-import hierarchy_metrics as hm
-from utils import config_util
+from lib import models
+from lib import train_util
+from lib import ood_helpers
+from lib.utils import calculate_log as callog
+from lib.utils.dataset_util import gen_datasets, gen_far_ood_datasets, print_stats_of_list
+from lib.hierarchy import Hierarchy
+from lib import hierarchy_loss
+from lib import hierarchy_metrics as hm
+from lib.utils import config_util
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
@@ -60,75 +61,6 @@ ch.setLevel(logging.INFO)
 ch_formatter = logging.Formatter('%(message)s')
 ch.setFormatter(ch_formatter)
 logger.addHandler(ch)
-
-
-def gen_datasets(datadir):
-    """Generate datasets for experiment.
-
-    Preprocessing from pytorch Imagenet example code
-
-    Parameters
-    ----------
-    datadir : string
-        path to directory of data
-
-    Returns
-    -------
-    Tuple of torchvision.datasets.Dataset objects:
-        val_dataset, ood_dataset
-    """
-    normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                                     std=[0.229, 0.224, 0.225])
-    train_dataset = datasets.ImageFolder(
-        os.path.join(datadir, 'train'),
-        transforms.Compose([
-            transforms.RandomResizedCrop(224),
-            transforms.RandomHorizontalFlip(),
-            transforms.ToTensor(),
-            normalize,
-        ]))
-
-    eval_transform = transforms.Compose([
-        transforms.Resize(256),
-        transforms.CenterCrop(224),
-        transforms.ToTensor(),
-        normalize,
-    ])
-    val_dataset = datasets.ImageFolder(os.path.join(datadir, 'val'),
-                                       eval_transform)
-    ood_dataset = datasets.ImageFolder(os.path.join(datadir, 'ood'),
-                                       eval_transform)
-    return train_dataset, val_dataset, ood_dataset
-
-
-def gen_far_ood_datasets(dset: str = "iNaturalist"):
-    if dset not in ['iNaturalist', 'SUN', 'Places', 'Textures',
-                    'coarseid-fineood', 'coarseid-coarseood',
-                    'imagenet1000-fineood', 'imagenet1000-mediumood',
-                    'imagenet1000-coarseood', 'balanced100-coarseood',
-                    'balanced100-mediumood', 'balanced100-fineood',
-                    'balanced100-finemediumood',
-                    ]:
-        raise ValueError("Unknown far ood dataset: " + dset)
-    datadir = "data/" + dset
-    normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
-                                     std=[0.229, 0.224, 0.225])
-    transform = transforms.Compose([
-        transforms.Resize(256),
-        transforms.CenterCrop(224),
-        transforms.ToTensor(),
-        normalize,
-    ])
-    ds = datasets.ImageFolder(datadir, transform)
-    return ds
-
-
-def print_stats_of_list(prefix,dat):
-    # Helper to print min/max/avg/std/len of values in a list
-    dat = np.array(dat)
-    logger.info("{} Min: {:.4f}; Max: {:.4f}; Avg: {:.4f}; Std: {:.4f}; Len: {}".format(
-            prefix, dat.min(), dat.max(), dat.mean(), dat.std(), len(dat))
-    )
 
 
 def main(args):
@@ -199,9 +131,7 @@ def main(args):
         acc = train_util.Accuracy((1, 5))
         ood = train_util.OOD(config.model)
     elif config.model in [config.CASCADE, config.HILR, config.CASCADEFCHEAD]:
-        id_hierarchy = hierarchy_util.Hierarchy(train_ds.classes, hierarchy_fn)
-        # ood_hierarchy = hierarchy_util.Hierarchy(ood_ds.classes,
-        #         hierarchy_fn)
+        id_hierarchy = Hierarchy(train_ds.classes, hierarchy_fn)
         ood_hierarchy = id_hierarchy
         acc = hm.HierarchicalAccuracy(id_hierarchy,
                                       soft_preds=config.hl.softpred_loss)
@@ -220,13 +150,11 @@ def main(args):
         else:
             net = backbone(num_classes=id_hierarchy.num_classes)
     elif config.model == config.MOS:
-        id_hierarchy = hierarchy_util.Hierarchy(train_ds.classes, hierarchy_fn)
+        id_hierarchy = Hierarchy(train_ds.classes, hierarchy_fn)
         net = models.build_MOS(id_hierarchy, backbone=config.backbone, **kwargs)
         acc = hm.MOSAccuracy(id_hierarchy)
         ood = hm.MOSOOD(id_hierarchy)
     elif config.model == config.AMSOFTMAX:
-        # hierarchy = hierarchy_util.Hierarchy(train_ds.classes,
-        #                                      config.hierarchy_fn)
         id_hierarchy = None
         ood_hierarchy = None
         net = models.build_AMSoftmax(
@@ -238,8 +166,8 @@ def main(args):
         acc = train_util.Accuracy((1, 5))
         ood = train_util.OOD(config.model)
     elif config.model == config.AMCASCADE:
-        id_hierarchy = hierarchy_util.Hierarchy(train_ds.classes,
-                                                config.hierarchy_fn)
+        id_hierarchy = Hierarchy(train_ds.classes,
+                                 config.hierarchy_fn)
         ood_hierarchy = id_hierarchy
         net = models.build_AMSoftmax(
             id_hierarchy.num_classes,
