@@ -108,7 +108,7 @@ def main(args):
         hierarchy = None
     elif config.model in [config.CASCADE, config.CASCADEFCHEAD]:
         hierarchy = Hierarchy(train_ds.classes,
-                              config.hierarchy_fn,
+                              './hierarchies/' + config.hierarchy_fn,
                               config.min_norm_factor,
                               )
         if config.model == config.CASCADE:
@@ -141,7 +141,7 @@ def main(args):
         )
     elif config.model == config.MOS:
         hierarchy = Hierarchy(train_ds.classes,
-                              config.hierarchy_fn,
+                              './hierarchies/' + config.hierarchy_fn,
                               config.min_norm_factor,
                               )
         net = models.build_MOS(hierarchy, config.backbone,
